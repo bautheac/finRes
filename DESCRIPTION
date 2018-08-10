@@ -1,0 +1,24 @@
+Package: finRes
+Title: Financial data-science in R made easy
+Version: 0.0.0.9000
+Authors@R: person("Olivier", "Bauthéac", email = "o.bautheac@gmail.com", role = c("aut", "cre"))
+Description: finRes is a set of packages that work in harmony because they share common data 
+  representations and 'API' design. It is meant to financial data-science work in R easy 
+  and accessible. This package is designed to make it easy to install and load multiple
+  'finRes' packages in a single step.
+Depends: R (>= 3.4.0)
+Imports:
+  bbgsymbols,
+  cli,
+  crayon,
+  factorem,
+  pullit,
+  utils
+Remotes:
+  bautheac/bbgsymbols,
+  bautheac/factorem,
+  bautheac/pullit
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
