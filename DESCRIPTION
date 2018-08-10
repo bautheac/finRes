@@ -11,8 +11,13 @@ Imports:
   bbgsymbols,
   cli,
   crayon,
+  dplyr,
   factorem,
+  grDevices,
+  magrittr,
   pullit,
+  purrr,
+  rstudioapi,
   utils
 Remotes:
   bautheac/bbgsymbols,

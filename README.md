@@ -3,7 +3,7 @@
 finRes
 ==========
 
-[![Travis-CI Build Status](https://travis-ci.org/bautheac/factorem.svg?branch=master)](https://travis-ci.org/bautheac/factorem)
+[![Travis-CI Build Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 Financial data-science in R made easy.
