@@ -13,6 +13,7 @@ Imports:
   crayon,
   dplyr,
   factorem,
+  fewISOs,
   ffresearch,
   grDevices,
   magrittr,
@@ -23,6 +24,7 @@ Imports:
 Remotes:
   bautheac/bbgsymbols,
   bautheac/factorem,
+  bautheac/fewISOs,
   bautheac/ffresearch,
   bautheac/pullit
 License: GPL-3

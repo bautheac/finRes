@@ -3,3 +3,5 @@
 ^LICENSE\.md$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^development$
+^docs$
