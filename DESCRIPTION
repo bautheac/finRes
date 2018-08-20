@@ -9,24 +9,26 @@ Description: finRes is a set of packages that work in harmony because they share
 Depends: R (>= 3.4.0)
 Imports:
   bbgsymbols,
-  cli,
-  crayon,
-  dplyr,
+  cli (>= 1.0.0),
+  crayon (>= 1.3.4),
+  dplyr (>= 0.7.6),
   factorem,
   fewISOs,
   ffresearch,
-  grDevices,
-  magrittr,
+  grDevices (>= 3.5.1),
+  magrittr (>= 1.5),
   pullit,
-  purrr,
-  rstudioapi,
-  utils
+  purrr (>= 0.2.5),
+  rstudioapi (>= 0.7),
+  storethat,
+  utils (>= 3.5.1)
 Remotes:
   bautheac/bbgsymbols,
   bautheac/factorem,
   bautheac/fewISOs,
   bautheac/ffresearch,
   bautheac/pullit
+  bautheac/storethat
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
