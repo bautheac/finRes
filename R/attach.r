@@ -1,4 +1,4 @@
-core <- c("bbgsymbols", "factorem", "fewISOs", "ffresearch", "pullit", "storethat")
+core <- c("BBGsymbols", "factorem", "fewISOs", "FFresearch", "GICS", "plotit", "pullit", "storethat")
 
 core_loaded <- function() {
   search <- paste0("package:", core)
