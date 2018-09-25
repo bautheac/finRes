@@ -16,20 +16,21 @@ Imports:
   fewISOs,
   FFresearch,
   GICS,
-  grDevices (>= 3.5.1),
+  grDevices,
   magrittr (>= 1.5),
   plotit,
   pullit,
   purrr (>= 0.2.5),
   rstudioapi (>= 0.7),
   storethat,
-  utils (>= 3.5.1)
+  utils
 Remotes:
   bautheac/BBGsymbols,
   bautheac/factorem,
   bautheac/fewISOs,
   bautheac/FFresearch,
   bautheac/GICS,
+  bautheac/plotit,
   bautheac/pullit,
   bautheac/storethat
 License: GPL-3
