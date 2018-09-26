@@ -11,6 +11,7 @@ Imports:
   BBGsymbols,
   cli (>= 1.0.0),
   crayon (>= 1.3.4),
+  data.table (>= 1.11.4),
   dplyr (>= 0.7.6),
   factorem,
   fewISOs,
@@ -18,12 +19,16 @@ Imports:
   GICS,
   grDevices,
   magrittr (>= 1.5),
+  methods,
+  PerformanceAnalytics (>= 1.5.2),
   plotit,
   pullit,
   purrr (>= 0.2.5),
   rstudioapi (>= 0.7),
   storethat,
-  utils
+  tibble (>= 1.4.2),
+  utils,
+  xts (>= 0.11.0)
 Remotes:
   bautheac/BBGsymbols,
   bautheac/factorem,
