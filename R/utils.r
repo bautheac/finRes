@@ -24,9 +24,9 @@ text_col <- function(x) {
 
 }
 
-#' List all packages in the tidyverse
+#' List all packages in the finRes suite.
 #'
-#' @param include_self Include tidyverse in the list?
+#' @param include_self Include finRes in the list?
 #' @export
 #' @examples
 #' finRes_packages()

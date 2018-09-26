@@ -59,12 +59,27 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    <div id="finres" class="section level1">
+    
+
+<div id="finres" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#finres" class="anchor"></a>finRes</h1></div>
-
 <p>finRes is a set of packages that work in harmony because they share common data representations and ‘API’ design. It is meant to facilitate data-science and research in finance and financial economics in R. This package is designed to make it easy to install and load multiple ‘finRes’ packages in a single step.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>Install the development version from <a href="https://github.com/bautheac/finRes/">github</a> with:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="dt">repo =</span> <span class="st">"finRes"</span>, <span class="dt">username =</span> <span class="st">"bautheac"</span>)</code></pre></div>
 </div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<p>Classic Fama &amp; French asset pricing factors</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(finRes)
+<span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"factors"</span>), <span class="dt">package =</span> <span class="st">"FFresearch"</span>, <span class="dt">envir =</span> <span class="kw">environment</span>())</code></pre></div>
+</div>
+</div>
+
   </div>
 
   <div class="col-md-3" id="sidebar">

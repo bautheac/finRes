@@ -2,15 +2,15 @@
 % Please edit documentation in R/utils.r
 \name{finRes_packages}
 \alias{finRes_packages}
-\title{List all packages in the tidyverse}
+\title{List all packages in the finRes suite.}
 \usage{
 finRes_packages(include_self = TRUE)
 }
 \arguments{
-\item{include_self}{Include tidyverse in the list?}
+\item{include_self}{Include finRes in the list?}
 }
 \description{
-List all packages in the tidyverse
+List all packages in the finRes suite.
 }
 \examples{
 finRes_packages()
