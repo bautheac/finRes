@@ -4,7 +4,7 @@
 \name{finRes-package}
 \alias{finRes}
 \alias{finRes-package}
-\title{finRes: Data-science and research in finance and financial economics in R made easy}
+\title{finRes: Data-science and research in finance and financial economics in R}
 \description{
 finRes is a set of packages that work in harmony because they share common data 
   representations and 'API' design. It is meant to facilitate data-science and research in finance and 

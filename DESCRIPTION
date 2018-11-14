@@ -1,6 +1,6 @@
 Package: finRes
-Title: Data-science and research in finance and financial economics in R made easy
-Version: 0.0.0.9000
+Title: Data-science and research in finance and financial economics in R
+Version: 0.0.1.0
 Authors@R: person("Olivier", "Bauthéac", email = "o.bautheac@gmail.com", role = c("aut", "cre"))
 Description: finRes is a set of packages that work in harmony because they share common data 
   representations and 'API' design. It is meant to facilitate data-science and research in finance and 
@@ -47,6 +47,10 @@ Remotes:
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 URL: https://bautheac.github.io/finRes/
 BugReports: https://github.com/bautheac/finRes/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
