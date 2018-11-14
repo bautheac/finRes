@@ -5,4 +5,7 @@ articles:
   asset-pricing: asset-pricing.html
   Bloomberg: Bloomberg.html
   datasets: datasets.html
+urls:
+  reference: https://bautheac.github.io/finRes/reference
+  article: https://bautheac.github.io/finRes/articles
 

@@ -1,6 +1,20 @@
-articles:
-- title: finRes vignettes
-  contents:
-  - datasets
-  - Bloomberg
-  - asset-pricing
+title: finRes
+
+url: https://bautheac.github.io/finRes
+
+navbar:
+  title: ~
+  type: default
+  left:
+    - text: home
+      href: index.html
+    - text: functions
+      href: reference/index.html
+    - text: articles
+      menu:
+      - text: datasets
+        href: articles/datasets.html
+      - text: Bloomberg
+        href: articles/Bloomberg.html
+      - text: asset pricing
+        href: articles/asset-pricing.html
