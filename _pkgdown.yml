@@ -15,6 +15,6 @@ navbar:
       - text: datasets
         href: articles/datasets.html
       - text: Bloomberg
-        href: articles/Bloomberg.html
+        href: articles/bloomberg.html
       - text: asset pricing
         href: articles/asset-pricing.html
