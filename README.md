@@ -1,24 +1,128 @@
-[![Travis-CI Build Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&svg=true)](https://ci.appveyor.com/project/bautheac/finRes)
+finRes
+================
+2018-11-14
+
+[![Travis-CI Build
+Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&svg=true)](https://ci.appveyor.com/project/bautheac/finRes)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-# finRes
+<style> body {text-align: justify} </style>
 
-finRes is a set of packages that work in harmony because they share common data representations and 'API' design. It is meant to facilitate data-science and research in finance and financial economics in R. This package is designed to make it easy to install and load multiple 'finRes' packages in a single step.
+## finRes
 
-## Installation
+The [finRes](https://bautheac.github.io/finRes/) suite is organised
+along the lines of the [tidyverse](www.tidyverse.org) of [Hadley
+Wickham](http://hadley.nz/) and the [RStudio](https://www.rstudio.com/)
+team. It is a set of packages that work in harmony because they share
+common data representations and ‘API’ design. It is meant to facilitate
+data-science and research in finance and financial economics in R. This
+package is designed to make it easy to install and load multiple
+‘finRes’ packages in a single step.  
+Install the development version from github with
+`devtools::install_github("bautheac/finRes")`.
 
-Install the development version from [github](https://github.com/bautheac/finRes/) with:
+### datasets
+
+finRes is home to a number of packages that, although self-contained
+with consumption value on their own, host datasets that play important
+roles in the finRes suite, mostly in relation to data collection,
+storage and wrangling but also to analytics and asset pricing in
+particular. At the time of writing, the set of dataset packages in
+finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/),
+[fewISOs](https://bautheac.github.io/fewISOs/),
+[GICS](https://bautheac.github.io/GICS/) and
+[FFresearch](https://bautheac.github.io/FFresearch/).
+
+### Bloomberg
+
+The finRes suite is organised along the data-science pipeline where
+preprocessing, including data collection and wrangling, plays a major
+role and is often reported by data-scientists to amount up to 80% of
+work-time. finRes adresses the issue in two complementary packages that
+work in conjuction with most of the dataset packages above. On the one
+hand the [pullit](https://bautheac.github.io/pullit/) package provides
+tools for data collection from Bloomberg. It returns clean and tidy,
+ready-to-use, data objects for other packages further down the pipeline
+to work with. On the other hand the
+[storethat](https://bautheac.github.io/storethat/) package works in
+concert with fewISOs and GICS to help store the data retrieved with
+pullit for off-Bloomberg consumption in R.  
+Both pullit and storethat work in tandem with the BBGsymbol package. The
+latter plays a central role in finRes where it provides the formers the
+wording required to interact with Bloomberg through the interface
+provided by the [Whit Armstrong](https://github.com/armstrtw), [Dirk
+Eddelbuettel](https://github.com/eddelbuettel) & [John
+Laing](https://github.com/johnlaing)’s
+[Rblpapi](https://github.com/Rblp/Rblpapi) package (Armstrong,
+Eddelbuettel, and Laing 2018).
+
+### asset pricing
+
+At the time of writing, the analytics part of the pipeline in finRes
+focusses on asset pricing.  
+On the one hand the FFresearch package abovementioned provides data on
+classic asset pricing factors and a number of sort portfolios. The data
+is pulled directly from Kenneth French’s [data
+library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html)
+and tidied up for seamless consumption in R.  
+On the other hand the [factorem](https://bautheac.github.io/factorem/)
+package provides tools for outright factor construction from data
+retrieve with pullit. The returned objects carry corresponding return &
+positions time series and a number of methods help with performance
+analysis.
+
+### visualization
+
+The bottom-end of the pipeline (communication) is adressed in the
+[plotit](https://bautheac.github.io/plotit/) package that provides a
+number of plot methods for finRes objects.
+
+### packages
+
+finRes packages at the time of writing:  
+\- [BBGsymbols](https://bautheac.github.io/BBGsymbols/): popular
+Bloomberg tickers and field symbols conviniently packaged for R users.  
+\- [fewISOs](https://bautheac.github.io/fewISOs/): a collection of
+financial economics related ISO code datasets conveniently packaged for
+consumption in R.  
+\- [GICS](https://bautheac.github.io/GICS/): Global Industry
+Classification Standard dataset conveniently packaged for consumption in
+R.  
+\- [FFresearch](https://bautheac.github.io/FFresearch/): Fama/French
+asset pricing research data conveniently packaged for consumption by R
+users.  
+\- [pullit](https://bautheac.github.io/pullit/): Bloomberg financial
+data collection in R made easy.  
+\- [storethat](https://bautheac.github.io/storethat/): store Bloomberg
+financial data for off-Bloomberg consumption in R.  
+\- [factorem](https://bautheac.github.io/factorem/): construct bespoke
+asset pricing factors.  
+\- [plotit](https://bautheac.github.io/plotit/): plot methods for the
+finRes suite.
+
+### going further
+
+See package vignettes for details:
 
 ``` r
-devtools::install_github(repo = "finRes", username = "bautheac")
+vignette(topic = "datasets", package = "finRes")
+
+vignette(topic = "Bloomberg", package = "finRes")
+
+vignette(topic = "asset pricing", package = "finRes")
 ```
 
-## Example
+#### references
 
-Classic Fama & French asset pricing factors
+<div id="refs" class="references">
 
-``` r
-library(finRes)
-data(list = c("factors"), package = "FFresearch", envir = environment())
-```
+<div id="ref-Armstrong_Rblpapi_2018">
+
+Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. *Rblpapi: R
+Interface to ’Bloomberg’*. <https://CRAN.R-project.org/package=Rblpapi>.
+
+</div>
+
+</div>
