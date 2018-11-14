@@ -15,6 +15,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 
+
 finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/), [fewISOs](https://bautheac.github.io/fewISOs/), [GICS](https://bautheac.github.io/GICS/) and [FFresearch](https://bautheac.github.io/FFresearch/).
 
 ## BBGsymbols
