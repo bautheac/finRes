@@ -84,210 +84,188 @@
 
     
     
-<p>Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The <code>html_vignette</code> output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The <code>html_vignette</code> format:</p>
-<ul>
-<li>Never uses retina figures</li>
-<li>Has a smaller default figure size</li>
-<li>Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style</li>
-</ul>
-<div id="vignette-info" class="section level2">
+<style> body {text-align: justify} </style>
+<p>The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes adresses the issue in two complementary packages that work in conjuction with most of the finRes dataset packages.<br>
+On the one hand the <a href="https://bautheac.github.io/pullit/">pullit</a> package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the <a href="https://bautheac.github.io/storethat/">storethat</a> package works in concert with <a href="https://bautheac.github.io/fewISOs/">fewISOs</a> and <a href="https://bautheac.github.io/GICS/">GICS</a> to help store the data retrieved for off-Bloomberg consumption in R.<br>
+Both pullit and storethat work in tandem with the <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package. The latter plays a central role in finRes where it helps pullit in interacting with Bloomberg via the interface provided by the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> package <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span> and storethat in storing the data retrieved.</p>
+<div id="pullit" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette-info" class="anchor"></a>Vignette Info</h2>
-<p>Note the various macros within the <code>vignette</code> section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the <code>title</code> field and the <code>\VignetteIndexEntry</code> to match the title of your vignette.</p>
+<a href="#pullit" class="anchor"></a>pullit</h2>
+<p>pullit together with storethat are the two workhorses of the finRes suite. Using carefully selected Bloomberg datafields from BBGsymbols in tandem with <span class="citation">Armstrong, Eddelbuettel, and Laing (2018)</span>’s Bloomberg interface pullit provides the R user with easy access to Bloomberg financial data for a number of financial instruments including, at the time of writting, equity and equity-like securities, funds with the category encompassing any money-managing entity, as well as futures series &amp; term structure individual contracts.</p>
+<p>For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(pullit); <span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">end &lt;-<span class="st"> </span><span class="kw">as_date</span>(<span class="st">"2018-10-31"</span>); start &lt;-<span class="st"> </span>end <span class="op">-</span><span class="st"> </span><span class="kw">years</span>(2L)</a></code></pre></div>
+<div id="equity" class="section level3">
+<h3 class="hasAnchor">
+<a href="#equity" class="anchor"></a>equity</h3>
+<p>Equity data comes in three major categories in pullit, market, book and info. For a given corporation market data records stock market activity while book data records business activity in the form of financial statements commonly refered to as ‘books’ and info refers to qualitative information. See the ‘fields’ dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.</p>
+<div id="market" class="section level4">
+<h4 class="hasAnchor">
+<a href="#market" class="anchor"></a>market</h4>
+<p>Retrieve market data from Bloomberg for the Archer-Daniels-Midland (ADM US Equity), Kraft-Heinz (KHC US Equity) and XPO Logistics (XPO US Equity) corporations with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">equity_tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"ADM US Equity"</span>, <span class="st">"KHC US Equity"</span>, <span class="st">"XPO US Equity"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">equity_market &lt;-<span class="st"> </span><span class="kw">BBG_equity_market</span>(equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 </div>
-<div id="styles" class="section level2">
+<div id="books" class="section level4">
+<h4 class="hasAnchor">
+<a href="#books" class="anchor"></a>books</h4>
+<p>For financial statements data BBGsymbols replicates the Bloomberg ‘financial analysis’ monitor (FA <go>). At the time of writing, this includes balance sheet, cash flow statement, income statement as well as ‘key stats’ that gathers broad summary figures and ‘ratios’ that includes popular financial ratios.</go></p>
+<p>Retrieve the corresponding data for the abovementioned corporations with:</p>
+<div id="balance-sheet" class="section level5">
+<h5 class="hasAnchor">
+<a href="#balance-sheet" class="anchor"></a>balance sheet</h5>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">equity_BS &lt;-<span class="st"> </span><span class="kw">BBG_equity_book</span>(<span class="dt">book =</span> <span class="st">"balance sheet"</span>, equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="cash-flow-statement" class="section level5">
+<h5 class="hasAnchor">
+<a href="#cash-flow-statement" class="anchor"></a>cash flow statement</h5>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">equity_CF &lt;-<span class="st"> </span><span class="kw">BBG_equity_book</span>(<span class="dt">book =</span> <span class="st">"cash flow statement"</span>, equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="income-statement" class="section level5">
+<h5 class="hasAnchor">
+<a href="#income-statement" class="anchor"></a>income statement</h5>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">equity_IS &lt;-<span class="st"> </span><span class="kw">BBG_equity_book</span>(<span class="dt">book =</span> <span class="st">"income statement"</span>, equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="key-stats" class="section level5">
+<h5 class="hasAnchor">
+<a href="#key-stats" class="anchor"></a>key stats</h5>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">equity_KS &lt;-<span class="st"> </span><span class="kw">BBG_equity_book</span>(<span class="dt">book =</span> <span class="st">"key stats"</span>, equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="ratios" class="section level5">
+<h5 class="hasAnchor">
+<a href="#ratios" class="anchor"></a>ratios</h5>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">equity_R &lt;-<span class="st"> </span><span class="kw">BBG_equity_book</span>(<span class="dt">book =</span> <span class="st">"ratios"</span>, equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="info" class="section level4">
+<h4 class="hasAnchor">
+<a href="#info" class="anchor"></a>info</h4>
+<p>‘info’ encompasses a range of contemporaneous qualitative information including, but not limited to, firm’s name, security type, exchange where the security trades, country of incorporation, etc.</p>
+<p>Retrieve the corresponding data for the abovementioned corporations with:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">equity_info &lt;-<span class="st"> </span><span class="kw">BBG_equity_info</span>(equity_tickers, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="fund" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fund" class="anchor"></a>fund</h3>
+<p>Fund data only comes in two categories, market and info. For a given fund market data records stock market activity while info data records contemporaneous qualitative information that includes a wide range of fund characteristics. Market historical data as well as contemporaneous qualitative data not only allow for an indepth assessment of the fund performance but potentially also the mapping of the performance to fund characteristics. See the ‘fields’ dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.</p>
+<div id="market-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#market-1" class="anchor"></a>market</h4>
+<p>Retrieve market data from Bloomberg for the SPDR S&amp;P 500 ETF Trust (SPY US Equity), the SPDR Gold Shares investment fund (GLD US Equity) and the iShares MSCI Emerging Markets ETF (EEM US Equity) with:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">fund_tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"SPY US Equity"</span>, <span class="st">"GLD US Equity"</span>, <span class="st">"EEM US Equity"</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">fund_market &lt;-<span class="st"> </span><span class="kw">BBG_fund_market</span>(fund_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="info-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#info-1" class="anchor"></a>info</h4>
+<p>Retrieve the corresponding qualitative data for the abovementioned funds with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">fund_info &lt;-<span class="st"> </span><span class="kw">BBG_fund_info</span>(fund_tickers, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="futures" class="section level3">
+<h3 class="hasAnchor">
+<a href="#futures" class="anchor"></a>futures</h3>
+<p>Futures data comes in three major categories in pullit, market, CFTC and info. For a given futures series market data records futures market price activity while CFTC data records market positions. ‘info’ on the other hand records contemporaneous qualitative information for the corresponding futures series, including but not limited to series name, term structure length, contract size, contract unit, etc. See the ‘fields’ dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.</p>
+<div id="market-2" class="section level4">
+<h4 class="hasAnchor">
+<a href="#market-2" class="anchor"></a>market</h4>
+<p>pullit helps retrieving both term structure as well as aggregated market data for futures. Term structure data records market activity for individual futures term structure contracts while aggregated data records market activity measures that are aggregated over the whole term structure for a particular futures series.</p>
+<div id="term-structure" class="section level5">
+<h5 class="hasAnchor">
+<a href="#term-structure" class="anchor"></a>term structure</h5>
+<p>Retrieve market data from Bloomberg for the five first term structure contracts on the Corn - #2-yellow (C A Comdty), Eurodollar (EDA Comdty) and S&amp;P500 - e-mini (ESA Index) futures series where the futures chains are constructed by rolling on liquidity (with active contract: “A”) with no roll adjustment (none: “N”) using:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">futures_tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"C A Comdty"</span>, <span class="st">"EDA Comdty"</span>, <span class="st">"ESA Index"</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">futures_TS &lt;-<span class="st"> </span><span class="kw">BBG_futures_market</span>(<span class="dt">type =</span> <span class="st">"term structure"</span>, <span class="dt">active_contract_tickers =</span> futures_tickers, </a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">                                 start, end, <span class="dt">TS_positions =</span> 1L<span class="op">:</span>5L, <span class="dt">roll_type =</span> <span class="st">"A"</span>, <span class="dt">roll_days =</span> 0L, </a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">                                 <span class="dt">roll_months =</span> 0L, <span class="dt">roll_adjustment =</span> <span class="st">"N"</span>, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="aggregate" class="section level5">
+<h5 class="hasAnchor">
+<a href="#aggregate" class="anchor"></a>aggregate</h5>
+<p>Retrieve the corresponding aggregated futures market data with:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">futures_agg &lt;-<span class="st"> </span><span class="kw">BBG_futures_market</span>(<span class="dt">type =</span> <span class="st">"aggregate"</span>, <span class="dt">active_contract_tickers =</span> futures_tickers,</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">                                  start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="cftc" class="section level4">
+<h4 class="hasAnchor">
+<a href="#cftc" class="anchor"></a>CFTC</h4>
+<p>pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the ‘fields’ and ‘tickers_CFTC’ datasets in BBGsymbols for a details.</p>
+<p>Retrieve the corresponding futures market position data with:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">futures_CFTC &lt;-<span class="st"> </span><span class="kw">BBG_futures_CFTC</span>(<span class="dt">active_contract_tickers =</span> futures_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+<div id="info-2" class="section level4">
+<h4 class="hasAnchor">
+<a href="#info-2" class="anchor"></a>info</h4>
+<p>‘info’ encompasses a range of contemporaneous qualitative information on the underlying futures series including, but not limited to, name for the series’ underlying, trading exchange, term structure length, contract size, etc.</p>
+<p>Retrieve the corresponding data for the abovementioned futures series with:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">futures_info &lt;-<span class="st"> </span><span class="kw">BBG_futures_info</span>(futures_tickers, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+</div>
+</div>
+</div>
+<div id="accessors" class="section level2">
 <h2 class="hasAnchor">
-<a href="#styles" class="anchor"></a>Styles</h2>
-<p>The <code>html_vignette</code> template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:</p>
-<pre><code>output: 
-  rmarkdown::html_vignette:
-    css: mystyles.css</code></pre>
+<a href="#accessors" class="anchor"></a>accessors</h2>
+<p>The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formaly using bespoke accessor methods. Historical data functions for example return objects that carry a ‘tickers’ dataframe that indicates the tickers for which some data have been found, a ‘fields’ dataframe that indicates the data fields for which data has been found, a ‘data’ dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A <code>get_periods()</code> method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">equity_market</a></code></pre></div>
+<p>Access each slot using the appropriate accessor:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">get_tickers</span>(equity_market)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">get_fields</span>(equity_market)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">get_data</span>(equity_market)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">get_call</span>(equity_market)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">get_periods</span>(equity_market)</a></code></pre></div>
 </div>
-<div id="figures" class="section level2">
+<div id="storethat" class="section level2">
 <h2 class="hasAnchor">
-<a href="#figures" class="anchor"></a>Figures</h2>
-<p>The figure sizes have been customised so that you can easily put two images side-by-side.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">plot</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1</span>)</a></code></pre></div>
-<p><img src="Bloomberg_files/figure-html/unnamed-chunk-1-1.png" width="700"><img src="Bloomberg_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
-<p>You can enable figure captions by <code>fig_caption: yes</code> in YAML:</p>
-<pre><code>output:
-  rmarkdown::html_vignette:
-    fig_caption: yes</code></pre>
-<p>Then you can use the chunk option <code>fig.cap = "Your figure caption."</code> in <strong>knitr</strong>.</p>
+<a href="#storethat" class="anchor"></a>storethat</h2>
+<p>All the objects above can be stored in a bespoke database for later off-Bloomberg consumption. The storethat package makes the process seamless by providing befitted storing methods:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">library</span>(storethat)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="kw">db_create</span>(<span class="dt">path =</span> <span class="st">"~/data-raw/"</span>)</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">data &lt;-<span class="st"> </span><span class="kw">list</span>(equity_market, equity_BS, equity_CF, equity_IS, equity_KS, equity_R, equity_info, </a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">             fund_market, fund_info, futures_TS, futures_agg, futures_CFTC, futures_info)</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb21-8" data-line-number="8"><span class="kw">do.call</span>(db_store, data)</a></code></pre></div>
+<p>Every function above has an equivalent for retrieving data from a storethat database that can be accessed by swapping the ‘BBG’ prefix for ‘storethat’; i.e. ‘BBG_futures_market’ becomes ‘storethat_futures_market’. Function parameters are identical for both data sources and the returned objects have alike characteristics:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">equity_market &lt;-<span class="st"> </span><span class="kw">storethat_equity_market</span>(equity_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p>Updating a storethat database is equally straightforward with pullit. Update the whole database with:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">storethat_update</span>()</a></code></pre></div>
+<p>More refined updates are also allowed:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">storethat_update</span>(<span class="dt">instrument =</span> <span class="st">"equity"</span>, <span class="dt">book =</span> <span class="st">"market"</span>)</a></code></pre></div>
 </div>
-<div id="more-examples" class="section level2">
+<div id="plotit" class="section level2">
 <h2 class="hasAnchor">
-<a href="#more-examples" class="anchor"></a>More Examples</h2>
-<p>You can write math expressions, e.g. <span class="math inline">\(Y = X\beta + \epsilon\)</span>, footnotes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and tables, e.g. using <code><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">knitr::kable()</a></code>.</p>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="right">mpg</th>
-<th align="right">cyl</th>
-<th align="right">disp</th>
-<th align="right">hp</th>
-<th align="right">drat</th>
-<th align="right">wt</th>
-<th align="right">qsec</th>
-<th align="right">vs</th>
-<th align="right">am</th>
-<th align="right">gear</th>
-<th align="right">carb</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Mazda RX4</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.620</td>
-<td align="right">16.46</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td>Mazda RX4 Wag</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.875</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td>Datsun 710</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">108.0</td>
-<td align="right">93</td>
-<td align="right">3.85</td>
-<td align="right">2.320</td>
-<td align="right">18.61</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td>Hornet 4 Drive</td>
-<td align="right">21.4</td>
-<td align="right">6</td>
-<td align="right">258.0</td>
-<td align="right">110</td>
-<td align="right">3.08</td>
-<td align="right">3.215</td>
-<td align="right">19.44</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Hornet Sportabout</td>
-<td align="right">18.7</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">175</td>
-<td align="right">3.15</td>
-<td align="right">3.440</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td>Valiant</td>
-<td align="right">18.1</td>
-<td align="right">6</td>
-<td align="right">225.0</td>
-<td align="right">105</td>
-<td align="right">2.76</td>
-<td align="right">3.460</td>
-<td align="right">20.22</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Duster 360</td>
-<td align="right">14.3</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">245</td>
-<td align="right">3.21</td>
-<td align="right">3.570</td>
-<td align="right">15.84</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td>Merc 240D</td>
-<td align="right">24.4</td>
-<td align="right">4</td>
-<td align="right">146.7</td>
-<td align="right">62</td>
-<td align="right">3.69</td>
-<td align="right">3.190</td>
-<td align="right">20.00</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td>Merc 230</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">140.8</td>
-<td align="right">95</td>
-<td align="right">3.92</td>
-<td align="right">3.150</td>
-<td align="right">22.90</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td>Merc 280</td>
-<td align="right">19.2</td>
-<td align="right">6</td>
-<td align="right">167.6</td>
-<td align="right">123</td>
-<td align="right">3.92</td>
-<td align="right">3.440</td>
-<td align="right">18.30</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-</tbody>
-</table>
-<p>Also a quote using <code>&gt;</code>:</p>
-<blockquote>
-<p>“He who gives up [code] safety for [code] speed deserves neither.” (<a href="https://twitter.com/hadleywickham/status/504368538874703872">via</a>)</p>
-</blockquote>
+<a href="#plotit" class="anchor"></a>plotit</h2>
+<p>The <a href="https://bautheac.github.io/plotit/">plotit</a> package, also part of the finRes suite, provides plot methods for some pullit data objects including, at the time of writing, futures term structure (FuturesTS) and fund market (FundMarket) objects.</p>
+<div id="futures-term-structure" class="section level3">
+<h3 class="hasAnchor">
+<a href="#futures-term-structure" class="anchor"></a>futures term structure</h3>
+<p>Plot a futures series term structure dynamics with:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">library</span>(plotit)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="kw">plot_term_structure</span>(<span class="dt">object =</span> futures_TS, <span class="dt">ticker =</span> <span class="st">"C A Comdty"</span>)</a></code></pre></div>
 </div>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn1"><p>A footnote here.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
+<div id="fund-market" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fund-market" class="anchor"></a>fund market</h3>
+<p>Plot historical fund performance with:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">plot_performance</span>(<span class="dt">object =</span> fund_market, <span class="dt">ticker =</span> <span class="st">"GLD US Equity"</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>references</h2>
+<div id="refs" class="references">
+<div id="ref-Armstrong_Rblpapi_2018">
+<p>Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. <em>Rblpapi: R Interface to ’Bloomberg’</em>. <a href="https://CRAN.R-project.org/package=Rblpapi">https://CRAN.R-project.org/package=Rblpapi</a>.</p>
+</div>
+</div>
 </div>
   </div>
 
@@ -296,10 +274,11 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#vignette-info">Vignette Info</a></li>
-      <li><a href="#styles">Styles</a></li>
-      <li><a href="#figures">Figures</a></li>
-      <li><a href="#more-examples">More Examples</a></li>
+<li><a href="#pullit">pullit</a></li>
+      <li><a href="#accessors">accessors</a></li>
+      <li><a href="#storethat">storethat</a></li>
+      <li><a href="#plotit">plotit</a></li>
+      <li><a href="#references">references</a></li>
       </ul>
 </div>
       </div>

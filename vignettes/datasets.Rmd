@@ -11,7 +11,7 @@ vignette: >
 ---
 <style> body {text-align: justify} </style>
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, cache = TRUE, comment = "#>")
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 
@@ -169,4 +169,4 @@ tibble::as.tibble(breakpoints)
 
 
 
-#### references
+## references
