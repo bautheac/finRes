@@ -3,7 +3,7 @@ pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
   asset-pricing: asset-pricing.html
-  Bloomberg: Bloomberg.html
+  bloomberg: bloomberg.html
   datasets: datasets.html
 urls:
   reference: https://bautheac.github.io/finRes/reference
