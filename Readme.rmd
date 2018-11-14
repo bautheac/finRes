@@ -21,6 +21,7 @@ finRes is home to a number of packages that, although self-contained with consum
 
 
 ### Bloomberg
+
 The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes adresses the issue in two complementary packages that work in conjuction with most of the dataset packages above.  
 On the one hand the [pullit](https://bautheac.github.io/pullit/) package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the [storethat](https://bautheac.github.io/storethat/) package works in concert with fewISOs and GICS to help store the data retrieved with pullit for off-Bloomberg consumption in R.  
 Both pullit and storethat work in tandem with the BBGsymbol package. The latter plays a central role in finRes where it provides the formers the wording required to interact with Bloomberg through the interface provided by the [Whit Armstrong](https://github.com/armstrtw), [Dirk Eddelbuettel](https://github.com/eddelbuettel) & [John Laing](https://github.com/johnlaing)'s [Rblpapi](https://github.com/Rblp/Rblpapi) package [@Armstrong_Rblpapi_2018].
