@@ -3,6 +3,6 @@ pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
   asset-pricing: asset-pricing.html
-  bloomberg: bloomberg.html
+  Bloomberg: Bloomberg.html
   datasets: datasets.html
 

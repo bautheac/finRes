@@ -3,20 +3,169 @@ title: datasets
 author: Olivier Bauthéac
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
+bibliography: BibTeX.bib
 vignette: >
   %\VignetteIndexEntry{datasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+<style> body {text-align: justify} </style>
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
-## datasets in finRes
+
+finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/), [fewISOs](https://bautheac.github.io/fewISOs/), [GICS](https://bautheac.github.io/GICS/) and [FFresearch](https://bautheac.github.io/FFresearch/).
+
+## BBGsymbols
+The BBGsymbols package plays a critical role in finRes where it provides both the [pullit](https://bautheac.github.io/pullit/) and the [storethat](https://bautheac.github.io/storethat/) packages with support for interacting with Bloomberg through the [Rblpapi](https://github.com/Rblp/Rblpapi) interface [@Armstrong_Rblpapi_2018].
+
+```{r `BBGsymbols load`}
+library(BBGsymbols)
+
+data(list = c("fields", "months", "rolls", "tickers_CFTC", "tickers_futures"), package = "BBGsymbols")
+```
+
+
+### fields
+The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for fitting fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writting include 'equity', refering to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
+```{r `BBGsymbols fields`, echo = FALSE}
+tibble::as.tibble(fields)
+```
+
+### months
+The 'months' dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial deriviatives such as futures contracts.  
+```{r `BBGsymbols months`, echo = FALSE}
+tibble::as.tibble(months)
+```
+
+
+### rolls
+The 'rolls' dataset details the symbols used to refer to the various roll types and adjustments available in Bloomberg when working with futures term structure contracts. These symbols can be used to construct bespoke tickers that allow the user to query Bloomberg for futures term structure data with the desired roll characteristics.
+```{r `BBGsymbols rolls`, echo = FALSE}
+tibble::as.tibble(rolls)
+```
+
+
+### tickers_CFTC
+The 'tickers_CFTC' dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the 'legacy', 'disaggregated', 'supplemental' and 'traders in financial futures' (TFF) reports. See `?tickers_CFTC` for details.
+```{r `tickers_CFTC`, echo = FALSE}
+tibble::as.tibble(tickers_CFTC)
+```
+
+
+### tickers_futures
+The 'tickers_futures' dataset gathers futures active contract Bloomberg tickers as well as a collection of qualitative information for several popular futures series including commodity, currency, financial and index futures with underlyings from various asset classes.  
+```{r `tickers_futures`, echo = FALSE}
+tibble::as.tibble(tickers_futures)
+```
+
+
+## fewISOs
+fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets play an important role in finRes where they provide storethat with support in enforcing data integrity. At the time of writing fewISOs hosts the 'countries', 'currencies' and 'exchanges' datasets that make sure no data belonging to a financial instrument trading on a non-existing exchange in a non-existing currency from a non-existing country is ever recorded in a storethat database. 
+```{r `fewISOs load`}
+library(fewISOs)
+
+data(list = c("countries", "currencies", "exchanges"), package = "fewISOs")
+```
+
+
+### countries
+The countries dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:  
+- ISO 3166-1 alpha-2: two-letter country codes (most widely used).  
+- ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.  
+- ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.  
+```{r `fewISOs countries`, echo = FALSE}
+tibble::as.tibble(countries)
+```
+
+
+### currencies
+The currencies dataset corresponds to the ISO 4217 standard that defines codes for worldwide currencies and comes as a three-letter alphabetic as well as an alternative three-digit numeric code, both provided in the dataset. The ISO 4217 three-letter alphabetic code standard is based on the ISO 3166-1 code standard for countries with the first two letters corresponding the ISO 3166-1 alpha-2 code for the country issuing the corresponding currency and the third corresponding to the first letter of the currency name when possible. The three-digit numeric code is the same as the ISO 3166-1 numeric code for the issuing country when possible.
+```{r `fewISOs currencies`, echo = FALSE}
+tibble::as.tibble(currencies)
+```
+
+
+### exchanges
+The exchanges dataset corresponds to the ISO 10383 standard that defines four alphanumeric character Market Identifier Codes (MIC). These are unique identification codes used to identify securities trading exchanges, trading platforms and regulated or non-regulated markets as sources of prices and related information in order to facilitate automated processing.
+```{r `fewISOs exchanges`, echo = FALSE}
+tibble::as.tibble(exchanges)
+```
+
+
+
+## GICS
+GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS plays an important role in finRes where, along with BBGsymbols and fewISOs, it helps storethat enforcing data integrity.
+```{r `GICS load`}
+library(GICS)
+
+data(list = c("standards"), package = "GICS")
+```
+
+### standards
+The GICS is a standardized classification system for equities developed jointly by Morgan Stanley Capital International (MSCI) and Standard & Poor's. The GICS methodology is used by the MSCI indexes, which include domestic and international stocks, as well as by a large portion of the professional investment management community. The GICS hierarchy begins with 11 sectors and is followed by 24 industry groups, 68 industries, and 157 sub-industries. Each stock that is classified will have a coding at all four of these levels with all these provided in the 'standards' dataset.
+```{r `GICS standards`, echo = FALSE}
+tibble::as.tibble(exchanges)
+```
+
+
+
+## FFresearch
+FFresearch conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French's online [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.
+```{r `FFresearch load`}
+library(FFresearch)
+
+data(list = c("factors", "portfolios_univariate", "portfolios_bivariate", "portfolios_trivariate",
+              "portfolios_industries", "variables", "breakpoints"), package = "FFresearch")
+```
+
+### portfolios
+
+#### univariate
+The 'portfolios_univariate' dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.
+```{r, `FFresearch portfolios_univariate`, echo = FALSE}
+tibble::as.tibble(portfolios_univariate)
+```
+
+#### bivariate
+The 'portfolios_bivariate' dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.
+```{r, `FFresearch portfolios_bivariate`, echo = FALSE}
+tibble::as.tibble(portfolios_bivariate)
+```
+
+#### trivariate
+The 'portfolios_trivariate' dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.
+```{r, `FFresearch portfolios_trivariate`, echo = FALSE}
+tibble::as.tibble(portfolios_trivariate)
+```
+
+#### industries
+The 'portfolios_industries' dataset provides various feature time series for Fama/French industry portfolios [@fama_industry_1997].
+```{r, `FFresearchportfolios_industries`, echo = FALSE}
+tibble::as.tibble(portfolios_industries)
+```
+
+### factors
+The 'factors' dataset provides the return (factors) and level (ris free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models extremely popular to the asset pricing enthousiasts.  
+```{r, `FFresearch factors`, echo = FALSE}
+tibble::as.tibble(factors)
+```
+
+### variables
+The 'variables' dataset is a helper dataset that provides details, including contruction methods, for the variables used to construct the portfolios and asset pricing factors above.
+
+```{r, `FFresearch variables`, echo = FALSE}
+tibble::as.tibble(variables)
+```
+
+### breakpoints
+Finally, the 'breakpoints' dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned.
+```{r, `FFresearch breakpoints`, echo = FALSE}
+tibble::as.tibble(breakpoints)
+```
 
 
 
 
-
-
+#### references
