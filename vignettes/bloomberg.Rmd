@@ -3,12 +3,11 @@ title: Bloomberg
 author: Olivier Bauthéac
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
-bibliography: BibTeX.bib
+bibliography: REFERENCES.bib
 vignette: >
   %\VignetteIndexEntry{Bloomberg}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-  \usepackage[UTF-8]{inputenc}
 ---
 <style> body {text-align: justify} </style>
 ```{r setup, include = FALSE}
