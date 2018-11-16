@@ -1,6 +1,6 @@
 finRes
 ================
-2018-11-15
+2018-11-16
 
 [![Travis-CI Build
 Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes)

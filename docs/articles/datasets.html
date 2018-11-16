@@ -75,7 +75,7 @@
       <h1>datasets</h1>
                         <h4 class="author">Olivier Bauthéac</h4>
             
-            <h4 class="date">2018-11-14</h4>
+            <h4 class="date">2018-11-16</h4>
       
       
       <div class="hidden name"><code>datasets.Rmd</code></div>
@@ -92,7 +92,7 @@
 <p>The BBGsymbols package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(BBGsymbols)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_CFTC"</span>, <span class="st">"tickers_futures"</span>), <span class="dt">package =</span> <span class="st">"BBGsymbols"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_cftc"</span>, <span class="st">"tickers_futures"</span>), <span class="dt">package =</span> <span class="st">"BBGsymbols"</span>)</a></code></pre></div>
 <div id="fields" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fields" class="anchor"></a>fields</h3>
@@ -153,8 +153,8 @@
 </div>
 <div id="tickers_cftc" class="section level3">
 <h3 class="hasAnchor">
-<a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
-<p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
+<a href="#tickers_cftc" class="anchor"></a>tickers_cftc</h3>
+<p>The ‘tickers_cftc’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_cftc</code> for details.</p>
 <pre><code>#&gt; # A tibble: 22,070 x 10
 #&gt;    name  `asset class` `active contrac~ MIC   format underlying unit 
 #&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;
@@ -197,7 +197,7 @@
 <div id="fewisos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fewisos" class="anchor"></a>fewISOs</h2>
-<p>fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets play an important role in finRes where they provide storethat with support in enforcing data integrity. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets that make sure no data belonging to a financial instrument trading on a non-existing exchange in a non-existing currency from a non-existing country is ever recorded in a storethat database.</p>
+<p>fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(fewISOs)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"countries"</span>, <span class="st">"currencies"</span>, <span class="st">"exchanges"</span>), <span class="dt">package =</span> <span class="st">"fewISOs"</span>)</a></code></pre></div>
@@ -265,7 +265,7 @@
 <div id="gics" class="section level2">
 <h2 class="hasAnchor">
 <a href="#gics" class="anchor"></a>GICS</h2>
-<p>GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS plays an important role in finRes where, along with BBGsymbols and fewISOs, it helps storethat enforcing data integrity.</p>
+<p>GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(GICS)</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"standards"</span>), <span class="dt">package =</span> <span class="st">"GICS"</span>)</a></code></pre></div>

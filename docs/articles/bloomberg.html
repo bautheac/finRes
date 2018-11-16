@@ -75,7 +75,7 @@
       <h1>Bloomberg</h1>
                         <h4 class="author">Olivier Bauthéac</h4>
             
-            <h4 class="date">2018-11-14</h4>
+            <h4 class="date">2018-11-16</h4>
       
       
       <div class="hidden name"><code>bloomberg.Rmd</code></div>
@@ -95,7 +95,7 @@ Both pullit and storethat work in tandem with the <a href="https://bautheac.gith
 <p>For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(pullit); <span class="kw">library</span>(lubridate)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">end &lt;-<span class="st"> </span><span class="kw">as_date</span>(<span class="st">"2018-10-31"</span>); start &lt;-<span class="st"> </span>end <span class="op">-</span><span class="st"> </span><span class="kw">years</span>(2L)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3">end &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>() <span class="op">-</span><span class="st"> </span><span class="kw">years</span>(1L); start &lt;-<span class="st"> </span>end <span class="op">-</span><span class="st"> </span><span class="kw">years</span>(2L)</a></code></pre></div>
 <div id="equity" class="section level3">
 <h3 class="hasAnchor">
 <a href="#equity" class="anchor"></a>equity</h3>
@@ -195,7 +195,7 @@ Both pullit and storethat work in tandem with the <a href="https://bautheac.gith
 <div id="cftc" class="section level4">
 <h4 class="hasAnchor">
 <a href="#cftc" class="anchor"></a>CFTC</h4>
-<p>pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the ‘fields’ and ‘tickers_CFTC’ datasets in BBGsymbols for a details.</p>
+<p>pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the ‘fields’ and ‘tickers_cftc’ datasets in BBGsymbols for a details.</p>
 <p>Retrieve the corresponding futures market position data with:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">futures_CFTC &lt;-<span class="st"> </span><span class="kw">BBG_futures_CFTC</span>(<span class="dt">active_contract_tickers =</span> futures_tickers, start, end, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 </div>
