@@ -52,6 +52,8 @@ finRes packages at the time of writing:
 ### going further
 See package vignettes for details:
 ```{r vignettes, eval = FALSE}
+library(finRes)
+
 vignette(topic = "datasets", package = "finRes")
 
 vignette(topic = "Bloomberg", package = "finRes")
@@ -61,4 +63,4 @@ vignette(topic = "asset pricing", package = "finRes")
 
 
 
-#### references
+## References

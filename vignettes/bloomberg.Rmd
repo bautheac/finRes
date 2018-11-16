@@ -29,7 +29,7 @@ For each instrument category, pullit allows data retrieval for a corresponding c
 ```{r `globals`, warnings = FALSE, message = FALSE}
 library(pullit); library(lubridate)
 
-end <- as_date("2018-10-31"); start <- end - years(2L)
+end <- Sys.Date() - years(1L); start <- end - years(2L)
 ```
 
 

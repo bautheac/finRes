@@ -63,7 +63,7 @@ tibble::as.tibble(tickers_futures)
 
 
 ## fewISOs
-fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets play an important role in finRes where they provide storethat with support in enforcing data integrity. At the time of writing fewISOs hosts the 'countries', 'currencies' and 'exchanges' datasets that make sure no data belonging to a financial instrument trading on a non-existing exchange in a non-existing currency from a non-existing country is ever recorded in a storethat database. 
+fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the 'countries', 'currencies' and 'exchanges' datasets. 
 ```{r `fewISOs load`}
 library(fewISOs)
 
@@ -97,7 +97,7 @@ tibble::as.tibble(exchanges)
 
 
 ## GICS
-GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS plays an important role in finRes where, along with BBGsymbols and fewISOs, it helps storethat enforcing data integrity.
+GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.
 ```{r `GICS load`}
 library(GICS)
 
@@ -109,7 +109,6 @@ The GICS is a standardized classification system for equities developed jointly 
 ```{r `GICS standards`, echo = FALSE}
 tibble::as.tibble(exchanges)
 ```
-
 
 
 ## FFresearch

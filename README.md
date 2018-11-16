@@ -1,6 +1,6 @@
 finRes
 ================
-2018-11-14
+2018-11-15
 
 [![Travis-CI Build
 Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes)
@@ -15,11 +15,11 @@ Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branc
 The [finRes](https://bautheac.github.io/finRes/) suite is organised
 along the lines of the [tidyverse](www.tidyverse.org) of [Hadley
 Wickham](http://hadley.nz/) and the [RStudio](https://www.rstudio.com/)
-team. It is a set of packages that work in harmony because they share
-common data representations and ‘API’ design. It is meant to facilitate
-data-science and research in finance and financial economics in R. This
-package is designed to make it easy to install and load multiple
-‘finRes’ packages in a single step.  
+team (Wickham 2017): it’s a set of packages that work in harmony because
+they share common data representations and ‘API’ design. It is meant to
+facilitate data-science and research in finance and financial economics
+in R. This package is designed to make it easy to install and load
+multiple ‘finRes’ packages in a single step.  
 Install the development version from github with
 `devtools::install_github("bautheac/finRes")`.
 
@@ -41,17 +41,17 @@ The finRes suite is organised along the data-science pipeline where
 preprocessing, including data collection and wrangling, plays a major
 role and is often reported by data-scientists to amount up to 80% of
 work-time. finRes adresses the issue in two complementary packages that
-work in conjuction with most of the dataset packages above. On the one
-hand the [pullit](https://bautheac.github.io/pullit/) package provides
-tools for data collection from Bloomberg. It returns clean and tidy,
-ready-to-use, data objects for other packages further down the pipeline
-to work with. On the other hand the
+work in conjuction with most of the dataset packages above.  
+On the one hand the [pullit](https://bautheac.github.io/pullit/) package
+provides tools for data collection from Bloomberg. It returns clean and
+tidy, ready-to-use, data objects for other packages further down the
+pipeline to work with. On the other hand the
 [storethat](https://bautheac.github.io/storethat/) package works in
 concert with fewISOs and GICS to help store the data retrieved with
 pullit for off-Bloomberg consumption in R.  
-Both pullit and storethat work in tandem with the BBGsymbol package. The
-latter plays a central role in finRes where it provides the formers the
-wording required to interact with Bloomberg through the interface
+Both pullit and storethat work in tandem with the BBGsymbols package.
+The latter plays a central role in finRes where it provides the formers
+the wording required to interact with Bloomberg through the interface
 provided by the [Whit Armstrong](https://github.com/armstrtw), [Dirk
 Eddelbuettel](https://github.com/eddelbuettel) & [John
 Laing](https://github.com/johnlaing)’s
@@ -107,6 +107,8 @@ finRes suite.
 See package vignettes for details:
 
 ``` r
+library(finRes)
+
 vignette(topic = "datasets", package = "finRes")
 
 vignette(topic = "Bloomberg", package = "finRes")
@@ -114,7 +116,7 @@ vignette(topic = "Bloomberg", package = "finRes")
 vignette(topic = "asset pricing", package = "finRes")
 ```
 
-#### references
+## References
 
 <div id="refs" class="references">
 
@@ -122,6 +124,13 @@ vignette(topic = "asset pricing", package = "finRes")
 
 Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. *Rblpapi: R
 Interface to ’Bloomberg’*. <https://CRAN.R-project.org/package=Rblpapi>.
+
+</div>
+
+<div id="ref-Wickham_tidyverse_2017">
+
+Wickham, Hadley. 2017. *Tidyverse: Easily Install and Load the
+’Tidyverse’*. <https://CRAN.R-project.org/package=tidyverse>.
 
 </div>
 
