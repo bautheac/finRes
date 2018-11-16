@@ -8,55 +8,243 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+<style> body {text-align: justify} </style>
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+At the time of writing, the analytics part of the pipeline in finRes focusses on asset pricing.  
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+## FFresearch
+On the one hand the [FFresearch](https://bautheac.github.io/FFresearch/) package provides data on classic asset pricing factors and a number of sort portfolios. The data is pulled directly from Kenneth French's [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html) and tidied up for seamless consumption in R.  
 
-## Vignette Info
+### portfolios
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+#### univariate
+The 'portfolios_univariate' dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:
+```{r, `portfolios_univariate`, echo = FALSE}
+head(portfolios_univariate)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+#### bivariate
+The 'portfolios_bivariate' dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:
+```{r, `portfolios_bivariate`, echo = FALSE}
+head(portfolios_bivariate)
 ```
 
-Also a quote using `>`:
+#### trivariate
+The 'portfolios_trivariate' dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:
+```{r, `portfolios_trivariate`, echo = FALSE}
+head(portfolios_trivariate)
+```
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+#### industries
+The 'portfolios_industries' dataset provides various feature time series for Fama/French industry portfolios [@fama_industry_1997]:
+```{r, `portfolios_industries`, echo = FALSE}
+head(portfolios_industries)
+```
+
+### factors
+The 'factors' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models extremely popular to the asset pricing enthousiasts:
+```{r, `factors`, echo = FALSE}
+head(factors)
+```
+
+### variables
+The 'variables' dataset is a helper dataset that provides details, including contruction methods, for the variables used to construct the portfolios and asset pricing factors above:
+```{r, `variables`, echo = FALSE}
+head(variables)
+```
+
+### breakpoints
+The 'breakpoints' dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned:
+```{r, `breakpoints`, echo = FALSE}
+head(breakpoints)
+```
+
+
+## factor'em!
+On the other hand the [factorem](https://bautheac.github.io/factorem/) package provides tools for outright factor construction from data retrieve with pullit facilitating asset pricing research and factor investment backtesting. The returned objects carry corresponding return & positions time series and a number of methods help with performance analysis. The package is organised around a workhorse function and a series of wrappers for asset pricing factors popular in the literature. The latter functions get raw financial data retrieved from Bloomberg using the [pullit](https://bautheac.github.io/pullit/) package and return S4 objects that carry data belonging to the corresponding factor including positions and return time series.  
+
+### factorem
+The factorem function is the workhorse function in [factorem](https://bautheac.github.io/factorem/). From raw financial data and a set of parameter specifications it contruct a complete backtest of the correpsonding asset pricing factor and returns the whole time series for the factor positions and return. For the record the S4 object returned by the function also contains the original raw financial and the set of parameters supplied as well as the original call to the function. The raw financial data should be supplied in a format similar to that of historical datasets returned returned by historical data query functions in pullit:
+
+```{r `pullit equity`, message = FALSE, warning = FALSE}
+library(pullit); library(lubridate)
+
+tickers_equity <- c("ADM US Equity", "CIVI US Equity", "GBX US Equity", "LIND US Equity", 
+                    "SERV US Equity", "AE US Equity", "CLGX US Equity", "GDI US Equity", 
+                    "LZB US Equity", "SGA US Equity", "AGCO US Equity", "CLR US Equity", 
+                    "GHC US Equity", "MAN US Equity", "SITE US Equity", "AJRD US Equity", 
+                    "COMM US Equity", "GME US Equity", "MEI US Equity", "SMP US Equity")
+end <- Sys.Date(); start <- end - years(2L)
+
+equity_data_market <- BBG_equity_market(tickers_equity, start, end, verbose = FALSE)
+
+get_data(equity_data_market)
+```
+
+From there, constuct a bespoke asset pricing factor using the factorem function. I.e., an equity momentum factor:
+```{r `factorem factor`, message = FALSE, warning = FALSE}
+library(factorem)
+
+name <- "factorem"; ranking_period = 1L
+factorem <- factorem(name = name, data = equity_data_market, ranking_period = ranking_period)
+```
+
+
+### wrappers
+
+factorem provides wrapper methods for popular asset pricing factors in the literature. At the time of writing the factors covered in the package include, equity market and momentum as well as futures market, momentum, commercial hedging pressure (CHP), open interest and term structure factors. The author welcomes pull requests that would help expanding the current coverage.
+
+
+#### equity
+
+##### market
+The equity market factor encompasses the entire cross-section of a defined investment opportunity set with, at the time of writing, equal individual position weights. It came into sight in the 1960s for the central role it plays in the Capital Asset Pricing Model [@treynor1961market; @treynor1961toward; @sharpe1964capital; @sharpe1964capital; @mossin1966equilibrium; @lintner1975valuation] and remains the most popular factor to date in the literature when it comes to explaining the cross-section of equity returns:
+
+```{r `equity market`, message = FALSE, warning = FALSE}
+equity_market <- market_factor(data = equity_data_market)
+```
+
+##### momentum
+The equity momentum factor is another popular factor in the asset pricing literature. After being first introduced in @carhart1997persistence it eventually drew the field leaders' attention in @fama2012size. The equity momentum sorts on prior returns over a defined ranking period:
+
+```{r `equity momentum`, message = FALSE, warning = FALSE}
+ranking_period = 1L
+equity_momentum <- momentum_factor(data = equity_data_market, ranking_period = ranking_period)
+```
+
+
+#### futures
+
+```{r `pullit futures`, message = FALSE, warning = FALSE}
+tickers_futures <- c("C A Comdty", "CCA Comdty", "CLA Comdty", "CTA Comdty", "FCA Comdty", 
+                     "GCA Comdty", "HGA Comdty", "HOA Comdty", "KCA Comdty", "KWA Comdty", 
+                     "LBA Comdty", "LCA Comdty", "LHA Comdty", "NGA Comdty", "O A Comdty", 
+                     "PAA Comdty", "S A Comdty", "SIA Comdty", "W A Comdty", "XBA Comdty")
+end <- Sys.Date(); start <- end - years(2L)
+
+futures_data_TS <- BBG_futures_market(type = "term structure", tickers_futures, 
+                                      start, end, verbose = FALSE)
+
+get_data(futures_data_TS)
+```
+
+
+##### market
+factorem provides futures equivalent for the factors above including a futures market factor that, at the time of writing, takes equally weighted positions on the nearby front contract of the commodity futures series provided:
+```{r `futures market`, message = FALSE, warning = FALSE}
+futures_market <- market_factor(data = futures_data_TS)
+```
+
+
+##### momentum
+The momentum factor is also popular in the futures asset pricing literature in particular in the context of commodity markets [@miffre2007momentum]. As does its equity equivalent, it sorts on prior returns:
+```{r `futures momentum`, message = FALSE, warning = FALSE}
+ranking_period = 1L
+futures_momentum <- momentum_factor(data = futures_data_TS, ranking_period = ranking_period)
+```
+
+
+##### commercial hedging pressure (CHP)
+The futures commercial hedging pressure factor is based on the well-known hedging pressure-based theory [@anderson_hedger_1983; @chang_returns_1985; @cootner_returns_1960; @dusak_futures_1973; @hicks_value_1939; @hirshleifer_risk_1988; @hirshleifer_determinants_1989; @hirshleifer_hedging_1990; @kolb_is_1992; @keynes_treatise_1930] which postulates that futures prices for a given commodity are inversely related to the extent that commercial hedgers are short or long and the mimicking portfolio here aims at capturing the impact of hedging pressure as a systemic factor [@basu_capturing_2013].  
+```{r `futures CHP`, message = FALSE, warning = FALSE}
+futures_data_CFTC <- BBG_futures_CFTC(tickers_futures, start, end, verbose = FALSE)
+
+ranking_period = 1L
+futures_CHP <- CHP_factor(price_data = futures_data_TS, CHP_data = futures_data_CFTC, 
+                          ranking_period = ranking_period)
+```
+
+
+##### open interest
+The open interest factor relates to futures market liquidity and is popular in the literature, in particular in the context of commodity markets research [@hong_what_2012]. It comes in two flavours in factorem, nearby and aggregate.
+
+###### nearby
+The nearby open interest factor is concerned with liquidity at the very front end of the term structure where it sort on nearby front contract's open interest:
+```{r `futures OI nearby`, message = FALSE, warning = FALSE}
+ranking_period = 1L
+futures_OI_nearby <- OI_nearby_factor(data = futures_data_TS, ranking_period = ranking_period)
+```
+###### aggregate
+In contrast, the aggregate open interest factor [@basu_financiallization_2018] is concerned with liquidity over the whole futures term strucutre and sorts on open interest aggregated (summed up) over the futures term structure:
+```{r `futures OI aggregate`, message = FALSE, warning = FALSE}
+futures_data_agg <- BBG_futures_market(type = "aggregate", tickers_futures, 
+                                       start, end, verbose = FALSE)
+
+ranking_period = 1L
+futures_OI_aggregate <- OI_aggregate_factor(price_data = futures_data_market, 
+                                            aggregate_data = futures_data_agg, 
+                                            ranking_period = ranking_period)
+```
+
+##### term structure
+The futures term structure factor [@szymanowska_anatomy_2014; @fuertes_commodity_2015] is concerned with the shape (steepness) of the futures term structure and sort on roll yield:
+```{r `futures TS`, message = FALSE, warning = FALSE}
+ranking_period = 1L
+futures_TS <- TS_factor(data = futures_data_market, ranking_period = ranking_period)
+```
+
+
+### accessors
+
+Accessor methods allow access to the content of the factor output:
+#### name
+```{r `factor name`}
+get_name(futures_TS)
+```
+#### positions
+```{r `factor positions`}
+get_positions(futures_TS)
+```
+#### returns
+```{r `factor returns`}
+get_returns(futures_TS)
+```
+#### data initially supplied
+```{r `factor data`}
+get_data(futures_TS)
+```
+#### parameters
+```{r `factor params`}
+get_parameters(futures_TS)
+```
+#### function call
+```{r `factor call`}
+get_call(futures_TS)
+```
+
+
+### summary
+A summary method returns a performance summary of the corresponding facotr:
+#### function call
+```{r `factor summary`}
+summary(futures_TS)
+```
+
+
+### plotit
+The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRes suite, provides plot methods for the factor objects returned by the functions above:
+
+#### performance overview
+```{r `plot performance`}
+library(plotit)
+
+plot_performance(futures_TS)
+```
+
+#### positions overview
+```{r `plot positions`}
+plot_positions(futures_TS)
+```
+  
+  
+  
+  
+## References
+
+
+
+
+
