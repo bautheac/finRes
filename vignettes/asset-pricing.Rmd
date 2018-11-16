@@ -7,6 +7,7 @@ vignette: >
   %\VignetteIndexEntry{asset pricing}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  \usepackage[UTF-8]{inputenc}
 ---
 <style> body {text-align: justify} </style>
 ```{r setup, include = FALSE}
