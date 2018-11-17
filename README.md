@@ -46,9 +46,8 @@ On the one hand the [pullit](https://bautheac.github.io/pullit/) package
 provides tools for data collection from Bloomberg. It returns clean and
 tidy, ready-to-use, data objects for other packages further down the
 pipeline to work with. On the other hand the
-[storethat](https://bautheac.github.io/storethat/) package works in
-concert with fewISOs and GICS to help store the data retrieved with
-pullit for off-Bloomberg consumption in R.  
+[storethat](https://bautheac.github.io/storethat/) package helps storing
+the data retrieved with pullit for off-Bloomberg consumption in R.  
 Both pullit and storethat work in tandem with the BBGsymbols package.
 The latter plays a central role in finRes where it provides the formers
 the wording required to interact with Bloomberg through the interface
