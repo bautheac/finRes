@@ -12,7 +12,7 @@
 
 <meta name="author" content="Olivier Bauthéac" />
 
-<meta name="date" content="2018-11-16" />
+<meta name="date" content="2018-11-17" />
 
 <title>datasets</title>
 
@@ -278,7 +278,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">datasets</h1>
 <h4 class="author"><em>Olivier Bauthéac</em></h4>
-<h4 class="date"><em>2018-11-16</em></h4>
+<h4 class="date"><em>2018-11-17</em></h4>
 
 
 
@@ -289,7 +289,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>The BBGsymbols package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(BBGsymbols)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">&quot;fields&quot;</span>, <span class="st">&quot;months&quot;</span>, <span class="st">&quot;rolls&quot;</span>, <span class="st">&quot;tickers_cftc&quot;</span>, <span class="st">&quot;tickers_futures&quot;</span>), <span class="dt">package =</span> <span class="st">&quot;BBGsymbols&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">&quot;fields&quot;</span>, <span class="st">&quot;months&quot;</span>, <span class="st">&quot;rolls&quot;</span>, <span class="st">&quot;tickers_CFTC&quot;</span>, <span class="st">&quot;tickers_futures&quot;</span>), <span class="dt">package =</span> <span class="st">&quot;BBGsymbols&quot;</span>)</a></code></pre></div>
 <div id="fields" class="section level3">
 <h3>fields</h3>
 <p>The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for fitting fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writting include ‘equity’, refering to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
@@ -346,8 +346,8 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 #&gt; 11 adjustment W      Average</code></pre>
 </div>
 <div id="tickers_cftc" class="section level3">
-<h3>tickers_cftc</h3>
-<p>The ‘tickers_cftc’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_cftc</code> for details.</p>
+<h3>tickers_CFTC</h3>
+<p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
 <pre><code>#&gt; # A tibble: 22,070 x 10
 #&gt;    name  `asset class` `active contrac~ MIC   format underlying unit 
 #&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;

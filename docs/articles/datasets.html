@@ -75,7 +75,7 @@
       <h1>datasets</h1>
                         <h4 class="author">Olivier Bauthéac</h4>
             
-            <h4 class="date">2018-11-16</h4>
+            <h4 class="date">2018-11-17</h4>
       
       
       <div class="hidden name"><code>datasets.Rmd</code></div>
@@ -92,7 +92,7 @@
 <p>The BBGsymbols package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(BBGsymbols)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_cftc"</span>, <span class="st">"tickers_futures"</span>), <span class="dt">package =</span> <span class="st">"BBGsymbols"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_CFTC"</span>, <span class="st">"tickers_futures"</span>), <span class="dt">package =</span> <span class="st">"BBGsymbols"</span>)</a></code></pre></div>
 <div id="fields" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fields" class="anchor"></a>fields</h3>
@@ -153,8 +153,8 @@
 </div>
 <div id="tickers_cftc" class="section level3">
 <h3 class="hasAnchor">
-<a href="#tickers_cftc" class="anchor"></a>tickers_cftc</h3>
-<p>The ‘tickers_cftc’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_cftc</code> for details.</p>
+<a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
+<p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
 <pre><code>#&gt; # A tibble: 22,070 x 10
 #&gt;    name  `asset class` `active contrac~ MIC   format underlying unit 
 #&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;

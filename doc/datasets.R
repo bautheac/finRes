@@ -4,7 +4,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ## ----`BBGsymbols load`---------------------------------------------------
 library(BBGsymbols)
 
-data(list = c("fields", "months", "rolls", "tickers_cftc", "tickers_futures"), package = "BBGsymbols")
+data(list = c("fields", "months", "rolls", "tickers_CFTC", "tickers_futures"), package = "BBGsymbols")
 
 ## ----`BBGsymbols fields`, echo = FALSE-----------------------------------
 tibble::as.tibble(fields)
@@ -15,8 +15,8 @@ tibble::as.tibble(months)
 ## ----`BBGsymbols rolls`, echo = FALSE------------------------------------
 tibble::as.tibble(rolls)
 
-## ----`tickers_cftc`, echo = FALSE----------------------------------------
-tibble::as.tibble(tickers_cftc)
+## ----`tickers_CFTC`, echo = FALSE----------------------------------------
+tibble::as.tibble(tickers_CFTC)
 
 ## ----`tickers_futures`, echo = FALSE-------------------------------------
 tibble::as.tibble(tickers_futures)

@@ -121,7 +121,7 @@ futures_agg <- BBG_futures_market(type = "aggregate", active_contract_tickers = 
 ```
 
 #### CFTC
-pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the 'fields' and 'tickers_cftc' datasets in BBGsymbols for a details.
+pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the 'fields' and '' datasets in BBGsymbols for a details.
 
 Retrieve the corresponding futures market position data with:
 ```{r `futures CFTC`}
