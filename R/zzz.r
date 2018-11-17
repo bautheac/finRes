@@ -6,10 +6,10 @@
   crayon::num_colors(TRUE)
   finRes_attach()
 
-  if (!"package:conflicted" %in% search()) {
-    x <- finRes_conflicts()
-    msg(finRes_conflict_message(x), startup = TRUE)
-  }
+  # if (!"package:conflicted" %in% search()) {
+  #   x <- finRes_conflicts()
+  #   msg(finRes_conflict_message(x), startup = TRUE)
+  # }
 
 }
 
