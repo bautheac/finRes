@@ -10,7 +10,7 @@ navbar:
       href: index.html
     - text: functions
       href: reference/index.html
-    - text: articles
+    - text: get started
       menu:
       - text: datasets
         href: articles/datasets.html
