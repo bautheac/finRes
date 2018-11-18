@@ -1,5 +1,11 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, echo = FALSE, message = FALSE, warning = FALSE---------------
 knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
+
+## ---- `load FFresearch`, echo = FALSE------------------------------------
+#  library(FFresearch)
+#  data(list = c("factors", "portfolios_univariate", "portfolios_bivariate", "portfolios_trivariate",
+#                "portfolios_industries", "variables", "breakpoints"),
+#       package = "FFresearch")
 
 ## ---- `portfolios_univariate`, echo = FALSE------------------------------
 #  head(portfolios_univariate)
@@ -22,7 +28,7 @@ knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
 ## ---- `breakpoints`, echo = FALSE----------------------------------------
 #  head(breakpoints)
 
-## ----`pullit equity`, message = FALSE, warning = FALSE-------------------
+## ----`pullit equity BBG`, message = FALSE, warning = FALSE---------------
 #  library(pullit); library(lubridate)
 #  
 #  tickers_equity <- c("ADM US Equity", "CIVI US Equity", "GBX US Equity", "LIND US Equity",
@@ -36,11 +42,26 @@ knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
 #  
 #  get_data(equity_data_market)
 
-## ----`factorem factor`, message = FALSE, warning = FALSE-----------------
-#  library(factorem)
-#  
-#  name <- "factorem"; ranking_period = 1L
-#  factorem <- factorem(name = name, data = equity_data_market, ranking_period = ranking_period)
+## ----`pullit equity storethat`, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE----
+library(pullit); library(lubridate)
+
+tickers_equity <- c("ADM US Equity", "CIVI US Equity", "GBX US Equity", "LIND US Equity", 
+                    "SERV US Equity", "AE US Equity", "CLGX US Equity", "GDI US Equity", 
+                    "LZB US Equity", "SGA US Equity", "AGCO US Equity", "CLR US Equity", 
+                    "GHC US Equity", "MAN US Equity", "SITE US Equity", "AJRD US Equity", 
+                    "COMM US Equity", "GME US Equity", "MEI US Equity", "SMP US Equity")
+end <- Sys.Date(); start <- end - years(2L)
+
+equity_data_market <- storethat_equity_market(tickers = tickers_equity, start = start, end = end, verbose = FALSE)
+
+get_data(equity_data_market)
+
+## ----`factorem factor`, message = FALSE, warning = FALSE, eval = TRUE----
+library(factorem)
+
+ranking_period = 1L
+factor <- factorem(name = "factorem", data = pullit::get_data(equity_data_market),
+                   ranking_period = ranking_period)
 
 ## ----`equity market`, message = FALSE, warning = FALSE-------------------
 #  equity_market <- market_factor(data = equity_data_market)
@@ -54,7 +75,6 @@ knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
 #                       "GCA Comdty", "HGA Comdty", "HOA Comdty", "KCA Comdty", "KWA Comdty",
 #                       "LBA Comdty", "LCA Comdty", "LHA Comdty", "NGA Comdty", "O A Comdty",
 #                       "PAA Comdty", "S A Comdty", "SIA Comdty", "W A Comdty", "XBA Comdty")
-#  end <- Sys.Date(); start <- end - years(2L)
 #  
 #  futures_data_TS <- BBG_futures_market(type = "term structure", tickers_futures,
 #                                        start, end, verbose = FALSE)
@@ -92,32 +112,32 @@ knitr::opts_chunk$set(collapse = TRUE, eval = FALSE, comment = "#>")
 #  ranking_period = 1L
 #  futures_TS <- TS_factor(data = futures_data_market, ranking_period = ranking_period)
 
-## ----`factor name`-------------------------------------------------------
-#  get_name(futures_TS)
+## ----`factor name`, eval = TRUE------------------------------------------
+get_name(factor)
 
-## ----`factor positions`--------------------------------------------------
-#  get_positions(futures_TS)
+## ----`factor positions`, eval = TRUE-------------------------------------
+get_positions(factor)
 
-## ----`factor returns`----------------------------------------------------
-#  get_returns(futures_TS)
+## ----`factor returns`, eval = TRUE---------------------------------------
+get_returns(factor)
 
-## ----`factor data`-------------------------------------------------------
-#  get_data(futures_TS)
+## ----`factor data`, eval = TRUE------------------------------------------
+get_data(factor)
 
-## ----`factor params`-----------------------------------------------------
-#  get_parameters(futures_TS)
+## ----`factor params`, eval = TRUE----------------------------------------
+get_parameters(factor)
 
-## ----`factor call`-------------------------------------------------------
-#  get_call(futures_TS)
+## ----`factor call`, eval = TRUE------------------------------------------
+get_call(factor)
 
-## ----`factor summary`----------------------------------------------------
-#  summary(futures_TS)
+## ----`factor summary`, eval = TRUE---------------------------------------
+summary(factor)
 
-## ----`plot performance`--------------------------------------------------
-#  library(plotit)
-#  
-#  plot_performance(futures_TS)
+## ----`plot performance`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = TRUE, eval = TRUE----
+library(plotit)
 
-## ----`plot positions`----------------------------------------------------
-#  plot_positions(futures_TS)
+plot_performance(factor)
+
+## ----`plot positions`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = TRUE, eval = TRUE----
+plot_positions(factor)
 

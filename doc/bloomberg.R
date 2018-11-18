@@ -1,10 +1,10 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, echo = FALSE, message = FALSE, warning = FALSE---------------
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
 
-## ----`globals`, warnings = FALSE, message = FALSE------------------------
-#  library(pullit); library(lubridate)
-#  
-#  end <- Sys.Date() - years(1L); start <- end - years(2L)
+## ----`globals`, warnings = FALSE, message = FALSE, eval = TRUE-----------
+library(pullit); library(lubridate)
+
+end <- Sys.Date() - years(1L); start <- end - years(2L)
 
 ## ----`equity market`-----------------------------------------------------
 #  equity_tickers <- c("ADM US Equity", "KHC US Equity", "XPO US Equity")
@@ -29,20 +29,32 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
 ## ----`equity info`-------------------------------------------------------
 #  equity_info <- BBG_equity_info(equity_tickers, verbose = FALSE)
 
-## ----`fund market`-------------------------------------------------------
+## ----`fund market BBG`---------------------------------------------------
 #  fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
 #  
 #  fund_market <- BBG_fund_market(fund_tickers, start, end, verbose = FALSE)
 
+## ----`fund market storethat`, echo = FALSE, eval = TRUE------------------
+fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+
+fund_market <- storethat_fund_market(fund_tickers, start, end, verbose = FALSE)
+
 ## ----`fund info`---------------------------------------------------------
 #  fund_info <- BBG_fund_info(fund_tickers, verbose = FALSE)
 
-## ----`futures term structure`--------------------------------------------
+## ----`futures term structure BGG`----------------------------------------
 #  futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
 #  
 #  futures_TS <- BBG_futures_market(type = "term structure", active_contract_tickers = futures_tickers,
 #                                   start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L,
 #                                   roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
+
+## ----`futures term structure storethat`, echo = FALSE, eval = TRUE-------
+futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+
+futures_TS <- storethat_futures_market(type = "term structure", active_contract_tickers = futures_tickers, 
+                                       start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
+                                       roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
 
 ## ----`futures aggregated`------------------------------------------------
 #  futures_agg <- BBG_futures_market(type = "aggregate", active_contract_tickers = futures_tickers,
@@ -54,48 +66,46 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
 ## ----`futures info`------------------------------------------------------
 #  futures_info <- BBG_futures_info(futures_tickers, verbose = FALSE)
 
-## ----`equity show`-------------------------------------------------------
-#  equity_market
+## ----`futures show`, eval = TRUE-----------------------------------------
+futures_TS
 
-## ----`equity get_tickers`------------------------------------------------
-#  get_tickers(equity_market)
+## ----`futures get_tickers`, eval = TRUE----------------------------------
+get_active_contract_tickers(futures_TS)
 
-## ----`equity get_fields`-------------------------------------------------
-#  get_fields(equity_market)
+## ----`futures get_fields`, eval = TRUE-----------------------------------
+get_fields(futures_TS)
 
-## ----`equity get_data`---------------------------------------------------
-#  get_data(equity_market)
+## ----`futures get_data`, eval = TRUE-------------------------------------
+pullit::get_data(futures_TS)
 
-## ----`equity get_call`---------------------------------------------------
-#  get_call(equity_market)
+## ----`futures get_call`, eval = TRUE-------------------------------------
+pullit::get_call(futures_TS)
 
-## ----`equity get_periods`------------------------------------------------
-#  get_periods(equity_market)
+## ----`futures get_periods`, eval = TRUE----------------------------------
+get_periods(futures_TS)
 
 ## ----`storethat store`---------------------------------------------------
 #  library(storethat)
 #  
-#  db_create(path = "~/data-raw/")
+#  db_create()
 #  
-#  data <- list(equity_market, equity_BS, equity_CF, equity_IS, equity_KS, equity_R, equity_info,
-#               fund_market, fund_info, futures_TS, futures_agg, futures_CFTC, futures_info)
-#  
-#  do.call(db_store, data)
+#  db_store(object = futures_TS, file = "~/storethat.sqlite", verbose = FALSE)
+#  db_store(object = fund_market, file = "~/storethat.sqlite", verbose = FALSE)
 
 ## ----`storethat retrieve`------------------------------------------------
 #  equity_market <- storethat_equity_market(equity_tickers, start, end, verbose = FALSE)
 
 ## ----`storethat update all`----------------------------------------------
-#  storethat_update()
+#  storethat_update(instrument = "equity")
 
 ## ----`storethat update some`---------------------------------------------
 #  storethat_update(instrument = "equity", book = "market")
 
-## ----`plot term structure`-----------------------------------------------
-#  library(plotit)
-#  
-#  plot_term_structure(object = futures_TS, ticker = "C A Comdty")
+## ----`plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = TRUE, eval = TRUE----
+library(plotit)
 
-## ----`plot performance`--------------------------------------------------
-#  plot_performance(object = fund_market, ticker = "GLD US Equity")
+plot_term_structure(object = futures_TS, ticker = "C A Comdty")
+
+## ----`plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = TRUE, eval = TRUE----
+plot_performance(object = fund_market, ticker = "GLD US Equity")
 

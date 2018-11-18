@@ -10,7 +10,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 <style> body {text-align: justify} </style>
-```{r setup, include = FALSE}
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
 ```
 
@@ -26,7 +26,7 @@ Using carefully selected Bloomberg datafields from BBGsymbols in tandem with @Ar
 
 For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.
 
-```{r `globals`, warnings = FALSE, message = FALSE}
+```{r `globals`, warnings = FALSE, message = FALSE, eval = TRUE}
 library(pullit); library(lubridate)
 
 end <- Sys.Date() - years(1L); start <- end - years(2L)
@@ -84,10 +84,16 @@ Fund data only comes in two categories, market and info. For a given fund market
 
 #### market
 Retrieve market data from Bloomberg for the SPDR S&P 500 ETF Trust (SPY US Equity), the SPDR Gold Shares investment fund (GLD US Equity) and the iShares MSCI Emerging Markets ETF (EEM US Equity) with:
-```{r `fund market`}
+```{r `fund market BBG`}
 fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
 
 fund_market <- BBG_fund_market(fund_tickers, start, end, verbose = FALSE)
+```
+
+```{r `fund market storethat`, echo = FALSE, eval = TRUE}
+fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+
+fund_market <- storethat_fund_market(fund_tickers, start, end, verbose = FALSE)
 ```
 
 #### info
@@ -105,12 +111,20 @@ pullit helps retrieving both term structure as well as aggregated market data fo
 
 ##### term structure
 Retrieve market data from Bloomberg for the five first term structure contracts on the Corn - #2-yellow (C A Comdty), Eurodollar (EDA Comdty) and S&P500 - e-mini (ESA Index) futures series where the futures chains are constructed by rolling on liquidity (with active contract: "A") with no roll adjustment (none: "N") using:
-```{r `futures term structure`}
+```{r `futures term structure BGG`}
 futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
 
 futures_TS <- BBG_futures_market(type = "term structure", active_contract_tickers = futures_tickers, 
                                  start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
                                  roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
+```
+
+```{r `futures term structure storethat`, echo = FALSE, eval = TRUE}
+futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+
+futures_TS <- storethat_futures_market(type = "term structure", active_contract_tickers = futures_tickers, 
+                                       start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
+                                       roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
 ```
 
 ##### aggregate
@@ -142,29 +156,29 @@ futures_info <- BBG_futures_info(futures_tickers, verbose = FALSE)
 ## accessors
 The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formaly using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
 
-```{r `equity show`}
-equity_market
+```{r `futures show`, eval = TRUE}
+futures_TS
 ```
 
 Access each slot using the appropriate accessor:
-```{r `equity get_tickers`}
-get_tickers(equity_market)
+```{r `futures get_tickers`, eval = TRUE}
+get_active_contract_tickers(futures_TS)
 ```
 
-```{r `equity get_fields`}
-get_fields(equity_market)
+```{r `futures get_fields`, eval = TRUE}
+get_fields(futures_TS)
 ```
 
-```{r `equity get_data`}
-get_data(equity_market)
+```{r `futures get_data`, eval = TRUE}
+pullit::get_data(futures_TS)
 ```
 
-```{r `equity get_call`}
-get_call(equity_market)
+```{r `futures get_call`, eval = TRUE}
+pullit::get_call(futures_TS)
 ```
 
-```{r `equity get_periods`}
-get_periods(equity_market)
+```{r `futures get_periods`, eval = TRUE}
+get_periods(futures_TS)
 ```
 
 
@@ -175,12 +189,10 @@ All the objects above can be stored in a bespoke database for later off-Bloomber
 ```{r `storethat store`}
 library(storethat)
 
-db_create(path = "~/data-raw/")
+db_create()
 
-data <- list(equity_market, equity_BS, equity_CF, equity_IS, equity_KS, equity_R, equity_info, 
-             fund_market, fund_info, futures_TS, futures_agg, futures_CFTC, futures_info)
-
-do.call(db_store, data)
+db_store(object = futures_TS, file = "~/storethat.sqlite", verbose = FALSE)
+db_store(object = fund_market, file = "~/storethat.sqlite", verbose = FALSE)
 ```
 
 Every function above has an equivalent for retrieving data from a storethat database that can be accessed by swapping the 'BBG' prefix for 'storethat'; i.e. 'BBG_futures_market' becomes 'storethat_futures_market'. Function parameters are identical for both data sources and the returned objects have alike characteristics:
@@ -189,12 +201,12 @@ Every function above has an equivalent for retrieving data from a storethat data
 equity_market <- storethat_equity_market(equity_tickers, start, end, verbose = FALSE)
 ```
 
-Updating a storethat database is equally straightforward with pullit. Update the whole database with:  
+Updating a storethat database is equally straightforward with pullit. Update the equity content of the database with: 
 ```{r `storethat update all`}
-storethat_update()
+storethat_update(instrument = "equity")
 ```
 
-More refined updates are also allowed:
+Narrower updates are also allowed:
 ```{r `storethat update some`}
 storethat_update(instrument = "equity", book = "market")
 ```
@@ -205,7 +217,7 @@ The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRe
 
 ### futures term structure
 Plot a futures series term structure dynamics with:
-```{r `plot term structure`}
+```{r `plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = TRUE, eval = TRUE}
 library(plotit)
 
 plot_term_structure(object = futures_TS, ticker = "C A Comdty")
@@ -213,7 +225,7 @@ plot_term_structure(object = futures_TS, ticker = "C A Comdty")
 
 ### fund market
 Plot historical fund performance with:
-```{r `plot performance`}
+```{r `plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = TRUE, eval = TRUE}
 plot_performance(object = fund_market, ticker = "GLD US Equity")
 ```
   
