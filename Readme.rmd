@@ -61,4 +61,4 @@ vignette(topic = "asset pricing", package = "finRes")
 
 
 
-## References
+## references

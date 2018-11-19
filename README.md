@@ -1,6 +1,6 @@
 finRes
 ================
-2018-11-17
+2018-11-19
 
 <style> body {text-align: justify} </style>
 
@@ -115,7 +115,7 @@ vignette(topic = "Bloomberg", package = "finRes")
 vignette(topic = "asset pricing", package = "finRes")
 ```
 
-## References
+## references
 
 <div id="refs" class="references">
 
