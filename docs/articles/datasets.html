@@ -6,18 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>datasets • finRes</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="datasets">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="finRes">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -61,7 +62,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/bautheac/finRes/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -70,15 +78,15 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
+
+      </header><script src="datasets_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>datasets</h1>
+      <h1 data-toc-skip>datasets</h1>
                         <h4 class="author">Olivier Bauthéac</h4>
             
-            <h4 class="date">2018-12-14</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/bautheac/finRes/blob/master/vignettes/datasets.Rmd"><code>vignettes/datasets.Rmd</code></a></small>
       <div class="hidden name"><code>datasets.Rmd</code></div>
 
     </div>
@@ -91,14 +99,16 @@
 <h2 class="hasAnchor">
 <a href="#bbgsymbols" class="anchor"></a>BBGsymbols</h2>
 <p>The BBGsymbols package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(BBGsymbols)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="dt">list =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_CFTC"</span>, <span class="st">"tickers_futures"</span>), <span class="dt">package =</span> <span class="st">"BBGsymbols"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.oi/BBGsymbols">BBGsymbols</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_cftc"</span>, <span class="st">"tickers_futures"</span>), package = <span class="st">"BBGsymbols"</span>)
+</pre></div>
 <div id="fields" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fields" class="anchor"></a>fields</h3>
 <p>The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for fitting fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writting include ‘equity’, refering to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
-<pre><code>#&gt; # A tibble: 955 x 10
+<pre><code>#&gt; # A tibble: 961 x 10
 #&gt;    instrument book  type  subtype section subsection name  id    symbol
 #&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
 #&gt;  1 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       mark~ RR250 HISTO~
@@ -111,7 +121,7 @@
 #&gt;  8 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       cash~ CF015 CF_CA~
 #&gt;  9 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       capi~ RR014 CAPIT~
 #&gt; 10 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       free~ RR008 CF_FR~
-#&gt; # ... with 945 more rows, and 1 more variable: description &lt;chr&gt;</code></pre>
+#&gt; # ... with 951 more rows, and 1 more variable: description &lt;chr&gt;</code></pre>
 </div>
 <div id="months" class="section level3">
 <h3 class="hasAnchor">
@@ -156,7 +166,7 @@
 <h3 class="hasAnchor">
 <a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
 <p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
-<pre><code>#&gt; # A tibble: 22,070 x 10
+<pre><code>#&gt; # A tibble: 22,219 x 10
 #&gt;    name  `asset class` `active contrac~ MIC   format underlying unit 
 #&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;
 #&gt;  1 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
@@ -169,7 +179,7 @@
 #&gt;  8 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
 #&gt;  9 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
 #&gt; 10 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt; # ... with 22,060 more rows, and 3 more variables: participant &lt;chr&gt;,
+#&gt; # ... with 22,209 more rows, and 3 more variables: participant &lt;chr&gt;,
 #&gt; #   position &lt;chr&gt;, ticker &lt;chr&gt;</code></pre>
 </div>
 <div id="tickers_futures" class="section level3">
@@ -177,31 +187,32 @@
 <a href="#tickers_futures" class="anchor"></a>tickers_futures</h3>
 <p>The ‘tickers_futures’ dataset gathers futures active contract Bloomberg tickers as well as a collection of qualitative information for several popular futures series including commodity, currency, financial and index futures with underlyings from various asset classes.</p>
 <pre><code>#&gt; # A tibble: 229 x 15
-#&gt;    ticker name  `asset class` sector subsector currency MIC  
-#&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;
-#&gt;  1 BSDA ~ Carb~ climate       &lt;NA&gt;   &lt;NA&gt;      USD      IFED 
-#&gt;  2 V6A C~ Butt~ commodity     agric~ dairy     USD      XCME 
-#&gt;  3 CHEA ~ Chee~ commodity     agric~ dairy     USD      XCME 
-#&gt;  4 KVA C~ Milk~ commodity     agric~ dairy     USD      XCME 
-#&gt;  5 LEA C~ Milk~ commodity     agric~ dairy     USD      XCME 
-#&gt;  6 WBSA ~ Whea~ commodity     agric~ financial USD      XCBT 
-#&gt;  7 QKA C~ Whea~ commodity     agric~ grains    GBP      IFLX 
-#&gt;  8 RSA C~ Cano~ commodity     agric~ grains    CAD      IFUS 
-#&gt;  9 C A C~ Corn~ commodity     agric~ grains    USD      XCBT 
-#&gt; 10 O A C~ Oats  commodity     agric~ grains    USD      XCBT 
-#&gt; # ... with 219 more rows, and 8 more variables: `term structure
-#&gt; #   length` &lt;int&gt;, `contract size` &lt;int&gt;, `trading unit` &lt;chr&gt;, `point
-#&gt; #   value` &lt;dbl&gt;, `tick size` &lt;dbl&gt;, `tick value` &lt;dbl&gt;, FIGI &lt;chr&gt;,
-#&gt; #   description &lt;chr&gt;</code></pre>
+#&gt;    ticker name  `asset class` sector subsector currency MIC   `term structure~
+#&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;            &lt;int&gt;
+#&gt;  1 BSDA ~ Carb~ climate       &lt;NA&gt;   &lt;NA&gt;      USD      IFED                50
+#&gt;  2 V6A C~ Butt~ commodity     agric~ dairy     USD      XCME                24
+#&gt;  3 CHEA ~ Chee~ commodity     agric~ dairy     USD      XCME                25
+#&gt;  4 DAA C~ Milk~ commodity     agric~ dairy     USD      XCME                24
+#&gt;  5 KVA C~ Milk~ commodity     agric~ dairy     USD      XCME                23
+#&gt;  6 LEA C~ Milk~ commodity     agric~ dairy     USD      XCME                24
+#&gt;  7 WBSA ~ Whea~ commodity     agric~ financial USD      XCBT                12
+#&gt;  8 QKA C~ Whea~ commodity     agric~ grains    GBP      IFLX                10
+#&gt;  9 RSA C~ Cano~ commodity     agric~ grains    CAD      IFUS                11
+#&gt; 10 C A C~ Corn~ commodity     agric~ grains    USD      XCBT                17
+#&gt; # ... with 219 more rows, and 7 more variables: `contract size` &lt;int&gt;, `trading
+#&gt; #   unit` &lt;chr&gt;, `point value` &lt;dbl&gt;, `tick size` &lt;dbl&gt;, `tick value` &lt;dbl&gt;,
+#&gt; #   FIGI &lt;chr&gt;, description &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div id="fewisos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fewisos" class="anchor"></a>fewISOs</h2>
 <p>fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fewISOs)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="dt">list =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"countries"</span>, <span class="st">"currencies"</span>, <span class="st">"exchanges"</span>), <span class="dt">package =</span> <span class="st">"fewISOs"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/fewISOs">fewISOs</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"countries"</span>, <span class="st">"currencies"</span>, <span class="st">"exchanges"</span>), package = <span class="st">"fewISOs"</span>)
+</pre></div>
 <div id="countries" class="section level3">
 <h3 class="hasAnchor">
 <a href="#countries" class="anchor"></a>countries</h3>
@@ -248,18 +259,18 @@
 <a href="#exchanges" class="anchor"></a>exchanges</h3>
 <p>The exchanges dataset corresponds to the ISO 10383 standard that defines four alphanumeric character Market Identifier Codes (MIC). These are unique identification codes used to identify securities trading exchanges, trading platforms and regulated or non-regulated markets as sources of prices and related information in order to facilitate automated processing.</p>
 <pre><code>#&gt; # A tibble: 1,669 x 5
-#&gt;    name                          MIC   country city      website          
-#&gt;    &lt;chr&gt;                         &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;            
-#&gt;  1 zobex                         ZOBX  DE      Berlin    www.boerse-berli~
-#&gt;  2 zurcher kantonalbank securit~ ZKBX  CH      Zurich    www.zkb.ch       
-#&gt;  3 jse currency derivatives mar~ ZFXM  ZA      Johannes~ www.jse.co.za    
-#&gt;  4 zar x                         ZARX  ZA      Johannes~ www.zarx.co.za   
-#&gt;  5 zagreb stock exchange - apa   ZAPA  HR      Zagreb    www.zse.hr       
-#&gt;  6 jse interest rate derivative~ YLDX  ZA      Johannes~ www.yieldx.co.za 
-#&gt;  7 zimbabwe stock exchange       XZIM  ZW      Harare    www.zse.co.zw    
-#&gt;  8 zhengzhou commodity exchange  XZCE  CN      Zhengzhou www.czce.com.cn  
-#&gt;  9 progress market               XZAP  HR      Zagreb    http://progress.~
-#&gt; 10 the zagreb stock exchange mtf XZAM  HR      Zagreb    www.zse.hr       
+#&gt;    name                              MIC   country city       website           
+#&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
+#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin~
+#&gt;  2 zurcher kantonalbank securities ~ ZKBX  CH      Zurich     www.zkb.ch        
+#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb~ www.jse.co.za     
+#&gt;  4 zar x                             ZARX  ZA      Johannesb~ www.zarx.co.za    
+#&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
+#&gt;  6 jse interest rate derivatives ma~ YLDX  ZA      Johannesb~ www.yieldx.co.za  
+#&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
+#&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
+#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m~
+#&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
 #&gt; # ... with 1,659 more rows</code></pre>
 </div>
 </div>
@@ -267,26 +278,28 @@
 <h2 class="hasAnchor">
 <a href="#gics" class="anchor"></a>GICS</h2>
 <p>GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GICS)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="dt">list =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"standards"</span>), <span class="dt">package =</span> <span class="st">"GICS"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/GICS">GICS</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"standards"</span>), package = <span class="st">"GICS"</span>)
+</pre></div>
 <div id="standards" class="section level3">
 <h3 class="hasAnchor">
 <a href="#standards" class="anchor"></a>standards</h3>
 <p>The GICS is a standardized classification system for equities developed jointly by Morgan Stanley Capital International (MSCI) and Standard &amp; Poor’s. The GICS methodology is used by the MSCI indexes, which include domestic and international stocks, as well as by a large portion of the professional investment management community. The GICS hierarchy begins with 11 sectors and is followed by 24 industry groups, 68 industries, and 157 sub-industries. Each stock that is classified will have a coding at all four of these levels with all these provided in the ‘standards’ dataset.</p>
 <pre><code>#&gt; # A tibble: 1,669 x 5
-#&gt;    name                          MIC   country city      website          
-#&gt;    &lt;chr&gt;                         &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;            
-#&gt;  1 zobex                         ZOBX  DE      Berlin    www.boerse-berli~
-#&gt;  2 zurcher kantonalbank securit~ ZKBX  CH      Zurich    www.zkb.ch       
-#&gt;  3 jse currency derivatives mar~ ZFXM  ZA      Johannes~ www.jse.co.za    
-#&gt;  4 zar x                         ZARX  ZA      Johannes~ www.zarx.co.za   
-#&gt;  5 zagreb stock exchange - apa   ZAPA  HR      Zagreb    www.zse.hr       
-#&gt;  6 jse interest rate derivative~ YLDX  ZA      Johannes~ www.yieldx.co.za 
-#&gt;  7 zimbabwe stock exchange       XZIM  ZW      Harare    www.zse.co.zw    
-#&gt;  8 zhengzhou commodity exchange  XZCE  CN      Zhengzhou www.czce.com.cn  
-#&gt;  9 progress market               XZAP  HR      Zagreb    http://progress.~
-#&gt; 10 the zagreb stock exchange mtf XZAM  HR      Zagreb    www.zse.hr       
+#&gt;    name                              MIC   country city       website           
+#&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
+#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin~
+#&gt;  2 zurcher kantonalbank securities ~ ZKBX  CH      Zurich     www.zkb.ch        
+#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb~ www.jse.co.za     
+#&gt;  4 zar x                             ZARX  ZA      Johannesb~ www.zarx.co.za    
+#&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
+#&gt;  6 jse interest rate derivatives ma~ YLDX  ZA      Johannesb~ www.yieldx.co.za  
+#&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
+#&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
+#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m~
+#&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
 #&gt; # ... with 1,659 more rows</code></pre>
 </div>
 </div>
@@ -294,10 +307,12 @@
 <h2 class="hasAnchor">
 <a href="#ffresearch" class="anchor"></a>FFresearch</h2>
 <p>FFresearch conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French’s online <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a>. Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(FFresearch)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="dt">list =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"factors"</span>, <span class="st">"portfolios_univariate"</span>, <span class="st">"portfolios_bivariate"</span>, <span class="st">"portfolios_trivariate"</span>,</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">              <span class="st">"portfolios_industries"</span>, <span class="st">"variables"</span>, <span class="st">"breakpoints"</span>), <span class="dt">package =</span> <span class="st">"FFresearch"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://bautheac.github.io/FFresearch">FFresearch</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"factors"</span>, <span class="st">"portfolios_univariate"</span>, <span class="st">"portfolios_bivariate"</span>, <span class="st">"portfolios_trivariate"</span>,
+              <span class="st">"portfolios_industries"</span>, <span class="st">"variables"</span>, <span class="st">"breakpoints"</span>), package = <span class="st">"FFresearch"</span>)
+</pre></div>
 <div id="portfolios" class="section level3">
 <h3 class="hasAnchor">
 <a href="#portfolios" class="anchor"></a>portfolios</h3>
@@ -305,66 +320,66 @@
 <h4 class="hasAnchor">
 <a href="#univariate" class="anchor"></a>univariate</h4>
 <p>The ‘portfolios_univariate’ dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 1,711,057 x 9
+<pre><code>#&gt; # A tibble: 2,586,965 x 9
 #&gt;    region frequency `sort variable` dividend weights portfolio field period
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;           &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;     &lt;fct&gt; &lt;chr&gt; 
-#&gt;  1 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  2 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  3 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  4 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  5 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  6 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  7 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  8 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt;  9 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt; 10 US     day       market capital~ Y        value   Dec 2     retu~ 19980~
-#&gt; # ... with 1,711,047 more rows, and 1 more variable: value &lt;dbl&gt;</code></pre>
+#&gt;  1 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  2 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  3 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  4 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  5 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  6 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  7 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  8 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt;  9 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt; 10 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
+#&gt; # ... with 2,586,955 more rows, and 1 more variable: value &lt;dbl&gt;</code></pre>
 </div>
 <div id="bivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#bivariate" class="anchor"></a>bivariate</h4>
 <p>The ‘portfolios_bivariate’ dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 24,873,855 x 10
-#&gt;    region frequency `sort variable ~ `sort variable ~ dividend weights
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;    &lt;fct&gt;  
-#&gt;  1 US     day       market capitali~ book/market      Y        value  
-#&gt;  2 US     day       market capitali~ book/market      Y        value  
-#&gt;  3 US     day       market capitali~ book/market      Y        value  
-#&gt;  4 US     day       market capitali~ book/market      Y        value  
-#&gt;  5 US     day       market capitali~ book/market      Y        value  
-#&gt;  6 US     day       market capitali~ book/market      Y        value  
-#&gt;  7 US     day       market capitali~ book/market      Y        value  
-#&gt;  8 US     day       market capitali~ book/market      Y        value  
-#&gt;  9 US     day       market capitali~ book/market      Y        value  
-#&gt; 10 US     day       market capitali~ book/market      Y        value  
-#&gt; # ... with 24,873,845 more rows, and 4 more variables: portfolio &lt;chr&gt;,
-#&gt; #   field &lt;fct&gt;, period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+<pre><code>#&gt; # A tibble: 25,350,690 x 10
+#&gt;    region frequency `sort variable ~ `sort variable ~ dividend weights portfolio
+#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;    
+#&gt;  1 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  2 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  3 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  4 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  5 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  6 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  7 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  8 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt;  9 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt; 10 US     day       market capitali~ book/market      Y        value   BIG HiBM 
+#&gt; # ... with 25,350,680 more rows, and 3 more variables: field &lt;fct&gt;,
+#&gt; #   period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 </div>
 <div id="trivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#trivariate" class="anchor"></a>trivariate</h4>
 <p>The ‘portfolios_trivariate’ dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 2,530,944 x 11
-#&gt;    region frequency `sort variable ~ `sort variable ~ `sort variable ~
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;           
-#&gt;  1 US     month     market capitali~ book/market      operating profi~
-#&gt;  2 US     month     market capitali~ book/market      operating profi~
-#&gt;  3 US     month     market capitali~ book/market      operating profi~
-#&gt;  4 US     month     market capitali~ book/market      operating profi~
-#&gt;  5 US     month     market capitali~ book/market      operating profi~
-#&gt;  6 US     month     market capitali~ book/market      operating profi~
-#&gt;  7 US     month     market capitali~ book/market      operating profi~
-#&gt;  8 US     month     market capitali~ book/market      operating profi~
-#&gt;  9 US     month     market capitali~ book/market      operating profi~
-#&gt; 10 US     month     market capitali~ book/market      operating profi~
-#&gt; # ... with 2,530,934 more rows, and 6 more variables: dividend &lt;fct&gt;,
-#&gt; #   weights &lt;fct&gt;, portfolio &lt;chr&gt;, field &lt;fct&gt;, period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+<pre><code>#&gt; # A tibble: 2,580,480 x 11
+#&gt;    region frequency `sort variable ~ `sort variable ~ `sort variable ~ dividend
+#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;   
+#&gt;  1 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  2 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  3 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  4 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  5 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  6 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  7 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  8 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt;  9 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt; 10 US     month     market capitali~ book/market      operating profi~ Y       
+#&gt; # ... with 2,580,470 more rows, and 5 more variables: weights &lt;fct&gt;,
+#&gt; #   portfolio &lt;chr&gt;, field &lt;fct&gt;, period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 </div>
 <div id="industries" class="section level4">
 <h4 class="hasAnchor">
 <a href="#industries" class="anchor"></a>industries</h4>
 <p>The ‘portfolios_industries’ dataset provides various feature time series for Fama/French industry portfolios <span class="citation">(Fama and French 1997)</span>.</p>
-<pre><code>#&gt; # A tibble: 3,445,574 x 8
+<pre><code>#&gt; # A tibble: 3,516,216 x 8
 #&gt;    region frequency dividend weights portfolio field  period value
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;     &lt;fct&gt;  &lt;chr&gt;  &lt;dbl&gt;
 #&gt;  1 US     month     Y        value   Aero      return 199801  1.31
@@ -377,52 +392,52 @@
 #&gt;  8 US     month     Y        value   Aero      return 199801  1.31
 #&gt;  9 US     month     Y        value   Aero      return 199801  1.31
 #&gt; 10 US     month     Y        value   Aero      return 199801  1.31
-#&gt; # ... with 3,445,564 more rows</code></pre>
+#&gt; # ... with 3,516,206 more rows</code></pre>
 </div>
 </div>
 <div id="factors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factors" class="anchor"></a>factors</h3>
 <p>The ‘factors’ dataset provides the return (factors) and level (ris free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models extremely popular to the asset pricing enthousiasts.</p>
-<pre><code>#&gt; # A tibble: 284,655 x 5
+<pre><code>#&gt; # A tibble: 399,132 x 5
 #&gt;    region frequency factor period value
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
-#&gt;  1 US     month     CMA    199801 -0.83
-#&gt;  2 US     month     CMA    199802 -2.42
-#&gt;  3 US     month     CMA    199803 -0.48
-#&gt;  4 US     month     CMA    199804 -0.23
-#&gt;  5 US     month     CMA    199805  2.54
-#&gt;  6 US     month     CMA    199806 -2.91
-#&gt;  7 US     month     CMA    199807  0.45
-#&gt;  8 US     month     CMA    199808  5.84
-#&gt;  9 US     month     CMA    199809 -2.9 
-#&gt; 10 US     month     CMA    199810  0.27
-#&gt; # ... with 284,645 more rows</code></pre>
+#&gt;  1 US     month     CMA    198801  2.09
+#&gt;  2 US     month     CMA    198802 -0.11
+#&gt;  3 US     month     CMA    198803  1.91
+#&gt;  4 US     month     CMA    198804  1.9 
+#&gt;  5 US     month     CMA    198805  0.38
+#&gt;  6 US     month     CMA    198806 -3.25
+#&gt;  7 US     month     CMA    198807  1.45
+#&gt;  8 US     month     CMA    198808  1.74
+#&gt;  9 US     month     CMA    198809 -0.48
+#&gt; 10 US     month     CMA    198810  1.04
+#&gt; # ... with 399,122 more rows</code></pre>
 </div>
 <div id="variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#variables" class="anchor"></a>variables</h3>
 <p>The ‘variables’ dataset is a helper dataset that provides details, including contruction methods, for the variables used to construct the portfolios and asset pricing factors above.</p>
 <pre><code>#&gt; # A tibble: 23 x 3
-#&gt;    name             symbol description                                    
-#&gt;    &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;                                          
-#&gt;  1 market capitali~ ME     Market equity (size) is price times shares out~
-#&gt;  2 book value       BE     Book equity is constructed from Compustat data~
-#&gt;  3 book/market      ME/BE  The book-to-market ratio used to form portfoli~
-#&gt;  4 operating profi~ OP     The operating profitability ratio used to form~
-#&gt;  5 investment       INV    The investment ratio used to form portfolios i~
-#&gt;  6 earnings/price   E/P    Earnings is total earnings before extraordinar~
-#&gt;  7 cash flow/price  CF/P   Cashflow is total earnings before extraordinar~
-#&gt;  8 dividend/price   D/P    The dividend yield used to form portfolios in ~
-#&gt;  9 accruals         ACCR   AC for June of year t is the change in operati~
-#&gt; 10 univariate mark~ BETA   ß for June of year t is estimated using the pr~
+#&gt;    name              symbol description                                         
+#&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;                                               
+#&gt;  1 market capitaliz~ ME     Market equity (size) is price times shares outstand~
+#&gt;  2 book value        BE     Book equity is constructed from Compustat data or c~
+#&gt;  3 book/market       ME/BE  The book-to-market ratio used to form portfolios in~
+#&gt;  4 operating profit~ OP     The operating profitability ratio used to form port~
+#&gt;  5 investment        INV    The investment ratio used to form portfolios in Jun~
+#&gt;  6 earnings/price    E/P    Earnings is total earnings before extraordinary ite~
+#&gt;  7 cash flow/price   CF/P   Cashflow is total earnings before extraordinary ite~
+#&gt;  8 dividend/price    D/P    The dividend yield used to form portfolios in June ~
+#&gt;  9 accruals          ACCR   AC for June of year t is the change in operating wo~
+#&gt; 10 univariate marke~ BETA   ß for June of year t is estimated using the precedi~
 #&gt; # ... with 13 more rows</code></pre>
 </div>
 <div id="breakpoints" class="section level3">
 <h3 class="hasAnchor">
 <a href="#breakpoints" class="anchor"></a>breakpoints</h3>
 <p>Finally, the ‘breakpoints’ dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned.</p>
-<pre><code>#&gt; # A tibble: 13,104 x 5
+<pre><code>#&gt; # A tibble: 13,314 x 5
 #&gt;    variable frequency percentile period value
 #&gt;    &lt;fct&gt;    &lt;fct&gt;     &lt;fct&gt;      &lt;chr&gt;  &lt;dbl&gt;
 #&gt;  1 size     month     # positive 199801  1816
@@ -435,7 +450,7 @@
 #&gt;  8 size     month     # positive 199808  1817
 #&gt;  9 size     month     # positive 199809  1810
 #&gt; 10 size     month     # positive 199810  1795
-#&gt; # ... with 13,094 more rows</code></pre>
+#&gt; # ... with 13,304 more rows</code></pre>
 </div>
 </div>
 <div id="references" class="section level2 unnumbered">
@@ -470,21 +485,14 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#bbgsymbols">BBGsymbols</a></li>
-      <li><a href="#fewisos">fewISOs</a></li>
-      <li><a href="#gics">GICS</a></li>
-      <li><a href="#ffresearch">FFresearch</a></li>
-      <li><a href="#references">references</a></li>
-      </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
+
 
 
       <footer><div class="copyright">
@@ -492,12 +500,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

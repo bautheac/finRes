@@ -26,7 +26,7 @@ Using carefully selected Bloomberg datafields from BBGsymbols in tandem with @Ar
 
 For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.
 
-```{r `globals`, warnings = F, message = F, eval = T}
+```{r `globals`, warnings = F, message = F, eval = F}
 library(pullit); library(lubridate)
 
 end <- Sys.Date() - years(1L); start <- end - years(2L)
@@ -95,7 +95,7 @@ fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
 fund_market <- pull_fund_market(source = "Bloomberg", fund_tickers, start, end, verbose = F)
 ```
 
-```{r `fund market storethat`, echo = F, eval = T}
+```{r `fund market storethat`, echo = F, eval = F}
 fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
 
 fund_market <- pull_fund_market(source = "storethat", tickers = fund_tickers, 
@@ -126,7 +126,7 @@ futures_TS <- pull_futures_market(source = "Bloomberg", type = "term structure",
                                   roll_months = 0L, roll_adjustment = "N", verbose = F)
 ```
 
-```{r `futures term structure storethat`, echo = F, eval = T}
+```{r `futures term structure storethat`, echo = F, eval = F}
 futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
 
 futures_TS <- pull_futures_market(source = "storethat", type = "term structure", 
@@ -165,28 +165,28 @@ futures_info <- pull_futures_info(source = "Bloomberg", futures_tickers, verbose
 ## accessors
 The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formaly using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
 
-```{r `futures show`, eval = T}
+```{r `futures show`, eval = F}
 futures_TS
 ```
 
 Access each slot using the appropriate accessor:
-```{r `futures get_tickers`, eval = T}
+```{r `futures get_tickers`, eval = F}
 get_active_contract_tickers(futures_TS)
 ```
 
-```{r `futures get_fields`, eval = T}
+```{r `futures get_fields`, eval = F}
 get_fields(futures_TS)
 ```
 
-```{r `futures get_data`, eval = T}
+```{r `futures get_data`, eval = F}
 pullit::get_data(futures_TS)
 ```
 
-```{r `futures get_call`, eval = T}
+```{r `futures get_call`, eval = F}
 pullit::get_call(futures_TS)
 ```
 
-```{r `futures get_periods`, eval = T}
+```{r `futures get_periods`, eval = F}
 get_periods(futures_TS)
 ```
 
@@ -226,7 +226,7 @@ The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRe
 
 ### futures term structure
 Plot a futures series term structure dynamics with:
-```{r `plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T, eval = T}
+```{r `plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T, eval = F}
 library(plotit)
 
 plot(object = futures_TS, ticker = "C A Comdty")
@@ -234,7 +234,7 @@ plot(object = futures_TS, ticker = "C A Comdty")
 
 ### fund market
 Plot historical fund performance with:
-```{r `plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T, eval = T}
+```{r `plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T, eval = F}
 plot(object = fund_market, ticker = "GLD US Equity")
 ```
   

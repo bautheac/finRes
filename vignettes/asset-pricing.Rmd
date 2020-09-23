@@ -91,7 +91,7 @@ equity_data_market <- pull_equity_market(source = "Bloomberg", tickers_equity, s
 get_data(equity_data_market)
 ```
 
-```{r `pullit equity storethat`, message = F, warning = F, echo = F, eval = T}
+```{r `pullit equity storethat`, message = F, warning = F, echo = F, eval = F}
 library(pullit); library(lubridate)
 
 tickers_equity <- c("ADM US Equity", "CIVI US Equity", "GBX US Equity", "LIND US Equity", 
@@ -107,8 +107,8 @@ equity_data_market <- pull_equity_market(source = "storethat", tickers = tickers
 get_data(equity_data_market)
 ```
 
-From there, constuct a bespoke asset pricing factor using the factorem function. I.e., an equity momentum factor:
-```{r `factorem factor`, message = F, warning = F, eval = T}
+From there, construct a bespoke asset pricing factor using the factorem function. I.e., an equity momentum factor:
+```{r `factorem factor`, message = F, warning = F, eval = F}
 library(factorem)
 
 ranking_period = 1L
@@ -214,34 +214,34 @@ futures_TS <- TS_factor(data = futures_data_market, ranking_period = ranking_per
 
 Accessor methods allow access to the content of the factor output:
 #### name
-```{r `factor name`, eval = T}
+```{r `factor name`, eval = F}
 get_name(factor)
 ```
 #### positions
-```{r `factor positions`, eval = T}
+```{r `factor positions`, eval = F}
 get_positions(factor)
 ```
 #### returns
-```{r `factor returns`, eval = T}
+```{r `factor returns`, eval = F}
 get_returns(factor)
 ```
 #### data initially supplied
-```{r `factor data`, eval = T}
+```{r `factor data`, eval = F}
 get_data(factor)
 ```
 #### parameters
-```{r `factor params`, eval = T}
+```{r `factor params`, eval = F}
 get_parameters(factor)
 ```
 #### function call
-```{r `factor call`, eval = T}
+```{r `factor call`, eval = F}
 get_call(factor)
 ```
 
 #### summary
 A summary method returns a performance summary of the corresponding facotr:
 #### function call
-```{r `factor summary`, eval = T}
+```{r `factor summary`, eval = F}
 summary(factor)
 ```
 
@@ -250,14 +250,14 @@ summary(factor)
 The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRes suite, provides plot methods for the factor objects returned by the functions above:
 
 #### performance overview
-```{r `plot performance`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T, eval = T}
+```{r `plot performance`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T, eval = F}
 library(plotit)
 
 plot(object = factor, type = "performance")
 ```
 
 #### positions overview
-```{r `plot positions`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T, eval = T}
+```{r `plot positions`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T, eval = F}
 plot(object = factor, type = "positions")
 ```
   

@@ -6,21 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data-science and research in finance and financial economics in R • finRes</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Data-science and research in finance and financial economics in R">
 <meta property="og:description" content="finRes is a set of packages that work in harmony because they share common data 
-  representations and 'API' design. It is meant to facilitate data-science and research in finance and 
+  representations and API design. It is meant to facilitate data-science and research in finance and 
   financial economics in R. This package is designed to make it easy to install and load multiple
-  'finRes' packages in a single step.">
-<meta name="twitter:card" content="summary">
+  finRes packages in a single step.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -64,7 +65,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/bautheac/finRes/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -73,14 +81,21 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
+<div id="finres" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#finres" class="anchor"></a>finRes</h1></div>
+<p>2020-09-23</p>
 <style> body {text-align: justify} </style>
-<div id="finres" class="section level2">
+<!-- [![Travis-CI Build Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes) --><!-- [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&svg=true)](https://ci.appveyor.com/project/bautheac/finRes) --><p><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></p>
+<div id="finres-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#finres" class="anchor"></a>finRes</h2>
-<p>The <a href="https://bautheac.github.io/finRes/">finRes</a> suite is organised along the lines of the <a href="www.tidyverse.org">tidyverse</a> of <a href="http://hadley.nz/">Hadley Wickham</a> and the <a href="https://www.rstudio.com/">RStudio</a> team <span class="citation">(Wickham 2017)</span>: it’s a set of packages that work in harmony because they share common data representations and ‘API’ design. It is meant to facilitate data-science and research in finance and financial economics in R. This package is designed to make it easy to install and load multiple ‘finRes’ packages in a single step.<br>
-Install the development version from github with <code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("bautheac/finRes")</a></code>.</p>
+<a href="#finres-1" class="anchor"></a>finRes</h2>
+<p>There are only so many things that can be done in Excel; serious data munging and further statistical processing not only require flexibility but also computational power. Programming languages make these accessible and within that realm, the R programming language stands out of the crowd for statistical analysis, the workhorse of research in finance and financial economics. Programming in R can be rather daunting though. Fetching data requires the user to make API calls; once retrieved the data have to be stored somewhere which requires the user not only to communicate with databases but also to set them up entirely to meet there needs. With the data available comes the time of financial modelling, the dreadful part for most.<br>
+The <a href="https://bautheac.github.io/finRes/">finRes</a> suite strives to abstract complexity away in all these areas. Through a series of packages it facilitates financial data acquisition from Bloomberg, data storage and put forwards financial modelling solutions albeit limited to asset pricing at the time of writing. <a href="https://bautheac.github.io/finRes/">finRes</a> leverages the power of the <a href="www.tidyverse.org">tidyverse</a> of <a href="http://hadley.nz/">Hadley Wickham</a> and the <a href="https://www.rstudio.com/">RStudio</a> team (Wickham 2017) with the suite organised as a set of packages that work in harmony because they share common data representations and ‘API’ design. This package is designed to make it easy to install and load multiple ‘finRes’ packages in a single step.<br>
+Install the development version from github with <code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github("bautheac/finRes")</a></code>.</p>
 <div id="datasets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#datasets" class="anchor"></a>datasets</h3>
@@ -91,7 +106,7 @@ Install the development version from github with <code><a href="https://www.rdoc
 <a href="#bloomberg" class="anchor"></a>Bloomberg</h3>
 <p>The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes adresses the issue in two complementary packages that work in conjuction with most of the dataset packages above.<br>
 On the one hand the <a href="https://bautheac.github.io/pullit/">pullit</a> package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the <a href="https://bautheac.github.io/storethat/">storethat</a> package helps storing the data retrieved with pullit for off-Bloomberg consumption in R.<br>
-Both pullit and storethat work in tandem with the BBGsymbols package. The latter plays a central role in finRes where it provides the formers the wording required to interact with Bloomberg through the interface provided by the <a href="https://github.com/armstrtw">Whit Armstrong</a>, <a href="https://github.com/eddelbuettel">Dirk Eddelbuettel</a> &amp; <a href="https://github.com/johnlaing">John Laing</a>’s <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> package <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
+Both pullit and storethat work in tandem with the BBGsymbols package. The latter plays a central role in finRes where it provides the formers the wording required to interact with Bloomberg through the interface provided by the <a href="https://github.com/armstrtw">Whit Armstrong</a>, <a href="https://github.com/eddelbuettel">Dirk Eddelbuettel</a> &amp; <a href="https://github.com/johnlaing">John Laing</a>’s <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> package (Armstrong, Eddelbuettel, and Laing 2018).</p>
 </div>
 <div id="asset-pricing" class="section level3">
 <h3 class="hasAnchor">
@@ -111,7 +126,8 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 <p>finRes packages at the time of writing:<br>
 - <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>: popular Bloomberg tickers and field symbols conviniently packaged for R users.<br>
 - <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>: a collection of financial economics related ISO code datasets conveniently packaged for consumption in R.<br>
-- <a href="https://bautheac.github.io/GICS/">GICS</a>: Global Industry Classification Standard dataset conveniently packaged for consumption in R.<br>
+- <a href="https://bautheac.github.io/GICS/">GICS</a>: Global Industry Classification Standard dataset conveniently packaged for consumption in</p>
+<p>R.<br>
 - <a href="https://bautheac.github.io/FFresearch/">FFresearch</a>: Fama/French asset pricing research data conveniently packaged for consumption by R users.<br>
 - <a href="https://bautheac.github.io/pullit/">pullit</a>: Bloomberg financial data collection in R made easy.<br>
 - <a href="https://bautheac.github.io/storethat/">storethat</a>: store Bloomberg financial data for off-Bloomberg consumption in R.<br>
@@ -122,33 +138,38 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 <h3 class="hasAnchor">
 <a href="#going-further" class="anchor"></a>going further</h3>
 <p>See package vignettes for details:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(finRes)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/vignette">vignette</a></span>(<span class="dt">topic =</span> <span class="st">"datasets"</span>, <span class="dt">package =</span> <span class="st">"finRes"</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/vignette">vignette</a></span>(<span class="dt">topic =</span> <span class="st">"Bloomberg"</span>, <span class="dt">package =</span> <span class="st">"finRes"</span>)</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/vignette">vignette</a></span>(<span class="dt">topic =</span> <span class="st">"asset pricing"</span>, <span class="dt">package =</span> <span class="st">"finRes"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/finRes">finRes</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(topic = <span class="st">"datasets"</span>, package = <span class="st">"finRes"</span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(topic = <span class="st">"Bloomberg"</span>, package = <span class="st">"finRes"</span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(topic = <span class="st">"asset pricing"</span>, package = <span class="st">"finRes"</span>)
+</pre></div>
 </div>
 </div>
-<div id="references" class="section level2 unnumbered">
+<div id="references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>references</h2>
 <div id="refs" class="references">
 <div id="ref-Armstrong_Rblpapi_2018">
-<p>Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. <em>Rblpapi: R Interface to ’Bloomberg’</em>. <a href="https://CRAN.R-project.org/package=Rblpapi">https://CRAN.R-project.org/package=Rblpapi</a>.</p>
+<p>Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. <em>Rblpapi: R Interface to ’Bloomberg’</em>. <a href="https://CRAN.R-project.org/package=Rblpapi" class="uri">https://CRAN.R-project.org/package=Rblpapi</a>.</p>
 </div>
 <div id="ref-Wickham_tidyverse_2017">
-<p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+<p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse" class="uri">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+</div>
 </div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/bautheac/finRes/">https://​github.com/​bautheac/​finRes/​</a>
+</li>
 <li>Report a bug at <br><a href="https://github.com/bautheac/finRes/issues">https://​github.com/​bautheac/​finRes/​issues</a>
 </li>
 </ul>
@@ -167,15 +188,7 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://travis-ci.org/bautheac/finRes"><img src="https://travis-ci.org/bautheac/finRes.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/bautheac/finRes"><img src="https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
@@ -184,12 +197,14 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
