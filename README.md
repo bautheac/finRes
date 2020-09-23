@@ -1,6 +1,6 @@
 finRes
 ================
-2018-11-19
+2020-09-23
 
 <style> body {text-align: justify} </style>
 
@@ -12,14 +12,29 @@ Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branc
 
 ## finRes
 
-The [finRes](https://bautheac.github.io/finRes/) suite is organised
-along the lines of the [tidyverse](www.tidyverse.org) of [Hadley
-Wickham](http://hadley.nz/) and the [RStudio](https://www.rstudio.com/)
-team (Wickham 2017): it’s a set of packages that work in harmony because
-they share common data representations and ‘API’ design. It is meant to
-facilitate data-science and research in finance and financial economics
-in R. This package is designed to make it easy to install and load
-multiple ‘finRes’ packages in a single step.  
+There are only so many things that can be done in Excel; serious data
+munging and further statistical processing not only require flexibility
+but also computational power. Programming languages make these
+accessible and within that realm, the R programming language stands out
+of the crowd for statistical analysis, the workhorse of research in
+finance and financial economics. Programming in R can be rather daunting
+though. Fetching data requires the user to make API calls; once
+retrieved the data have to be stored somewhere which requires the user
+not only to communicate with databases but also to set them up entirely
+to meet there needs. With the data available comes the time of financial
+modelling, the dreadful part for most.  
+The [finRes](https://bautheac.github.io/finRes/) suite strives to
+abstract complexity away in all these areas. Through a series of
+packages it facilitates financial data acquisition from Bloomberg, data
+storage and put forwards financial modelling solutions albeit limited to
+asset pricing at the time of writing.
+[finRes](https://bautheac.github.io/finRes/) leverages the power of the
+[tidyverse](www.tidyverse.org) of [Hadley Wickham](http://hadley.nz/)
+and the [RStudio](https://www.rstudio.com/) team (Wickham 2017) with the
+suite organised as a set of packages that work in harmony because they
+share common data representations and ‘API’ design. This package is
+designed to make it easy to install and load multiple ‘finRes’ packages
+in a single step.  
 Install the development version from github with
 `devtools::install_github("bautheac/finRes")`.
 
