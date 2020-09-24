@@ -47,7 +47,8 @@ storage and wrangling but also to analytics and asset pricing in
 particular. At the time of writing, the set of dataset packages in
 finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/),
 [fewISOs](https://bautheac.github.io/fewISOs/),
-[GICS](https://bautheac.github.io/GICS/) and
+[GICS](https://bautheac.github.io/GICS/),
+[factors](https://bautheac.github.io/factors/), and
 [FFresearch](https://bautheac.github.io/FFresearch/).
 
 ### Bloomberg
