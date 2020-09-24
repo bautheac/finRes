@@ -1,6 +1,5 @@
 finRes
 ================
-2020-09-24
 
 <style> body {text-align: justify} </style>
 
@@ -56,8 +55,8 @@ finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/),
 The finRes suite is organised along the data-science pipeline where
 preprocessing, including data collection and wrangling, plays a major
 role and is often reported by data-scientists to amount up to 80% of
-work-time. finRes adresses the issue in two complementary packages that
-work in conjuction with most of the dataset packages above.  
+work-time. finRes addresses the issue in two complementary packages that
+work in conjunction with most of the dataset packages above.  
 On the one hand the [pullit](https://bautheac.github.io/pullit/) package
 provides tools for data collection from Bloomberg. It returns clean and
 tidy, ready-to-use, data objects for other packages further down the
@@ -98,7 +97,7 @@ number of plot methods for finRes objects.
 
 finRes packages at the time of writing:  
 \- [BBGsymbols](https://bautheac.github.io/BBGsymbols/): popular
-Bloomberg tickers and field symbols conviniently packaged for R users.  
+Bloomberg tickers and field symbols conveniently packaged for R users.  
 \- [fewISOs](https://bautheac.github.io/fewISOs/): a collection of
 financial economics related ISO code datasets conveniently packaged for
 consumption in R.  
@@ -135,9 +134,11 @@ vignette(topic = "asset pricing", package = "finRes")
 
 finRes is still in the alpha stage of development; bugs have to be fixed
 and some design flaws must be addressed in some of the packages. The
-next stage of development will focus on fixing these issues before each
-individual package as well as the suite itself is submitted to the
-Comprehensive R Archive Network (CRAN) for public dissemination.
+next stage of development will focus on fixing these issues, set up a
+CI/CD pipeline for the suite as well as a testing framework. Each
+individual package as well as the suite itself will thereafter
+eventually be submitted to the Comprehensive R Archive Network (CRAN)
+for public dissemination.
 
 ## References
 
