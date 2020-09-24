@@ -1,6 +1,6 @@
 finRes
 ================
-2020-09-23
+2020-09-24
 
 <style> body {text-align: justify} </style>
 
@@ -38,7 +38,7 @@ in a single step.
 Install the development version from github with
 `devtools::install_github("bautheac/finRes")`.
 
-### datasets
+### Datasets
 
 finRes is home to a number of packages that, although self-contained
 with consumption value on their own, host datasets that play important
@@ -87,13 +87,13 @@ retrieve with pullit. The returned objects carry corresponding return &
 positions time series and a number of methods help with performance
 analysis.
 
-### visualization
+### Visualization
 
 The bottom-end of the pipeline (communication) is adressed in the
 [plotit](https://bautheac.github.io/plotit/) package that provides a
 number of plot methods for finRes objects.
 
-### packages
+### Packages
 
 finRes packages at the time of writing:  
 \- [BBGsymbols](https://bautheac.github.io/BBGsymbols/): popular
@@ -116,7 +116,7 @@ asset pricing factors.
 \- [plotit](https://bautheac.github.io/plotit/): plot methods for the
 finRes suite.
 
-### going further
+### Going further
 
 See package vignettes for details:
 
@@ -130,7 +130,15 @@ vignette(topic = "Bloomberg", package = "finRes")
 vignette(topic = "asset pricing", package = "finRes")
 ```
 
-## references
+### Coming next
+
+finRes is still in the alpha stage of development; bugs have to be fixed
+and some design flaws must be addressed in some of the packages. The
+next stage of development will focus on fixing these issues before each
+individual package as well as the suite itself is submitted to the
+Comprehensive R Archive Network (CRAN) for public dissemination.
+
+## References
 
 <div id="refs" class="references">
 
