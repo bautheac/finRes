@@ -9,8 +9,6 @@ finRes
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-## finRes
-
 There are only so many things that can be done in Excel; serious data
 munging and further statistical processing not only require flexibility
 but also computational power. Programming languages make these
