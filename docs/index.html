@@ -87,9 +87,8 @@
 <div id="finres" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#finres" class="anchor"></a>finRes</h1></div>
-<p>2020-09-24</p>
 <style> body {text-align: justify} </style>
-<!-- [![Travis-CI Build Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes) --><!-- [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&svg=true)](https://ci.appveyor.com/project/bautheac/finRes) --><p><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></p>
+<!-- [![Travis-CI Build Status](https://travis-ci.org/bautheac/finRes.svg?branch=master)](https://travis-ci.org/bautheac/finRes) --><!-- [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/bautheac/finRes?branch=master&svg=true)](https://ci.appveyor.com/project/bautheac/finRes) -->
 <div id="finres-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#finres-1" class="anchor"></a>finRes</h2>
@@ -104,13 +103,13 @@ Install the development version from github with <code><a href="https://devtools
 <div id="bloomberg" class="section level3">
 <h3 class="hasAnchor">
 <a href="#bloomberg" class="anchor"></a>Bloomberg</h3>
-<p>The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes adresses the issue in two complementary packages that work in conjuction with most of the dataset packages above.<br>
+<p>The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes addresses the issue in two complementary packages that work in conjunction with most of the dataset packages above.<br>
 On the one hand the <a href="https://bautheac.github.io/pullit/">pullit</a> package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the <a href="https://bautheac.github.io/storethat/">storethat</a> package helps storing the data retrieved with pullit for off-Bloomberg consumption in R.<br>
 Both pullit and storethat work in tandem with the BBGsymbols package. The latter plays a central role in finRes where it provides the formers the wording required to interact with Bloomberg through the interface provided by the <a href="https://github.com/armstrtw">Whit Armstrong</a>, <a href="https://github.com/eddelbuettel">Dirk Eddelbuettel</a> &amp; <a href="https://github.com/johnlaing">John Laing</a>’s <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> package (Armstrong, Eddelbuettel, and Laing 2018).</p>
 </div>
 <div id="asset-pricing" class="section level3">
 <h3 class="hasAnchor">
-<a href="#asset-pricing" class="anchor"></a>asset pricing</h3>
+<a href="#asset-pricing" class="anchor"></a>Asset pricing</h3>
 <p>At the time of writing, the analytics part of the pipeline in finRes focusses on asset pricing.<br>
 On the one hand the FFresearch package abovementioned provides data on classic asset pricing factors and a number of sort portfolios. The data is pulled directly from Kenneth French’s <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a> and tidied up for seamless consumption in R.<br>
 On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a> package provides tools for outright factor construction from data retrieve with pullit. The returned objects carry corresponding return &amp; positions time series and a number of methods help with performance analysis.</p>
@@ -118,13 +117,13 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 <div id="visualization" class="section level3">
 <h3 class="hasAnchor">
 <a href="#visualization" class="anchor"></a>Visualization</h3>
-<p>The bottom-end of the pipeline (communication) is adressed in the <a href="https://bautheac.github.io/plotit/">plotit</a> package that provides a number of plot methods for finRes objects.</p>
+<p>The bottom-end of the pipeline (communication) is addressed in the <a href="https://bautheac.github.io/plotit/">plotit</a> package that provides a number of plot methods for finRes objects.</p>
 </div>
 <div id="packages" class="section level3">
 <h3 class="hasAnchor">
 <a href="#packages" class="anchor"></a>Packages</h3>
 <p>finRes packages at the time of writing:<br>
-- <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>: popular Bloomberg tickers and field symbols conviniently packaged for R users.<br>
+- <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>: popular Bloomberg tickers and field symbols conveniently packaged for R users.<br>
 - <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>: a collection of financial economics related ISO code datasets conveniently packaged for consumption in R.<br>
 - <a href="https://bautheac.github.io/GICS/">GICS</a>: Global Industry Classification Standard dataset conveniently packaged for consumption in</p>
 <p>R.<br>
@@ -151,7 +150,7 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 <div id="coming-next" class="section level3">
 <h3 class="hasAnchor">
 <a href="#coming-next" class="anchor"></a>Coming next</h3>
-<p>finRes is still in the alpha stage of development; bugs have to be fixed and some design flaws must be addressed in some of the packages. The next stage of development will focus on fixing these issues before each individual package as well as the suite itself is submitted to the Comprehensive R Archive Network (CRAN) for public dissemination.</p>
+<p>finRes is still in the alpha stage of development; bugs have to be fixed and some design flaws must be addressed in some of the packages. The next stage of development will focus on fixing these issues, set up a CI/CD pipeline for the suite as well as a testing framework. Each individual package as well as the suite itself will thereafter eventually be submitted to the Comprehensive R Archive Network (CRAN) for public dissemination.</p>
 </div>
 </div>
 <div id="references" class="section level2">
@@ -193,7 +192,13 @@ On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
