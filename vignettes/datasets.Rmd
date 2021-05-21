@@ -3,23 +3,25 @@ title: datasets
 author: Olivier Bauthéac
 date: ""
 output: rmarkdown::html_vignette
-bibliography: REFERENCES.bib
+bibliography: literature_files/references.bib
 vignette: >
   %\VignetteIndexEntry{datasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 <style> body {text-align: justify} </style>
-```{r setup, include = FALSE}
+
+```{r, setup, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+folder <- "literature_files"; dir.create(folder)
+download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
 ```
 
 
-
-finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/), [fewISOs](https://bautheac.github.io/fewISOs/), [GICS](https://bautheac.github.io/GICS/) and [FFresearch](https://bautheac.github.io/FFresearch/).
+finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/), [fewISOs](https://bautheac.github.io/fewISOs/), [GICS](https://bautheac.github.io/GICS/), [FFresearch](https://bautheac.github.io/FFresearch/) and [factors](https://bautheac.github.io/factors/).
 
 ## BBGsymbols
-The BBGsymbols package plays a critical role in finRes where it provides both the [pullit](https://bautheac.github.io/pullit/) and the [storethat](https://bautheac.github.io/storethat/) packages with support for interacting with Bloomberg through the [Rblpapi](https://github.com/Rblp/Rblpapi) interface [@Armstrong_Rblpapi_2018].
+The [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package plays a critical role in finRes where it provides both the [pullit](https://bautheac.github.io/pullit/) and the [storethat](https://bautheac.github.io/storethat/) packages with support for interacting with Bloomberg through the [Rblpapi](https://github.com/Rblp/Rblpapi) interface [@Armstrong_Rblpapi_2018].
 
 ```{r `BBGsymbols load`}
 library(BBGsymbols)
@@ -29,13 +31,13 @@ data(list = c("fields", "months", "rolls", "tickers_cftc", "tickers_futures"), p
 
 
 ### fields
-The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for fitting fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writting include 'equity', refering to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
+The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include 'equity', referring to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
 ```{r `BBGsymbols fields`, echo = FALSE}
 tibble::as_tibble(fields)
 ```
 
 ### months
-The 'months' dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial deriviatives such as futures contracts.  
+The 'months' dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial derivatives such as futures contracts.  
 ```{r `BBGsymbols months`, echo = FALSE}
 tibble::as_tibble(months)
 ```
@@ -63,7 +65,7 @@ tibble::as_tibble(tickers_futures)
 
 
 ## fewISOs
-fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the 'countries', 'currencies' and 'exchanges' datasets. 
+[fewISOs](https://bautheac.github.io/fewISOs/) provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the 'countries', 'currencies' and 'exchanges' datasets. 
 ```{r `fewISOs load`}
 library(fewISOs)
 
@@ -97,7 +99,7 @@ tibble::as_tibble(exchanges)
 
 
 ## GICS
-GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.
+[GICS](https://bautheac.github.io/GICS/) packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.
 ```{r `GICS load`}
 library(GICS)
 
@@ -112,7 +114,7 @@ tibble::as_tibble(exchanges)
 
 
 ## FFresearch
-FFresearch conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French's online [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.
+[FFresearch](https://bautheac.github.io/FFresearch/) conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French's online [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.
 ```{r `FFresearch load`}
 library(FFresearch)
 
@@ -147,7 +149,7 @@ tibble::as_tibble(portfolios_industries)
 ```
 
 ### factors
-The 'factors' dataset provides the return (factors) and level (ris free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models extremely popular to the asset pricing enthousiasts.  
+The 'factors' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models extremely popular to the asset pricing enthousiasts.  
 ```{r, `FFresearch factors`, echo = FALSE}
 tibble::as_tibble(factors)
 ```
@@ -166,6 +168,27 @@ tibble::as_tibble(breakpoints)
 ```
 
 
+## factors
+
+The [factors](https://bautheac.github.io/factors/) package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors' website. The current version includes the factor data from Kenneth's French, also available in the FFresearch package described above, as well as factor data from Robert F. Stambaugh. 
+
+```{r, `factors load`}
+library(factors)
+
+data(list = c("Fama & French", "Stambaugh et al"), package = "factors")
+```
+
+### Fama & French
+The 'Fama & French' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models very popular to the asset pricing enthusiasts:
+```{r, `Fama & French`, echo = FALSE}
+head(`Fama & French`)
+```
+
+### Stambaugh et al
+The 'Stambaugh et al' dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded & non-traded liquidity [@pastor_liquidity_2003], as well as market, size and two 'mispricing' factors: management & performance [@stambaugh_mispricing_2016]:  
+```{r, `Stambaugh et al.`, echo = FALSE}
+head(`Stambaugh et al`)
+```
 
 
 ## references

@@ -1,111 +1,197 @@
-## ----setup, echo = FALSE, message = FALSE, warning = FALSE---------------
-knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
+## ---- setup, echo = F, message = F, warning = F-------------------------------
+knitr::opts_chunk$set(collapse = T, comment = "#>", warning = F, message = F, eval = T)
+folder <- "literature_files"; dir.create(folder)
+download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
+path <- here::here("development", "storethat.sqlite")
 
-## ----`globals`, warnings = FALSE, message = FALSE, eval = TRUE-----------
+## ----`globals bbg`, warnings = F, message = F, eval = F, echo = F-------------
+#  library(pullit); library(lubridate)
+#  start <- "2016-01-01"; end <- "2017-12-31"
+
+## ----`globals storethat`, warnings = F, message = F, eval = T-----------------
 library(pullit); library(lubridate)
+# end <- Sys.Date(); start <- end - years(2L)
+start <- "2016-01-01"; end <- "2017-12-31"
 
-end <- Sys.Date() - years(1L); start <- end - years(2L)
-
-## ----`equity market`-----------------------------------------------------
-#  equity_tickers <- c("ADM US Equity", "KHC US Equity", "XPO US Equity")
+## ----`equity market bbg`, eval = F, echo = T----------------------------------
+#  equity_tickers <- c('BP/ LN Equity', 'WEIR LN Equity', 'AAPL US Equity')
 #  
-#  equity_market <- BBG_equity_market(equity_tickers, start, end, verbose = FALSE)
+#  equity_market <- pull_equity_market(source = "Bloomberg", equity_tickers, start, end, verbose = F)
+#  equity_market
 
-## ----`equity balance sheet`----------------------------------------------
-#  equity_BS <- BBG_equity_book(book = "balance sheet", equity_tickers, start, end, verbose = FALSE)
+## ----`equity market storethat`, eval = T, echo = F----------------------------
+equity_tickers <- c('BP/ LN Equity', 'WEIR LN Equity', 'AAPL US Equity')
 
-## ----`equity cash flow statement`----------------------------------------
-#  equity_CF <- BBG_equity_book(book = "cash flow statement", equity_tickers, start, end, verbose = FALSE)
+equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, end, verbose = F, file = path)
+equity_market
 
-## ----`equity income statement`-------------------------------------------
-#  equity_IS <- BBG_equity_book(book = "income statement", equity_tickers, start, end, verbose = FALSE)
+## ----`equity balance sheet bbg`, eval = F, echo = T---------------------------
+#  equity_BS <- pull_equity_book(source = "Bloomberg", book = "balance sheet", equity_tickers,
+#                                start, end, verbose = F)
+#  equity_BS
 
-## ----`equity key stats`--------------------------------------------------
-#  equity_KS <- BBG_equity_book(book = "key stats", equity_tickers, start, end, verbose = FALSE)
+## ----`equity balance sheet storethat`, eval = T, echo = F---------------------
+equity_BS <- pull_equity_book(source = "storethat", book = "balance sheet", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_BS
 
-## ----`equity ratios`-----------------------------------------------------
-#  equity_R <- BBG_equity_book(book = "ratios", equity_tickers, start, end, verbose = FALSE)
+## ----`equity cash flow statement bbg`, eval = F, echo = T---------------------
+#  equity_CF <- pull_equity_book(source = "Bloomberg", book = "cash flow statement", equity_tickers,
+#                                start, end, verbose = F)
+#  equity_CF
 
-## ----`equity info`-------------------------------------------------------
-#  equity_info <- BBG_equity_info(equity_tickers, verbose = FALSE)
+## ----`equity cash flow statement storethat`, eval = T, echo = F---------------
+equity_CF <- pull_equity_book(source = "storethat", book = "cash flow statement", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_CF
 
-## ----`fund market BBG`---------------------------------------------------
-#  fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+## ----`equity income statement bbg`, eval = F, echo = T------------------------
+#  equity_IS <- pull_equity_book(source = "Bloomberg", book = "income statement", equity_tickers,
+#                                start, end, verbose = F)
+#  equity_IS
+
+## ----`equity income statement storethat`, eval = T, echo = F------------------
+equity_IS <- pull_equity_book(source = "storethat", book = "income statement", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_IS
+
+## ----`equity key stats bbg`, eval = F, echo = T-------------------------------
+#  equity_KS <- pull_equity_book(source = "Bloomberg", book = "key stats", equity_tickers,
+#                                start, end, verbose = F)
+#  equity_KS
+
+## ----`equity key stats storethat`, eval = T, echo = F-------------------------
+equity_KS <- pull_equity_book(source = "storethat", book = "key stats", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_KS
+
+## ----`equity ratios bbg`, eval = F, echo = T----------------------------------
+#  equity_R <- pull_equity_book(source = "Bloomberg", book = "ratios", equity_tickers,
+#                               start, end, verbose = F)
+#  equity_R
+
+## ----`equity ratios storethat`, eval = T, echo = F----------------------------
+equity_R <- pull_equity_book(source = "storethat", book = "ratios", equity_tickers, 
+                             start, end, verbose = F, file = path)
+equity_R
+
+## ----`equity info bbg`, eval = F, echo = T------------------------------------
+#  equity_info <- pull_equity_info(source = "Bloomberg", equity_tickers, verbose = F)
+#  equity_info
+
+## ----`equity info storethat`, eval = T, echo = F------------------------------
+equity_info <- pull_equity_info(source = "storethat", equity_tickers, verbose = F, file = path)
+equity_info
+
+## ----`fund market bbg`, eval = F, echo = T------------------------------------
+#  fund_tickers <- "SPY US Equity"
 #  
-#  fund_market <- BBG_fund_market(fund_tickers, start, end, verbose = FALSE)
+#  fund_market <- pull_fund_market(source = "Bloomberg", fund_tickers, start, end, verbose = F)
+#  fund_market
 
-## ----`fund market storethat`, echo = FALSE, eval = TRUE------------------
-fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+## ----`fund market storethat`, eval = T, echo = F------------------------------
+fund_tickers <- "SPY US Equity"
 
-fund_market <- storethat_fund_market(fund_tickers, start, end, verbose = FALSE)
+fund_market <- pull_fund_market(source = "storethat", tickers = fund_tickers, 
+                                start = start, end = end, verbose = F, file = path)
+fund_market
 
-## ----`fund info`---------------------------------------------------------
-#  fund_info <- BBG_fund_info(fund_tickers, verbose = FALSE)
+## ----`fund info bbg`, eval = F, echo = T--------------------------------------
+#  fund_info <- pull_fund_info(source = "Bloomberg", fund_tickers, verbose = F)
+#  fund_info
 
-## ----`futures term structure BGG`----------------------------------------
-#  futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+## ----`fund info storethat`, eval = T, echo = F--------------------------------
+fund_info <- pull_fund_info(source = "storethat", fund_tickers, verbose = F, file = path)
+fund_info
+
+## ----`futures term structure bbg`, echo = T, eval = F-------------------------
+#  futures_tickers <- c("C A Comdty", "SIA Comdty")
 #  
-#  futures_TS <- BBG_futures_market(type = "term structure", active_contract_tickers = futures_tickers,
-#                                   start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L,
-#                                   roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
+#  futures_TS <- pull_futures_market(source = "Bloomberg", type = "term structure",
+#                                    active_contract_tickers = futures_tickers,
+#                                    start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L,
+#                                    roll_months = 0L, roll_adjustment = "N", verbose = F)
+#  futures_TS
 
-## ----`futures term structure storethat`, echo = FALSE, eval = TRUE-------
-futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+## ----`futures term structure storethat`, echo = F, eval = T-------------------
+futures_tickers <- c("C A Comdty", "SIA Comdty")
 
-futures_TS <- storethat_futures_market(type = "term structure", active_contract_tickers = futures_tickers, 
-                                       start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
-                                       roll_months = 0L, roll_adjustment = "N", verbose = FALSE)
-
-## ----`futures aggregated`------------------------------------------------
-#  futures_agg <- BBG_futures_market(type = "aggregate", active_contract_tickers = futures_tickers,
-#                                    start, end, verbose = FALSE)
-
-## ----`futures CFTC`------------------------------------------------------
-#  futures_CFTC <- BBG_futures_CFTC(active_contract_tickers = futures_tickers, start, end, verbose = FALSE)
-
-## ----`futures info`------------------------------------------------------
-#  futures_info <- BBG_futures_info(futures_tickers, verbose = FALSE)
-
-## ----`futures show`, eval = TRUE-----------------------------------------
+futures_TS <- pull_futures_market(source = "storethat", type = "term structure", 
+                                  active_contract_tickers = futures_tickers, 
+                                  start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
+                                  roll_months = 0L, roll_adjustment = "N", verbose = F, file = path)
 futures_TS
 
-## ----`futures get_tickers`, eval = TRUE----------------------------------
-get_active_contract_tickers(futures_TS)
+## ----`futures aggregated bbg`, echo = T, eval = F-----------------------------
+#  futures_agg <- pull_futures_market(source = "Bloomberg", type = "aggregate",
+#                                     active_contract_tickers = futures_tickers, start, end, verbose = F)
+#  futures_agg
 
-## ----`futures get_fields`, eval = TRUE-----------------------------------
-get_fields(futures_TS)
+## ----`futures aggregated storethat`, echo = F, eval = T-----------------------
+futures_agg <- pull_futures_market(source = "storethat", type = "aggregate", 
+                                   active_contract_tickers = futures_tickers, start, end, verbose = F, file = path)
+futures_agg
 
-## ----`futures get_data`, eval = TRUE-------------------------------------
-pullit::get_data(futures_TS)
+## ----`futures CFTC bbg`, echo = T, eval = F-----------------------------------
+#  futures_CFTC <- pull_futures_CFTC(source = "Bloomberg", active_contract_tickers = futures_tickers,
+#                                    start, end, verbose = F)
 
-## ----`futures get_call`, eval = TRUE-------------------------------------
-pullit::get_call(futures_TS)
+## ----`futures CFTC storethat`, echo = F, eval = T-----------------------------
+futures_CFTC <- pull_futures_CFTC(source = "storethat", active_contract_tickers = futures_tickers, 
+                                  start, end, verbose = F, file = path)
 
-## ----`futures get_periods`, eval = TRUE----------------------------------
-get_periods(futures_TS)
+## ----`futures info bbg`, echo = T, eval = F-----------------------------------
+#  futures_info <- pull_futures_info(source = "Bloomberg", futures_tickers, verbose = F)
 
-## ----`storethat store`---------------------------------------------------
+## ----`futures info storethat`, echo = F, eval = T-----------------------------
+futures_info <- pull_futures_info(source = "storethat", futures_tickers, verbose = F, file = path)
+futures_info
+
+## ----`futures show`-----------------------------------------------------------
+futures_TS
+
+## ----`futures get_tickers`----------------------------------------------------
+tickers <- get_active_contract_tickers(futures_TS)
+tickers
+
+## ----`futures get_fields`-----------------------------------------------------
+fields <- get_fields(futures_TS)
+head(fields)
+
+## ----`futures get_data`-------------------------------------------------------
+data <- pullit::get_data(futures_TS)
+data
+
+## ----`futures get_call`-------------------------------------------------------
+call <- pullit::get_call(futures_TS)
+call
+
+## ----`storethat store`, eval = F----------------------------------------------
 #  library(storethat)
 #  
 #  db_create()
 #  
-#  db_store(object = futures_TS, file = "~/storethat.sqlite", verbose = FALSE)
-#  db_store(object = fund_market, file = "~/storethat.sqlite", verbose = FALSE)
+#  path = "~/storethat.sqlite"
+#  
+#  db_store(object = futures_TS, file = path, verbose = F)
+#  db_store(object = fund_market, file = path, verbose = F)
 
-## ----`storethat retrieve`------------------------------------------------
-#  equity_market <- storethat_equity_market(equity_tickers, start, end, verbose = FALSE)
+## ----`storethat retrieve`-----------------------------------------------------
+equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, 
+                                    end, verbose = F, file = path)
+equity_market
 
-## ----`storethat update all`----------------------------------------------
-#  storethat_update(instrument = "equity")
+## ----`storethat update all`, eval = F-----------------------------------------
+#  storethat_update(instrument = "equity", file = path)
 
-## ----`storethat update some`---------------------------------------------
+## ----`storethat update some`, eval = F----------------------------------------
 #  storethat_update(instrument = "equity", book = "market")
 
-## ----`plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = TRUE, eval = TRUE----
+## ----`plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T----
 library(plotit)
 
-plot_term_structure(object = futures_TS, ticker = "C A Comdty")
+plot(object = futures_TS, ticker = "C A Comdty")
 
-## ----`plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = TRUE, eval = TRUE----
-plot_performance(object = fund_market, ticker = "GLD US Equity")
+## ----`plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T----
+plot(object = fund_market, ticker = "SPY US Equity")
 

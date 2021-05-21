@@ -3,111 +3,170 @@ title: Bloomberg
 author: Olivier Bauthéac
 date: ""
 output: rmarkdown::html_vignette
-bibliography: REFERENCES.bib
+bibliography: literature_files/references.bib
 vignette: >
   %\VignetteIndexEntry{Bloomberg}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 <style> body {text-align: justify} </style>
-```{r setup, echo = F, message = F, warning = F}
-knitr::opts_chunk$set(collapse = T, comment = "#>", eval = F)
+
+```{r, setup, echo = F, message = F, warning = F}
+knitr::opts_chunk$set(collapse = T, comment = "#>", warning = F, message = F, eval = T)
+folder <- "literature_files"; dir.create(folder)
+download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
+path <- here::here("development", "storethat.sqlite")
 ```
 
 
-The finRes suite is organised along the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes adresses the issue in two complementary packages that work in conjuction with most of the finRes dataset packages.  
+The finRes suite is organised around the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes addresses the issue in two complementary packages that work in conjunction with most of the finRes dataset packages.  
 On the one hand the [pullit](https://bautheac.github.io/pullit/) package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the [storethat](https://bautheac.github.io/storethat/) package works in concert with [fewISOs](https://bautheac.github.io/fewISOs/) and [GICS](https://bautheac.github.io/GICS/) to help store the data retrieved for off-Bloomberg consumption in R.  
 Both pullit and storethat work in tandem with the [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package. The latter plays a central role in finRes where it helps pullit in interacting with Bloomberg via the interface provided by the [Rblpapi](https://github.com/Rblp/Rblpapi) package [@Armstrong_Rblpapi_2018] and storethat in storing the data retrieved.
 
 
 ## pullit
 pullit together with storethat are the two workhorses of the finRes suite.
-Using carefully selected Bloomberg datafields from BBGsymbols in tandem with @Armstrong_Rblpapi_2018's Bloomberg interface pullit provides the R user with easy access to Bloomberg financial data for a number of financial instruments including, at the time of writting, equity and equity-like securities, funds with the category encompassing any money-managing entity, indexes, as well as futures series & term structure individual contracts.  
+Using carefully selected Bloomberg datafields from BBGsymbols in tandem with @Armstrong_Rblpapi_2018's Bloomberg interface pullit provides the R user with easy access to Bloomberg financial data for a number of financial instruments including, at the time of writing, equity and equity-like securities, funds with the category encompassing any money-managing entity, indexes, as well as futures series & term structure individual contracts.  
 
 For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.
 
-```{r `globals`, warnings = F, message = F, eval = F}
+```{r `globals bbg`, warnings = F, message = F, eval = F, echo = F}
 library(pullit); library(lubridate)
-
-end <- Sys.Date() - years(1L); start <- end - years(2L)
+# end <- Sys.Date(); start <- end - years(2L)
+start <- "2016-01-01"; end <- "2017-12-31"
 ```
 
+```{r `globals storethat`, warnings = F, message = F, eval = T}
+library(pullit); library(lubridate)
+
+start <- "2016-01-01"; end <- "2017-12-31"
+```
 
 ### equity
 Equity data comes in three major categories in pullit, market, book and info. For a given corporation market data records stock market activity while book data records business activity in the form of financial statements commonly refered to as 'books' and info refers to qualitative information. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.
 
 #### market
-Retrieve market data from Bloomberg for the Archer-Daniels-Midland (ADM US Equity), Kraft-Heinz (KHC US Equity) and XPO Logistics (XPO US Equity) corporations with:
-```{r `equity market`}
-equity_tickers <- c("ADM US Equity", "KHC US Equity", "XPO US Equity")
+Retrieve market data from Bloomberg for the BP (BP/ LN Equity), Weir group (WEIR LN Equity) and Apple (AAPL US Equity) corporations with:
+```{r `equity market bbg`, eval = F, echo = T}
+equity_tickers <- c('BP/ LN Equity', 'WEIR LN Equity', 'AAPL US Equity')
 
 equity_market <- pull_equity_market(source = "Bloomberg", equity_tickers, start, end, verbose = F)
+equity_market
+```
+
+```{r `equity market storethat`, eval = T, echo = F}
+equity_tickers <- c('BP/ LN Equity', 'WEIR LN Equity', 'AAPL US Equity')
+
+equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, end, verbose = F, file = path)
+equity_market
 ```
 
 #### books
-For financial statements data BBGsymbols replicates the Bloomberg 'financial analysis' monitor (FA <GO>). At the time of writing, this includes balance sheet, cash flow statement, income statement as well as 'key stats' that gathers broad summary figures and 'ratios' that includes popular financial ratios.
+For financial statements data BBGsymbols replicates the Bloomberg 'financial analysis' monitor (FA \<GO\>). At the time of writing, this includes balance sheet, cash flow statement, income statement as well as 'key stats' that gathers broad summary figures and 'ratios' that includes popular financial ratios.
 
 Retrieve the corresponding data for the abovementioned corporations with:  
 
-##### balance sheet
-```{r `equity balance sheet`}
+##### __balance sheet__
+```{r `equity balance sheet bbg`, eval = F, echo = T}
 equity_BS <- pull_equity_book(source = "Bloomberg", book = "balance sheet", equity_tickers, 
                               start, end, verbose = F)
+equity_BS
 ```
-##### cash flow statement
-```{r `equity cash flow statement`}
+
+```{r `equity balance sheet storethat`, eval = T, echo = F}
+equity_BS <- pull_equity_book(source = "storethat", book = "balance sheet", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_BS
+```
+
+##### __cash flow statement__
+```{r `equity cash flow statement bbg`, eval = F, echo = T}
 equity_CF <- pull_equity_book(source = "Bloomberg", book = "cash flow statement", equity_tickers, 
                               start, end, verbose = F)
+equity_CF
 ```
-##### income statement
-```{r `equity income statement`}
+```{r `equity cash flow statement storethat`, eval = T, echo = F}
+equity_CF <- pull_equity_book(source = "storethat", book = "cash flow statement", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_CF
+```
+##### __income statement__
+```{r `equity income statement bbg`, eval = F, echo = T}
 equity_IS <- pull_equity_book(source = "Bloomberg", book = "income statement", equity_tickers, 
                               start, end, verbose = F)
+equity_IS
 ```
-##### key stats
-```{r `equity key stats`}
+```{r `equity income statement storethat`, eval = T, echo = F}
+equity_IS <- pull_equity_book(source = "storethat", book = "income statement", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_IS
+```
+##### __key stats__
+```{r `equity key stats bbg`, eval = F, echo = T}
 equity_KS <- pull_equity_book(source = "Bloomberg", book = "key stats", equity_tickers, 
                               start, end, verbose = F)
+equity_KS
 ```
-##### ratios
-```{r `equity ratios`}
+```{r `equity key stats storethat`, eval = T, echo = F}
+equity_KS <- pull_equity_book(source = "storethat", book = "key stats", equity_tickers, 
+                              start, end, verbose = F, file = path)
+equity_KS
+```
+##### __ratios__
+```{r `equity ratios bbg`, eval = F, echo = T}
 equity_R <- pull_equity_book(source = "Bloomberg", book = "ratios", equity_tickers, 
                              start, end, verbose = F)
+equity_R
+```
+```{r `equity ratios storethat`, eval = T, echo = F}
+equity_R <- pull_equity_book(source = "storethat", book = "ratios", equity_tickers, 
+                             start, end, verbose = F, file = path)
+equity_R
 ```
 
 #### info
 'info' encompasses a range of contemporaneous qualitative information including, but not limited to, firm's name, security type, exchange where the security trades, country of incorporation, etc.
 
 Retrieve the corresponding data for the abovementioned corporations with:
-```{r `equity info`}
+```{r `equity info bbg`, eval = F, echo = T}
 equity_info <- pull_equity_info(source = "Bloomberg", equity_tickers, verbose = F)
+equity_info
 ```
-
+```{r `equity info storethat`, eval = T, echo = F}
+equity_info <- pull_equity_info(source = "storethat", equity_tickers, verbose = F, file = path)
+equity_info
+```
 
 ### fund
 Fund data only comes in two categories, market and info. For a given fund market data records stock market activity while info data records contemporaneous qualitative information that includes a wide range of fund characteristics. Market historical data as well as contemporaneous qualitative data not only allow for an indepth assessment of the fund performance but potentially also the mapping of the performance to fund characteristics. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.  
 
 #### market
-Retrieve market data from Bloomberg for the SPDR S&P 500 ETF Trust (SPY US Equity), the SPDR Gold Shares investment fund (GLD US Equity) and the iShares MSCI Emerging Markets ETF (EEM US Equity) with:
-```{r `fund market BBG`}
-fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+Retrieve market data from Bloomberg for the SPDR S&P 500 ETF Trust (SPY US Equity):
+```{r `fund market bbg`, eval = F, echo = T}
+fund_tickers <- "SPY US Equity"
 
 fund_market <- pull_fund_market(source = "Bloomberg", fund_tickers, start, end, verbose = F)
+fund_market
 ```
 
-```{r `fund market storethat`, echo = F, eval = F}
-fund_tickers <- c("SPY US Equity", "GLD US Equity", "EEM US Equity")
+```{r `fund market storethat`, eval = T, echo = F}
+fund_tickers <- "SPY US Equity"
 
 fund_market <- pull_fund_market(source = "storethat", tickers = fund_tickers, 
-                                start = start, end = end, verbose = F)
+                                start = start, end = end, verbose = F, file = path)
+fund_market
 ```
 
 #### info
 Retrieve the corresponding qualitative data for the abovementioned funds with:
-```{r `fund info`}
+```{r `fund info bbg`, eval = F, echo = T}
 fund_info <- pull_fund_info(source = "Bloomberg", fund_tickers, verbose = F)
+fund_info
 ```
-
+```{r `fund info storethat`, eval = T, echo = F}
+fund_info <- pull_fund_info(source = "storethat", fund_tickers, verbose = F, file = path)
+fund_info
+```
 
 ### futures
 Futures data comes in three major categories in pullit, market, CFTC and info. For a given futures series market data records futures market price activity while CFTC data records market positions. 'info' on the other hand records contemporaneous qualitative information for the corresponding futures series, including but not limited to series name, term structure length, contract size, contract unit, etc. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.
@@ -115,79 +174,93 @@ Futures data comes in three major categories in pullit, market, CFTC and info. F
 #### market
 pullit helps retrieving both term structure as well as aggregated market data for futures. Term structure data records market activity for individual futures term structure contracts while aggregated data records market activity measures that are aggregated over the whole term structure for a particular futures series.
 
-##### term structure
-Retrieve market data from Bloomberg for the five first term structure contracts on the Corn - #2-yellow (C A Comdty), Eurodollar (EDA Comdty) and S&P500 - e-mini (ESA Index) futures series where the futures chains are constructed by rolling on liquidity (with active contract: "A") with no roll adjustment (none: "N") using:
-```{r `futures term structure BGG`}
-futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+##### __term structure__
+Retrieve market data from Bloomberg for the five first term structure contracts on the Corn - #2-yellow (C A Comdty) and silver (SIA Comdty) futures series where the futures chains are constructed by rolling on liquidity (with active contract: "A") with no roll adjustment (none: "N") using:
+```{r `futures term structure bbg`, echo = T, eval = F}
+futures_tickers <- c("C A Comdty", "SIA Comdty")
 
 futures_TS <- pull_futures_market(source = "Bloomberg", type = "term structure", 
                                   active_contract_tickers = futures_tickers, 
                                   start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
                                   roll_months = 0L, roll_adjustment = "N", verbose = F)
+futures_TS
 ```
 
-```{r `futures term structure storethat`, echo = F, eval = F}
-futures_tickers <- c("C A Comdty", "EDA Comdty", "ESA Index")
+```{r `futures term structure storethat`, echo = F, eval = T}
+futures_tickers <- c("C A Comdty", "SIA Comdty")
 
 futures_TS <- pull_futures_market(source = "storethat", type = "term structure", 
                                   active_contract_tickers = futures_tickers, 
                                   start, end, TS_positions = 1L:5L, roll_type = "A", roll_days = 0L, 
-                                  roll_months = 0L, roll_adjustment = "N", verbose = F)
+                                  roll_months = 0L, roll_adjustment = "N", verbose = F, file = path)
+futures_TS
 ```
 
-##### aggregate
+##### __aggregate__
 Retrieve the corresponding aggregated futures market data with:
-```{r `futures aggregated`}
+```{r `futures aggregated bbg`, echo = T, eval = F}
 futures_agg <- pull_futures_market(source = "Bloomberg", type = "aggregate", 
                                    active_contract_tickers = futures_tickers, start, end, verbose = F)
+futures_agg
+```
+```{r `futures aggregated storethat`, echo = F, eval = T}
+futures_agg <- pull_futures_market(source = "storethat", type = "aggregate", 
+                                   active_contract_tickers = futures_tickers, start, end, verbose = F, file = path)
+futures_agg
 ```
 
 #### CFTC
 pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the 'fields' and '' datasets in BBGsymbols for a details.
 
 Retrieve the corresponding futures market position data with:
-```{r `futures CFTC`}
+```{r `futures CFTC bbg`, echo = T, eval = F}
 futures_CFTC <- pull_futures_CFTC(source = "Bloomberg", active_contract_tickers = futures_tickers, 
                                   start, end, verbose = F)
 ```
-
+```{r `futures CFTC storethat`, echo = F, eval = T}
+futures_CFTC <- pull_futures_CFTC(source = "storethat", active_contract_tickers = futures_tickers, 
+                                  start, end, verbose = F, file = path)
+```
 
 #### info
 'info' encompasses a range of contemporaneous qualitative information on the underlying futures series including, but not limited to, name for the series' underlying, trading exchange, term structure length, contract size, etc.
 
 Retrieve the corresponding data for the abovementioned futures series with:
-```{r `futures info`}
+```{r `futures info bbg`, echo = T, eval = F}
 futures_info <- pull_futures_info(source = "Bloomberg", futures_tickers, verbose = F)
+```
+```{r `futures info storethat`, echo = F, eval = T}
+futures_info <- pull_futures_info(source = "storethat", futures_tickers, verbose = F, file = path)
+futures_info
 ```
 
 
-
 ## accessors
-The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formaly using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
+The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formally using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
 
-```{r `futures show`, eval = F}
+```{r `futures show`}
 futures_TS
 ```
 
 Access each slot using the appropriate accessor:
-```{r `futures get_tickers`, eval = F}
-get_active_contract_tickers(futures_TS)
+```{r `futures get_tickers`}
+tickers <- get_active_contract_tickers(futures_TS)
+tickers
 ```
 
-```{r `futures get_fields`, eval = F}
-get_fields(futures_TS)
+```{r `futures get_fields`}
+fields <- get_fields(futures_TS)
+head(fields)
 ```
 
-```{r `futures get_data`, eval = F}
-pullit::get_data(futures_TS)
+```{r `futures get_data`}
+data <- pullit::get_data(futures_TS)
+data
 ```
 
-```{r `futures get_call`, eval = F}
-pullit::get_call(futures_TS)
-```
-
-```{r `futures get_periods`, eval = F}
-get_periods(futures_TS)
+```{r `futures get_call`}
+call <- pullit::get_call(futures_TS)
+call
 ```
 
 
@@ -195,28 +268,33 @@ get_periods(futures_TS)
 
 All the objects above can be stored in a bespoke database for later off-Bloomberg consumption. The storethat package makes the process seamless by providing befitted storing methods:
 
-```{r `storethat store`}
+```{r `storethat store`, eval = F}
 library(storethat)
 
 db_create()
 
-db_store(object = futures_TS, file = "~/storethat.sqlite", verbose = F)
-db_store(object = fund_market, file = "~/storethat.sqlite", verbose = F)
+path = "~/storethat.sqlite"
+
+db_store(object = futures_TS, file = path, verbose = F)
+db_store(object = fund_market, file = path, verbose = F)
 ```
 
 Every function above has an equivalent for retrieving data from a storethat database that can be accessed by swapping the 'BBG' prefix for 'storethat'; i.e. 'pull_futures_market' becomes 'pull_futures_market'. Function parameters are identical for both data sources and the returned objects have alike characteristics:
 
 ```{r `storethat retrieve`}
-equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, end, verbose = F)
+equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, 
+                                    end, verbose = F, file = path)
+equity_market
 ```
 
 Updating a storethat database is equally straightforward with pullit. Update the equity content of the database with: 
-```{r `storethat update all`}
-storethat_update(instrument = "equity")
+```{r `storethat update all`, eval = F}
+storethat_update(instrument = "equity", file = path)
 ```
+The function pull data from Bloomberg for all the equity tickers and fields already present in the storethat database and updates the corresponding series to the current system date.
 
 Narrower updates are also allowed:
-```{r `storethat update some`}
+```{r `storethat update some`, eval = F}
 storethat_update(instrument = "equity", book = "market")
 ```
 
@@ -226,7 +304,7 @@ The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRe
 
 ### futures term structure
 Plot a futures series term structure dynamics with:
-```{r `plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T, eval = F}
+```{r `plot term structure`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T}
 library(plotit)
 
 plot(object = futures_TS, ticker = "C A Comdty")
@@ -234,8 +312,8 @@ plot(object = futures_TS, ticker = "C A Comdty")
 
 ### fund market
 Plot historical fund performance with:
-```{r `plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T, eval = F}
-plot(object = fund_market, ticker = "GLD US Equity")
+```{r `plot performance`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T}
+plot(object = fund_market, ticker = "SPY US Equity")
 ```
   
   

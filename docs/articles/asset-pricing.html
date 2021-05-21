@@ -65,7 +65,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/bautheac/finRes/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -79,7 +79,8 @@
 
       
 
-      </header><script src="asset-pricing_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="asset-pricing_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="asset-pricing_files/htmlwidgets-1.5.2/htmlwidgets.js"></script><script src="asset-pricing_files/jquery-1.11.1/jquery.min.js"></script><link href="asset-pricing_files/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="asset-pricing_files/dygraphs-1.1.1/dygraph-combined.js"></script><script src="asset-pricing_files/dygraphs-1.1.1/shapes.js"></script><script src="asset-pricing_files/moment-2.8.4/moment.js"></script><script src="asset-pricing_files/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="asset-pricing_files/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="asset-pricing_files/dygraphs-binding-1.1.1.6/dygraphs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>asset pricing</h1>
@@ -98,7 +99,7 @@
 <div id="ffresearch" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ffresearch" class="anchor"></a>FFresearch</h2>
-<p>On the one hand the <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> package provides data on classic asset pricing factors and a number of sort portfolios. The data is pulled directly from Kenneth French’s <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a> and tidied up for seamless consumption in R.</p>
+<p>The <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> package provides data on classic asset pricing factors and a number of sort portfolios. The data is pulled directly from Kenneth French’s <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a> and tidied up for seamless consumption in R.</p>
 <div id="portfolios" class="section level3">
 <h3 class="hasAnchor">
 <a href="#portfolios" class="anchor"></a>portfolios</h3>
@@ -106,69 +107,199 @@
 <h4 class="hasAnchor">
 <a href="#univariate" class="anchor"></a>univariate</h4>
 <p>The ‘portfolios_univariate’ dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:</p>
+<pre><code>#&gt;    region frequency         sort variable dividend weights portfolio  field
+#&gt; 1:     US       day market capitalization        Y   value     Dec 2 return
+#&gt; 2:     US       day market capitalization        Y   value     Dec 2 return
+#&gt; 3:     US       day market capitalization        Y   value     Dec 2 return
+#&gt; 4:     US       day market capitalization        Y   value     Dec 2 return
+#&gt; 5:     US       day market capitalization        Y   value     Dec 2 return
+#&gt; 6:     US       day market capitalization        Y   value     Dec 2 return
+#&gt;      period value
+#&gt; 1: 19880104  2.31
+#&gt; 2: 19880105  2.36
+#&gt; 3: 19880106  0.76
+#&gt; 4: 19880107  1.05
+#&gt; 5: 19880108 -2.47
+#&gt; 6: 19880111 -1.12</code></pre>
 </div>
 <div id="bivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#bivariate" class="anchor"></a>bivariate</h4>
 <p>The ‘portfolios_bivariate’ dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:</p>
+<pre><code>#&gt;    region frequency       sort variable 1 sort variable 2 dividend weights
+#&gt; 1:     US       day market capitalization     book/market        Y   value
+#&gt; 2:     US       day market capitalization     book/market        Y   value
+#&gt; 3:     US       day market capitalization     book/market        Y   value
+#&gt; 4:     US       day market capitalization     book/market        Y   value
+#&gt; 5:     US       day market capitalization     book/market        Y   value
+#&gt; 6:     US       day market capitalization     book/market        Y   value
+#&gt;    portfolio  field   period value
+#&gt; 1:  BIG HiBM return 19980102 -0.30
+#&gt; 2:  BIG HiBM return 19980102 -0.39
+#&gt; 3:  BIG HiBM return 19980102 -0.34
+#&gt; 4:  BIG HiBM return 19980105  0.22
+#&gt; 5:  BIG HiBM return 19980105  0.53
+#&gt; 6:  BIG HiBM return 19980105  0.73</code></pre>
 </div>
 <div id="trivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#trivariate" class="anchor"></a>trivariate</h4>
 <p>The ‘portfolios_trivariate’ dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment:</p>
+<pre><code>#&gt;    region frequency       sort variable 1 sort variable 2
+#&gt; 1:     US     month market capitalization     book/market
+#&gt; 2:     US     month market capitalization     book/market
+#&gt; 3:     US     month market capitalization     book/market
+#&gt; 4:     US     month market capitalization     book/market
+#&gt; 5:     US     month market capitalization     book/market
+#&gt; 6:     US     month market capitalization     book/market
+#&gt;            sort variable 3 dividend weights     portfolio  field period  value
+#&gt; 1: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429
+#&gt; 2: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429
+#&gt; 3: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429
+#&gt; 4: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429
+#&gt; 5: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429
+#&gt; 6: operating profitability        Y   value BIG HiBM.HiOP return 199801 3.3429</code></pre>
 </div>
 <div id="industries" class="section level4">
 <h4 class="hasAnchor">
 <a href="#industries" class="anchor"></a>industries</h4>
 <p>The ‘portfolios_industries’ dataset provides various feature time series for Fama/French industry portfolios <span class="citation">(Fama and French 1997)</span>:</p>
+<pre><code>#&gt;    region frequency dividend weights portfolio  field period value
+#&gt; 1:     US     month        Y   value      Aero return 199801  1.31
+#&gt; 2:     US     month        Y   value      Aero return 199801  1.31
+#&gt; 3:     US     month        Y   value      Aero return 199801  1.31
+#&gt; 4:     US     month        Y   value      Aero return 199801  1.31
+#&gt; 5:     US     month        Y   value      Aero return 199801  1.31
+#&gt; 6:     US     month        Y   value      Aero return 199801  1.31</code></pre>
 </div>
 </div>
 <div id="factors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factors" class="anchor"></a>factors</h3>
-<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models extremely popular to the asset pricing enthousiasts:</p>
+<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
+<pre><code>#&gt;    region frequency factor period value
+#&gt; 1:     US     month    CMA 198801  2.09
+#&gt; 2:     US     month    CMA 198802 -0.11
+#&gt; 3:     US     month    CMA 198803  1.91
+#&gt; 4:     US     month    CMA 198804  1.90
+#&gt; 5:     US     month    CMA 198805  0.38
+#&gt; 6:     US     month    CMA 198806 -3.25</code></pre>
 </div>
 <div id="variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#variables" class="anchor"></a>variables</h3>
-<p>The ‘variables’ dataset is a helper dataset that provides details, including contruction methods, for the variables used to construct the portfolios and asset pricing factors above:</p>
+<p>The ‘variables’ dataset is a helper dataset that provides details, including construction methods, for the variables used to construct the portfolios and asset pricing factors above:</p>
+<pre><code>#&gt; # A tibble: 6 x 3
+#&gt;   name              symbol description                                          
+#&gt;   &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;                                                
+#&gt; 1 market capitaliz… ME     Market equity (size) is price times shares outstandi…
+#&gt; 2 book value        BE     Book equity is constructed from Compustat data or co…
+#&gt; 3 book/market       ME/BE  The book-to-market ratio used to form portfolios in …
+#&gt; 4 operating profit… OP     The operating profitability ratio used to form portf…
+#&gt; 5 investment        INV    The investment ratio used to form portfolios in June…
+#&gt; 6 earnings/price    E/P    Earnings is total earnings before extraordinary item…</code></pre>
 </div>
 <div id="breakpoints" class="section level3">
 <h3 class="hasAnchor">
 <a href="#breakpoints" class="anchor"></a>breakpoints</h3>
 <p>The ‘breakpoints’ dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned:</p>
+<pre><code>#&gt;    variable frequency percentile period value
+#&gt; 1:     size     month # positive 199801  1816
+#&gt; 2:     size     month # positive 199802  1817
+#&gt; 3:     size     month # positive 199803  1819
+#&gt; 4:     size     month # positive 199804  1820
+#&gt; 5:     size     month # positive 199805  1826
+#&gt; 6:     size     month # positive 199806  1823</code></pre>
+</div>
+</div>
+<div id="factors-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#factors-1" class="anchor"></a>factors</h2>
+<p>Meanwhile, the <a href="https://bautheac.github.io/factors/">factors</a> package provides various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors’ website. The current version includes the factor data from Kenneth’s French, also available in the FFresearch package described above, as well as factor data from Robert F. Stambaugh.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/factors">factors</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Fama &amp; French"</span>, <span class="st">"Stambaugh et al"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"factors"</span><span class="op">)</span></code></pre></div>
+<div id="fama-french" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fama-french" class="anchor"></a>Fama &amp; French</h3>
+<p>The ‘Fama &amp; French’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
+<pre><code>#&gt;    region frequency factor period value
+#&gt; 1:     US     month    CMA 196801  6.45
+#&gt; 2:     US     month    CMA 196802  2.48
+#&gt; 3:     US     month    CMA 196803 -1.15
+#&gt; 4:     US     month    CMA 196804 -3.66
+#&gt; 5:     US     month    CMA 196805 -1.85
+#&gt; 6:     US     month    CMA 196806  2.65</code></pre>
+</div>
+<div id="stambaugh-et-al" class="section level3">
+<h3 class="hasAnchor">
+<a href="#stambaugh-et-al" class="anchor"></a>Stambaugh et al</h3>
+<p>The ‘Stambaugh et al’ dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
+<pre><code>#&gt;    frequency               factor period       value
+#&gt; 1:     month non-traded liquidity 196208  0.00437073
+#&gt; 2:     month non-traded liquidity 196209  0.01230259
+#&gt; 3:     month non-traded liquidity 196210 -0.07407571
+#&gt; 4:     month non-traded liquidity 196211  0.02923186
+#&gt; 5:     month non-traded liquidity 196212  0.01592809
+#&gt; 6:     month non-traded liquidity 196301  0.01013548</code></pre>
 </div>
 </div>
 <div id="factorem" class="section level2">
 <h2 class="hasAnchor">
 <a href="#factorem" class="anchor"></a>factor’em!</h2>
-<p>On the other hand the <a href="https://bautheac.github.io/factorem/">factorem</a> package provides tools for outright factor construction from data retrieve with pullit facilitating asset pricing research and factor investment backtesting. The returned objects carry corresponding return &amp; positions time series and a number of methods help with performance analysis. The package is organised around a workhorse function and a series of wrappers for asset pricing factors popular in the literature. The latter functions get raw financial data retrieved from Bloomberg using the <a href="https://bautheac.github.io/pullit/">pullit</a> package and return S4 objects that carry data belonging to the corresponding factor including positions and return time series.</p>
+<p><a href="https://bautheac.github.io/factorem/">factorem</a> on the other hand provides tools for outright factor construction from data retrieve with pullit facilitating asset pricing research and factor investment backtesting. The returned objects carry corresponding return &amp; positions time series and a number of methods help with performance analysis. The package is organised around a workhorse function and a series of wrappers for asset pricing factors popular in the literature. The latter functions get raw financial data retrieved from Bloomberg using the <a href="https://bautheac.github.io/pullit/">pullit</a> package and return S4 objects that carry data belonging to the corresponding factor including positions and return time series.</p>
 <div id="factorem-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factorem-1" class="anchor"></a>factorem</h3>
-<p>The factorem function is the workhorse function in <a href="https://bautheac.github.io/factorem/">factorem</a>. From raw financial data and a set of parameter specifications it contruct a complete backtest of the correpsonding asset pricing factor and returns the whole time series for the factor positions and return. For the record the S4 object returned by the function also contains the original raw financial and the set of parameters supplied as well as the original call to the function. The raw financial data should be supplied in a format similar to that of historical datasets returned returned by historical data query functions in pullit:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/pullit">pullit</a></span>); <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://lubridate.tidyverse.org">lubridate</a></span>)
+<p>The factorem function is the workhorse function in <a href="https://bautheac.github.io/factorem/">factorem</a>. From raw financial data and a set of parameter specifications it construct a complete backtest of the corresponding asset pricing factor and returns the whole time series for the factor positions and return. For the record the S4 object returned by the function also contains the original raw financial and the set of parameters supplied as well as the original call to the function. The raw financial data should be supplied in a format similar to that of historical datasets returned returned by historical data query functions in pullit:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/pullit">pullit</a></span><span class="op">)</span>; <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span>
 
-<span class="kw">tickers_equity</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"ADM US Equity"</span>, <span class="st">"CIVI US Equity"</span>, <span class="st">"GBX US Equity"</span>, <span class="st">"LIND US Equity"</span>, 
-                    <span class="st">"SERV US Equity"</span>, <span class="st">"AE US Equity"</span>, <span class="st">"CLGX US Equity"</span>, <span class="st">"GDI US Equity"</span>, 
-                    <span class="st">"LZB US Equity"</span>, <span class="st">"SGA US Equity"</span>, <span class="st">"AGCO US Equity"</span>, <span class="st">"CLR US Equity"</span>, 
+<span class="va">tickers_equity</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LZB US Equity"</span>, <span class="st">"SGA US Equity"</span>, <span class="st">"AGCO US Equity"</span>, <span class="st">"CLR US Equity"</span>, 
                     <span class="st">"GHC US Equity"</span>, <span class="st">"MAN US Equity"</span>, <span class="st">"SITE US Equity"</span>, <span class="st">"AJRD US Equity"</span>, 
-                    <span class="st">"COMM US Equity"</span>, <span class="st">"GME US Equity"</span>, <span class="st">"MEI US Equity"</span>, <span class="st">"SMP US Equity"</span>)
-<span class="kw">end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span>(); <span class="kw">start</span> <span class="op">&lt;-</span> <span class="kw">end</span> <span class="op">-</span> <span class="fu"><a href="http://lubridate.tidyverse.org/reference/period.html">years</a></span>(<span class="fl">2L</span>)
+                    <span class="st">"COMM US Equity"</span>, <span class="st">"GME US Equity"</span>, <span class="st">"MEI US Equity"</span>, <span class="st">"SMP US Equity"</span><span class="op">)</span>
+<span class="va">start</span> <span class="op">&lt;-</span> <span class="st">"2016-01-01"</span>; <span class="va">end</span> <span class="op">&lt;-</span> <span class="st">"2017-12-31"</span>
 
-<span class="kw">equity_data_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_equity_market.html">pull_equity_market</a></span>(source = <span class="st">"Bloomberg"</span>, <span class="kw">tickers_equity</span>, <span class="kw">start</span>, <span class="kw">end</span>, verbose = <span class="kw">F</span>)
+<span class="va">equity_data_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_equity_market.html">pull_equity_market</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"Bloomberg"</span>, <span class="va">tickers_equity</span>, <span class="va">start</span>, <span class="va">end</span>, verbose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
-<span class="fu"><a href="https://bautheac.github.io/pullit/reference/get_data-methods.html">get_data</a></span>(<span class="kw">equity_data_market</span>)
-</pre></div>
+<span class="fu"><a href="https://bautheac.github.io/pullit/reference/get_data-methods.html">get_data</a></span><span class="op">(</span><span class="va">equity_data_market</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt;                ticker       field       date      value
+#&gt;     1: AGCO US Equity CUR_MKT_CAP 2016-11-21   4271.793
+#&gt;     2: AGCO US Equity CUR_MKT_CAP 2016-11-22   4360.889
+#&gt;     3: AGCO US Equity CUR_MKT_CAP 2016-11-23   4507.777
+#&gt;     4: AGCO US Equity CUR_MKT_CAP 2016-11-25   4535.067
+#&gt;     5: AGCO US Equity CUR_MKT_CAP 2016-11-28   4518.211
+#&gt;    ---                                                 
+#&gt; 33466:  SMP US Equity   PX_VOLUME 2017-12-22  89626.000
+#&gt; 33467:  SMP US Equity   PX_VOLUME 2017-12-26  48762.000
+#&gt; 33468:  SMP US Equity   PX_VOLUME 2017-12-27 119607.000
+#&gt; 33469:  SMP US Equity   PX_VOLUME 2017-12-28  81731.000
+#&gt; 33470:  SMP US Equity   PX_VOLUME 2017-12-29 153615.000</code></pre>
 <p>From there, construct a bespoke asset pricing factor using the factorem function. I.e., an equity momentum factor:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/factorem">factorem</a></span>)
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/factorem">factorem</a></span><span class="op">)</span>
 
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">factor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/factorem.html">factorem</a></span>(name = <span class="st">"factorem"</span>, data = <span class="kw">pullit</span>::<span class="fu"><a href="https://bautheac.github.io/pullit/reference/get_data-methods.html">get_data</a></span>(<span class="kw">equity_data_market</span>), 
-                   ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+
+<span class="va">factor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/factorem.html">factorem</a></span><span class="op">(</span>
+  name <span class="op">=</span> <span class="st">"momentum"</span>, data <span class="op">=</span> <span class="fu">pullit</span><span class="fu">::</span><span class="fu"><a href="https://bautheac.github.io/pullit/reference/get_data-methods.html">get_data</a></span><span class="op">(</span><span class="va">equity_data_market</span><span class="op">)</span>,
+  ranking_period <span class="op">=</span> <span class="va">ranking_period</span>
+  <span class="op">)</span>
+<span class="va">factor</span>
+<span class="co">#&gt; AssetPricingFactor</span>
+<span class="co">#&gt;   name: momentum factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     name:         momentum</span>
+<span class="co">#&gt;     update frequency:     month</span>
+<span class="co">#&gt;     return frequency:     day</span>
+<span class="co">#&gt;     price variable:   PX_LAST</span>
+<span class="co">#&gt;     sort variable:    PX_LAST</span>
+<span class="co">#&gt;     sort levels:  TRUE</span>
+<span class="co">#&gt;     weighted:         TRUE</span>
+<span class="co">#&gt;     ranking period:   1</span>
+<span class="co">#&gt;     long threshold:   0.5</span>
+<span class="co">#&gt;     short threshold:  0.5</span></code></pre></div>
 </div>
 <div id="wrappers" class="section level3">
 <h3 class="hasAnchor">
@@ -179,99 +310,203 @@
 <a href="#equity" class="anchor"></a>equity</h4>
 <div id="market" class="section level5">
 <h5 class="hasAnchor">
-<a href="#market" class="anchor"></a>market</h5>
-<p>The equity market factor encompasses the entire cross-section of a defined investment opportunity set with, at the time of writing, equal individual position weights. It came into sight in the 1960s for the central role it plays in the Capital Asset Pricing Model <span class="citation">(Treynor 1961a, 1961b; Sharpe 1964, 1964; Mossin 1966; Lintner 1975)</span> and remains the most popular factor to date in the literature when it comes to explaining the cross-section of equity returns:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">equity_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/market_factor-methods.html">market_factor</a></span>(data = <span class="kw">equity_data_market</span>)
-</pre></div>
+<a href="#market" class="anchor"></a><strong>market</strong>
+</h5>
+<p>The equity market factor encompasses the entire cross-section of a defined investment opportunity set with, at the time of writing, equal individual position weights. It came into sight in the 1960s for the central role it plays in the Capital Asset Pricing Model <span class="citation">(Treynor 1961a, 1961b; Sharpe 1964; Mossin 1966; Lintner 1975)</span> and remains the most popular factor to date in the literature when it comes to explaining the cross-section of equity returns:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">equity_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/market_factor-methods.html">market_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">equity_data_market</span><span class="op">)</span>
+<span class="va">equity_market</span>
+<span class="co">#&gt; MarketFactor</span>
+<span class="co">#&gt;   name: equity market factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     return frequency:     month</span>
+<span class="co">#&gt;     long:         TRUE</span></code></pre></div>
 </div>
 <div id="momentum" class="section level5">
 <h5 class="hasAnchor">
-<a href="#momentum" class="anchor"></a>momentum</h5>
-<p>The equity momentum factor is another popular factor in the asset pricing literature. After being first introduced in <span class="citation">Carhart (1997)</span> it eventually drew the field leaders’ attention in <span class="citation">Fama and French (2012)</span>. The equity momentum sorts on prior returns over a defined ranking period:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">equity_momentum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/momentum_factor-methods.html">momentum_factor</a></span>(data = <span class="kw">equity_data_market</span>, ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<a href="#momentum" class="anchor"></a><strong>momentum</strong>
+</h5>
+<p>The equity momentum factor is another popular factor in the asset pricing literature. After being first introduced in <span class="citation">Carhart (1997)</span> it eventually drew the field leaders’ attention in <span class="citation">Fama and French (2012)</span> The equity momentum sorts on prior returns over a defined ranking period:</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">equity_momentum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/momentum_factor-methods.html">momentum_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">equity_data_market</span>, ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">equity_momentum</span>
+<span class="co">#&gt; MomentumFactor</span>
+<span class="co">#&gt;   name: equity momentum factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     name:         equity momentum</span>
+<span class="co">#&gt;     update frequency:     week</span>
+<span class="co">#&gt;     return frequency:     day</span>
+<span class="co">#&gt;     price variable:   PX_LAST</span>
+<span class="co">#&gt;     sort variable:    PX_LAST</span>
+<span class="co">#&gt;     sort levels:  FALSE</span>
+<span class="co">#&gt;     weighted:         FALSE</span>
+<span class="co">#&gt;     ranking period:   1</span>
+<span class="co">#&gt;     long threshold:   0.5</span>
+<span class="co">#&gt;     short threshold:  0.5</span></code></pre></div>
 </div>
 </div>
 <div id="futures" class="section level4">
 <h4 class="hasAnchor">
 <a href="#futures" class="anchor"></a>futures</h4>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">tickers_futures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"C A Comdty"</span>, <span class="st">"CCA Comdty"</span>, <span class="st">"CLA Comdty"</span>, <span class="st">"CTA Comdty"</span>, <span class="st">"FCA Comdty"</span>, 
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">tickers_futures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"C A Comdty"</span>, <span class="st">"CCA Comdty"</span>, <span class="st">"CLA Comdty"</span>, <span class="st">"CTA Comdty"</span>, <span class="st">"FCA Comdty"</span>, 
                      <span class="st">"GCA Comdty"</span>, <span class="st">"HGA Comdty"</span>, <span class="st">"HOA Comdty"</span>, <span class="st">"KCA Comdty"</span>, <span class="st">"KWA Comdty"</span>, 
                      <span class="st">"LBA Comdty"</span>, <span class="st">"LCA Comdty"</span>, <span class="st">"LHA Comdty"</span>, <span class="st">"NGA Comdty"</span>, <span class="st">"O A Comdty"</span>, 
-                     <span class="st">"PAA Comdty"</span>, <span class="st">"S A Comdty"</span>, <span class="st">"SIA Comdty"</span>, <span class="st">"W A Comdty"</span>, <span class="st">"XBA Comdty"</span>)
+                     <span class="st">"PAA Comdty"</span>, <span class="st">"S A Comdty"</span>, <span class="st">"SIA Comdty"</span>, <span class="st">"W A Comdty"</span>, <span class="st">"XBA Comdty"</span><span class="op">)</span>
 
-<span class="kw">futures_data_TS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_market.html">pull_futures_market</a></span>(source = <span class="st">"Bloomberg"</span>, type = <span class="st">"term structure"</span>, <span class="kw">tickers_futures</span>, 
-                                       <span class="kw">start</span>, <span class="kw">end</span>, verbose = <span class="kw">F</span>)
+<span class="va">futures_data_TS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_market.html">pull_futures_market</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"Bloomberg"</span>, type <span class="op">=</span> <span class="st">"term structure"</span>, <span class="va">tickers_futures</span>, 
+                                       <span class="va">start</span>, <span class="va">end</span>, verbose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_data-methods.html">get_data</a></span>(<span class="kw">futures_data_TS</span>)
-</pre></div>
+<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_data-methods.html">get_data</a></span><span class="op">(</span><span class="va">futures_data_TS</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt;                      ticker     field       date  value
+#&gt;      1: C 1 A:00_0_N Comdty  OPEN_INT 2016-01-04 727298
+#&gt;      2: C 1 A:00_0_N Comdty  OPEN_INT 2016-01-05 730600
+#&gt;      3: C 1 A:00_0_N Comdty  OPEN_INT 2016-01-06 727995
+#&gt;      4: C 1 A:00_0_N Comdty  OPEN_INT 2016-01-07 727244
+#&gt;      5: C 1 A:00_0_N Comdty  OPEN_INT 2016-01-08 719406
+#&gt;     ---                                                
+#&gt; 239938: W 5 A:00_0_N Comdty PX_VOLUME 2017-12-22   4135
+#&gt; 239939: W 5 A:00_0_N Comdty PX_VOLUME 2017-12-26   2339
+#&gt; 239940: W 5 A:00_0_N Comdty PX_VOLUME 2017-12-27   1129
+#&gt; 239941: W 5 A:00_0_N Comdty PX_VOLUME 2017-12-28   1657
+#&gt; 239942: W 5 A:00_0_N Comdty PX_VOLUME 2017-12-29   1617</code></pre>
 <div id="market-1" class="section level5">
 <h5 class="hasAnchor">
-<a href="#market-1" class="anchor"></a>market</h5>
+<a href="#market-1" class="anchor"></a><strong>market</strong>
+</h5>
 <p>factorem provides futures equivalent for the factors above including a futures market factor that, at the time of writing, takes equally weighted positions on the nearby front contract of the commodity futures series provided:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">futures_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/market_factor-methods.html">market_factor</a></span>(data = <span class="kw">futures_data_TS</span>)
-</pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">futures_market</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/market_factor-methods.html">market_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">futures_data_TS</span><span class="op">)</span>
+<span class="va">futures_market</span>
+<span class="co">#&gt; MarketFactor</span>
+<span class="co">#&gt;   name: futures nearby market factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     return frequency:     month</span>
+<span class="co">#&gt;     long:         TRUE</span></code></pre></div>
 </div>
 <div id="momentum-1" class="section level5">
 <h5 class="hasAnchor">
-<a href="#momentum-1" class="anchor"></a>momentum</h5>
+<a href="#momentum-1" class="anchor"></a><strong>momentum</strong>
+</h5>
 <p>The momentum factor is also popular in the futures asset pricing literature in particular in the context of commodity markets <span class="citation">(Miffre and Rallis 2007)</span>. As does its equity equivalent, it sorts on prior returns:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">futures_momentum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/momentum_factor-methods.html">momentum_factor</a></span>(data = <span class="kw">futures_data_TS</span>, ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+<span class="va">futures_momentum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/momentum_factor-methods.html">momentum_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">futures_data_TS</span>, ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">futures_momentum</span>
+<span class="co">#&gt; MomentumFactor</span>
+<span class="co">#&gt;   name: futures momentum factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     name:         futures momentum</span>
+<span class="co">#&gt;     update frequency:     week</span>
+<span class="co">#&gt;     return frequency:     day</span>
+<span class="co">#&gt;     price variable:   PX_LAST</span>
+<span class="co">#&gt;     sort variable:    PX_LAST</span>
+<span class="co">#&gt;     sort levels:  FALSE</span>
+<span class="co">#&gt;     weighted:         FALSE</span>
+<span class="co">#&gt;     ranking period:   1</span>
+<span class="co">#&gt;     long threshold:   0.5</span>
+<span class="co">#&gt;     short threshold:  0.5</span></code></pre></div>
 </div>
 <div id="commercial-hedging-pressure-chp" class="section level5">
 <h5 class="hasAnchor">
-<a href="#commercial-hedging-pressure-chp" class="anchor"></a>commercial hedging pressure (CHP)</h5>
+<a href="#commercial-hedging-pressure-chp" class="anchor"></a><strong>commercial hedging pressure</strong> (<strong>CHP</strong>)</h5>
 <p>The futures commercial hedging pressure factor is based on the well-known hedging pressure-based theory <span class="citation">(Anderson and Danthine 1983; Chang 1985; Cootner 1960; Dusak 1973; Hicks 1939; Hirshleifer 1988, 1989, 1990; Kolb 1992; Keynes 1930)</span> which postulates that futures prices for a given commodity are inversely related to the extent that commercial hedgers are short or long and the mimicking portfolio here aims at capturing the impact of hedging pressure as a systemic factor <span class="citation">(Basu and Miffre 2013)</span>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="kw">futures_data_CFTC</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_CFTC.html">pull_futures_CFTC</a></span>(source = <span class="st">"Bloomberg"</span>, <span class="kw">tickers_futures</span>, <span class="kw">start</span>, <span class="kw">end</span>, verbose = <span class="kw">F</span>)
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">futures_data_CFTC</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_CFTC.html">pull_futures_CFTC</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"Bloomberg"</span>, <span class="va">tickers_futures</span>, <span class="va">start</span>, <span class="va">end</span>, verbose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">futures_CHP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/CHP_factor-methods.html">CHP_factor</a></span>(price_data = <span class="kw">futures_data_TS</span>, CHP_data = <span class="kw">futures_data_CFTC</span>, 
-                          ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+<span class="va">futures_CHP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/CHP_factor-methods.html">CHP_factor</a></span><span class="op">(</span>price_data <span class="op">=</span> <span class="va">futures_data_TS</span>, CHP_data <span class="op">=</span> <span class="va">futures_data_CFTC</span>, 
+                          ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">futures_CHP</span></code></pre></div>
+<pre><code>#&gt; CHPFactor
+#&gt;   name: CHP factor  
+#&gt;   parameters
+#&gt;     name:         CHP
+#&gt;     update frequency:     month
+#&gt;     return frequency:     day
+#&gt;     price variable:   PX_LAST
+#&gt;     sort variable:    inverse CHP
+#&gt;     sort levels:  TRUE
+#&gt;     weighted:         FALSE
+#&gt;     ranking period:   1
+#&gt;     long threshold:   0.5
+#&gt;     short threshold:  0.5</code></pre>
 </div>
 <div id="open-interest" class="section level5">
 <h5 class="hasAnchor">
-<a href="#open-interest" class="anchor"></a>open interest</h5>
+<a href="#open-interest" class="anchor"></a><strong>open interest</strong>
+</h5>
 <p>The open interest factor relates to futures market liquidity and is popular in the literature, in particular in the context of commodity markets research <span class="citation">(Hong and Yogo 2012)</span>. It comes in two flavours in factorem, nearby and aggregate.</p>
 <div id="nearby" class="section level6">
-<h6>nearby</h6>
+<h6><strong>nearby</strong></h6>
 <p>The nearby open interest factor is concerned with liquidity at the very front end of the term structure where it sort on nearby front contract’s open interest:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">futures_OI_nearby</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/OI_nearby_factor-methods.html">OI_nearby_factor</a></span>(data = <span class="kw">futures_data_TS</span>, ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+<span class="va">futures_OI_nearby</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/OI_nearby_factor-methods.html">OI_nearby_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">futures_data_TS</span>, ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">futures_OI_nearby</span>
+<span class="co">#&gt; OIFactor</span>
+<span class="co">#&gt;   name: nearby OI factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     name:         nearby OI</span>
+<span class="co">#&gt;     update frequency:     month</span>
+<span class="co">#&gt;     return frequency:     day</span>
+<span class="co">#&gt;     price variable:   PX_LAST</span>
+<span class="co">#&gt;     sort variable:    OPEN_INT</span>
+<span class="co">#&gt;     sort levels:  FALSE</span>
+<span class="co">#&gt;     weighted:         FALSE</span>
+<span class="co">#&gt;     ranking period:   1</span>
+<span class="co">#&gt;     long threshold:   0.5</span>
+<span class="co">#&gt;     short threshold:  0.5</span></code></pre></div>
 </div>
 <div id="aggregate" class="section level6">
-<h6>aggregate</h6>
-<p>In contrast, the aggregate open interest factor <span class="citation">(Basu and Bauthéac 2018)</span> is concerned with liquidity over the whole futures term strucutre and sorts on open interest aggregated (summed up) over the futures term structure:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="kw">futures_data_agg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_market.html">pull_futures_market</a></span>(source = <span class="st">"Bloomberg"</span>, type = <span class="st">"aggregate"</span>, <span class="kw">tickers_futures</span>,
-                                        <span class="kw">start</span>, <span class="kw">end</span>, verbose = <span class="kw">F</span>)
+<h6><strong>aggregate</strong></h6>
+<p>In contrast, the aggregate open interest factor <span class="citation">(<span class="citeproc-not-found" data-reference-id="basu_financiallisation_2020"><strong>???</strong></span>)</span> is concerned with liquidity over the whole futures term structure and sorts on open interest aggregated (summed up) over the futures term structure:</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">futures_data_agg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/pullit/reference/pull_futures_market.html">pull_futures_market</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"Bloomberg"</span>, type <span class="op">=</span> <span class="st">"aggregate"</span>, <span class="va">tickers_futures</span>,
+                                        <span class="va">start</span>, <span class="va">end</span>, verbose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">futures_OI_aggregate</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/OI_aggregate_factor-methods.html">OI_aggregate_factor</a></span>(price_data = <span class="kw">futures_data_market</span>, 
-                                            aggregate_data = <span class="kw">futures_data_agg</span>, 
-                                            ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+<span class="va">futures_OI_aggregate</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/OI_aggregate_factor-methods.html">OI_aggregate_factor</a></span><span class="op">(</span>price_data <span class="op">=</span> <span class="va">futures_data_market</span>, 
+                                            aggregate_data <span class="op">=</span> <span class="va">futures_data_agg</span>, 
+                                            ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">futures_OI_aggregate</span></code></pre></div>
+<pre><code>#&gt; OIFactor
+#&gt;   name: aggregate OI factor  
+#&gt;   parameters
+#&gt;     name:         aggregate OI
+#&gt;     update frequency:     month
+#&gt;     return frequency:     day
+#&gt;     price variable:   PX_LAST
+#&gt;     sort variable:    FUT_AGGTE_OPEN_INT
+#&gt;     sort levels:  FALSE
+#&gt;     weighted:         FALSE
+#&gt;     ranking period:   1
+#&gt;     long threshold:   0.5
+#&gt;     short threshold:  0.5</code></pre>
 </div>
 </div>
 <div id="term-structure" class="section level5">
 <h5 class="hasAnchor">
-<a href="#term-structure" class="anchor"></a>term structure</h5>
+<a href="#term-structure" class="anchor"></a><strong>term structure</strong>
+</h5>
 <p>The futures term structure factor <span class="citation">(Szymanowska et al. 2014; Fuertes, Miffre, and Fernandez-Perez 2015)</span> is concerned with the shape (steepness) of the futures term structure and sort on roll yield:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="kw">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
-<span class="kw">futures_TS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/TS_factor-methods.html">TS_factor</a></span>(data = <span class="kw">futures_data_market</span>, ranking_period = <span class="kw">ranking_period</span>)
-</pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ranking_period</span> <span class="op">=</span> <span class="fl">1L</span>
+<span class="va">futures_TS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://bautheac.github.io/factorem/reference/TS_factor-methods.html">TS_factor</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">futures_data_TS</span>, ranking_period <span class="op">=</span> <span class="va">ranking_period</span><span class="op">)</span>
+<span class="va">futures_TS</span>
+<span class="co">#&gt; TSFactor</span>
+<span class="co">#&gt;   name: futures term structure factor  </span>
+<span class="co">#&gt;   parameters</span>
+<span class="co">#&gt;     name:         futures term structure</span>
+<span class="co">#&gt;     update frequency:     month</span>
+<span class="co">#&gt;     return frequency:     day</span>
+<span class="co">#&gt;     price variable:   PX_LAST</span>
+<span class="co">#&gt;     sort variable:    carry</span>
+<span class="co">#&gt;     sort levels:  TRUE</span>
+<span class="co">#&gt;     weighted:         FALSE</span>
+<span class="co">#&gt;     ranking period:   1</span>
+<span class="co">#&gt;     long threshold:   0.5</span>
+<span class="co">#&gt;     short threshold:  0.5</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -279,51 +514,100 @@
 <h3 class="hasAnchor">
 <a href="#accessors" class="anchor"></a>accessors</h3>
 <p>Accessor methods allow access to the content of the factor output: #### name</p>
-<div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_name-methods.html">get_name</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_name-methods.html">get_name</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt; [1] "momentum"</span></code></pre></div>
 <div id="positions" class="section level4">
 <h4 class="hasAnchor">
 <a href="#positions" class="anchor"></a>positions</h4>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_positions-methods.html">get_positions</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_positions-methods.html">get_positions</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt;            date           name      weight position</span>
+<span class="co">#&gt;   1: 2016-11-30  GHC US Equity 0.819672699     long</span>
+<span class="co">#&gt;   2: 2016-11-30  MAN US Equity 0.115325337     long</span>
+<span class="co">#&gt;   3: 2016-11-30  CLR US Equity 0.051070670     long</span>
+<span class="co">#&gt;   4: 2016-11-30 AGCO US Equity 0.009255775     long</span>
+<span class="co">#&gt;   5: 2016-11-30  SMP US Equity 0.004098827     long</span>
+<span class="co">#&gt;  ---                                               </span>
+<span class="co">#&gt; 164: 2017-12-29 AJRD US Equity 0.237620737    short</span>
+<span class="co">#&gt; 165: 2017-12-29  LZB US Equity 0.206723704    short</span>
+<span class="co">#&gt; 166: 2017-12-29 COMM US Equity 0.093992202    short</span>
+<span class="co">#&gt; 167: 2017-12-29  MEI US Equity 0.081770710    short</span>
+<span class="co">#&gt; 168: 2017-12-29  SGA US Equity 0.060914585    short</span></code></pre></div>
 </div>
 <div id="returns" class="section level4">
 <h4 class="hasAnchor">
 <a href="#returns" class="anchor"></a>returns</h4>
-<div class="sourceCode" id="cb14"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_returns-methods.html">get_returns</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_returns-methods.html">get_returns</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt;            date         long         short       factor</span>
+<span class="co">#&gt;   1: 2016-12-01  0.006416473 -0.0040956391  0.001160417</span>
+<span class="co">#&gt;   2: 2016-12-02 -0.002483545 -0.0067535324 -0.004618539</span>
+<span class="co">#&gt;   3: 2016-12-05  0.012148490 -0.0189794821 -0.003415496</span>
+<span class="co">#&gt;   4: 2016-12-06 -0.002147128 -0.0109990016 -0.006573065</span>
+<span class="co">#&gt;   5: 2016-12-07 -0.001245176 -0.0206913629 -0.010968270</span>
+<span class="co">#&gt;  ---                                                   </span>
+<span class="co">#&gt; 268: 2017-12-22 -0.005904508  0.0089731213  0.001534306</span>
+<span class="co">#&gt; 269: 2017-12-26  0.006046919 -0.0001029397  0.002971990</span>
+<span class="co">#&gt; 270: 2017-12-27  0.002764602  0.0052943404  0.004029471</span>
+<span class="co">#&gt; 271: 2017-12-28 -0.004520664  0.0020863248 -0.001217170</span>
+<span class="co">#&gt; 272: 2017-12-29 -0.004116380  0.0109242176  0.003403919</span></code></pre></div>
 </div>
 <div id="data-initially-supplied" class="section level4">
 <h4 class="hasAnchor">
 <a href="#data-initially-supplied" class="anchor"></a>data initially supplied</h4>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_data-methods.html">get_data</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">factorem</span><span class="fu">::</span><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_data-methods.html">get_data</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt;                ticker       field       date      value</span>
+<span class="co">#&gt;     1: AGCO US Equity CUR_MKT_CAP 2016-11-21   4271.793</span>
+<span class="co">#&gt;     2: AGCO US Equity CUR_MKT_CAP 2016-11-22   4360.889</span>
+<span class="co">#&gt;     3: AGCO US Equity CUR_MKT_CAP 2016-11-23   4507.777</span>
+<span class="co">#&gt;     4: AGCO US Equity CUR_MKT_CAP 2016-11-25   4535.067</span>
+<span class="co">#&gt;     5: AGCO US Equity CUR_MKT_CAP 2016-11-28   4518.211</span>
+<span class="co">#&gt;    ---                                                 </span>
+<span class="co">#&gt; 33466:  SMP US Equity   PX_VOLUME 2017-12-22  89626.000</span>
+<span class="co">#&gt; 33467:  SMP US Equity   PX_VOLUME 2017-12-26  48762.000</span>
+<span class="co">#&gt; 33468:  SMP US Equity   PX_VOLUME 2017-12-27 119607.000</span>
+<span class="co">#&gt; 33469:  SMP US Equity   PX_VOLUME 2017-12-28  81731.000</span>
+<span class="co">#&gt; 33470:  SMP US Equity   PX_VOLUME 2017-12-29 153615.000</span></code></pre></div>
 </div>
 <div id="parameters" class="section level4">
 <h4 class="hasAnchor">
 <a href="#parameters" class="anchor"></a>parameters</h4>
-<div class="sourceCode" id="cb16"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_parameters-methods.html">get_parameters</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_parameters-methods.html">get_parameters</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt;            parameter    value</span>
+<span class="co">#&gt;  1:             name momentum</span>
+<span class="co">#&gt;  2: update frequency    month</span>
+<span class="co">#&gt;  3: return frequency      day</span>
+<span class="co">#&gt;  4:   price variable  PX_LAST</span>
+<span class="co">#&gt;  5:    sort variable  PX_LAST</span>
+<span class="co">#&gt;  6:      sort levels     TRUE</span>
+<span class="co">#&gt;  7:         weighted     TRUE</span>
+<span class="co">#&gt;  8:   ranking_period        1</span>
+<span class="co">#&gt;  9:   long_threshold      0.5</span>
+<span class="co">#&gt; 10:  short_threshold      0.5</span></code></pre></div>
 </div>
 <div id="function-call" class="section level4">
 <h4 class="hasAnchor">
 <a href="#function-call" class="anchor"></a>function call</h4>
-<div class="sourceCode" id="cb17"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_call-methods.html">get_call</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/get_call-methods.html">get_call</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt; factorem(name = "momentum", data = pullit::get_data(equity_data_market), </span>
+<span class="co">#&gt;     ranking_period = ranking_period)</span></code></pre></div>
 </div>
 <div id="summary" class="section level4">
 <h4 class="hasAnchor">
 <a href="#summary" class="anchor"></a>summary</h4>
-<p>A summary method returns a performance summary of the corresponding facotr: #### function call</p>
-<div class="sourceCode" id="cb18"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/factorem/reference/summary-methods.html">summary</a></span>(<span class="kw">factor</span>)
-</pre></div>
+<p>A summary method returns a performance summary of the corresponding factor:</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/factorem/reference/summary-methods.html">summary</a></span><span class="op">(</span><span class="va">factor</span><span class="op">)</span>
+<span class="co">#&gt;   year     Jan     Feb     Mar      Apr     May     Jun      Jul     Aug</span>
+<span class="co">#&gt; 1 2016      NA      NA      NA       NA      NA      NA       NA      NA</span>
+<span class="co">#&gt; 2 2017 0.01503 0.00164 0.00173 -0.00341 0.02487 0.01072 -0.06205 0.06167</span>
+<span class="co">#&gt;        Sep     Oct     Nov      Dec   total</span>
+<span class="co">#&gt; 1       NA      NA      NA  0.00682 0.00682</span>
+<span class="co">#&gt; 2 -0.03783 0.02627 0.00822 -0.00161 0.04062</span></code></pre></div>
 </div>
 </div>
 <div id="plotit" class="section level3">
@@ -333,18 +617,21 @@
 <div id="performance-overview" class="section level4">
 <h4 class="hasAnchor">
 <a href="#performance-overview" class="anchor"></a>performance overview</h4>
-<div class="sourceCode" id="cb19"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/plotit">plotit</a></span>)
+<p>The plot function dispatched on a factor object from factorem with the parameter “type” set to “performance” displays an overview of the performance of the corresponding factor in the form of equity curves. The equity curve for the factor is plotted along with, for long-short factors only, that of the long and short leg of the factor independently:</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/plotit">plotit</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://bautheac.github.io/plotit/reference/plot-methods.html">plot</a></span>(object = <span class="kw">factor</span>, type = <span class="st">"performance"</span>)
-</pre></div>
+<span class="fu"><a href="https://bautheac.github.io/plotit/reference/plot-methods.html">plot</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">factor</span>, type <span class="op">=</span> <span class="st">"performance"</span><span class="op">)</span></code></pre></div>
+<div id="htmlwidget-cb417f070d19e1da669f" style="width:720px;height:528px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb417f070d19e1da669f">{"x":{"attrs":{"title":"momentum factor","labels":["day","long","short","factor"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"daily","annotations":[],"shadings":[],"events":[{"pos":1,"labelLoc":"left","color":"blue","strokePattern":[1,0],"axis":"y"}],"format":"date","data":[["2016-12-01T00:00:00.000Z","2016-12-02T00:00:00.000Z","2016-12-05T00:00:00.000Z","2016-12-06T00:00:00.000Z","2016-12-07T00:00:00.000Z","2016-12-08T00:00:00.000Z","2016-12-09T00:00:00.000Z","2016-12-12T00:00:00.000Z","2016-12-13T00:00:00.000Z","2016-12-14T00:00:00.000Z","2016-12-15T00:00:00.000Z","2016-12-16T00:00:00.000Z","2016-12-19T00:00:00.000Z","2016-12-20T00:00:00.000Z","2016-12-21T00:00:00.000Z","2016-12-22T00:00:00.000Z","2016-12-23T00:00:00.000Z","2016-12-27T00:00:00.000Z","2016-12-28T00:00:00.000Z","2016-12-29T00:00:00.000Z","2016-12-30T00:00:00.000Z","2017-01-03T00:00:00.000Z","2017-01-04T00:00:00.000Z","2017-01-05T00:00:00.000Z","2017-01-06T00:00:00.000Z","2017-01-09T00:00:00.000Z","2017-01-10T00:00:00.000Z","2017-01-11T00:00:00.000Z","2017-01-12T00:00:00.000Z","2017-01-13T00:00:00.000Z","2017-01-17T00:00:00.000Z","2017-01-18T00:00:00.000Z","2017-01-19T00:00:00.000Z","2017-01-20T00:00:00.000Z","2017-01-23T00:00:00.000Z","2017-01-24T00:00:00.000Z","2017-01-25T00:00:00.000Z","2017-01-26T00:00:00.000Z","2017-01-27T00:00:00.000Z","2017-01-30T00:00:00.000Z","2017-01-31T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-02-02T00:00:00.000Z","2017-02-03T00:00:00.000Z","2017-02-06T00:00:00.000Z","2017-02-07T00:00:00.000Z","2017-02-08T00:00:00.000Z","2017-02-09T00:00:00.000Z","2017-02-10T00:00:00.000Z","2017-02-13T00:00:00.000Z","2017-02-14T00:00:00.000Z","2017-02-15T00:00:00.000Z","2017-02-16T00:00:00.000Z","2017-02-17T00:00:00.000Z","2017-02-21T00:00:00.000Z","2017-02-22T00:00:00.000Z","2017-02-23T00:00:00.000Z","2017-02-24T00:00:00.000Z","2017-02-27T00:00:00.000Z","2017-02-28T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-03-02T00:00:00.000Z","2017-03-03T00:00:00.000Z","2017-03-06T00:00:00.000Z","2017-03-07T00:00:00.000Z","2017-03-08T00:00:00.000Z","2017-03-09T00:00:00.000Z","2017-03-10T00:00:00.000Z","2017-03-13T00:00:00.000Z","2017-03-14T00:00:00.000Z","2017-03-15T00:00:00.000Z","2017-03-16T00:00:00.000Z","2017-03-17T00:00:00.000Z","2017-03-20T00:00:00.000Z","2017-03-21T00:00:00.000Z","2017-03-22T00:00:00.000Z","2017-03-23T00:00:00.000Z","2017-03-24T00:00:00.000Z","2017-03-27T00:00:00.000Z","2017-03-28T00:00:00.000Z","2017-03-29T00:00:00.000Z","2017-03-30T00:00:00.000Z","2017-03-31T00:00:00.000Z","2017-04-03T00:00:00.000Z","2017-04-04T00:00:00.000Z","2017-04-05T00:00:00.000Z","2017-04-06T00:00:00.000Z","2017-04-07T00:00:00.000Z","2017-04-10T00:00:00.000Z","2017-04-11T00:00:00.000Z","2017-04-12T00:00:00.000Z","2017-04-13T00:00:00.000Z","2017-04-17T00:00:00.000Z","2017-04-18T00:00:00.000Z","2017-04-19T00:00:00.000Z","2017-04-20T00:00:00.000Z","2017-04-21T00:00:00.000Z","2017-04-24T00:00:00.000Z","2017-04-25T00:00:00.000Z","2017-04-26T00:00:00.000Z","2017-04-27T00:00:00.000Z","2017-04-28T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-05-02T00:00:00.000Z","2017-05-03T00:00:00.000Z","2017-05-04T00:00:00.000Z","2017-05-05T00:00:00.000Z","2017-05-08T00:00:00.000Z","2017-05-09T00:00:00.000Z","2017-05-10T00:00:00.000Z","2017-05-11T00:00:00.000Z","2017-05-12T00:00:00.000Z","2017-05-15T00:00:00.000Z","2017-05-16T00:00:00.000Z","2017-05-17T00:00:00.000Z","2017-05-18T00:00:00.000Z","2017-05-19T00:00:00.000Z","2017-05-22T00:00:00.000Z","2017-05-23T00:00:00.000Z","2017-05-24T00:00:00.000Z","2017-05-25T00:00:00.000Z","2017-05-26T00:00:00.000Z","2017-05-30T00:00:00.000Z","2017-05-31T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-06-02T00:00:00.000Z","2017-06-05T00:00:00.000Z","2017-06-06T00:00:00.000Z","2017-06-07T00:00:00.000Z","2017-06-08T00:00:00.000Z","2017-06-09T00:00:00.000Z","2017-06-12T00:00:00.000Z","2017-06-13T00:00:00.000Z","2017-06-14T00:00:00.000Z","2017-06-15T00:00:00.000Z","2017-06-16T00:00:00.000Z","2017-06-19T00:00:00.000Z","2017-06-20T00:00:00.000Z","2017-06-21T00:00:00.000Z","2017-06-22T00:00:00.000Z","2017-06-23T00:00:00.000Z","2017-06-26T00:00:00.000Z","2017-06-27T00:00:00.000Z","2017-06-28T00:00:00.000Z","2017-06-29T00:00:00.000Z","2017-06-30T00:00:00.000Z","2017-07-03T00:00:00.000Z","2017-07-05T00:00:00.000Z","2017-07-06T00:00:00.000Z","2017-07-07T00:00:00.000Z","2017-07-10T00:00:00.000Z","2017-07-11T00:00:00.000Z","2017-07-12T00:00:00.000Z","2017-07-13T00:00:00.000Z","2017-07-14T00:00:00.000Z","2017-07-17T00:00:00.000Z","2017-07-18T00:00:00.000Z","2017-07-19T00:00:00.000Z","2017-07-20T00:00:00.000Z","2017-07-21T00:00:00.000Z","2017-07-24T00:00:00.000Z","2017-07-25T00:00:00.000Z","2017-07-26T00:00:00.000Z","2017-07-27T00:00:00.000Z","2017-07-28T00:00:00.000Z","2017-07-31T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-08-02T00:00:00.000Z","2017-08-03T00:00:00.000Z","2017-08-04T00:00:00.000Z","2017-08-07T00:00:00.000Z","2017-08-08T00:00:00.000Z","2017-08-09T00:00:00.000Z","2017-08-10T00:00:00.000Z","2017-08-11T00:00:00.000Z","2017-08-14T00:00:00.000Z","2017-08-15T00:00:00.000Z","2017-08-16T00:00:00.000Z","2017-08-17T00:00:00.000Z","2017-08-18T00:00:00.000Z","2017-08-21T00:00:00.000Z","2017-08-22T00:00:00.000Z","2017-08-23T00:00:00.000Z","2017-08-24T00:00:00.000Z","2017-08-25T00:00:00.000Z","2017-08-28T00:00:00.000Z","2017-08-29T00:00:00.000Z","2017-08-30T00:00:00.000Z","2017-08-31T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-09-05T00:00:00.000Z","2017-09-06T00:00:00.000Z","2017-09-07T00:00:00.000Z","2017-09-08T00:00:00.000Z","2017-09-11T00:00:00.000Z","2017-09-12T00:00:00.000Z","2017-09-13T00:00:00.000Z","2017-09-14T00:00:00.000Z","2017-09-15T00:00:00.000Z","2017-09-18T00:00:00.000Z","2017-09-19T00:00:00.000Z","2017-09-20T00:00:00.000Z","2017-09-21T00:00:00.000Z","2017-09-22T00:00:00.000Z","2017-09-25T00:00:00.000Z","2017-09-26T00:00:00.000Z","2017-09-27T00:00:00.000Z","2017-09-28T00:00:00.000Z","2017-09-29T00:00:00.000Z","2017-10-02T00:00:00.000Z","2017-10-03T00:00:00.000Z","2017-10-04T00:00:00.000Z","2017-10-05T00:00:00.000Z","2017-10-06T00:00:00.000Z","2017-10-09T00:00:00.000Z","2017-10-10T00:00:00.000Z","2017-10-11T00:00:00.000Z","2017-10-12T00:00:00.000Z","2017-10-13T00:00:00.000Z","2017-10-16T00:00:00.000Z","2017-10-17T00:00:00.000Z","2017-10-18T00:00:00.000Z","2017-10-19T00:00:00.000Z","2017-10-20T00:00:00.000Z","2017-10-23T00:00:00.000Z","2017-10-24T00:00:00.000Z","2017-10-25T00:00:00.000Z","2017-10-26T00:00:00.000Z","2017-10-27T00:00:00.000Z","2017-10-30T00:00:00.000Z","2017-10-31T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-11-02T00:00:00.000Z","2017-11-03T00:00:00.000Z","2017-11-06T00:00:00.000Z","2017-11-07T00:00:00.000Z","2017-11-08T00:00:00.000Z","2017-11-09T00:00:00.000Z","2017-11-10T00:00:00.000Z","2017-11-13T00:00:00.000Z","2017-11-14T00:00:00.000Z","2017-11-15T00:00:00.000Z","2017-11-16T00:00:00.000Z","2017-11-17T00:00:00.000Z","2017-11-20T00:00:00.000Z","2017-11-21T00:00:00.000Z","2017-11-22T00:00:00.000Z","2017-11-24T00:00:00.000Z","2017-11-27T00:00:00.000Z","2017-11-28T00:00:00.000Z","2017-11-29T00:00:00.000Z","2017-11-30T00:00:00.000Z","2017-12-01T00:00:00.000Z","2017-12-04T00:00:00.000Z","2017-12-05T00:00:00.000Z","2017-12-06T00:00:00.000Z","2017-12-07T00:00:00.000Z","2017-12-08T00:00:00.000Z","2017-12-11T00:00:00.000Z","2017-12-12T00:00:00.000Z","2017-12-13T00:00:00.000Z","2017-12-14T00:00:00.000Z","2017-12-15T00:00:00.000Z","2017-12-18T00:00:00.000Z","2017-12-19T00:00:00.000Z","2017-12-20T00:00:00.000Z","2017-12-21T00:00:00.000Z","2017-12-22T00:00:00.000Z","2017-12-26T00:00:00.000Z","2017-12-27T00:00:00.000Z","2017-12-28T00:00:00.000Z","2017-12-29T00:00:00.000Z"],[1,0.997516455140372,1.00963477351732,1.00746695888024,1.00621248509003,1.03048666933939,1.0464142010134,1.04367693888864,1.0563916661333,1.05452760700661,1.0596654481125,1.06596470542788,1.08252435097012,1.08146814222301,1.06886554925763,1.06500378628974,1.05323079096751,1.05420163062822,1.04918128549235,1.05045575491179,1.02998827378229,1.0520185715131,1.08097809980366,1.04193711362164,1.05921997380835,1.05761398664055,1.06858638375855,1.07602808988455,1.06322319688662,1.06379886206592,1.05852717111684,1.06429615859718,1.0562565379231,1.06182861141132,1.05667490316403,1.06839981451776,1.06985683644028,1.06162414278598,1.0550768486649,1.05379401298566,1.06191651581328,1.07310016191074,1.07500223856738,1.08305884264431,1.07911319510432,1.07813063486419,1.07395547533373,1.07833231969717,1.07814686687381,1.07980125477246,1.07657543491103,1.08189519081045,1.07347853894965,1.0784628347617,1.08086083477783,1.07752823203918,1.07402111942166,1.07973694301405,1.08776280155521,1.0804518151065,1.10490291704621,1.11125476607369,1.11892165041981,1.11870912048034,1.12116433323013,1.12124602578,1.11851484589999,1.1218449204593,1.12631056742918,1.12880773958434,1.14692438696717,1.15223088832298,1.15567599175399,1.15183930602992,1.1369353662826,1.13329152878089,1.12696881329465,1.12905159684915,1.12552247203117,1.12983917809844,1.13837914573965,1.14992347762456,1.1629659362184,1.14750538474644,1.14135122573433,1.1466922091569,1.16034451683922,1.1473149199224,1.15097255501497,1.15339049070154,1.14058574244676,1.1311222921598,1.1490078220587,1.15333734085528,1.1614244898692,1.17201706882154,1.16055236431902,1.18276843486144,1.18091671197166,1.18364819632074,1.18176164802597,1.16869023273366,1.1809451791933,1.18206942694517,1.16995478091766,1.16710019625795,1.16966146289081,1.16600336581634,1.16774505450013,1.18809303981073,1.17365809360664,1.16848188066038,1.17577199322106,1.17669187780722,1.15748058831651,1.15414378950027,1.17011370537631,1.17566590125905,1.17470129164072,1.16733161895436,1.16521269655799,1.16336420557145,1.15688600649616,1.16824540470006,1.18529167231907,1.19057853053278,1.17332227547827,1.16973117467047,1.17048198973284,1.17895323370753,1.18200813194644,1.18558880288582,1.18897638362577,1.18492060578503,1.18664261750022,1.19302940743114,1.2008018797778,1.19245598559289,1.19138142179604,1.18503073123004,1.18953328523575,1.19183774564746,1.18688277726731,1.19966828959639,1.19288563864907,1.20884649796679,1.21567313889162,1.22087857159947,1.20619685587212,1.2226163673284,1.22743032936105,1.22009268613689,1.22429398294583,1.22978357289322,1.23581448968025,1.23572854584632,1.24022297385849,1.24298221156496,1.24511747572447,1.24586036566249,1.20595132780254,1.20779896300098,1.19526916381837,1.18785758146822,1.18957750297122,1.19363982002908,1.19658826914523,1.17540530199334,1.17789768614847,1.19304873885744,1.19257718785215,1.19810870843757,1.19445441304572,1.16997546244862,1.16843715435665,1.19119550010817,1.19198396168534,1.18809337524942,1.1605273849308,1.15775062040354,1.15939552243324,1.1813610650043,1.17360243468824,1.1690506286915,1.17478163144741,1.18015582137692,1.17783464804009,1.18589517538577,1.19404700563313,1.19308832838309,1.17626540266402,1.16846792973173,1.17451810756267,1.17545079696897,1.19146974298156,1.19652957882684,1.18992753873743,1.19028130080144,1.18846440815876,1.20027136334849,1.20565231141151,1.21021562931541,1.20818786128474,1.20875762158363,1.21080144856087,1.21476137826965,1.22827067530695,1.24262473421854,1.23818392645389,1.25433244233665,1.25625275680887,1.25539736425241,1.25118097962137,1.25441429200866,1.25075026064148,1.25503402278912,1.2483133553757,1.24372852566339,1.22751283979364,1.2230321657244,1.2146740953719,1.23234053582795,1.22486733617791,1.22421340918412,1.22124719928138,1.23180977188329,1.22672616687107,1.24100890421387,1.25682764715127,1.22784268851432,1.22128327493841,1.22026544004971,1.2228418045008,1.21234597508143,1.20322710536481,1.21989421180065,1.23986725035448,1.2176340215534,1.22882428625435,1.22758641297579,1.21805264761765,1.22243763008589,1.25186514769295,1.24749591852927,1.26394517356477,1.25488384269048,1.25287804330979,1.25089286181207,1.25290752107016,1.27696297566751,1.28471233924596,1.28224436631243,1.26028937453679,1.28339684387492,1.27067883532211,1.25208622582426,1.24823352109614,1.24467928000956,1.24815003523393,1.25143986665672,1.23531550637683,1.23275388779923,1.24588210771229,1.26512957734982,1.26228979801574,1.26213708276504,1.24474388577079,1.23739428495006,1.24487670836366,1.24831829677651,1.24267506886308,1.23755974563742],[1,0.993246467611624,0.97439516402935,0.963677790035183,0.943737983131179,0.955662997453631,0.96331610447824,0.963152760465236,0.964547339389308,0.991594700022956,0.984823243490348,0.978936175821501,0.964545895104694,0.957972953229971,0.962864335176531,0.974867689686078,0.969651388931892,0.962038549581706,0.975291128891404,0.974435405862425,0.980534526256498,0.964331477057232,0.951014373126154,0.970902353761046,0.982472447887834,0.991240324592562,0.980653345066773,0.980330693695722,0.982706747479234,0.993504816951515,1.00433077795444,0.990658485330311,0.99162825538181,0.987413044823261,0.987290072324529,0.976972247820873,0.97111695026141,0.973811217718294,0.980644767118295,0.989787799798539,0.977529817649741,0.981816975434169,0.980931057607136,0.965710351828116,0.96938882170371,0.965384819566379,0.965240230586497,0.950661252502034,0.941750371117454,0.947266631750515,0.941652360107136,0.94132096587132,0.94155751218769,0.940139343606412,0.928623450004378,0.933948362860322,0.960087654965389,0.952854413777303,0.937547122270415,0.962862129047281,0.942458990531363,0.917602147331631,0.914542897937998,0.920340626351988,0.921504676679021,0.917415892318283,0.917568140157832,0.916165558390293,0.915397678256601,0.911411882606664,0.894265444912353,0.888594885579663,0.878917563981163,0.889109944458116,0.904959948160977,0.902424815114617,0.896111212396272,0.917738643500259,0.921713568116995,0.911375821659706,0.906865509296732,0.898744130351816,0.895975609150473,0.914984286381762,0.909071299206984,0.920610247777242,0.908193250591171,0.908350555513821,0.90560731862415,0.899528398418071,0.911989335014994,0.915473770391101,0.900746215812705,0.89827996786375,0.889316817603238,0.880694313675607,0.88287890453107,0.872294531207975,0.864487549211446,0.863923980198383,0.873873053251975,0.884081875271616,0.881222145300017,0.877565469291452,0.882370907346863,0.901947410560858,0.89149837447973,0.887605277583662,0.893292786352364,0.888529398934824,0.898798784948647,0.91576227757823,0.905278249253675,0.906725716553459,0.923538513754341,0.92489044282949,0.912393895931468,0.903847723282882,0.918288984171145,0.915772349065353,0.904674559268132,0.922566319294748,0.922551180890179,0.927492102853362,0.912494846636249,0.916579948396334,0.918134068226752,0.937022110992621,0.935437560339763,0.933142158035011,0.923476791443042,0.927368602352151,0.924558246919488,0.93260143969411,0.947011521975046,0.961449633979443,0.95661803825938,0.971470123463062,0.944763713221562,0.944867362992493,0.93433971144143,0.930096816496606,0.928575369826153,0.919082066560888,0.919810694745206,0.914514615181697,0.894231193796519,0.8720773075152,0.893906836141872,0.876533509566317,0.877610656691654,0.868143674721699,0.854662131453773,0.862987957938166,0.847325815665885,0.843610582089057,0.848268895650128,0.836073971421703,0.830894991937081,0.82494278955912,0.807334801336759,0.802650133903399,0.809563897066771,0.812670571608222,0.798592323722695,0.813430136012534,0.824274235689349,0.824458832429991,0.816733773657592,0.799755943140175,0.793267322160241,0.801254416984282,0.794427509677695,0.814216004319358,0.804515988474653,0.802245353496472,0.83113385201054,0.815964799415319,0.826849208154417,0.822065090741523,0.829351929207562,0.805038394767492,0.813955262120256,0.805528323619631,0.880733514193592,0.891324062318276,0.906554665052037,0.902674997794768,0.912487687812758,0.901435722979719,0.901150828928066,0.895417889436674,0.895404510669584,0.896318498790951,0.89061504455729,0.880529006432708,0.871141873915383,0.872974769651008,0.860083644353437,0.852109415012093,0.854082333405761,0.847985081370913,0.854324837510373,0.837709004586036,0.832280118558101,0.821437009728171,0.812228930262662,0.814241493979639,0.814003462824997,0.814615321809691,0.821061328105087,0.821496226047194,0.815778701964947,0.828657518683422,0.826060981781088,0.82582931491243,0.842026253474827,0.843627865720095,0.840895222608756,0.848751580349975,0.844229209258572,0.830794122844434,0.830333014716811,0.824186159855945,0.828584184471045,0.831004638380445,0.841382363895503,0.84353709767894,0.847747791689997,0.866203689756486,0.868144276160614,0.869645294727076,0.873500974190575,0.893680251984113,0.901073456980075,0.933810835243044,0.927378544147584,0.910559217301837,0.960716741743939,0.972537626383232,0.973096045636022,0.983601197171931,0.972138802419775,0.96460056870833,0.956474274255875,0.940833717031723,0.910000181444175,0.907242356825517,0.874328406627729,0.83563531478984,0.816969104859455,0.837476766867015,0.841326895090785,0.826253904687547,0.835796283134051,0.83769885194877,0.843622306577199,0.833805364125777,0.839210143582416,0.835938200071908,0.842966434259813,0.85252200300209,0.851177162256102,0.838528381077503,0.846768436369969,0.847654838090237,0.840742545833157,0.848286630703902,0.848199308303923,0.85268996413308,0.854468952339584,0.863803357139117],[1,0.995381461375998,0.991981739760464,0.98546137971486,0.974652573698473,0.992566809824401,1.00421184434338,1.00281327155393,1.00964772406771,1.02291295727223,1.02191219961438,1.02189522597307,1.02232185386536,1.01833978960784,1.01500612423953,1.01949922340702,1.01113668184374,1.00763342860209,1.01217447634921,1.01234519217547,1.00565093337699,1.00809676271228,1.01501125210126,1.00729515404343,1.02165116766816,1.02543541459167,1.02527859136755,1.02867997835567,1.02380587623299,1.02970787306809,1.03276672521093,1.02855132119242,1.02516994983947,1.02569509624605,1.02314206115032,1.02347222530709,1.02110310827332,1.01859081926795,1.01902376188965,1.02315469141962,1.02076225449115,1.02837574934485,1.0288231860424,1.02469652946244,1.02478159090525,1.02219864662774,1.02014281864322,1.0145174725238,1.00967551952036,1.0134072443067,1.00889037044941,1.01120549137615,1.00739918614469,1.00897925721103,1.00392144613716,1.0052521011492,1.01768363461377,1.01655805255285,1.01217083767712,1.02243434853207,1.02317067934344,1.01261888829334,1.01442405528653,1.01754317616107,1.01930326514893,1.01707903845685,1.01592470937249,1.01666056538137,1.01825798419646,1.01716995381986,1.01576438491792,1.01489372154149,1.0108845630313,1.01506793287028,1.01754853976917,1.01449266827912,1.00811387472594,1.02121073125195,1.02182625255107,1.01805545831679,1.01938384977002,1.01998813349843,1.02420149533785,1.02825812614595,1.02217830914926,1.0310572789973,1.03024172693136,1.02454661779183,1.02463266726148,1.02226998822177,1.02367607524228,1.02138492869813,1.0212444065096,1.02177037012672,1.02025499732757,1.0199615130661,1.01623789054735,1.01987307144775,1.01451082276638,1.01535342941573,1.02039075111484,1.0207077425323,1.02440850363933,1.02277069932274,1.02032995860542,1.03040385058234,1.02556588979955,1.02172289041998,1.02575942419721,1.03196148962542,1.03165605839207,1.03911657764753,1.0364099615172,1.03764395591394,1.03879355832152,1.03805655814143,1.03822557646467,1.03582636569994,1.04367640591581,1.03897243810509,1.03173407950009,1.04111801797679,1.03821074081516,1.04608798790904,1.04526244419885,1.04993332224309,1.04321456561661,1.05234873297424,1.05179668155358,1.0543123533852,1.05021810211019,1.05402178963748,1.0539305303527,1.05671730568177,1.06564908312053,1.07664029876616,1.07744216993645,1.0820618915238,1.06670102099498,1.06391649555922,1.06001063959805,1.05863062167735,1.05556418563243,1.05585384952386,1.05328760000816,1.05730180991775,1.0485620454539,1.03781832554241,1.04456731559275,1.04152624242993,1.04421665992517,1.0354633697506,1.0292062007063,1.03652670795342,1.02966247016321,1.02736930790625,1.03207411690388,1.02580351497889,1.02350748580958,1.02014681884637,0.992920216577779,0.990800066214793,0.989927960502362,0.988758213347258,0.980909688650537,0.991697185478664,0.999532315077695,0.990796975880644,0.987205630477317,0.983293985985146,0.979110807506616,0.986310647830965,0.980604679254969,0.982769507015134,0.976269400279207,0.984399397705357,1.00244908085035,0.991665238272778,0.986775059174372,0.982739822220202,0.98779348270686,0.982671467176456,0.984886797023932,0.977878557331461,1.02592348834518,1.03443830426339,1.04225906077378,1.04359520567221,1.05285433076275,1.04605563638346,1.03851547722543,1.03176990063367,1.03443337904763,1.03537205406374,1.03913289638598,1.03545536188566,1.02707933327433,1.02831250241221,1.01993518338044,1.02027338007458,1.0237415158818,1.02202469407064,1.02498893171898,1.01526306880615,1.01283162270313,1.00789017246628,1.00784543544263,1.01498311035283,1.01302111408608,1.02000780124055,1.0248242222135,1.02474673001581,1.01945980725297,1.02882423548604,1.02570981170397,1.02732248722354,1.03464625330187,1.03373021550155,1.02531714037777,1.02823552327315,1.02198274344087,1.02128276419838,1.01790269942747,1.01386327736006,1.01534009661269,1.02121393911825,1.02548324040139,1.03276617926371,1.04192598459789,1.0412531640559,1.03963823693604,1.04010377780072,1.04350748510213,1.051082547543,1.05147727649894,1.07786069976326,1.08297220967383,1.06344169227032,1.09761777259112,1.10381759586036,1.09984822340305,1.10776470542015,1.11464354706285,1.10837676872159,1.11101542650563,1.09794911378365,1.0790803307034,1.07659031350936,1.0579284071676,1.044675241554,1.03617724851491,1.04818711022846,1.04162282833347,1.04184121220189,1.04269516783023,1.03625356692595,1.0383230038662,1.03080343095852,1.03558148173304,1.0349274752926,1.03261076619409,1.03739278162574,1.04209840612588,1.04240505928377,1.04635689533552,1.04684126577729,1.03535984664523,1.03694840591336,1.04003020599398,1.04422097764014,1.04294998346544,1.04650010036234]]},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="positions-overview" class="section level4">
 <h4 class="hasAnchor">
 <a href="#positions-overview" class="anchor"></a>positions overview</h4>
-<div class="sourceCode" id="cb20"><pre class="downlit">
-<span class="fu"><a href="https://bautheac.github.io/plotit/reference/plot-methods.html">plot</a></span>(object = <span class="kw">factor</span>, type = <span class="st">"positions"</span>)
-</pre></div>
+<p>Similarly, with the “type” parameter set to “positions”, the plot function shows the proportion of time each asset leaves in the factor with a breakdown by leg for long-short factors:</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://bautheac.github.io/plotit/reference/plot-methods.html">plot</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">factor</span>, type <span class="op">=</span> <span class="st">"positions"</span><span class="op">)</span></code></pre></div>
+<p><img src="asset-pricing_files/figure-html/%60plot%20positions%60-1.png" width="720"></p>
 </div>
 </div>
 </div>
@@ -355,25 +642,22 @@
 <div id="ref-anderson_hedger_1983">
 <p>Anderson, Ronald W., and Jean-Pierre Danthine. 1983. “Hedger Diversity in Futures Markets.” <em>The Economic Journal</em> 93 (370): 370–89. <a href="https://doi.org/10.2307/2232798">https://doi.org/10.2307/2232798</a>.</p>
 </div>
-<div id="ref-basu_financiallization_2018">
-<p>Basu, Devraj, and Olivier Bauthéac. 2018. “Financialization of Commodities: An Asset Pricing Perspective.” <em>Working Paper</em>.</p>
-</div>
 <div id="ref-basu_capturing_2013">
-<p>Basu, Devraj, and Joëlle Miffre. 2013. “Capturing the Risk Premium of Commodity Futures: The Role of Hedging Pressure.” <em>Journal of Banking &amp; Finance</em> 37 (7): 2652–64.</p>
+<p>Basu, Devraj, and Joëlle Miffre. 2013. “Capturing the Risk Premium of Commodity Futures: The Role of Hedging Pressure.” <em>Journal of Banking &amp; Finance</em> 37 (7): 2652–64. <a href="https://doi.org/10.1016/j.jbankfin.2013.02.031">https://doi.org/10.1016/j.jbankfin.2013.02.031</a>.</p>
 </div>
-<div id="ref-carhart1997persistence">
+<div id="ref-carhart_persistence_1997">
 <p>Carhart, Mark M. 1997. “On Persistence in Mutual Fund Performance.” <em>The Journal of Finance</em> 52 (1): 57–82.</p>
 </div>
 <div id="ref-chang_returns_1985">
-<p>Chang, Eric C. 1985. “Returns to Speculators and the Theory of Normal Backwardation.” <em>The Journal of Finance</em> 40 (1): 193–208.</p>
+<p>Chang, Eric C. 1985. “Returns to Speculators and the Theory of Normal Backwardation.” <em>The Journal of Finance</em> 40 (1): 193–208. <a href="https://doi.org/10.1111/j.1540-6261.1985.tb04944.x">https://doi.org/10.1111/j.1540-6261.1985.tb04944.x</a>.</p>
 </div>
 <div id="ref-cootner_returns_1960">
-<p>Cootner, Paul H. 1960. “Returns to Speculators: Telser Versus Keynes.” <em>Journal of Political Economy</em> 68 (4): 396–404.</p>
+<p>Cootner, Paul H. 1960. “Returns to Speculators: Telser Versus Keynes.” <em>Journal of Political Economy</em> 68 (4): 396–404. <a href="https://doi.org/10.1086/258347">https://doi.org/10.1086/258347</a>.</p>
 </div>
 <div id="ref-dusak_futures_1973">
-<p>Dusak, Katherine. 1973. “Futures Trading and Investor Returns: An Investigation of Commodity Market Risk Premiums.” <em>Journal of Political Economy</em> 81 (6): 1387–1406.</p>
+<p>Dusak, Katherine. 1973. “Futures Trading and Investor Returns: An Investigation of Commodity Market Risk Premiums.” <em>Journal of Political Economy</em> 81 (6): 1387–1406. <a href="https://doi.org/10.1086/260133">https://doi.org/10.1086/260133</a>.</p>
 </div>
-<div id="ref-fama2012size">
+<div id="ref-fama_size_2012">
 <p>Fama, Eugene F., and Kenneth R. French. 2012. “Size, Value, and Momentum in International Stock Returns.” <em>Journal of Financial Economics</em> 105 (3): 457–72.</p>
 </div>
 <div id="ref-fama_cross_section_1992">
@@ -401,7 +685,7 @@
 <p>Fuertes, Ana-Maria, Joëlle Miffre, and Adrian Fernandez-Perez. 2015. “Commodity Strategies Based on Momentum, Term Structure, and Idiosyncratic Volatility.” <em>Journal of Futures Markets</em> 35 (3): 274–97. <a href="https://doi.org/10.1002/fut.21656">https://doi.org/10.1002/fut.21656</a>.</p>
 </div>
 <div id="ref-hicks_value_1939">
-<p>Hicks, John Richard. 1939. <em>Value and Capital</em>. Oxford University Press, Cambridge.</p>
+<p>Hicks, John Richard. 1939. <em>Value and Capital</em>. 1st ed. Oxford University Press, Cambridge.</p>
 </div>
 <div id="ref-hirshleifer_hedging_1990">
 <p>Hirshleifer, David. 1990. “Hedging Pressure and Futures Price Movements in a General Equilibrium Model.” <em>Econometrica</em> 58 (2): 411–28. <a href="https://doi.org/10.2307/2938209">https://doi.org/10.2307/2938209</a>.</p>
@@ -413,33 +697,39 @@
 <p>———. 1989. “Determinants of Hedging and Risk Premia in Commodity Futures Markets.” <em>Journal of Financial and Quantitative Analysis</em> 24 (3): 313–31. <a href="https://doi.org/10.2307/2330814">https://doi.org/10.2307/2330814</a>.</p>
 </div>
 <div id="ref-hong_what_2012">
-<p>Hong, Harrison, and Motohiro Yogo. 2012. “What Does Futures Market Interest Tell Us About the Macroeconomy and Asset Prices?” <em>Journal of Financial Economics</em> 105 (3): 473–90.</p>
+<p>Hong, Harrison, and Motohiro Yogo. 2012. “What Does Futures Market Interest Tell Us About the Macroeconomy and Asset Prices?” <em>Journal of Financial Economics</em> 105 (3): 473–90. <a href="https://doi.org/10.1016/j.jfineco.2012.04.005">https://doi.org/10.1016/j.jfineco.2012.04.005</a>.</p>
 </div>
 <div id="ref-keynes_treatise_1930">
 <p>Keynes, John Maynard. 1930. <em>Treatise on Money</em>. Macmillan, London.</p>
 </div>
 <div id="ref-kolb_is_1992">
-<p>Kolb, Robert W. 1992. “Is Normal Backwardation Normal?” <em>Journal of Futures Markets</em> 12 (1): 75–91.</p>
+<p>Kolb, Robert W. 1992. “Is Normal Backwardation Normal?” <em>Journal of Futures Markets</em> 12 (1): 75–91. <a href="https://search.proquest.com/openview/7b1cb686a2ef7ebf28a34125d51bfedd/1?pq-origsite=gscholar&amp;cbl=47957">https://search.proquest.com/openview/7b1cb686a2ef7ebf28a34125d51bfedd/1?pq-origsite=gscholar&amp;cbl=47957</a>.</p>
 </div>
-<div id="ref-lintner1975valuation">
+<div id="ref-lintner_valuation_1975">
 <p>Lintner, John. 1975. “The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets.” In <em>Stochastic Optimization Models in Finance</em>, 131–55. Elsevier.</p>
 </div>
-<div id="ref-miffre2007momentum">
+<div id="ref-miffre_momentum_2007">
 <p>Miffre, Joëlle, and Georgios Rallis. 2007. “Momentum Strategies in Commodity Futures Markets.” <em>Journal of Banking &amp; Finance</em> 31 (6): 1863–86.</p>
 </div>
-<div id="ref-mossin1966equilibrium">
-<p>Mossin, Jan. 1966. “Equilibrium in a Capital Asset Market.” <em>Econometrica: Journal of the Econometric Society</em>, 768–83.</p>
+<div id="ref-mosin_equilibrium_1966">
+<p>Mossin, Jan. 1966. “Equilibrium in a Capital Asset Market.” <em>Econometrica</em> 34 (4): 768–83. <a href="https://doi.org/10.2307/1910098">https://doi.org/10.2307/1910098</a>.</p>
 </div>
-<div id="ref-sharpe1964capital">
+<div id="ref-pastor_liquidity_2003">
+<p>Pástor, L’uboš, and Robert F Stambaugh. 2003. “Liquidity Risk and Expected Stock Returns.” <em>Journal of Political Economy</em> 111 (3): 642–85.</p>
+</div>
+<div id="ref-sharpe_capital_1964">
 <p>Sharpe, William F. 1964. “Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk.” <em>The Journal of Finance</em> 19 (3): 425–42.</p>
+</div>
+<div id="ref-stambaugh_mispricing_2016">
+<p>Stambaugh, Robert F, and Yu Yuan. 2016. “Mispricing Factors.” <em>The Review of Financial Studies</em> 30 (4): 1270–1315.</p>
 </div>
 <div id="ref-szymanowska_anatomy_2014">
 <p>Szymanowska, Marta, Frans De Roon, Theo Nijman, and Rob Van Den Goorbergh. 2014. “An Anatomy of Commodity Futures Risk Premia.” <em>The Journal of Finance</em> 69 (1): 453–82. <a href="https://doi.org/10.1111/jofi.12096">https://doi.org/10.1111/jofi.12096</a>.</p>
 </div>
-<div id="ref-treynor1961market">
+<div id="ref-treynor_market_1961">
 <p>Treynor, Jack L. 1961a. “Market Value, Time, and Risk.”</p>
 </div>
-<div id="ref-treynor1961toward">
+<div id="ref-treynor_toward_1961">
 <p>———. 1961b. <em>Toward a Theory of Market Value of Risky Assets</em>.</p>
 </div>
 </div>

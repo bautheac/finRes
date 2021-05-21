@@ -65,7 +65,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/bautheac/finRes/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,39 +94,38 @@
     
     
 <style> body {text-align: justify} </style>
-<p>finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>, <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>, <a href="https://bautheac.github.io/GICS/">GICS</a> and <a href="https://bautheac.github.io/FFresearch/">FFresearch</a>.</p>
+<p>finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>, <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>, <a href="https://bautheac.github.io/GICS/">GICS</a>, <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> and <a href="https://bautheac.github.io/factors/">factors</a>.</p>
 <div id="bbgsymbols" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bbgsymbols" class="anchor"></a>BBGsymbols</h2>
-<p>The BBGsymbols package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.oi/BBGsymbols">BBGsymbols</a></span>)
+<p>The <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.oi/BBGsymbols">BBGsymbols</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_cftc"</span>, <span class="st">"tickers_futures"</span>), package = <span class="st">"BBGsymbols"</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"fields"</span>, <span class="st">"months"</span>, <span class="st">"rolls"</span>, <span class="st">"tickers_cftc"</span>, <span class="st">"tickers_futures"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"BBGsymbols"</span><span class="op">)</span></code></pre></div>
 <div id="fields" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fields" class="anchor"></a>fields</h3>
-<p>The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for fitting fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writting include ‘equity’, refering to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
+<p>The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include ‘equity’, referring to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
 <pre><code>#&gt; # A tibble: 961 x 10
 #&gt;    instrument book  type  subtype section subsection name  id    symbol
 #&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
-#&gt;  1 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       mark~ RR250 HISTO~
-#&gt;  2 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       ente~ RR472 ENTER~
-#&gt;  3 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju~ IS010 SALES~
-#&gt;  4 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju~ RR861 GROSS~
-#&gt;  5 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju~ RR009 EBITDA
-#&gt;  6 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju~ RR530 EARN_~
-#&gt;  7 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju~ IS147 IS_DI~
-#&gt;  8 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       cash~ CF015 CF_CA~
-#&gt;  9 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       capi~ RR014 CAPIT~
-#&gt; 10 equity     key ~ adju~ &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       free~ RR008 CF_FR~
-#&gt; # ... with 951 more rows, and 1 more variable: description &lt;chr&gt;</code></pre>
+#&gt;  1 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       mark… RR250 HISTO…
+#&gt;  2 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       ente… RR472 ENTER…
+#&gt;  3 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju… IS010 SALES…
+#&gt;  4 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju… RR861 GROSS…
+#&gt;  5 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju… RR009 EBITDA
+#&gt;  6 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju… RR530 EARN_…
+#&gt;  7 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       adju… IS147 IS_DI…
+#&gt;  8 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       cash… CF015 CF_CA…
+#&gt;  9 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       capi… RR014 CAPIT…
+#&gt; 10 equity     key … adju… &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       free… RR008 CF_FR…
+#&gt; # … with 951 more rows, and 1 more variable: description &lt;chr&gt;</code></pre>
 </div>
 <div id="months" class="section level3">
 <h3 class="hasAnchor">
 <a href="#months" class="anchor"></a>months</h3>
-<p>The ‘months’ dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial deriviatives such as futures contracts.</p>
+<p>The ‘months’ dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial derivatives such as futures contracts.</p>
 <pre><code>#&gt; # A tibble: 12 x 2
 #&gt;    name      symbol
 #&gt;    &lt;chr&gt;     &lt;chr&gt; 
@@ -167,19 +166,19 @@
 <a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
 <p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
 <pre><code>#&gt; # A tibble: 22,219 x 10
-#&gt;    name  `asset class` `active contrac~ MIC   format underlying unit 
+#&gt;    name  `asset class` `active contrac… MIC   format underlying unit 
 #&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;
-#&gt;  1 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  2 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  3 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  4 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  5 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  6 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  7 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  8 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt;  9 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt; 10 Cali~ climate       &lt;NA&gt;             IFUS  disag~ futures &amp;~ cont~
-#&gt; # ... with 22,209 more rows, and 3 more variables: participant &lt;chr&gt;,
+#&gt;  1 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  2 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  3 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  4 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  5 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  6 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  7 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  8 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt;  9 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt; 10 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
+#&gt; # … with 22,209 more rows, and 3 more variables: participant &lt;chr&gt;,
 #&gt; #   position &lt;chr&gt;, ticker &lt;chr&gt;</code></pre>
 </div>
 <div id="tickers_futures" class="section level3">
@@ -187,19 +186,19 @@
 <a href="#tickers_futures" class="anchor"></a>tickers_futures</h3>
 <p>The ‘tickers_futures’ dataset gathers futures active contract Bloomberg tickers as well as a collection of qualitative information for several popular futures series including commodity, currency, financial and index futures with underlyings from various asset classes.</p>
 <pre><code>#&gt; # A tibble: 229 x 15
-#&gt;    ticker name  `asset class` sector subsector currency MIC   `term structure~
+#&gt;    ticker name  `asset class` sector subsector currency MIC   `term structure…
 #&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;            &lt;int&gt;
-#&gt;  1 BSDA ~ Carb~ climate       &lt;NA&gt;   &lt;NA&gt;      USD      IFED                50
-#&gt;  2 V6A C~ Butt~ commodity     agric~ dairy     USD      XCME                24
-#&gt;  3 CHEA ~ Chee~ commodity     agric~ dairy     USD      XCME                25
-#&gt;  4 DAA C~ Milk~ commodity     agric~ dairy     USD      XCME                24
-#&gt;  5 KVA C~ Milk~ commodity     agric~ dairy     USD      XCME                23
-#&gt;  6 LEA C~ Milk~ commodity     agric~ dairy     USD      XCME                24
-#&gt;  7 WBSA ~ Whea~ commodity     agric~ financial USD      XCBT                12
-#&gt;  8 QKA C~ Whea~ commodity     agric~ grains    GBP      IFLX                10
-#&gt;  9 RSA C~ Cano~ commodity     agric~ grains    CAD      IFUS                11
-#&gt; 10 C A C~ Corn~ commodity     agric~ grains    USD      XCBT                17
-#&gt; # ... with 219 more rows, and 7 more variables: `contract size` &lt;int&gt;, `trading
+#&gt;  1 BSDA … Carb… climate       &lt;NA&gt;   &lt;NA&gt;      USD      IFED                50
+#&gt;  2 V6A C… Butt… commodity     agric… dairy     USD      XCME                24
+#&gt;  3 CHEA … Chee… commodity     agric… dairy     USD      XCME                25
+#&gt;  4 DAA C… Milk… commodity     agric… dairy     USD      XCME                24
+#&gt;  5 KVA C… Milk… commodity     agric… dairy     USD      XCME                23
+#&gt;  6 LEA C… Milk… commodity     agric… dairy     USD      XCME                24
+#&gt;  7 WBSA … Whea… commodity     agric… financial USD      XCBT                12
+#&gt;  8 QKA C… Whea… commodity     agric… grains    GBP      IFLX                10
+#&gt;  9 RSA C… Cano… commodity     agric… grains    CAD      IFUS                11
+#&gt; 10 C A C… Corn… commodity     agric… grains    USD      XCBT                17
+#&gt; # … with 219 more rows, and 7 more variables: `contract size` &lt;int&gt;, `trading
 #&gt; #   unit` &lt;chr&gt;, `point value` &lt;dbl&gt;, `tick size` &lt;dbl&gt;, `tick value` &lt;dbl&gt;,
 #&gt; #   FIGI &lt;chr&gt;, description &lt;chr&gt;</code></pre>
 </div>
@@ -207,12 +206,11 @@
 <div id="fewisos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fewisos" class="anchor"></a>fewISOs</h2>
-<p>fewISOs provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/fewISOs">fewISOs</a></span>)
+<p><a href="https://bautheac.github.io/fewISOs/">fewISOs</a> provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/fewISOs">fewISOs</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"countries"</span>, <span class="st">"currencies"</span>, <span class="st">"exchanges"</span>), package = <span class="st">"fewISOs"</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"countries"</span>, <span class="st">"currencies"</span>, <span class="st">"exchanges"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"fewISOs"</span><span class="op">)</span></code></pre></div>
 <div id="countries" class="section level3">
 <h3 class="hasAnchor">
 <a href="#countries" class="anchor"></a>countries</h3>
@@ -233,7 +231,7 @@
 #&gt;  8 Anguilla            AI        AIA       660     The Valley      
 #&gt;  9 Antarctica          AQ        ATA       010     &lt;NA&gt;            
 #&gt; 10 Antigua and Barbuda AG        ATG       028     St. John's      
-#&gt; # ... with 240 more rows</code></pre>
+#&gt; # … with 240 more rows</code></pre>
 </div>
 <div id="currencies" class="section level3">
 <h3 class="hasAnchor">
@@ -252,7 +250,7 @@
 #&gt;  8 Australian Dollar             AUD        036     2            AU     
 #&gt;  9 Aruban Florin                 AWG        533     2            AW     
 #&gt; 10 Azerbaijan Manat              AZN        944     2            AZ     
-#&gt; # ... with 145 more rows</code></pre>
+#&gt; # … with 145 more rows</code></pre>
 </div>
 <div id="exchanges" class="section level3">
 <h3 class="hasAnchor">
@@ -261,28 +259,27 @@
 <pre><code>#&gt; # A tibble: 1,669 x 5
 #&gt;    name                              MIC   country city       website           
 #&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
-#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin~
-#&gt;  2 zurcher kantonalbank securities ~ ZKBX  CH      Zurich     www.zkb.ch        
-#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb~ www.jse.co.za     
-#&gt;  4 zar x                             ZARX  ZA      Johannesb~ www.zarx.co.za    
+#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin…
+#&gt;  2 zurcher kantonalbank securities … ZKBX  CH      Zurich     www.zkb.ch        
+#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb… www.jse.co.za     
+#&gt;  4 zar x                             ZARX  ZA      Johannesb… www.zarx.co.za    
 #&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
-#&gt;  6 jse interest rate derivatives ma~ YLDX  ZA      Johannesb~ www.yieldx.co.za  
+#&gt;  6 jse interest rate derivatives ma… YLDX  ZA      Johannesb… www.yieldx.co.za  
 #&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
 #&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
-#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m~
+#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m…
 #&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
-#&gt; # ... with 1,659 more rows</code></pre>
+#&gt; # … with 1,659 more rows</code></pre>
 </div>
 </div>
 <div id="gics" class="section level2">
 <h2 class="hasAnchor">
 <a href="#gics" class="anchor"></a>GICS</h2>
-<p>GICS packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bautheac.github.io/GICS">GICS</a></span>)
+<p><a href="https://bautheac.github.io/GICS/">GICS</a> packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/GICS">GICS</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"standards"</span>), package = <span class="st">"GICS"</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"standards"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"GICS"</span><span class="op">)</span></code></pre></div>
 <div id="standards" class="section level3">
 <h3 class="hasAnchor">
 <a href="#standards" class="anchor"></a>standards</h3>
@@ -290,29 +287,28 @@
 <pre><code>#&gt; # A tibble: 1,669 x 5
 #&gt;    name                              MIC   country city       website           
 #&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
-#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin~
-#&gt;  2 zurcher kantonalbank securities ~ ZKBX  CH      Zurich     www.zkb.ch        
-#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb~ www.jse.co.za     
-#&gt;  4 zar x                             ZARX  ZA      Johannesb~ www.zarx.co.za    
+#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin…
+#&gt;  2 zurcher kantonalbank securities … ZKBX  CH      Zurich     www.zkb.ch        
+#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb… www.jse.co.za     
+#&gt;  4 zar x                             ZARX  ZA      Johannesb… www.zarx.co.za    
 #&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
-#&gt;  6 jse interest rate derivatives ma~ YLDX  ZA      Johannesb~ www.yieldx.co.za  
+#&gt;  6 jse interest rate derivatives ma… YLDX  ZA      Johannesb… www.yieldx.co.za  
 #&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
 #&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
-#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m~
+#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m…
 #&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
-#&gt; # ... with 1,659 more rows</code></pre>
+#&gt; # … with 1,659 more rows</code></pre>
 </div>
 </div>
 <div id="ffresearch" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ffresearch" class="anchor"></a>FFresearch</h2>
-<p>FFresearch conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French’s online <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a>. Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://bautheac.github.io/FFresearch">FFresearch</a></span>)
+<p><a href="https://bautheac.github.io/FFresearch/">FFresearch</a> conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French’s online <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a>. Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/FFresearch">FFresearch</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(list = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"factors"</span>, <span class="st">"portfolios_univariate"</span>, <span class="st">"portfolios_bivariate"</span>, <span class="st">"portfolios_trivariate"</span>,
-              <span class="st">"portfolios_industries"</span>, <span class="st">"variables"</span>, <span class="st">"breakpoints"</span>), package = <span class="st">"FFresearch"</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"factors"</span>, <span class="st">"portfolios_univariate"</span>, <span class="st">"portfolios_bivariate"</span>, <span class="st">"portfolios_trivariate"</span>,
+              <span class="st">"portfolios_industries"</span>, <span class="st">"variables"</span>, <span class="st">"breakpoints"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"FFresearch"</span><span class="op">)</span></code></pre></div>
 <div id="portfolios" class="section level3">
 <h3 class="hasAnchor">
 <a href="#portfolios" class="anchor"></a>portfolios</h3>
@@ -323,56 +319,56 @@
 <pre><code>#&gt; # A tibble: 2,586,965 x 9
 #&gt;    region frequency `sort variable` dividend weights portfolio field period
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;           &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;     &lt;fct&gt; &lt;chr&gt; 
-#&gt;  1 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  2 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  3 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  4 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  5 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  6 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  7 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  8 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt;  9 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt; 10 US     day       market capital~ Y        value   Dec 2     retu~ 19880~
-#&gt; # ... with 2,586,955 more rows, and 1 more variable: value &lt;dbl&gt;</code></pre>
+#&gt;  1 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  2 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  3 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  4 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  5 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  6 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  7 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  8 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt;  9 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt; 10 US     day       market capital… Y        value   Dec 2     retu… 19880…
+#&gt; # … with 2,586,955 more rows, and 1 more variable: value &lt;dbl&gt;</code></pre>
 </div>
 <div id="bivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#bivariate" class="anchor"></a>bivariate</h4>
 <p>The ‘portfolios_bivariate’ dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
 <pre><code>#&gt; # A tibble: 25,350,690 x 10
-#&gt;    region frequency `sort variable ~ `sort variable ~ dividend weights portfolio
+#&gt;    region frequency `sort variable … `sort variable … dividend weights portfolio
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;    
-#&gt;  1 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  2 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  3 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  4 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  5 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  6 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  7 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  8 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt;  9 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt; 10 US     day       market capitali~ book/market      Y        value   BIG HiBM 
-#&gt; # ... with 25,350,680 more rows, and 3 more variables: field &lt;fct&gt;,
-#&gt; #   period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+#&gt;  1 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  2 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  3 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  4 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  5 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  6 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  7 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  8 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt;  9 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt; 10 US     day       market capitali… book/market      Y        value   BIG HiBM 
+#&gt; # … with 25,350,680 more rows, and 3 more variables: field &lt;fct&gt;, period &lt;chr&gt;,
+#&gt; #   value &lt;dbl&gt;</code></pre>
 </div>
 <div id="trivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#trivariate" class="anchor"></a>trivariate</h4>
 <p>The ‘portfolios_trivariate’ dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
 <pre><code>#&gt; # A tibble: 2,580,480 x 11
-#&gt;    region frequency `sort variable ~ `sort variable ~ `sort variable ~ dividend
+#&gt;    region frequency `sort variable … `sort variable … `sort variable … dividend
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;   
-#&gt;  1 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  2 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  3 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  4 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  5 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  6 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  7 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  8 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt;  9 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt; 10 US     month     market capitali~ book/market      operating profi~ Y       
-#&gt; # ... with 2,580,470 more rows, and 5 more variables: weights &lt;fct&gt;,
+#&gt;  1 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  2 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  3 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  4 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  5 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  6 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  7 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  8 US     month     market capitali… book/market      operating profi… Y       
+#&gt;  9 US     month     market capitali… book/market      operating profi… Y       
+#&gt; 10 US     month     market capitali… book/market      operating profi… Y       
+#&gt; # … with 2,580,470 more rows, and 5 more variables: weights &lt;fct&gt;,
 #&gt; #   portfolio &lt;chr&gt;, field &lt;fct&gt;, period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 </div>
 <div id="industries" class="section level4">
@@ -392,13 +388,13 @@
 #&gt;  8 US     month     Y        value   Aero      return 199801  1.31
 #&gt;  9 US     month     Y        value   Aero      return 199801  1.31
 #&gt; 10 US     month     Y        value   Aero      return 199801  1.31
-#&gt; # ... with 3,516,206 more rows</code></pre>
+#&gt; # … with 3,516,206 more rows</code></pre>
 </div>
 </div>
 <div id="factors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factors" class="anchor"></a>factors</h3>
-<p>The ‘factors’ dataset provides the return (factors) and level (ris free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models extremely popular to the asset pricing enthousiasts.</p>
+<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models extremely popular to the asset pricing enthousiasts.</p>
 <pre><code>#&gt; # A tibble: 399,132 x 5
 #&gt;    region frequency factor period value
 #&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
@@ -412,7 +408,7 @@
 #&gt;  8 US     month     CMA    198808  1.74
 #&gt;  9 US     month     CMA    198809 -0.48
 #&gt; 10 US     month     CMA    198810  1.04
-#&gt; # ... with 399,122 more rows</code></pre>
+#&gt; # … with 399,122 more rows</code></pre>
 </div>
 <div id="variables" class="section level3">
 <h3 class="hasAnchor">
@@ -421,17 +417,17 @@
 <pre><code>#&gt; # A tibble: 23 x 3
 #&gt;    name              symbol description                                         
 #&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;                                               
-#&gt;  1 market capitaliz~ ME     Market equity (size) is price times shares outstand~
-#&gt;  2 book value        BE     Book equity is constructed from Compustat data or c~
-#&gt;  3 book/market       ME/BE  The book-to-market ratio used to form portfolios in~
-#&gt;  4 operating profit~ OP     The operating profitability ratio used to form port~
-#&gt;  5 investment        INV    The investment ratio used to form portfolios in Jun~
-#&gt;  6 earnings/price    E/P    Earnings is total earnings before extraordinary ite~
-#&gt;  7 cash flow/price   CF/P   Cashflow is total earnings before extraordinary ite~
-#&gt;  8 dividend/price    D/P    The dividend yield used to form portfolios in June ~
-#&gt;  9 accruals          ACCR   AC for June of year t is the change in operating wo~
-#&gt; 10 univariate marke~ BETA   ß for June of year t is estimated using the precedi~
-#&gt; # ... with 13 more rows</code></pre>
+#&gt;  1 market capitaliz… ME     Market equity (size) is price times shares outstand…
+#&gt;  2 book value        BE     Book equity is constructed from Compustat data or c…
+#&gt;  3 book/market       ME/BE  The book-to-market ratio used to form portfolios in…
+#&gt;  4 operating profit… OP     The operating profitability ratio used to form port…
+#&gt;  5 investment        INV    The investment ratio used to form portfolios in Jun…
+#&gt;  6 earnings/price    E/P    Earnings is total earnings before extraordinary ite…
+#&gt;  7 cash flow/price   CF/P   Cashflow is total earnings before extraordinary ite…
+#&gt;  8 dividend/price    D/P    The dividend yield used to form portfolios in June …
+#&gt;  9 accruals          ACCR   AC for June of year t is the change in operating wo…
+#&gt; 10 univariate marke… BETA   β for June of year t is estimated using the precedi…
+#&gt; # … with 13 more rows</code></pre>
 </div>
 <div id="breakpoints" class="section level3">
 <h3 class="hasAnchor">
@@ -450,7 +446,40 @@
 #&gt;  8 size     month     # positive 199808  1817
 #&gt;  9 size     month     # positive 199809  1810
 #&gt; 10 size     month     # positive 199810  1795
-#&gt; # ... with 13,304 more rows</code></pre>
+#&gt; # … with 13,304 more rows</code></pre>
+</div>
+</div>
+<div id="factors-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#factors-1" class="anchor"></a>factors</h2>
+<p>The <a href="https://bautheac.github.io/factors/">factors</a> package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors’ website. The current version includes the factor data from Kenneth’s French, also available in the FFresearch package described above, as well as factor data from Robert F. Stambaugh.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/factors">factors</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Fama &amp; French"</span>, <span class="st">"Stambaugh et al"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"factors"</span><span class="op">)</span></code></pre></div>
+<div id="fama-french" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fama-french" class="anchor"></a>Fama &amp; French</h3>
+<p>The ‘Fama &amp; French’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
+<pre><code>#&gt;    region frequency factor period value
+#&gt; 1:     US     month    CMA 196801  6.45
+#&gt; 2:     US     month    CMA 196802  2.48
+#&gt; 3:     US     month    CMA 196803 -1.15
+#&gt; 4:     US     month    CMA 196804 -3.66
+#&gt; 5:     US     month    CMA 196805 -1.85
+#&gt; 6:     US     month    CMA 196806  2.65</code></pre>
+</div>
+<div id="stambaugh-et-al" class="section level3">
+<h3 class="hasAnchor">
+<a href="#stambaugh-et-al" class="anchor"></a>Stambaugh et al</h3>
+<p>The ‘Stambaugh et al’ dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
+<pre><code>#&gt;    frequency               factor period       value
+#&gt; 1:     month non-traded liquidity 196208  0.00437073
+#&gt; 2:     month non-traded liquidity 196209  0.01230259
+#&gt; 3:     month non-traded liquidity 196210 -0.07407571
+#&gt; 4:     month non-traded liquidity 196211  0.02923186
+#&gt; 5:     month non-traded liquidity 196212  0.01592809
+#&gt; 6:     month non-traded liquidity 196301  0.01013548</code></pre>
 </div>
 </div>
 <div id="references" class="section level2 unnumbered">
@@ -480,6 +509,12 @@
 </div>
 <div id="ref-fama_international_2017">
 <p>———. 2017. “International Tests of a Five-Factor Asset Pricing Model.” <em>Journal of Financial Economics</em> 123 (3): 441–63. <a href="https://doi.org/10.1016/j.jfineco.2016.11.004">https://doi.org/10.1016/j.jfineco.2016.11.004</a>.</p>
+</div>
+<div id="ref-pastor_liquidity_2003">
+<p>Pástor, L’uboš, and Robert F Stambaugh. 2003. “Liquidity Risk and Expected Stock Returns.” <em>Journal of Political Economy</em> 111 (3): 642–85.</p>
+</div>
+<div id="ref-stambaugh_mispricing_2016">
+<p>Stambaugh, Robert F, and Yu Yuan. 2016. “Mispricing Factors.” <em>The Review of Financial Studies</em> 30 (4): 1270–1315.</p>
 </div>
 </div>
 </div>
