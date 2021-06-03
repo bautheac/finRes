@@ -6,11 +6,12 @@ path <- here::here("development", "storethat.sqlite")
 
 ## ----`globals bbg`, warnings = F, message = F, eval = F, echo = F-------------
 #  library(pullit); library(lubridate)
+#  # end <- Sys.Date(); start <- end - years(2L)
 #  start <- "2016-01-01"; end <- "2017-12-31"
 
 ## ----`globals storethat`, warnings = F, message = F, eval = T-----------------
 library(pullit); library(lubridate)
-# end <- Sys.Date(); start <- end - years(2L)
+
 start <- "2016-01-01"; end <- "2017-12-31"
 
 ## ----`equity market bbg`, eval = F, echo = T----------------------------------
@@ -135,13 +136,16 @@ futures_agg
 ## ----`futures CFTC bbg`, echo = T, eval = F-----------------------------------
 #  futures_CFTC <- pull_futures_CFTC(source = "Bloomberg", active_contract_tickers = futures_tickers,
 #                                    start, end, verbose = F)
+#  futures_CFTC
 
 ## ----`futures CFTC storethat`, echo = F, eval = T-----------------------------
 futures_CFTC <- pull_futures_CFTC(source = "storethat", active_contract_tickers = futures_tickers, 
                                   start, end, verbose = F, file = path)
+futures_CFTC
 
 ## ----`futures info bbg`, echo = T, eval = F-----------------------------------
 #  futures_info <- pull_futures_info(source = "Bloomberg", futures_tickers, verbose = F)
+#  futures_info
 
 ## ----`futures info storethat`, echo = F, eval = T-----------------------------
 futures_info <- pull_futures_info(source = "storethat", futures_tickers, verbose = F, file = path)

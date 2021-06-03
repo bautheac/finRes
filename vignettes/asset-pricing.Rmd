@@ -83,19 +83,19 @@ Meanwhile, the [factors](https://bautheac.github.io/factors/) package provides v
 ```{r, `factors load`}
 library(factors)
 
-data(list = c("Fama & French", "Stambaugh et al"), package = "factors")
+data(list = c("fama_french", "stambaugh"), package = "factors")
 ```
 
 ### Fama & French
-The 'Fama & French' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models very popular to the asset pricing enthusiasts:
-```{r, `Fama & French`, echo = FALSE}
-head(`Fama & French`)
+The 'fama_french' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models very popular to the asset pricing enthusiasts:
+```{r, fama_french, echo = FALSE}
+head(fama_french)
 ```
 
 ### Stambaugh et al
-The 'Stambaugh et al' dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded & non-traded liquidity [@pastor_liquidity_2003], as well as market, size and two 'mispricing' factors: management & performance [@stambaugh_mispricing_2016]:  
-```{r, `Stambaugh et al.`, echo = FALSE}
-head(`Stambaugh et al`)
+The 'stambaugh' dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded & non-traded liquidity [@pastor_liquidity_2003], as well as market, size and two 'mispricing' factors: management & performance [@stambaugh_mispricing_2016]:  
+```{r, stambaugh, echo = FALSE}
+head(stambaugh)
 ```
 
 
@@ -148,7 +148,7 @@ ranking_period = 1L
 
 factor <- factorem(
   name = "momentum", data = pullit::get_data(equity_data_market),
-  ranking_period = ranking_period
+  sort_levels = FALSE, weighted = FALSE, ranking_period = ranking_period
   )
 factor
 ```
@@ -257,7 +257,7 @@ futures_OI_nearby <- OI_nearby_factor(data = futures_data_TS, ranking_period = r
 futures_OI_nearby
 ```
 ###### __aggregate__
-In contrast, the aggregate open interest factor [@basu_financiallisation_2020] is concerned with liquidity over the whole futures term structure and sorts on open interest aggregated (summed up) over the futures term structure:
+In contrast, the aggregate open interest factor [@basu_financialisation_2020] is concerned with liquidity over the whole futures term structure and sorts on open interest aggregated (summed up) over the futures term structure:
 ```{r `futures OI aggregate bbg`, message = F, warning = F, echo = T, eval = F}
 futures_data_agg <- pull_futures_market(source = "Bloomberg", type = "aggregate", tickers_futures,
                                         start, end, verbose = F)

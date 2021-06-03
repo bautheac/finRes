@@ -9,19 +9,23 @@ library(BBGsymbols)
 data(list = c("fields", "months", "rolls", "tickers_cftc", "tickers_futures"), package = "BBGsymbols")
 
 ## ----`BBGsymbols fields`, echo = FALSE----------------------------------------
+# data.table::as.data.table(fields)
 tibble::as_tibble(fields)
+# head(fields)
 
 ## ----`BBGsymbols months`, echo = FALSE----------------------------------------
-tibble::as_tibble(months)
+months
 
 ## ----`BBGsymbols rolls`, echo = FALSE-----------------------------------------
-tibble::as_tibble(rolls)
+rolls
 
 ## ----`tickers_CFTC`, echo = FALSE---------------------------------------------
-tibble::as_tibble(tickers_cftc)
+tickers_cftc
 
 ## ----`tickers_futures`, echo = FALSE------------------------------------------
+# data.table::as.data.table(tickers_futures)
 tibble::as_tibble(tickers_futures)
+# head(tickers_futures)
 
 ## ----`fewISOs load`-----------------------------------------------------------
 library(fewISOs)
@@ -29,13 +33,13 @@ library(fewISOs)
 data(list = c("countries", "currencies", "exchanges"), package = "fewISOs")
 
 ## ----`fewISOs countries`, echo = FALSE----------------------------------------
-tibble::as_tibble(countries)
+countries
 
 ## ----`fewISOs currencies`, echo = FALSE---------------------------------------
-tibble::as_tibble(currencies)
+currencies
 
 ## ----`fewISOs exchanges`, echo = FALSE----------------------------------------
-tibble::as_tibble(exchanges)
+exchanges
 
 ## ----`GICS load`--------------------------------------------------------------
 library(GICS)
@@ -43,7 +47,7 @@ library(GICS)
 data(list = c("standards"), package = "GICS")
 
 ## ----`GICS standards`, echo = FALSE-------------------------------------------
-tibble::as_tibble(exchanges)
+exchanges
 
 ## ----`FFresearch load`--------------------------------------------------------
 library(FFresearch)
@@ -52,34 +56,34 @@ data(list = c("factors", "portfolios_univariate", "portfolios_bivariate", "portf
               "portfolios_industries", "variables", "breakpoints"), package = "FFresearch")
 
 ## ---- `FFresearch portfolios_univariate`, echo = FALSE------------------------
-tibble::as_tibble(portfolios_univariate)
+portfolios_univariate
 
 ## ---- `FFresearch portfolios_bivariate`, echo = FALSE-------------------------
-tibble::as_tibble(portfolios_bivariate)
+portfolios_bivariate
 
 ## ---- `FFresearch portfolios_trivariate`, echo = FALSE------------------------
-tibble::as_tibble(portfolios_trivariate)
+portfolios_trivariate
 
 ## ---- `FFresearchportfolios_industries`, echo = FALSE-------------------------
-tibble::as_tibble(portfolios_industries)
+portfolios_industries
 
 ## ---- `FFresearch factors`, echo = FALSE--------------------------------------
-tibble::as_tibble(factors)
+factors
 
 ## ---- `FFresearch variables`, echo = FALSE------------------------------------
-tibble::as_tibble(variables)
+variables
 
 ## ---- `FFresearch breakpoints`, echo = FALSE----------------------------------
-tibble::as_tibble(breakpoints)
+breakpoints
 
 ## ---- `factors load`----------------------------------------------------------
 library(factors)
 
-data(list = c("Fama & French", "Stambaugh et al"), package = "factors")
+data(list = c("fama_french", "stambaugh"), package = "factors")
 
-## ---- `Fama & French`, echo = FALSE-------------------------------------------
-head(`Fama & French`)
+## ---- fama_french, echo = FALSE-----------------------------------------------
+fama_french
 
-## ---- `Stambaugh et al.`, echo = FALSE----------------------------------------
-head(`Stambaugh et al`)
+## ---- stambaugh, echo = FALSE-------------------------------------------------
+stambaugh
 

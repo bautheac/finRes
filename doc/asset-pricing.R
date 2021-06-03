@@ -36,13 +36,13 @@ head(breakpoints)
 ## ---- `factors load`----------------------------------------------------------
 library(factors)
 
-data(list = c("Fama & French", "Stambaugh et al"), package = "factors")
+data(list = c("fama_french", "stambaugh"), package = "factors")
 
-## ---- `Fama & French`, echo = FALSE-------------------------------------------
-head(`Fama & French`)
+## ---- fama_french, echo = FALSE-----------------------------------------------
+head(fama_french)
 
-## ---- `Stambaugh et al.`, echo = FALSE----------------------------------------
-head(`Stambaugh et al`)
+## ---- stambaugh, echo = FALSE-------------------------------------------------
+head(stambaugh)
 
 ## ----`pullit equity BBG`, message = F, warning = F, echo = T, eval = F--------
 #  library(pullit); library(lubridate)
@@ -83,7 +83,7 @@ ranking_period = 1L
 
 factor <- factorem(
   name = "momentum", data = pullit::get_data(equity_data_market),
-  ranking_period = ranking_period
+  sort_levels = FALSE, weighted = FALSE, ranking_period = ranking_period
   )
 factor
 
