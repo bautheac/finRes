@@ -83,19 +83,19 @@ Meanwhile, the [factors](https://bautheac.github.io/factors/) package provides v
 ```{r, `factors load`}
 library(factors)
 
-data(list = c("Fama & French", "Stambaugh et al"), package = "factors")
+data(list = c("fama_french", "stambaugh"), package = "factors")
 ```
 
 ### Fama & French
-The 'Fama & French' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models very popular to the asset pricing enthusiasts:
-```{r, `Fama & French`, echo = FALSE}
-head(`Fama & French`)
+The 'fama_french' dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three [@fama_cross_section_1992; @fama_common_1993; @fama_size_1995] and most recently five-factor [@fama_five_factor_2015; @fama_dissecting_2016; @fama_international_2017] asset pricing models very popular to the asset pricing enthusiasts:
+```{r, fama_french, echo = FALSE}
+head(fama_french)
 ```
 
 ### Stambaugh et al
-The 'Stambaugh et al' dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded & non-traded liquidity [@pastor_liquidity_2003], as well as market, size and two 'mispricing' factors: management & performance [@stambaugh_mispricing_2016]:  
-```{r, `Stambaugh et al.`, echo = FALSE}
-head(`Stambaugh et al`)
+The 'stambaugh' dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded & non-traded liquidity [@pastor_liquidity_2003], as well as market, size and two 'mispricing' factors: management & performance [@stambaugh_mispricing_2016]:  
+```{r, stambaugh, echo = FALSE}
+head(stambaugh)
 ```
 
 
@@ -148,7 +148,7 @@ ranking_period = 1L
 
 factor <- factorem(
   name = "momentum", data = pullit::get_data(equity_data_market),
-  ranking_period = ranking_period
+  sort_levels = FALSE, weighted = FALSE, ranking_period = ranking_period
   )
 factor
 ```
@@ -161,7 +161,7 @@ factorem provides wrapper methods for popular asset pricing factors in the liter
 
 #### equity
 
-##### market
+##### __market__
 The equity market factor encompasses the entire cross-section of a defined investment opportunity set with, at the time of writing, equal individual position weights. It came into sight in the 1960s for the central role it plays in the Capital Asset Pricing Model [@treynor_market_1961; @treynor_toward_1961; @sharpe_capital_1964; @mosin_equilibrium_1966; @lintner_valuation_1975] and remains the most popular factor to date in the literature when it comes to explaining the cross-section of equity returns:
 
 ```{r `equity market`, message = F, warning = F}
@@ -169,7 +169,7 @@ equity_market <- market_factor(data = equity_data_market)
 equity_market
 ```
 
-##### momentum
+##### __momentum__
 The equity momentum factor is another popular factor in the asset pricing literature. After being first introduced in @carhart_persistence_1997 it eventually drew the field leaders' attention in @fama_size_2012 The equity momentum sorts on prior returns over a defined ranking period:
 
 ```{r `equity momentum`, message = F, warning = F}
@@ -206,7 +206,7 @@ futures_data_TS <- pull_futures_market(
 pullit::get_data(futures_data_TS)
 ```
 
-##### market
+##### __market__
 factorem provides futures equivalent for the factors above including a futures market factor that, at the time of writing, takes equally weighted positions on the nearby front contract of the commodity futures series provided:
 ```{r `futures market`, message = F, warning = F}
 futures_market <- market_factor(data = futures_data_TS)
@@ -214,7 +214,7 @@ futures_market
 ```
 
 
-##### momentum
+##### __momentum__
 The momentum factor is also popular in the futures asset pricing literature in particular in the context of commodity markets [@miffre_momentum_2007]. As does its equity equivalent, it sorts on prior returns:
 ```{r `futures momentum`, message = F, warning = F}
 ranking_period = 1L
@@ -223,7 +223,7 @@ futures_momentum
 ```
 
 
-##### commercial hedging pressure (CHP)
+##### __commercial hedging pressure__ (__CHP__)
 The futures commercial hedging pressure factor is based on the well-known hedging pressure-based theory [@anderson_hedger_1983; @chang_returns_1985; @cootner_returns_1960; @dusak_futures_1973; @hicks_value_1939; @hirshleifer_risk_1988; @hirshleifer_determinants_1989; @hirshleifer_hedging_1990; @kolb_is_1992; @keynes_treatise_1930] which postulates that futures prices for a given commodity are inversely related to the extent that commercial hedgers are short or long and the mimicking portfolio here aims at capturing the impact of hedging pressure as a systemic factor [@basu_capturing_2013].  
 ```{r `futures CHP bbg`, message = F, warning = F, echo = T, eval = F}
 futures_data_CFTC <- pull_futures_CFTC(source = "Bloomberg", tickers_futures, start, end, verbose = F)
@@ -246,18 +246,18 @@ futures_CHP <- CHP_factor(
 futures_CHP
 ```
 
-##### open interest
+##### __open interest__
 The open interest factor relates to futures market liquidity and is popular in the literature, in particular in the context of commodity markets research [@hong_what_2012]. It comes in two flavours in factorem, nearby and aggregate.
 
-###### nearby
+###### __nearby__
 The nearby open interest factor is concerned with liquidity at the very front end of the term structure where it sort on nearby front contract's open interest:
 ```{r `futures OI nearby`, message = F, warning = F}
 ranking_period = 1L
 futures_OI_nearby <- OI_nearby_factor(data = futures_data_TS, ranking_period = ranking_period)
 futures_OI_nearby
 ```
-###### aggregate
-In contrast, the aggregate open interest factor [@basu_financiallization_2020] is concerned with liquidity over the whole futures term structure and sorts on open interest aggregated (summed up) over the futures term structure:
+###### __aggregate__
+In contrast, the aggregate open interest factor [@basu_financialisation_2020] is concerned with liquidity over the whole futures term structure and sorts on open interest aggregated (summed up) over the futures term structure:
 ```{r `futures OI aggregate bbg`, message = F, warning = F, echo = T, eval = F}
 futures_data_agg <- pull_futures_market(source = "Bloomberg", type = "aggregate", tickers_futures,
                                         start, end, verbose = F)
@@ -279,7 +279,7 @@ futures_OI_aggregate <- OI_aggregate_factor(price_data = futures_data_TS,
 futures_OI_aggregate
 ```
 
-##### term structure
+##### __term structure__
 The futures term structure factor [@szymanowska_anatomy_2014; @fuertes_commodity_2015] is concerned with the shape (steepness) of the futures term structure and sort on roll yield:
 ```{r `futures TS`, message = F, warning = F}
 ranking_period = 1L
@@ -317,8 +317,7 @@ get_call(factor)
 ```
 
 #### summary
-A summary method returns a performance summary of the corresponding factor:
-#### function call
+A summary method returns a performance summary of the corresponding factor:  
 ```{r `factor summary`}
 summary(factor)
 ```
@@ -328,6 +327,8 @@ summary(factor)
 The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRes suite, provides plot methods for the factor objects returned by the functions above:
 
 #### performance overview
+
+The plot function dispatched on a factor object from factorem with the parameter "type" set to "performance" displays an overview of the performance of the corresponding factor in the form of equity curves. The equity curve for the factor is plotted along with, for long-short factors only, that of the long and short leg of the factor independently:
 ```{r `plot performance`, fig.width = 7.5, fig.height = 5.5, fig.fullwidth = T}
 library(plotit)
 
@@ -335,6 +336,8 @@ plot(object = factor, type = "performance")
 ```
 
 #### positions overview
+
+Similarly, with the "type" parameter set to "positions", the plot function shows the proportion of time each asset leaves in the factor with a breakdown by leg for long-short factors:
 ```{r `plot positions`, fig.width = 7.5, fig.height = 6.5, fig.fullwidth = T}
 plot(object = factor, type = "positions")
 ```

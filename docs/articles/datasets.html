@@ -98,7 +98,7 @@
 <div id="bbgsymbols" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bbgsymbols" class="anchor"></a>BBGsymbols</h2>
-<p>The <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2018)</span>.</p>
+<p>The <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2021)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.oi/BBGsymbols">BBGsymbols</a></span><span class="op">)</span>
 
@@ -126,60 +126,77 @@
 <h3 class="hasAnchor">
 <a href="#months" class="anchor"></a>months</h3>
 <p>The ‘months’ dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial derivatives such as futures contracts.</p>
-<pre><code>#&gt; # A tibble: 12 x 2
-#&gt;    name      symbol
-#&gt;    &lt;chr&gt;     &lt;chr&gt; 
-#&gt;  1 January   F     
-#&gt;  2 February  G     
-#&gt;  3 March     H     
-#&gt;  4 April     J     
-#&gt;  5 May       K     
-#&gt;  6 June      M     
-#&gt;  7 July      N     
-#&gt;  8 August    Q     
-#&gt;  9 September U     
-#&gt; 10 October   V     
-#&gt; 11 November  X     
-#&gt; 12 December  Z</code></pre>
+<pre><code>#&gt;          name symbol
+#&gt;  1:   January      F
+#&gt;  2:  February      G
+#&gt;  3:     March      H
+#&gt;  4:     April      J
+#&gt;  5:       May      K
+#&gt;  6:      June      M
+#&gt;  7:      July      N
+#&gt;  8:    August      Q
+#&gt;  9: September      U
+#&gt; 10:   October      V
+#&gt; 11:  November      X
+#&gt; 12:  December      Z</code></pre>
 </div>
 <div id="rolls" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rolls" class="anchor"></a>rolls</h3>
 <p>The ‘rolls’ dataset details the symbols used to refer to the various roll types and adjustments available in Bloomberg when working with futures term structure contracts. These symbols can be used to construct bespoke tickers that allow the user to query Bloomberg for futures term structure data with the desired roll characteristics.</p>
-<pre><code>#&gt; # A tibble: 11 x 3
-#&gt;    roll       symbol name                    
-#&gt;    &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;                   
-#&gt;  1 type       A      With active future      
-#&gt;  2 type       B      Bloomberg default       
-#&gt;  3 type       D      At first delivery       
-#&gt;  4 type       F      Fixed day of month      
-#&gt;  5 type       N      Relative to first notice
-#&gt;  6 type       O      At option expiration    
-#&gt;  7 type       R      Relative to expiration  
-#&gt;  8 adjustment D      Difference              
-#&gt;  9 adjustment N      None                    
-#&gt; 10 adjustment R      Ratio                   
-#&gt; 11 adjustment W      Average</code></pre>
+<pre><code>#&gt;           roll symbol                     name
+#&gt;  1:       type      A       With active future
+#&gt;  2:       type      B        Bloomberg default
+#&gt;  3:       type      D        At first delivery
+#&gt;  4:       type      F       Fixed day of month
+#&gt;  5:       type      N Relative to first notice
+#&gt;  6:       type      O     At option expiration
+#&gt;  7:       type      R   Relative to expiration
+#&gt;  8: adjustment      D               Difference
+#&gt;  9: adjustment      N                     None
+#&gt; 10: adjustment      R                    Ratio
+#&gt; 11: adjustment      W                  Average</code></pre>
 </div>
 <div id="tickers_cftc" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
-<p>The ‘tickers_CFTC’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
-<pre><code>#&gt; # A tibble: 22,219 x 10
-#&gt;    name  `asset class` `active contrac… MIC   format underlying unit 
-#&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;
-#&gt;  1 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  2 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  3 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  4 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  5 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  6 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  7 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  8 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt;  9 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt; 10 Cali… climate       &lt;NA&gt;             IFUS  disag… futures &amp;… cont…
-#&gt; # … with 22,209 more rows, and 3 more variables: participant &lt;chr&gt;,
-#&gt; #   position &lt;chr&gt;, ticker &lt;chr&gt;</code></pre>
+<p>The ‘tickers_cftc’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
+<pre><code>#&gt;                                            name  asset class
+#&gt;     1: California Carbon Allowance Vintage 2014      climate
+#&gt;     2: California Carbon Allowance Vintage 2014      climate
+#&gt;     3: California Carbon Allowance Vintage 2014      climate
+#&gt;     4: California Carbon Allowance Vintage 2014      climate
+#&gt;     5: California Carbon Allowance Vintage 2014      climate
+#&gt;    ---                                                      
+#&gt; 22215:                     LIBOR rate - 1-month fixed income
+#&gt; 22216:                     LIBOR rate - 1-month fixed income
+#&gt; 22217:                     LIBOR rate - 1-month fixed income
+#&gt; 22218:                     LIBOR rate - 1-month fixed income
+#&gt; 22219:                     LIBOR rate - 1-month fixed income
+#&gt;        active contract ticker  MIC        format        underlying      unit
+#&gt;     1:                   &lt;NA&gt; IFUS disaggregated futures &amp; options contracts
+#&gt;     2:                   &lt;NA&gt; IFUS disaggregated futures &amp; options contracts
+#&gt;     3:                   &lt;NA&gt; IFUS disaggregated futures &amp; options contracts
+#&gt;     4:                   &lt;NA&gt; IFUS disaggregated futures &amp; options contracts
+#&gt;     5:                   &lt;NA&gt; IFUS disaggregated futures &amp; options contracts
+#&gt;    ---                                                                      
+#&gt; 22215:             EMA Comdty XCME        legacy      futures only   traders
+#&gt; 22216:             EMA Comdty XCME        legacy      futures only   traders
+#&gt; 22217:             EMA Comdty XCME        legacy      futures only   traders
+#&gt; 22218:             EMA Comdty XCME        legacy      futures only   traders
+#&gt; 22219:             EMA Comdty XCME        legacy      futures only   traders
+#&gt;              participant  position         ticker
+#&gt;     1:     managed money      long CC21DMML Index
+#&gt;     2:     managed money       net CC21DMMN Index
+#&gt;     3:     managed money     short CC21DMMS Index
+#&gt;     4:     managed money spreading CC21DMMD Index
+#&gt;     5: other reportables      long CC21DORL Index
+#&gt;    ---                                           
+#&gt; 22215:    non-commercial     short IMM11TNS Index
+#&gt; 22216:    non-commercial spreading IMM11TNP Index
+#&gt; 22217:             total      long IMM11TTL Index
+#&gt; 22218:             total     short IMM11TTS Index
+#&gt; 22219:             total     total IMM11TTO Index</code></pre>
 </div>
 <div id="tickers_futures" class="section level3">
 <h3 class="hasAnchor">
@@ -218,58 +235,64 @@
 - ISO 3166-1 alpha-2: two-letter country codes (most widely used).<br>
 - ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.<br>
 - ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</p>
-<pre><code>#&gt; # A tibble: 250 x 5
-#&gt;    name                `alpha 2` `alpha 3` numeric capital         
-#&gt;    &lt;chr&gt;               &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;           
-#&gt;  1 Afghanistan         AF        AFG       004     Kabul           
-#&gt;  2 Åland Islands       AX        ALA       248     Mariehamn       
-#&gt;  3 Albania             AL        ALB       008     Tirana          
-#&gt;  4 Algeria             DZ        DZA       012     Algiers         
-#&gt;  5 American Samoa      AS        ASM       016     Pago Pago       
-#&gt;  6 Andorra             AD        AND       020     Andorra la Vella
-#&gt;  7 Angola              AO        AGO       024     Luanda          
-#&gt;  8 Anguilla            AI        AIA       660     The Valley      
-#&gt;  9 Antarctica          AQ        ATA       010     &lt;NA&gt;            
-#&gt; 10 Antigua and Barbuda AG        ATG       028     St. John's      
-#&gt; # … with 240 more rows</code></pre>
+<pre><code>#&gt;                           name alpha 2 alpha 3 numeric   capital
+#&gt;   1:               Afghanistan      AF     AFG     004     Kabul
+#&gt;   2:             Åland Islands      AX     ALA     248 Mariehamn
+#&gt;   3:                   Albania      AL     ALB     008    Tirana
+#&gt;   4:                   Algeria      DZ     DZA     012   Algiers
+#&gt;   5:            American Samoa      AS     ASM     016 Pago Pago
+#&gt;  ---                                                            
+#&gt; 246: Wallis and Futuna Islands      WF     WLF     876  Mata Utu
+#&gt; 247:            Western Sahara      EH     ESH     732  El-Aaiun
+#&gt; 248:                     Yemen      YE     YEM     887     Sanaa
+#&gt; 249:                    Zambia      ZM     ZMB     894    Lusaka
+#&gt; 250:                  Zimbabwe      ZW     ZWE     716    Harare</code></pre>
 </div>
 <div id="currencies" class="section level3">
 <h3 class="hasAnchor">
 <a href="#currencies" class="anchor"></a>currencies</h3>
 <p>The currencies dataset corresponds to the ISO 4217 standard that defines codes for worldwide currencies and comes as a three-letter alphabetic as well as an alternative three-digit numeric code, both provided in the dataset. The ISO 4217 three-letter alphabetic code standard is based on the ISO 3166-1 code standard for countries with the first two letters corresponding the ISO 3166-1 alpha-2 code for the country issuing the corresponding currency and the third corresponding to the first letter of the currency name when possible. The three-digit numeric code is the same as the ISO 3166-1 numeric code for the issuing country when possible.</p>
-<pre><code>#&gt; # A tibble: 155 x 5
-#&gt;    name                          alphabetic numeric `minor unit` country
-#&gt;    &lt;chr&gt;                         &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;  
-#&gt;  1 UAE Dirham                    AED        784     2            AE     
-#&gt;  2 Afghani                       AFN        971     2            AF     
-#&gt;  3 Lek                           ALL        008     2            AL     
-#&gt;  4 Armenian Dram                 AMD        051     2            AM     
-#&gt;  5 Netherlands Antillean Guilder ANG        532     2            CW     
-#&gt;  6 Kwanza                        AOA        973     2            AO     
-#&gt;  7 Argentine Peso                ARS        032     2            AR     
-#&gt;  8 Australian Dollar             AUD        036     2            AU     
-#&gt;  9 Aruban Florin                 AWG        533     2            AW     
-#&gt; 10 Azerbaijan Manat              AZN        944     2            AZ     
-#&gt; # … with 145 more rows</code></pre>
+<pre><code>#&gt;                               name alphabetic numeric minor unit country
+#&gt;   1:                    UAE Dirham        AED     784          2      AE
+#&gt;   2:                       Afghani        AFN     971          2      AF
+#&gt;   3:                           Lek        ALL     008          2      AL
+#&gt;   4:                 Armenian Dram        AMD     051          2      AM
+#&gt;   5: Netherlands Antillean Guilder        ANG     532          2      CW
+#&gt;  ---                                                                    
+#&gt; 151:                     CFP Franc        XPF     953          0      PF
+#&gt; 152:                   Yemeni Rial        YER     886          2      YE
+#&gt; 153:                          Rand        ZAR     710          2      LS
+#&gt; 154:                Zambian Kwacha        ZMW     967          2      ZM
+#&gt; 155:               Zimbabwe Dollar        ZWL     932          2      ZW</code></pre>
 </div>
 <div id="exchanges" class="section level3">
 <h3 class="hasAnchor">
 <a href="#exchanges" class="anchor"></a>exchanges</h3>
 <p>The exchanges dataset corresponds to the ISO 10383 standard that defines four alphanumeric character Market Identifier Codes (MIC). These are unique identification codes used to identify securities trading exchanges, trading platforms and regulated or non-regulated markets as sources of prices and related information in order to facilitate automated processing.</p>
-<pre><code>#&gt; # A tibble: 1,669 x 5
-#&gt;    name                              MIC   country city       website           
-#&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
-#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin…
-#&gt;  2 zurcher kantonalbank securities … ZKBX  CH      Zurich     www.zkb.ch        
-#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb… www.jse.co.za     
-#&gt;  4 zar x                             ZARX  ZA      Johannesb… www.zarx.co.za    
-#&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
-#&gt;  6 jse interest rate derivatives ma… YLDX  ZA      Johannesb… www.yieldx.co.za  
-#&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
-#&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
-#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m…
-#&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
-#&gt; # … with 1,659 more rows</code></pre>
+<pre><code>#&gt;                                                name  MIC country         city
+#&gt;    1:                                         zobex ZOBX      DE       Berlin
+#&gt;    2:      zurcher kantonalbank securities exchange ZKBX      CH       Zurich
+#&gt;    3:               jse currency derivatives market ZFXM      ZA Johannesburg
+#&gt;    4:                                         zar x ZARX      ZA Johannesburg
+#&gt;    5:                   zagreb stock exchange - apa ZAPA      HR       Zagreb
+#&gt;   ---                                                                        
+#&gt; 1665:                         athens exchange - apa AAPA      GR       Athens
+#&gt; 1666: credit agricole cib - systematic internaliser AACA      FR        Paris
+#&gt; 1667:                                           a2x A2XX      ZA Johannesburg
+#&gt; 1668:                                          360t 360T      DE    Frankfurt
+#&gt; 1669:             ssy futures ltd -  freight screen 3579      GB       London
+#&gt;                    website
+#&gt;    1: www.boerse-berlin.de
+#&gt;    2:           www.zkb.ch
+#&gt;    3:        www.jse.co.za
+#&gt;    4:       www.zarx.co.za
+#&gt;    5:           www.zse.hr
+#&gt;   ---                     
+#&gt; 1665:    www.athexgroup.gr
+#&gt; 1666:       www.ca-cib.com
+#&gt; 1667:        www.a2x.co.za
+#&gt; 1668:         www.360t.com
+#&gt; 1669:    www.ssyonline.com</code></pre>
 </div>
 </div>
 <div id="gics" class="section level2">
@@ -284,26 +307,36 @@
 <h3 class="hasAnchor">
 <a href="#standards" class="anchor"></a>standards</h3>
 <p>The GICS is a standardized classification system for equities developed jointly by Morgan Stanley Capital International (MSCI) and Standard &amp; Poor’s. The GICS methodology is used by the MSCI indexes, which include domestic and international stocks, as well as by a large portion of the professional investment management community. The GICS hierarchy begins with 11 sectors and is followed by 24 industry groups, 68 industries, and 157 sub-industries. Each stock that is classified will have a coding at all four of these levels with all these provided in the ‘standards’ dataset.</p>
-<pre><code>#&gt; # A tibble: 1,669 x 5
-#&gt;    name                              MIC   country city       website           
-#&gt;    &lt;chr&gt;                             &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;             
-#&gt;  1 zobex                             ZOBX  DE      Berlin     www.boerse-berlin…
-#&gt;  2 zurcher kantonalbank securities … ZKBX  CH      Zurich     www.zkb.ch        
-#&gt;  3 jse currency derivatives market   ZFXM  ZA      Johannesb… www.jse.co.za     
-#&gt;  4 zar x                             ZARX  ZA      Johannesb… www.zarx.co.za    
-#&gt;  5 zagreb stock exchange - apa       ZAPA  HR      Zagreb     www.zse.hr        
-#&gt;  6 jse interest rate derivatives ma… YLDX  ZA      Johannesb… www.yieldx.co.za  
-#&gt;  7 zimbabwe stock exchange           XZIM  ZW      Harare     www.zse.co.zw     
-#&gt;  8 zhengzhou commodity exchange      XZCE  CN      Zhengzhou  www.czce.com.cn   
-#&gt;  9 progress market                   XZAP  HR      Zagreb     http://progress.m…
-#&gt; 10 the zagreb stock exchange mtf     XZAM  HR      Zagreb     www.zse.hr        
-#&gt; # … with 1,659 more rows</code></pre>
+<pre><code>#&gt;                                                name  MIC country         city
+#&gt;    1:                                         zobex ZOBX      DE       Berlin
+#&gt;    2:      zurcher kantonalbank securities exchange ZKBX      CH       Zurich
+#&gt;    3:               jse currency derivatives market ZFXM      ZA Johannesburg
+#&gt;    4:                                         zar x ZARX      ZA Johannesburg
+#&gt;    5:                   zagreb stock exchange - apa ZAPA      HR       Zagreb
+#&gt;   ---                                                                        
+#&gt; 1665:                         athens exchange - apa AAPA      GR       Athens
+#&gt; 1666: credit agricole cib - systematic internaliser AACA      FR        Paris
+#&gt; 1667:                                           a2x A2XX      ZA Johannesburg
+#&gt; 1668:                                          360t 360T      DE    Frankfurt
+#&gt; 1669:             ssy futures ltd -  freight screen 3579      GB       London
+#&gt;                    website
+#&gt;    1: www.boerse-berlin.de
+#&gt;    2:           www.zkb.ch
+#&gt;    3:        www.jse.co.za
+#&gt;    4:       www.zarx.co.za
+#&gt;    5:           www.zse.hr
+#&gt;   ---                     
+#&gt; 1665:    www.athexgroup.gr
+#&gt; 1666:       www.ca-cib.com
+#&gt; 1667:        www.a2x.co.za
+#&gt; 1668:         www.360t.com
+#&gt; 1669:    www.ssyonline.com</code></pre>
 </div>
 </div>
 <div id="ffresearch" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ffresearch" class="anchor"></a>FFresearch</h2>
-<p><a href="https://bautheac.github.io/FFresearch/">FFresearch</a> conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French’s online <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a>. Size concerns limit the data history to the last twenty years; the full time series are available from the author upon request.</p>
+<p><a href="https://bautheac.github.io/FFresearch/">FFresearch</a> conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French’s online <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">data library</a>.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/FFresearch">FFresearch</a></span><span class="op">)</span>
 
@@ -316,104 +349,140 @@
 <h4 class="hasAnchor">
 <a href="#univariate" class="anchor"></a>univariate</h4>
 <p>The ‘portfolios_univariate’ dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 2,586,965 x 9
-#&gt;    region frequency `sort variable` dividend weights portfolio field period
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;           &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;     &lt;fct&gt; &lt;chr&gt; 
-#&gt;  1 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  2 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  3 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  4 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  5 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  6 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  7 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  8 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt;  9 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt; 10 US     day       market capital… Y        value   Dec 2     retu… 19880…
-#&gt; # … with 2,586,955 more rows, and 1 more variable: value &lt;dbl&gt;</code></pre>
+<pre><code>#&gt;          region frequency         sort variable dividend weights portfolio
+#&gt;       1:     US       day market capitalization        Y   value     Dec 2
+#&gt;       2:     US       day market capitalization        Y   value     Dec 2
+#&gt;       3:     US       day market capitalization        Y   value     Dec 2
+#&gt;       4:     US       day market capitalization        Y   value     Dec 2
+#&gt;       5:     US       day market capitalization        Y   value     Dec 2
+#&gt;      ---                                                                  
+#&gt; 2212298:     US      year     residual variance        Y   equal     Qnt 4
+#&gt; 2212299:     US      year     residual variance        Y   equal     Qnt 4
+#&gt; 2212300:     US      year     residual variance        Y   equal     Qnt 4
+#&gt; 2212301:     US      year     residual variance        Y   equal     Qnt 4
+#&gt; 2212302:     US      year     residual variance        Y   equal     Qnt 4
+#&gt;           field   period  value
+#&gt;       1: return 19710104  -0.29
+#&gt;       2: return 19710105   1.65
+#&gt;       3: return 19710106   1.37
+#&gt;       4: return 19710107   0.11
+#&gt;       5: return 19710108  -0.19
+#&gt;      ---                       
+#&gt; 2212298: return     2016  19.61
+#&gt; 2212299: return     2017  17.84
+#&gt; 2212300: return     2018 -12.37
+#&gt; 2212301: return     2019  19.54
+#&gt; 2212302: return     2020  37.81</code></pre>
 </div>
 <div id="bivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#bivariate" class="anchor"></a>bivariate</h4>
 <p>The ‘portfolios_bivariate’ dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 25,350,690 x 10
-#&gt;    region frequency `sort variable … `sort variable … dividend weights portfolio
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;    
-#&gt;  1 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  2 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  3 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  4 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  5 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  6 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  7 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  8 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt;  9 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt; 10 US     day       market capitali… book/market      Y        value   BIG HiBM 
-#&gt; # … with 25,350,680 more rows, and 3 more variables: field &lt;fct&gt;, period &lt;chr&gt;,
-#&gt; #   value &lt;dbl&gt;</code></pre>
+<pre><code>#&gt;                 region frequency       sort variable 1 sort variable 2 dividend
+#&gt;       1:            US       day market capitalization     book/market        Y
+#&gt;       2:            US       day market capitalization     book/market        Y
+#&gt;       3:            US       day market capitalization     book/market        Y
+#&gt;       4:            US       day market capitalization     book/market        Y
+#&gt;       5:            US       day market capitalization     book/market        Y
+#&gt;      ---                                                                       
+#&gt; 6262922: North America      year market capitalization        momentum        Y
+#&gt; 6262923: North America      year market capitalization        momentum        Y
+#&gt; 6262924: North America      year market capitalization        momentum        Y
+#&gt; 6262925: North America      year market capitalization        momentum        Y
+#&gt; 6262926: North America      year market capitalization        momentum        Y
+#&gt;          weights     portfolio  field   period  value
+#&gt;       1:   value      BIG HiBM return 20110103   4.81
+#&gt;       2:   value      BIG HiBM return 20110104   0.16
+#&gt;       3:   value      BIG HiBM return 20110105   1.80
+#&gt;       4:   value      BIG HiBM return 20110106  -0.40
+#&gt;       5:   value      BIG HiBM return 20110107  -0.71
+#&gt;      ---                                             
+#&gt; 6262922:   equal SMALL LoPRIOR return     2016  33.83
+#&gt; 6262923:   equal SMALL LoPRIOR return     2017  27.42
+#&gt; 6262924:   equal SMALL LoPRIOR return     2018 -27.13
+#&gt; 6262925:   equal SMALL LoPRIOR return     2019  12.85
+#&gt; 6262926:   equal SMALL LoPRIOR return     2020  57.99</code></pre>
 </div>
 <div id="trivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#trivariate" class="anchor"></a>trivariate</h4>
 <p>The ‘portfolios_trivariate’ dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
-<pre><code>#&gt; # A tibble: 2,580,480 x 11
-#&gt;    region frequency `sort variable … `sort variable … `sort variable … dividend
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;            &lt;fct&gt;   
-#&gt;  1 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  2 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  3 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  4 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  5 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  6 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  7 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  8 US     month     market capitali… book/market      operating profi… Y       
-#&gt;  9 US     month     market capitali… book/market      operating profi… Y       
-#&gt; 10 US     month     market capitali… book/market      operating profi… Y       
-#&gt; # … with 2,580,470 more rows, and 5 more variables: weights &lt;fct&gt;,
-#&gt; #   portfolio &lt;chr&gt;, field &lt;fct&gt;, period &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+<pre><code>#&gt;                 region frequency       sort variable 1         sort variable 2
+#&gt;       1:            US     month market capitalization             book/market
+#&gt;       2:            US     month market capitalization             book/market
+#&gt;       3:            US     month market capitalization             book/market
+#&gt;       4:            US     month market capitalization             book/market
+#&gt;       5:            US     month market capitalization             book/market
+#&gt;      ---                                                                      
+#&gt; 1165820: North America      year market capitalization operating profitability
+#&gt; 1165821: North America      year market capitalization operating profitability
+#&gt; 1165822: North America      year market capitalization operating profitability
+#&gt; 1165823: North America      year market capitalization operating profitability
+#&gt; 1165824: North America      year market capitalization operating profitability
+#&gt;                  sort variable 3 dividend weights        portfolio  field
+#&gt;       1: operating profitability        Y   value    BIG HiBM.HiOP return
+#&gt;       2: operating profitability        Y   value    BIG HiBM.HiOP return
+#&gt;       3: operating profitability        Y   value    BIG HiBM.HiOP return
+#&gt;       4: operating profitability        Y   value    BIG HiBM.HiOP return
+#&gt;       5: operating profitability        Y   value    BIG HiBM.HiOP return
+#&gt;      ---                                                                 
+#&gt; 1165820:              investment        N   equal SMALL LoOP.LoINV return
+#&gt; 1165821:              investment        N   equal SMALL LoOP.LoINV return
+#&gt; 1165822:              investment        N   equal SMALL LoOP.LoINV return
+#&gt; 1165823:              investment        N   equal SMALL LoOP.LoINV return
+#&gt; 1165824:              investment        N   equal SMALL LoOP.LoINV return
+#&gt;          period    value
+#&gt;       1: 197101  18.7986
+#&gt;       2: 197102   4.1366
+#&gt;       3: 197103   0.6142
+#&gt;       4: 197104   0.9330
+#&gt;       5: 197105   2.6881
+#&gt;      ---                
+#&gt; 1165820:   2016  40.9400
+#&gt; 1165821:   2017  29.5600
+#&gt; 1165822:   2018 -24.7600
+#&gt; 1165823:   2019  27.9800
+#&gt; 1165824:   2020 127.9700</code></pre>
 </div>
 <div id="industries" class="section level4">
 <h4 class="hasAnchor">
 <a href="#industries" class="anchor"></a>industries</h4>
 <p>The ‘portfolios_industries’ dataset provides various feature time series for Fama/French industry portfolios <span class="citation">(Fama and French 1997)</span>.</p>
-<pre><code>#&gt; # A tibble: 3,516,216 x 8
-#&gt;    region frequency dividend weights portfolio field  period value
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;fct&gt;    &lt;fct&gt;   &lt;chr&gt;     &lt;fct&gt;  &lt;chr&gt;  &lt;dbl&gt;
-#&gt;  1 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  2 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  3 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  4 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  5 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  6 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  7 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  8 US     month     Y        value   Aero      return 199801  1.31
-#&gt;  9 US     month     Y        value   Aero      return 199801  1.31
-#&gt; 10 US     month     Y        value   Aero      return 199801  1.31
-#&gt; # … with 3,516,206 more rows</code></pre>
+<pre><code>#&gt;          region frequency dividend weights portfolio  field   period value
+#&gt;       1:     US     month        Y   value      Aero return   197101 20.39
+#&gt;       2:     US     month        Y   value      Aero return   197102  4.36
+#&gt;       3:     US     month        Y   value      Aero return   197103  2.49
+#&gt;       4:     US     month        Y   value      Aero return   197104  6.54
+#&gt;       5:     US     month        Y   value      Aero return   197105 -4.19
+#&gt;      ---                                                                  
+#&gt; 2416940:     US       day        Y   equal      Wood return 20210426  1.60
+#&gt; 2416941:     US       day        Y   equal      Wood return 20210427  0.69
+#&gt; 2416942:     US       day        Y   equal      Wood return 20210428 -1.39
+#&gt; 2416943:     US       day        Y   equal      Wood return 20210429  0.58
+#&gt; 2416944:     US       day        Y   equal      Wood return 20210430 -2.28</code></pre>
 </div>
 </div>
 <div id="factors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factors" class="anchor"></a>factors</h3>
-<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models extremely popular to the asset pricing enthousiasts.</p>
-<pre><code>#&gt; # A tibble: 399,132 x 5
-#&gt;    region frequency factor period value
-#&gt;    &lt;fct&gt;  &lt;fct&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
-#&gt;  1 US     month     CMA    198801  2.09
-#&gt;  2 US     month     CMA    198802 -0.11
-#&gt;  3 US     month     CMA    198803  1.91
-#&gt;  4 US     month     CMA    198804  1.9 
-#&gt;  5 US     month     CMA    198805  0.38
-#&gt;  6 US     month     CMA    198806 -3.25
-#&gt;  7 US     month     CMA    198807  1.45
-#&gt;  8 US     month     CMA    198808  1.74
-#&gt;  9 US     month     CMA    198809 -0.48
-#&gt; 10 US     month     CMA    198810  1.04
-#&gt; # … with 399,122 more rows</code></pre>
+<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts.</p>
+<pre><code>#&gt;                region frequency factor period  value
+#&gt;      1:            US     month    CMA 197101  -0.14
+#&gt;      2:            US     month    CMA 197102  -0.72
+#&gt;      3:            US     month    CMA 197103  -2.69
+#&gt;      4:            US     month    CMA 197104   0.72
+#&gt;      5:            US     month    CMA 197105   0.30
+#&gt;     ---                                             
+#&gt; 466114: North America      year    WML   2016 -17.97
+#&gt; 466115: North America      year    WML   2017   5.16
+#&gt; 466116: North America      year    WML   2018   8.96
+#&gt; 466117: North America      year    WML   2019  -0.47
+#&gt; 466118: North America      year    WML   2020  21.95</code></pre>
 </div>
 <div id="variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#variables" class="anchor"></a>variables</h3>
-<p>The ‘variables’ dataset is a helper dataset that provides details, including contruction methods, for the variables used to construct the portfolios and asset pricing factors above.</p>
+<p>The ‘variables’ dataset is a helper dataset that provides details, including construction methods, for the variables used to construct the portfolios and asset pricing factors above.</p>
 <pre><code>#&gt; # A tibble: 23 x 3
 #&gt;    name              symbol description                                         
 #&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;                                               
@@ -433,20 +502,18 @@
 <h3 class="hasAnchor">
 <a href="#breakpoints" class="anchor"></a>breakpoints</h3>
 <p>Finally, the ‘breakpoints’ dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned.</p>
-<pre><code>#&gt; # A tibble: 13,314 x 5
-#&gt;    variable frequency percentile period value
-#&gt;    &lt;fct&gt;    &lt;fct&gt;     &lt;fct&gt;      &lt;chr&gt;  &lt;dbl&gt;
-#&gt;  1 size     month     # positive 199801  1816
-#&gt;  2 size     month     # positive 199802  1817
-#&gt;  3 size     month     # positive 199803  1819
-#&gt;  4 size     month     # positive 199804  1820
-#&gt;  5 size     month     # positive 199805  1826
-#&gt;  6 size     month     # positive 199806  1823
-#&gt;  7 size     month     # positive 199807  1821
-#&gt;  8 size     month     # positive 199808  1817
-#&gt;  9 size     month     # positive 199809  1810
-#&gt; 10 size     month     # positive 199810  1795
-#&gt; # … with 13,304 more rows</code></pre>
+<pre><code>#&gt;          variable frequency percentile period   value
+#&gt;   1:         size     month # positive 202104 1142.00
+#&gt;   2:         size     month         5% 202104  191.41
+#&gt;   3:         size     month        10% 202104  469.18
+#&gt;   4:         size     month        15% 202104  689.71
+#&gt;   5:         size     month        20% 202104 1035.99
+#&gt;  ---                                                 
+#&gt; 168: pior returns     month        80% 202104  126.58
+#&gt; 169: pior returns     month        85% 202104  149.93
+#&gt; 170: pior returns     month        90% 202104  182.36
+#&gt; 171: pior returns     month        95% 202104  245.90
+#&gt; 172: pior returns     month       100% 202104 3212.74</code></pre>
 </div>
 </div>
 <div id="factors-1" class="section level2">
@@ -456,38 +523,48 @@
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/factors">factors</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Fama &amp; French"</span>, <span class="st">"Stambaugh et al"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"factors"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"fama_french"</span>, <span class="st">"stambaugh"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"factors"</span><span class="op">)</span></code></pre></div>
 <div id="fama-french" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fama-french" class="anchor"></a>Fama &amp; French</h3>
-<p>The ‘Fama &amp; French’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
-<pre><code>#&gt;    region frequency factor period value
-#&gt; 1:     US     month    CMA 196801  6.45
-#&gt; 2:     US     month    CMA 196802  2.48
-#&gt; 3:     US     month    CMA 196803 -1.15
-#&gt; 4:     US     month    CMA 196804 -3.66
-#&gt; 5:     US     month    CMA 196805 -1.85
-#&gt; 6:     US     month    CMA 196806  2.65</code></pre>
+<p>The ‘fama_french’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
+<pre><code>#&gt;                region frequency factor period  value
+#&gt;      1:            US     month    CMA 197101  -0.14
+#&gt;      2:            US     month    CMA 197102  -0.72
+#&gt;      3:            US     month    CMA 197103  -2.69
+#&gt;      4:            US     month    CMA 197104   0.72
+#&gt;      5:            US     month    CMA 197105   0.30
+#&gt;     ---                                             
+#&gt; 466114: North America      year    WML   2016 -17.97
+#&gt; 466115: North America      year    WML   2017   5.16
+#&gt; 466116: North America      year    WML   2018   8.96
+#&gt; 466117: North America      year    WML   2019  -0.47
+#&gt; 466118: North America      year    WML   2020  21.95</code></pre>
 </div>
 <div id="stambaugh-et-al" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stambaugh-et-al" class="anchor"></a>Stambaugh et al</h3>
-<p>The ‘Stambaugh et al’ dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
-<pre><code>#&gt;    frequency               factor period       value
-#&gt; 1:     month non-traded liquidity 196208  0.00437073
-#&gt; 2:     month non-traded liquidity 196209  0.01230259
-#&gt; 3:     month non-traded liquidity 196210 -0.07407571
-#&gt; 4:     month non-traded liquidity 196211  0.02923186
-#&gt; 5:     month non-traded liquidity 196212  0.01592809
-#&gt; 6:     month non-traded liquidity 196301  0.01013548</code></pre>
+<p>The ‘stambaugh’ dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
+<pre><code>#&gt;        frequency               factor period       value
+#&gt;     1:     month non-traded liquidity 196208  0.00426023
+#&gt;     2:     month non-traded liquidity 196209  0.01172080
+#&gt;     3:     month non-traded liquidity 196210 -0.07442466
+#&gt;     4:     month non-traded liquidity 196211  0.02854555
+#&gt;     5:     month non-traded liquidity 196212  0.01435009
+#&gt;    ---                                                  
+#&gt; 72608:     month               market 201608  0.00520000
+#&gt; 72609:     month               market 201609  0.00270000
+#&gt; 72610:     month               market 201610 -0.02000000
+#&gt; 72611:     month               market 201611  0.04870000
+#&gt; 72612:     month               market 201612  0.01850000</code></pre>
 </div>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>references</h2>
 <div id="refs" class="references">
-<div id="ref-Armstrong_Rblpapi_2018">
-<p>Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2018. <em>Rblpapi: R Interface to ’Bloomberg’</em>. <a href="https://CRAN.R-project.org/package=Rblpapi">https://CRAN.R-project.org/package=Rblpapi</a>.</p>
+<div id="ref-Armstrong_Rblpapi">
+<p>Armstrong, Whit, Dirk Eddelbuettel, and John Laing. 2021. <em>Rblpapi: R Interface to ’Bloomberg’</em>. <a href="https://CRAN.R-project.org/package=Rblpapi">https://CRAN.R-project.org/package=Rblpapi</a>.</p>
 </div>
 <div id="ref-fama_cross_section_1992">
 <p>Fama, Eugene F., and Kenneth R. French. 1992. “The Cross-Section of Expected Stock Returns.” <em>The Journal of Finance</em> 47 (2): 427–65. <a href="https://doi.org/10.1111/j.1540-6261.1992.tb04398.x">https://doi.org/10.1111/j.1540-6261.1992.tb04398.x</a>.</p>
