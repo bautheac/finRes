@@ -47,7 +47,7 @@ library(GICS)
 data(list = c("standards"), package = "GICS")
 
 ## ----`GICS standards`, echo = FALSE-------------------------------------------
-exchanges
+standards
 
 ## ----`FFresearch load`--------------------------------------------------------
 library(FFresearch)
