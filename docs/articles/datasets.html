@@ -94,11 +94,11 @@
     
     
 <style> body {text-align: justify} </style>
-<p>finRes is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the finRes suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in finRes includes: <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>, <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>, <a href="https://bautheac.github.io/GICS/">GICS</a>, <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> and <a href="https://bautheac.github.io/factors/">factors</a>.</p>
+<p><a href="https://bautheac.github.io/finRes/">finRes</a> is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the <a href="https://bautheac.github.io/finRes/">finRes</a> suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in <a href="https://bautheac.github.io/finRes/">finRes</a> includes: <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>, <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>, <a href="https://bautheac.github.io/GICS/">GICS</a>, <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> and <a href="https://bautheac.github.io/factors/">factors</a>.</p>
 <div id="bbgsymbols" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bbgsymbols" class="anchor"></a>BBGsymbols</h2>
-<p>The <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package plays a critical role in finRes where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2021)</span>.</p>
+<p>The <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> package plays a critical role in <a href="https://bautheac.github.io/finRes/">finRes</a> where it provides both the <a href="https://bautheac.github.io/pullit/">pullit</a> and the <a href="https://bautheac.github.io/storethat/">storethat</a> packages with support for interacting with Bloomberg through the <a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> interface <span class="citation">(Armstrong, Eddelbuettel, and Laing 2021)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.oi/BBGsymbols">BBGsymbols</a></span><span class="op">)</span>
 
@@ -106,7 +106,7 @@
 <div id="fields" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fields" class="anchor"></a>fields</h3>
-<p>The fields dataset is the workhorse in BBGsymbols; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include ‘equity’, referring to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
+<p>The <code>fields</code> dataset is the workhorse in <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include ‘equity’, referring to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
 <pre><code>#&gt; # A tibble: 961 x 10
 #&gt;    instrument book  type  subtype section subsection name  id    symbol
 #&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -125,7 +125,7 @@
 <div id="months" class="section level3">
 <h3 class="hasAnchor">
 <a href="#months" class="anchor"></a>months</h3>
-<p>The ‘months’ dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial derivatives such as futures contracts.</p>
+<p>The <code>months</code> dataset details the symbols used to refer to calendar months in Bloomberg and financial markets in general. It is particularly useful when working with financial derivatives such as futures contracts.</p>
 <pre><code>#&gt;          name symbol
 #&gt;  1:   January      F
 #&gt;  2:  February      G
@@ -143,7 +143,7 @@
 <div id="rolls" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rolls" class="anchor"></a>rolls</h3>
-<p>The ‘rolls’ dataset details the symbols used to refer to the various roll types and adjustments available in Bloomberg when working with futures term structure contracts. These symbols can be used to construct bespoke tickers that allow the user to query Bloomberg for futures term structure data with the desired roll characteristics.</p>
+<p>The <code>rolls</code> dataset details the symbols used to refer to the various roll types and adjustments available in Bloomberg when working with futures term structure contracts. These symbols can be used to construct bespoke tickers that allow the user to query Bloomberg for futures term structure data with the desired roll characteristics.</p>
 <pre><code>#&gt;           roll symbol                     name
 #&gt;  1:       type      A       With active future
 #&gt;  2:       type      B        Bloomberg default
@@ -160,7 +160,7 @@
 <div id="tickers_cftc" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tickers_cftc" class="anchor"></a>tickers_CFTC</h3>
-<p>The ‘tickers_cftc’ dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via pullit of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
+<p>The <code>tickers_cftc</code> dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via <a href="https://bautheac.github.io/pullit/">pullit</a> of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the ‘legacy’, ‘disaggregated’, ‘supplemental’ and ‘traders in financial futures’ (TFF) reports. See <code>?tickers_CFTC</code> for details.</p>
 <pre><code>#&gt;                                            name  asset class
 #&gt;     1: California Carbon Allowance Vintage 2014      climate
 #&gt;     2: California Carbon Allowance Vintage 2014      climate
@@ -201,7 +201,7 @@
 <div id="tickers_futures" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tickers_futures" class="anchor"></a>tickers_futures</h3>
-<p>The ‘tickers_futures’ dataset gathers futures active contract Bloomberg tickers as well as a collection of qualitative information for several popular futures series including commodity, currency, financial and index futures with underlyings from various asset classes.</p>
+<p>The <code>tickers_futures</code> dataset gathers futures active contract Bloomberg tickers as well as a collection of qualitative information for several popular futures series including commodity, currency, financial and index futures with underlyings from various asset classes.</p>
 <pre><code>#&gt; # A tibble: 229 x 15
 #&gt;    ticker name  `asset class` sector subsector currency MIC   `term structure…
 #&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;            &lt;int&gt;
@@ -223,7 +223,7 @@
 <div id="fewisos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fewisos" class="anchor"></a>fewISOs</h2>
-<p><a href="https://bautheac.github.io/fewISOs/">fewISOs</a> provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to finRes where they help with data wrangling and exploration. At the time of writing fewISOs hosts the ‘countries’, ‘currencies’ and ‘exchanges’ datasets.</p>
+<p><a href="https://bautheac.github.io/fewISOs/">fewISOs</a> provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to <a href="https://bautheac.github.io/finRes/">finRes</a> where they help with data wrangling and exploration. At the time of writing <a href="https://bautheac.github.io/fewISOs/">fewISOs</a> hosts the <code>countries</code>, <code>currencies</code> and <code>exchanges</code> datasets.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/fewISOs">fewISOs</a></span><span class="op">)</span>
 
@@ -231,7 +231,7 @@
 <div id="countries" class="section level3">
 <h3 class="hasAnchor">
 <a href="#countries" class="anchor"></a>countries</h3>
-<p>The countries dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:<br>
+<p>The <code>countries</code> dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:<br>
 - ISO 3166-1 alpha-2: two-letter country codes (most widely used).<br>
 - ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.<br>
 - ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</p>
@@ -251,7 +251,7 @@
 <div id="currencies" class="section level3">
 <h3 class="hasAnchor">
 <a href="#currencies" class="anchor"></a>currencies</h3>
-<p>The currencies dataset corresponds to the ISO 4217 standard that defines codes for worldwide currencies and comes as a three-letter alphabetic as well as an alternative three-digit numeric code, both provided in the dataset. The ISO 4217 three-letter alphabetic code standard is based on the ISO 3166-1 code standard for countries with the first two letters corresponding the ISO 3166-1 alpha-2 code for the country issuing the corresponding currency and the third corresponding to the first letter of the currency name when possible. The three-digit numeric code is the same as the ISO 3166-1 numeric code for the issuing country when possible.</p>
+<p>The <code>currencies</code> dataset corresponds to the ISO 4217 standard that defines codes for worldwide currencies and comes as a three-letter alphabetic as well as an alternative three-digit numeric code, both provided in the dataset. The ISO 4217 three-letter alphabetic code standard is based on the ISO 3166-1 code standard for countries with the first two letters corresponding the ISO 3166-1 alpha-2 code for the country issuing the corresponding currency and the third corresponding to the first letter of the currency name when possible. The three-digit numeric code is the same as the ISO 3166-1 numeric code for the issuing country when possible.</p>
 <pre><code>#&gt;                               name alphabetic numeric minor unit country
 #&gt;   1:                    UAE Dirham        AED     784          2      AE
 #&gt;   2:                       Afghani        AFN     971          2      AF
@@ -268,7 +268,7 @@
 <div id="exchanges" class="section level3">
 <h3 class="hasAnchor">
 <a href="#exchanges" class="anchor"></a>exchanges</h3>
-<p>The exchanges dataset corresponds to the ISO 10383 standard that defines four alphanumeric character Market Identifier Codes (MIC). These are unique identification codes used to identify securities trading exchanges, trading platforms and regulated or non-regulated markets as sources of prices and related information in order to facilitate automated processing.</p>
+<p>The <code>exchanges</code> dataset corresponds to the ISO 10383 standard that defines four alphanumeric character Market Identifier Codes (MIC). These are unique identification codes used to identify securities trading exchanges, trading platforms and regulated or non-regulated markets as sources of prices and related information in order to facilitate automated processing.</p>
 <pre><code>#&gt;                                                name  MIC country         city
 #&gt;    1:                                         zobex ZOBX      DE       Berlin
 #&gt;    2:      zurcher kantonalbank securities exchange ZKBX      CH       Zurich
@@ -298,7 +298,7 @@
 <div id="gics" class="section level2">
 <h2 class="hasAnchor">
 <a href="#gics" class="anchor"></a>GICS</h2>
-<p><a href="https://bautheac.github.io/GICS/">GICS</a> packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to finRes where, along with BBGsymbols and fewISOs, it helps with data wrangling and exploration.</p>
+<p><a href="https://bautheac.github.io/GICS/">GICS</a> packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to <a href="https://bautheac.github.io/finRes/">finRes</a> where, along with <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a> and <a href="https://bautheac.github.io/fewISOs/">fewISOs</a>, it helps with data wrangling and exploration.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bautheac.github.io/GICS">GICS</a></span><span class="op">)</span>
 
@@ -306,31 +306,22 @@
 <div id="standards" class="section level3">
 <h3 class="hasAnchor">
 <a href="#standards" class="anchor"></a>standards</h3>
-<p>The GICS is a standardized classification system for equities developed jointly by Morgan Stanley Capital International (MSCI) and Standard &amp; Poor’s. The GICS methodology is used by the MSCI indexes, which include domestic and international stocks, as well as by a large portion of the professional investment management community. The GICS hierarchy begins with 11 sectors and is followed by 24 industry groups, 68 industries, and 157 sub-industries. Each stock that is classified will have a coding at all four of these levels with all these provided in the ‘standards’ dataset.</p>
-<pre><code>#&gt;                                                name  MIC country         city
-#&gt;    1:                                         zobex ZOBX      DE       Berlin
-#&gt;    2:      zurcher kantonalbank securities exchange ZKBX      CH       Zurich
-#&gt;    3:               jse currency derivatives market ZFXM      ZA Johannesburg
-#&gt;    4:                                         zar x ZARX      ZA Johannesburg
-#&gt;    5:                   zagreb stock exchange - apa ZAPA      HR       Zagreb
-#&gt;   ---                                                                        
-#&gt; 1665:                         athens exchange - apa AAPA      GR       Athens
-#&gt; 1666: credit agricole cib - systematic internaliser AACA      FR        Paris
-#&gt; 1667:                                           a2x A2XX      ZA Johannesburg
-#&gt; 1668:                                          360t 360T      DE    Frankfurt
-#&gt; 1669:             ssy futures ltd -  freight screen 3579      GB       London
-#&gt;                    website
-#&gt;    1: www.boerse-berlin.de
-#&gt;    2:           www.zkb.ch
-#&gt;    3:        www.jse.co.za
-#&gt;    4:       www.zarx.co.za
-#&gt;    5:           www.zse.hr
-#&gt;   ---                     
-#&gt; 1665:    www.athexgroup.gr
-#&gt; 1666:       www.ca-cib.com
-#&gt; 1667:        www.a2x.co.za
-#&gt; 1668:         www.360t.com
-#&gt; 1669:    www.ssyonline.com</code></pre>
+<p>The GICS is a standardized classification system for equities developed jointly by Morgan Stanley Capital International (MSCI) and Standard &amp; Poor’s. The GICS methodology is used by the MSCI indexes, which include domestic and international stocks, as well as by a large portion of the professional investment management community. The GICS hierarchy begins with 11 sectors and is followed by 24 industry groups, 68 industries, and 157 sub-industries. Each stock that is classified will have a coding at all four of these levels with all these provided in the <code>standards</code> dataset.</p>
+<pre><code>#&gt; # A tibble: 157 x 9
+#&gt;    `sector id` `sector name` `industry group… `industry group… `industry id`
+#&gt;          &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt;
+#&gt;  1          10 Energy                    1010 Energy                  101010
+#&gt;  2          10 Energy                    1010 Energy                  101010
+#&gt;  3          10 Energy                    1010 Energy                  101020
+#&gt;  4          10 Energy                    1010 Energy                  101020
+#&gt;  5          10 Energy                    1010 Energy                  101020
+#&gt;  6          10 Energy                    1010 Energy                  101020
+#&gt;  7          10 Energy                    1010 Energy                  101020
+#&gt;  8          15 Materials                 1510 Materials               151010
+#&gt;  9          15 Materials                 1510 Materials               151010
+#&gt; 10          15 Materials                 1510 Materials               151010
+#&gt; # … with 147 more rows, and 4 more variables: `industry name` &lt;chr&gt;,
+#&gt; #   `subindustry id` &lt;dbl&gt;, `subindustry name` &lt;chr&gt;, description &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div id="ffresearch" class="section level2">
@@ -348,7 +339,7 @@
 <div id="univariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#univariate" class="anchor"></a>univariate</h4>
-<p>The ‘portfolios_univariate’ dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
+<p>The <code>portfolios_univariate</code> dataset provides various feature time series for Fama/French portfolios formed on single variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
 <pre><code>#&gt;          region frequency         sort variable dividend weights portfolio
 #&gt;       1:     US       day market capitalization        Y   value     Dec 2
 #&gt;       2:     US       day market capitalization        Y   value     Dec 2
@@ -377,7 +368,7 @@
 <div id="bivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#bivariate" class="anchor"></a>bivariate</h4>
-<p>The ‘portfolios_bivariate’ dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
+<p>The <code>portfolios_bivariate</code> dataset provides various feature time series for Fama/French portfolios formed on two variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
 <pre><code>#&gt;                 region frequency       sort variable 1 sort variable 2 dividend
 #&gt;       1:            US       day market capitalization     book/market        Y
 #&gt;       2:            US       day market capitalization     book/market        Y
@@ -406,7 +397,7 @@
 <div id="trivariate" class="section level4">
 <h4 class="hasAnchor">
 <a href="#trivariate" class="anchor"></a>trivariate</h4>
-<p>The ‘portfolios_trivariate’ dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
+<p>The <code>portfolios_trivariate</code> dataset provides various feature time series for Fama/French portfolios formed on three variable sorts. Sorting variables include size, book-to-market, operating profitability and investment.</p>
 <pre><code>#&gt;                 region frequency       sort variable 1         sort variable 2
 #&gt;       1:            US     month market capitalization             book/market
 #&gt;       2:            US     month market capitalization             book/market
@@ -447,7 +438,7 @@
 <div id="industries" class="section level4">
 <h4 class="hasAnchor">
 <a href="#industries" class="anchor"></a>industries</h4>
-<p>The ‘portfolios_industries’ dataset provides various feature time series for Fama/French industry portfolios <span class="citation">(Fama and French 1997)</span>.</p>
+<p>The <code>portfolios_industries</code> dataset provides various feature time series for Fama/French industry portfolios <span class="citation">(Fama and French 1997)</span>.</p>
 <pre><code>#&gt;          region frequency dividend weights portfolio  field   period value
 #&gt;       1:     US     month        Y   value      Aero return   197101 20.39
 #&gt;       2:     US     month        Y   value      Aero return   197102  4.36
@@ -465,7 +456,7 @@
 <div id="factors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#factors" class="anchor"></a>factors</h3>
-<p>The ‘factors’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts.</p>
+<p>The <code>factors</code> dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts.</p>
 <pre><code>#&gt;                region frequency factor period  value
 #&gt;      1:            US     month    CMA 197101  -0.14
 #&gt;      2:            US     month    CMA 197102  -0.72
@@ -482,7 +473,7 @@
 <div id="variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#variables" class="anchor"></a>variables</h3>
-<p>The ‘variables’ dataset is a helper dataset that provides details, including construction methods, for the variables used to construct the portfolios and asset pricing factors above.</p>
+<p>The <code>variables</code> dataset is a helper dataset that provides details, including construction methods, for the variables used to construct the portfolios and asset pricing factors above.</p>
 <pre><code>#&gt; # A tibble: 23 x 3
 #&gt;    name              symbol description                                         
 #&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;                                               
@@ -501,7 +492,7 @@
 <div id="breakpoints" class="section level3">
 <h3 class="hasAnchor">
 <a href="#breakpoints" class="anchor"></a>breakpoints</h3>
-<p>Finally, the ‘breakpoints’ dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned.</p>
+<p>Finally, the <code>breakpoints</code> dataset is a helper dataset that provides the times series for the variables breakpoints used to construct the variables that in turn allow the construction of the portfolios and asset pricing factors above-mentioned.</p>
 <pre><code>#&gt;          variable frequency percentile period   value
 #&gt;   1:         size     month # positive 202104 1142.00
 #&gt;   2:         size     month         5% 202104  191.41
@@ -519,7 +510,7 @@
 <div id="factors-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#factors-1" class="anchor"></a>factors</h2>
-<p>The <a href="https://bautheac.github.io/factors/">factors</a> package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors’ website. The current version includes the factor data from Kenneth’s French, also available in the FFresearch package described above, as well as factor data from Robert F. Stambaugh.</p>
+<p>The <a href="https://bautheac.github.io/factors/">factors</a> package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors’ website. The current version includes the factor data from Kenneth’s French, also available in the <a href="https://bautheac.github.io/FFresearch/">FFresearch</a> package described above, as well as factor data from Robert F. Stambaugh.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bautheac.github.io/factors">factors</a></span><span class="op">)</span>
 
@@ -527,7 +518,7 @@
 <div id="fama-french" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fama-french" class="anchor"></a>Fama &amp; French</h3>
-<p>The ‘fama_french’ dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
+<p>The <code>fama_french</code> dataset provides the return (factors) and level (risk free rate) time series for the classic Fama/French asset pricing factors as used in their three <span class="citation">(Fama and French 1992, 1993, 1995)</span> and most recently five-factor <span class="citation">(Fama and French 2015, 2016, 2017)</span> asset pricing models very popular to the asset pricing enthusiasts:</p>
 <pre><code>#&gt;                region frequency factor period  value
 #&gt;      1:            US     month    CMA 197101  -0.14
 #&gt;      2:            US     month    CMA 197102  -0.72
@@ -544,7 +535,7 @@
 <div id="stambaugh-et-al" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stambaugh-et-al" class="anchor"></a>Stambaugh et al</h3>
-<p>The ‘stambaugh’ dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
+<p>The <code>stambaugh</code> dataset provides the return (factors) and level (risk free rate) time series for various research asset pricing factors put together by Robert F. Stambaugh and collaborators including Lubos Pastor and Yu Yuan. The factors include traded &amp; non-traded liquidity <span class="citation">(Pástor and Stambaugh 2003)</span>, as well as market, size and two ‘mispricing’ factors: management &amp; performance <span class="citation">(Stambaugh and Yuan 2016)</span>:</p>
 <pre><code>#&gt;        frequency               factor period       value
 #&gt;     1:     month non-traded liquidity 196208  0.00426023
 #&gt;     2:     month non-traded liquidity 196209  0.01172080

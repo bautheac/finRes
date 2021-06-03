@@ -96,10 +96,11 @@ equity_momentum <- momentum_factor(data = equity_data_market, ranking_period = r
 equity_momentum
 
 ## ----`pullit futures bbg`, message = F, warning = F, echo = T, eval = F-------
-#  tickers_futures <- c("C A Comdty", "CCA Comdty", "CLA Comdty", "CTA Comdty", "FCA Comdty",
-#                       "GCA Comdty", "HGA Comdty", "HOA Comdty", "KCA Comdty", "KWA Comdty",
-#                       "LBA Comdty", "LCA Comdty", "LHA Comdty", "NGA Comdty", "O A Comdty",
-#                       "PAA Comdty", "S A Comdty", "SIA Comdty", "W A Comdty", "XBA Comdty")
+#  tickers_futures <- c(
+#    "C A Comdty", "CLA Comdty", "COA Comdty", "GCA Comdty", "HOA Comdty",
+#    "KWA Comdty", "LHA Comdty", "QSA Comdty", "S A Comdty", "SBA Comdty",
+#    "W A Comdty"
+#    )
 #  
 #  futures_data_TS <- pull_futures_market(source = "Bloomberg", type = "term structure", tickers_futures,
 #                                         start, end, verbose = F)

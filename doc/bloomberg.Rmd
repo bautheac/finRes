@@ -19,16 +19,16 @@ path <- here::here("development", "storethat.sqlite")
 ```
 
 
-The finRes suite is organised around the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role and is often reported by data-scientists to amount up to 80% of work-time. finRes addresses the issue in two complementary packages that work in conjunction with most of the finRes dataset packages.  
+The [finRes](https://bautheac.github.io/finRes/) suite is organised around the data-science pipeline where preprocessing, including data collection and wrangling, plays a major role. [finRes](https://bautheac.github.io/finRes/) addresses the issue in two complementary packages that work in conjunction with most of the [finRes](https://bautheac.github.io/finRes/) dataset packages.  
 On the one hand the [pullit](https://bautheac.github.io/pullit/) package provides tools for data collection from Bloomberg. It returns clean and tidy, ready-to-use, data objects for other packages further down the pipeline to work with. On the other hand the [storethat](https://bautheac.github.io/storethat/) package works in concert with [fewISOs](https://bautheac.github.io/fewISOs/) and [GICS](https://bautheac.github.io/GICS/) to help store the data retrieved for off-Bloomberg consumption in R.  
-Both pullit and storethat work in tandem with the [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package. The latter plays a central role in finRes where it helps pullit in interacting with Bloomberg via the interface provided by the [Rblpapi](https://github.com/Rblp/Rblpapi) package [@Armstrong_Rblpapi] and storethat in storing the data retrieved.
+Both [pullit](https://bautheac.github.io/pullit/) and [storethat](https://bautheac.github.io/storethat/) work in tandem with the [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package. The latter plays a central role in [finRes](https://bautheac.github.io/finRes/) where it helps [pullit](https://bautheac.github.io/pullit/) in interacting with Bloomberg via the interface provided by the [Rblpapi](https://github.com/Rblp/Rblpapi) package [@Armstrong_Rblpapi] and [storethat](https://bautheac.github.io/storethat/) in storing the data retrieved.
 
 
 ## pullit
-pullit together with storethat are the two workhorses for data ETL (extract, transform, load) in the finRes suite.
-Using carefully selected Bloomberg datafields from BBGsymbols in tandem with @Armstrong_Rblpapi's Bloomberg interface pullit provides the R user with easy access to Bloomberg financial data for a number of financial instruments including, at the time of writing, equity and equity-like securities, funds with the category encompassing any money-managing entity, indexes, as well as futures series & term structure individual contracts.  
+[pullit](https://bautheac.github.io/pullit/) together with [storethat](https://bautheac.github.io/storethat/) are the two workhorses for data ETL (extract, transform, load) in the [finRes](https://bautheac.github.io/finRes/) suite.
+Using carefully selected Bloomberg datafields from [BBGsymbols](https://bautheac.github.io/BBGsymbols/) in tandem with @Armstrong_Rblpapi's Bloomberg interface [pullit](https://bautheac.github.io/pullit/) provides the R user with easy access to Bloomberg financial data for a number of financial instruments including, at the time of writing, equity and equity-like securities, funds with the category encompassing any money-managing entity, indexes, as well as futures series & term structure individual contracts.  
 
-For each instrument category, pullit allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using pullit.
+For each instrument category, [pullit](https://bautheac.github.io/pullit/) allows data retrieval for a corresponding category specific set of data types. An active Bloomberg connection is required to retrieve Bloomberg financial data using [pullit](https://bautheac.github.io/pullit/).
 
 ```{r `globals bbg`, warnings = F, message = F, eval = F, echo = F}
 library(pullit); library(lubridate)
@@ -43,7 +43,7 @@ start <- "2016-01-01"; end <- "2017-12-31"
 ```
 
 ### equity
-Equity data comes in three major categories in pullit, market, book and info. For a given corporation market data records stock market activity while book data records business activity in the form of financial statements commonly referred to as 'books' and info refers to qualitative information. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.
+Equity data comes in three major categories in [pullit](https://bautheac.github.io/pullit/), market, book and info. For a given corporation market data records stock market activity while book data records business activity in the form of financial statements commonly referred to as 'books' and info refers to qualitative information. See the `fields` dataset in [BBGsymbols](https://bautheac.github.io/BBGsymbols/) for a detailed list of the Bloomberg datafields available.
 
 #### market
 Retrieve market data from Bloomberg for the BP (BP/ LN Equity), Weir group (WEIR LN Equity) and Apple (AAPL US Equity) corporations with:
@@ -62,7 +62,7 @@ equity_market
 ```
 
 #### books
-For financial statements data BBGsymbols replicates the Bloomberg 'financial analysis' monitor (FA \<GO\>). At the time of writing, this includes balance sheet, cash flow statement, income statement as well as 'key stats' that gathers broad summary figures and 'ratios' that includes popular financial ratios.
+For financial statements data [BBGsymbols](https://bautheac.github.io/BBGsymbols/) replicates the Bloomberg 'financial analysis' monitor (FA \<GO\>). At the time of writing, this includes balance sheet, cash flow statement, income statement as well as 'key stats' that gathers broad summary figures and 'ratios' that includes popular financial ratios.
 
 Retrieve the corresponding data for the abovementioned corporations with:  
 
@@ -138,7 +138,7 @@ equity_info
 ```
 
 ### fund
-Fund data only comes in two categories, market and info. For a given fund market data records stock market activity while info data records contemporaneous qualitative information that includes a wide range of fund characteristics. Market historical data as well as contemporaneous qualitative data not only allow for an in depth assessment of the fund performance but potentially also the mapping of the performance to fund characteristics. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.  
+Fund data only comes in two categories, market and info. For a given fund market data records stock market activity while info data records contemporaneous qualitative information that includes a wide range of fund characteristics. Market historical data as well as contemporaneous qualitative data not only allow for an in depth assessment of the fund performance but potentially also the mapping of the performance to fund characteristics. See the `fields` dataset in [BBGsymbols](https://bautheac.github.io/BBGsymbols/) for a detailed list of the Bloomberg datafields available.  
 
 #### market
 Retrieve market data from Bloomberg for the SPDR S&P 500 ETF Trust (SPY US Equity):
@@ -169,10 +169,10 @@ fund_info
 ```
 
 ### futures
-Futures data comes in three major categories in pullit, market, CFTC and info. For a given futures series market data records futures market price activity while CFTC data records market positions. 'info' on the other hand records contemporaneous qualitative information for the corresponding futures series, including but not limited to series name, term structure length, contract size, contract unit, etc. See the 'fields' dataset in BBGsymbols for a detailed list of the Bloomberg datafields available.
+Futures data comes in three major categories in [pullit](https://bautheac.github.io/pullit/), market, CFTC and info. For a given futures series market data records futures market price activity while CFTC data records market positions. 'info' on the other hand records contemporaneous qualitative information for the corresponding futures series, including but not limited to series name, term structure length, contract size, contract unit, etc. See the `fields` dataset in [BBGsymbols](https://bautheac.github.io/BBGsymbols/) for a detailed list of the Bloomberg datafields available.
 
 #### market
-pullit helps retrieving both term structure as well as aggregated market data for futures. Term structure data records market activity for individual futures term structure contracts while aggregated data records market activity measures that are aggregated over the whole term structure for a particular futures series.
+[pullit](https://bautheac.github.io/pullit/) helps to retrieve both term structure as well as aggregated market data for futures. Term structure data records market activity for individual futures term structure contracts while aggregated data records market activity measures that are aggregated over the whole term structure for a particular futures series.
 
 ##### __term structure__
 Retrieve market data from Bloomberg for the five first term structure contracts on the Corn - #2-yellow (C A Comdty) and silver (SIA Comdty) futures series where the futures chains are constructed by rolling on liquidity (with active contract: "A") with no roll adjustment (none: "N") using:
@@ -210,7 +210,7 @@ futures_agg
 ```
 
 #### CFTC
-pullit helps retrieving CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the 'fields' and '' datasets in BBGsymbols for a details.
+[pullit](https://bautheac.github.io/pullit/) helps to retrieve CFTC futures market position data from Bloomberg. The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday's open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. See the `fields` and `tickers_CFTC` datasets in [BBGsymbols](https://bautheac.github.io/BBGsymbols/) for details.
 
 Retrieve the corresponding futures market position data with:
 ```{r `futures CFTC bbg`, echo = T, eval = F}
@@ -239,7 +239,7 @@ futures_info
 
 
 ## accessors
-The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using the @ operator or more formally using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
+The functions above return objects that not only carry the retrieved financial data but also complementary information that can be accessed using bespoke accessor methods. Historical data functions for example return objects that carry a 'tickers' dataframe that indicates the tickers for which some data have been found, a 'fields' dataframe that indicates the data fields for which data has been found, a 'data' dataframe that hosts the retrieved data as well as a character vector hosting the original call to the function. A `get_periods()` method complements the accessor methods by indicating the start and end dates between which data have been found for each ticker and data field:
 
 ```{r `futures show`}
 futures_TS
@@ -269,7 +269,7 @@ call
 
 ## storethat
 
-All the objects above can be stored in a bespoke database for later off-Bloomberg consumption. The storethat package makes the process seamless by providing befitted storing methods:
+All the objects above can be stored in a bespoke database for later off-Bloomberg consumption. The [storethat](https://bautheac.github.io/storethat/) package makes the process seamless by providing befitted storing methods:
 
 ```{r `storethat store`, eval = F}
 library(storethat)
@@ -282,7 +282,7 @@ db_store(object = futures_TS, file = path, verbose = F)
 db_store(object = fund_market, file = path, verbose = F)
 ```
 
-Every function above has an equivalent for retrieving data from a storethat database that can be accessed by swapping the 'BBG' prefix for 'storethat'; i.e. 'pull_futures_market' becomes 'pull_futures_market'. Function parameters are identical for both data sources and the returned objects have alike characteristics:
+Every function above has an equivalent for retrieving data from a [storethat](https://bautheac.github.io/storethat/) database that can be accessed by swapping the 'BBG' prefix for 'storethat'; i.e. 'pull_futures_market' becomes 'pull_futures_market'. Function parameters are identical for both data sources and the returned objects have alike characteristics:
 
 ```{r `storethat retrieve`}
 equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, 
@@ -290,11 +290,11 @@ equity_market <- pull_equity_market(source = "storethat", equity_tickers, start,
 equity_market
 ```
 
-Updating a storethat database is equally straightforward with pullit. Update the equity content of the database with: 
+Updating a [storethat](https://bautheac.github.io/storethat/) database is equally straightforward with [pullit](https://bautheac.github.io/pullit/). Update the equity content of the database with: 
 ```{r `storethat update all`, eval = F}
 storethat_update(instrument = "equity", file = path)
 ```
-The function pull data from Bloomberg for all the equity tickers and fields already present in the storethat database and updates the corresponding series to the current system date.
+The function pulls data from Bloomberg for all the equity tickers and fields already present in the [storethat](https://bautheac.github.io/storethat/) database and updates the corresponding series up to the current system date.
 
 Narrower updates are also allowed:
 ```{r `storethat update some`, eval = F}
@@ -303,7 +303,7 @@ storethat_update(instrument = "equity", book = "market")
 
 
 ## plotit
-The [plotit](https://bautheac.github.io/plotit/) package, also part of the finRes suite, provides plot methods for some pullit data objects including, at the time of writing, futures term structure (FuturesTS) and fund market (FundMarket) objects.
+The [plotit](https://bautheac.github.io/plotit/) package, also part of the [finRes](https://bautheac.github.io/finRes/) suite, provides plot methods for some [pullit](https://bautheac.github.io/pullit/) data objects including, at the time of writing, futures term structure (FuturesTS) and fund market (FundMarket) objects.
 
 ### futures term structure
 Plot a futures series term structure dynamics with:
