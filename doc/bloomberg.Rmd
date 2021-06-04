@@ -46,7 +46,7 @@ start <- "2016-01-01"; end <- "2017-12-31"
 Equity data comes in three major categories in [pullit](https://bautheac.github.io/pullit/), market, book and info. For a given corporation market data records stock market activity while book data records business activity in the form of financial statements commonly referred to as 'books' and info refers to qualitative information. See the `fields` dataset in [BBGsymbols](https://bautheac.github.io/BBGsymbols/) for a detailed list of the Bloomberg datafields available.
 
 #### market
-Retrieve market data from Bloomberg for the BP (BP/ LN Equity), Weir group (WEIR LN Equity) and Apple (AAPL US Equity) corporations with:
+Retrieve market data from Bloomberg for British Petroleum (BP/ LN Equity), the Weir group (WEIR LN Equity) and Apple (AAPL US Equity) with:
 ```{r `equity market bbg`, eval = F, echo = T}
 equity_tickers <- c('BP/ LN Equity', 'WEIR LN Equity', 'AAPL US Equity')
 
@@ -282,11 +282,11 @@ db_store(object = futures_TS, file = path, verbose = F)
 db_store(object = fund_market, file = path, verbose = F)
 ```
 
-Every function above has an equivalent for retrieving data from a [storethat](https://bautheac.github.io/storethat/) database that can be accessed by swapping the 'BBG' prefix for 'storethat'; i.e. 'pull_futures_market' becomes 'pull_futures_market'. Function parameters are identical for both data sources and the returned objects have alike characteristics:
-
+All the functions described above can be used to query data from a [storethat](https://bautheac.github.io/storethat/) database by setting the `source` parameter to "storethat" and providing the path to the database as a string in the `file` parameter. If omitted a pop-up window allows to browse the file system and select the database file. The other function parameters are identical for both data sources and the returned objects are identical in all aspects other than the source of the data they contain:  
 ```{r `storethat retrieve`}
-equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, 
-                                    end, verbose = F, file = path)
+equity_market <- pull_equity_market(
+  source = "storethat", equity_tickers, start, end, verbose = F, file = path
+  )
 equity_market
 ```
 

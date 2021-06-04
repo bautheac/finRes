@@ -348,7 +348,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb1-3"><a href="#cb1-3"></a><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">&quot;fields&quot;</span>, <span class="st">&quot;months&quot;</span>, <span class="st">&quot;rolls&quot;</span>, <span class="st">&quot;tickers_cftc&quot;</span>, <span class="st">&quot;tickers_futures&quot;</span>), <span class="dt">package =</span> <span class="st">&quot;BBGsymbols&quot;</span>)</span></code></pre></div>
 <div id="fields" class="section level3">
 <h3>fields</h3>
-<p>The <code>fields</code> dataset is the workhorse in <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>; it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include ‘equity’, referring to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
+<p>The <code>fields</code> dataset is the workhorse in <a href="https://bautheac.github.io/BBGsymbols/">BBGsymbols</a>; it gathers Bloomberg datafields that have been carefully selected over time through experience. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include ‘equity’, referring to any equity like security, ‘fund’ encompassing any money managing entity and ‘futures’ covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.</p>
 <pre><code>#&gt; # A tibble: 961 x 10
 #&gt;    instrument book  type  subtype section subsection name  id    symbol
 #&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -466,10 +466,14 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb7-3"><a href="#cb7-3"></a><span class="kw">data</span>(<span class="dt">list =</span> <span class="kw">c</span>(<span class="st">&quot;countries&quot;</span>, <span class="st">&quot;currencies&quot;</span>, <span class="st">&quot;exchanges&quot;</span>), <span class="dt">package =</span> <span class="st">&quot;fewISOs&quot;</span>)</span></code></pre></div>
 <div id="countries" class="section level3">
 <h3>countries</h3>
-<p>The <code>countries</code> dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:<br />
-- ISO 3166-1 alpha-2: two-letter country codes (most widely used).<br />
-- ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.<br />
-- ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</p>
+<p>The <code>countries</code> dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:</p>
+<ul>
+<li>ISO 3166-1 alpha-2: two-letter country codes (most widely used).<br />
+</li>
+<li>ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.<br />
+</li>
+<li>ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</li>
+</ul>
 <pre><code>#&gt;                           name alpha 2 alpha 3 numeric   capital
 #&gt;   1:               Afghanistan      AF     AFG     004     Kabul
 #&gt;   2:             Åland Islands      AX     ALA     248 Mariehamn

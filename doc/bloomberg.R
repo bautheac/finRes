@@ -181,8 +181,9 @@ call
 #  db_store(object = fund_market, file = path, verbose = F)
 
 ## ----`storethat retrieve`-----------------------------------------------------
-equity_market <- pull_equity_market(source = "storethat", equity_tickers, start, 
-                                    end, verbose = F, file = path)
+equity_market <- pull_equity_market(
+  source = "storethat", equity_tickers, start, end, verbose = F, file = path
+  )
 equity_market
 
 ## ----`storethat update all`, eval = F-----------------------------------------

@@ -31,7 +31,7 @@ data(list = c("fields", "months", "rolls", "tickers_cftc", "tickers_futures"), p
 
 
 ### fields
-The `fields` dataset is the workhorse in [BBGsymbols](https://bautheac.github.io/BBGsymbols/); it gathers Bloomberg datafields that have been carefully selected over time through experience. By curbing the search space the package saves the user long hours of browsing the depths of Bloomberg for the desired fields. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include 'equity', referring to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
+The `fields` dataset is the workhorse in [BBGsymbols](https://bautheac.github.io/BBGsymbols/); it gathers Bloomberg datafields that have been carefully selected over time through experience. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include 'equity', referring to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
 ```{r `BBGsymbols fields`, echo = FALSE}
 # data.table::as.data.table(fields)
 tibble::as_tibble(fields)
@@ -79,9 +79,10 @@ data(list = c("countries", "currencies", "exchanges"), package = "fewISOs")
 
 ### countries
 The `countries` dataset corresponds to the ISO 3166-1 sub-standard, part of the ISO 3166 standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The sub-standard comes in three sets of country codes, all provided in the dataset:  
-- ISO 3166-1 alpha-2: two-letter country codes (most widely used).  
-- ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.  
-- ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.  
+
+* ISO 3166-1 alpha-2: two-letter country codes (most widely used).  
+* ISO 3166-1 alpha-3: three-letter country codes. Allows for a better visual association between the codes and the country names than the alpha-2 codes.  
+* ISO 3166-1 numeric: three-digit country codes. These are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.  
 ```{r `fewISOs countries`, echo = FALSE}
 countries
 ```
@@ -171,8 +172,7 @@ breakpoints
 ```
 
 
-## factors
-
+## factors  
 The [factors](https://bautheac.github.io/factors/) package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors' website. The current version includes the factor data from Kenneth's French, also available in the [FFresearch](https://bautheac.github.io/FFresearch/) package described above, as well as factor data from Robert F. Stambaugh. 
 
 ```{r, `factors load`}

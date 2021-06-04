@@ -17,13 +17,11 @@ finRes
 
 The [finRes](https://bautheac.github.io/finRes/) suite provides a
 collection of packages developed to facilitate data-science and/or
-research in finance and financial economic The purpose of the
-[finRes](https://bautheac.github.io/finRes/) suite is to facilitate
-data-science and/or research in finance and financial economics. In
-particular, it provides helper packages for retrieving and storing
-locally financial data from Bloomberg as well as for processing this
-data further for financial modeling for example, although the
-capabilities of the current version are limited to asset pricing.
+research in finance and financial economics. In particular, it provides
+helper packages for retrieving and storing locally financial data from
+Bloomberg as well as for processing this data further for financial
+modeling for example, although the capabilities of the current version
+are limited to asset pricing.
 [finRes](https://bautheac.github.io/finRes/) is organised as a set of
 packages that work in harmony because they share common data
 representations and ‘API’ design. This package is designed to make it
@@ -42,7 +40,7 @@ own, host datasets that play important roles in the
 [finRes](https://bautheac.github.io/finRes/) suite, mostly in relation
 to data collection, storage and wrangling but also to analytics and
 asset pricing in particular. At the time of writing, the set of dataset
-packages in finRes includes:
+packages in [finRes](https://bautheac.github.io/finRes/) includes:
 [BBGsymbols](https://bautheac.github.io/BBGsymbols/),
 [fewISOs](https://bautheac.github.io/fewISOs/),
 [GICS](https://bautheac.github.io/GICS/),
@@ -53,15 +51,17 @@ packages in finRes includes:
 
 The [finRes](https://bautheac.github.io/finRes/) suite is organised
 around the data-science pipeline where preprocessing, including data
-collection and wrangling, plays a major role. finRes addresses the issue
-in two complementary packages that work in conjunction with most of the
-dataset packages above.  
+collection and wrangling, plays a major role.
+[finRes](https://bautheac.github.io/finRes/) addresses the issue in two
+complementary packages that work in conjunction with most of the dataset
+packages above.  
 On the one hand the [pullit](https://bautheac.github.io/pullit/) package
 provides tools for data collection from Bloomberg. It returns clean and
 tidy, ready-to-use, data objects for other packages further down the
 pipeline to work with. On the other hand the
 [storethat](https://bautheac.github.io/storethat/) package helps storing
-the data retrieved with pullit for off-Bloomberg consumption in R.  
+the data retrieved with [pullit](https://bautheac.github.io/pullit/) for
+off-Bloomberg consumption in R.  
 Both [pullit](https://bautheac.github.io/pullit/) and
 [storethat](https://bautheac.github.io/storethat/) work in tandem with
 the [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package. The
