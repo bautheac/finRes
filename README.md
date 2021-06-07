@@ -20,12 +20,10 @@ collection of packages developed to facilitate data-science and/or
 research in finance and financial economics. In particular, it provides
 helper packages for retrieving and storing locally financial data from
 Bloomberg as well as for processing this data further for financial
-modeling for example, although the capabilities of the current version
-are limited to asset pricing.
-[finRes](https://bautheac.github.io/finRes/) is organised as a set of
-packages that work in harmony because they share common data
-representations and ‘API’ design. This package is designed to make it
-easy to install and load multiple
+modeling for example. [finRes](https://bautheac.github.io/finRes/) is
+organised as a set of packages that work in harmony because they share
+common data representations and ‘API’ design. This package is designed
+to make it easy to install and load multiple
 ‘[finRes](https://bautheac.github.io/finRes/)’ packages in a single
 step.  
 The development version can be installed from github using
@@ -74,7 +72,7 @@ package (Armstrong, Eddelbuettel, and Laing 2021).
 ### Asset pricing
 
 At the time of writing, the analytics part of the pipeline in
-[finRes](https://bautheac.github.io/finRes/) focuses on asset pricing.  
+[finRes](https://bautheac.github.io/finRes/) focuses on asset pricing.
 On the one hand the [FFresearch](https://bautheac.github.io/FFresearch/)
 package abovementioned provides data on classic asset pricing factors
 and a number of sort portfolios. The data is pulled directly from
