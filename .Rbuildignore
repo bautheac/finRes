@@ -8,3 +8,4 @@
 ^docs$
 ^pkgdown-site$
 ^\.github$
+^data-raw$

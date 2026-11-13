@@ -13,9 +13,7 @@ vignette: >
 
 ```{r, setup, echo = F, message = F, warning = F}
 knitr::opts_chunk$set(collapse = T, comment = "#>", warning = F, message = F, eval = T)
-folder <- "literature_files"; dir.create(folder)
-download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
-path <- here::here("development", "storethat.sqlite")
+path <- system.file("extdata", "storethat.sqlite", package = "finRes")
 ```
 
 
