@@ -8,3 +8,5 @@
 ^appveyor\.yml$
 ^development$
 ^docs$
+^pkgdown-site$
+^\.github$
