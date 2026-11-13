@@ -412,7 +412,9 @@ simulate_cftc <- function(f, date, spot, oi) {
       NULL)
   }
 
-  rows <- dplyr::filter(tickers_cftc, `active contract ticker` == f$ticker)
+  # Legacy format only: the commercial hedging pressure factor (factorem::CHP_factor)
+  # is the one consumer, and it uses the legacy commercial / non-commercial split.
+  rows <- dplyr::filter(tickers_cftc, `active contract ticker` == f$ticker, format == "legacy")
   series <- lapply(seq_len(nrow(rows)), function(j) {
     x <- rows[j, ]
     v <- value(x$format, x$underlying, x$unit, x$participant, x$position)
