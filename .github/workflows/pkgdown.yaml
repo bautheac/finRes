@@ -42,15 +42,15 @@ jobs:
           needs: website
 
       - name: Build pkgdown site
-        # Articles are skipped: the vignettes read the author's local
-        # development/storethat.sqlite (not in the repo), so they cannot
-        # render in CI. The navbar links to them are removed to match.
+        # The articles read the synthetic database in inst/extdata, so they
+        # render without Bloomberg.
         shell: Rscript {0}
         run: |
           ov <- list(destination = "pkgdown-site")
           pkgdown::init_site(override = ov)
           pkgdown::build_home(override = ov)
           pkgdown::build_reference(override = ov)
+          pkgdown::build_articles(override = ov)
           pkgdown::build_news(override = ov)
 
       - name: Deploy pkgdown site
