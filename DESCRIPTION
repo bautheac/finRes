@@ -46,7 +46,8 @@ LazyData: true
 RoxygenNote: 7.1.1
 URL: https://bautheac.github.io/finRes/
 BugReports: https://github.com/bautheac/finRes/issues
-Suggests: 
+Suggests:
+    here,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
