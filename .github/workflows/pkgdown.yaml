@@ -42,8 +42,16 @@ jobs:
           needs: website
 
       - name: Build pkgdown site
+        # Articles are skipped: the vignettes read the author's local
+        # development/storethat.sqlite (not in the repo), so they cannot
+        # render in CI. The navbar links to them are removed to match.
         shell: Rscript {0}
-        run: pkgdown::build_site(override = list(destination = "pkgdown-site"))
+        run: |
+          ov <- list(destination = "pkgdown-site")
+          pkgdown::init_site(override = ov)
+          pkgdown::build_home(override = ov)
+          pkgdown::build_reference(override = ov)
+          pkgdown::build_news(override = ov)
 
       - name: Deploy pkgdown site
         # The key's forced rrsync command on the dev-sites host confines it
