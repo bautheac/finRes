@@ -1,0 +1,964 @@
+id,instrument,book,type,subtype,section,subsection,symbol
+1,equity,key stats,adjusted highlights,NA,NA,NA,HISTORICAL_MARKET_CAP
+2,equity,key stats,adjusted highlights,NA,NA,NA,ENTERPRISE_VALUE
+3,equity,key stats,adjusted highlights,NA,NA,NA,SALES_REV_TURN
+4,equity,key stats,adjusted highlights,NA,NA,NA,GROSS_PROFIT
+5,equity,key stats,adjusted highlights,NA,NA,NA,EBITDA
+6,equity,key stats,adjusted highlights,NA,NA,NA,EARN_FOR_COMMON
+7,equity,key stats,adjusted highlights,NA,NA,NA,IS_DIL_EPS_CONT_OPS
+8,equity,key stats,adjusted highlights,NA,NA,NA,CF_CASH_FROM_OPER
+9,equity,key stats,adjusted highlights,NA,NA,NA,CAPITAL_EXPEND
+10,equity,key stats,adjusted highlights,NA,NA,NA,CF_FREE_CASH_FLOW
+11,equity,key stats,GAAP highlights,NA,NA,NA,SALES_REV_TURN
+12,equity,key stats,GAAP highlights,NA,NA,NA,IS_OPER_INC
+13,equity,key stats,GAAP highlights,NA,NA,NA,EARN_FOR_COMMON
+14,equity,key stats,GAAP highlights,NA,NA,NA,IS_EPS
+15,equity,key stats,GAAP highlights,NA,NA,NA,IS_DILUTED_EPS
+16,equity,key stats,GAAP highlights,NA,NA,NA,CASH_AND_MARKETABLE_SECURITIES
+17,equity,key stats,GAAP highlights,NA,NA,NA,BS_CUR_ASSET_REPORT
+18,equity,key stats,GAAP highlights,NA,NA,NA,BS_TOT_ASSET
+19,equity,key stats,GAAP highlights,NA,NA,NA,BS_CUR_LIAB
+20,equity,key stats,GAAP highlights,NA,NA,NA,BS_TOT_LIAB2
+21,equity,key stats,GAAP highlights,NA,NA,NA,TOTAL_EQUITY
+22,equity,key stats,GAAP highlights,NA,NA,NA,CF_CASH_FROM_OPER
+23,equity,key stats,GAAP highlights,NA,NA,NA,CF_CASH_FROM_INV_ACT
+24,equity,key stats,GAAP highlights,NA,NA,NA,CF_CASH_FROM_FNC_ACT
+25,equity,key stats,earnings,NA,NA,NA,BEST_SALES
+26,equity,key stats,earnings,NA,NA,NA,IS_COMP_SALES
+27,equity,key stats,earnings,NA,NA,NA,BEST_EPS
+28,equity,key stats,earnings,NA,NA,NA,IS_COMP_EPS_ADJUSTED
+29,equity,key stats,earnings,NA,NA,NA,BEST_OPP
+30,equity,key stats,earnings,NA,NA,NA,IS_COMPARABLE_EBIT
+31,equity,key stats,earnings,NA,NA,NA,BEST_EBITDA
+32,equity,key stats,earnings,NA,NA,NA,IS_COMPARABLE_EBITDA
+33,equity,key stats,earnings,NA,NA,NA,BEST_GROSS_MARGIN
+34,equity,key stats,earnings,NA,NA,NA,IS_COMP_GROSS_MARGIN_PERCENTAGE
+35,equity,key stats,earnings,NA,NA,NA,BEST_PTP
+36,equity,key stats,earnings,NA,NA,NA,IS_COMP_PTP_EX_STK_BASED_COMP
+37,equity,key stats,earnings,NA,NA,NA,BEST_NET_INCOME
+38,equity,key stats,earnings,NA,NA,NA,IS_COMP_NET_INCOME_ADJUST
+39,equity,key stats,enterprise value,NA,NA,NA,HISTORICAL_MARKET_CAP
+40,equity,key stats,enterprise value,NA,NA,NA,ENTERPRISE_VALUE
+41,equity,key stats,enterprise value,NA,NA,NA,BS_TOT_CAP
+42,equity,key stats,enterprise value,NA,NA,NA,EV_TO_T12M_SALES
+43,equity,key stats,enterprise value,NA,NA,NA,EV_TO_T12M_EBITDA
+44,equity,key stats,enterprise value,NA,NA,NA,EV_TO_T12M_EBIT
+45,equity,key stats,enterprise value,NA,NA,NA,EV_TO_T12M_CASH_FLOW_FIRM
+46,equity,key stats,enterprise value,NA,NA,NA,EV_TO_T12M_FREE_CASH_FLOW_FIRM
+47,equity,key stats,enterprise value,NA,NA,NA,DILUTED_MKT_CAP
+48,equity,key stats,enterprise value,NA,NA,NA,DILUTED_EV
+49,equity,key stats,enterprise value,NA,NA,NA,EV_TO_SH_OUT
+50,equity,key stats,enterprise value,NA,NA,NA,TRAIL_12M_NET_SALES
+51,equity,key stats,enterprise value,NA,NA,NA,TRAIL_12M_EBITDA
+52,equity,key stats,enterprise value,NA,NA,NA,TRAIL_12M_OPER_INC
+53,equity,key stats,enterprise value,NA,NA,NA,TRAIL_12M_CASH_FLOW_FIRM
+54,equity,key stats,enterprise value,NA,NA,NA,TRAIL_12M_FREE_CASH_FLOW
+55,equity,key stats,multiples,NA,NA,NA,PE_RATIO
+56,equity,key stats,multiples,NA,NA,NA,PX_TO_BOOK_RATIO
+57,equity,key stats,multiples,NA,NA,NA,PX_TO_TANG_BV_PER_SH
+58,equity,key stats,multiples,NA,NA,NA,PX_TO_SALES_RATIO
+59,equity,key stats,multiples,NA,NA,NA,PX_TO_CASH_FLOW
+60,equity,key stats,multiples,NA,NA,NA,PX_TO_FREE_CASH_FLOW
+61,equity,key stats,multiples,NA,NA,NA,EV_TO_T12M_SALES
+62,equity,key stats,multiples,NA,NA,NA,EV_TO_T12M_EBITDA
+63,equity,key stats,multiples,NA,NA,NA,EV_TO_T12M_EBIT
+64,equity,key stats,multiples,NA,NA,NA,PX_LAST
+65,equity,key stats,per share,NA,NA,NA,BS_SH_OUT
+66,equity,key stats,NA,NA,NA,NA,IS_SH_FOR_DILUTED_EPS
+67,equity,key stats,NA,NA,NA,NA,IS_AVG_NUM_SH_FOR_EPS
+68,equity,key stats,per share data items,NA,NA,NA,REVENUE_PER_SH
+69,equity,key stats,per share data items,NA,NA,NA,EBITDA_PER_SH
+70,equity,key stats,per share data items,NA,NA,NA,OPER_INC_PER_SH
+71,equity,key stats,per share data items,NA,NA,NA,IS_EPS
+72,equity,key stats,per share data items,NA,NA,NA,IS_EARN_BEF_XO_ITEMS_PER_SH
+73,equity,key stats,per share data items,NA,NA,NA,IS_BASIC_EPS_CONT_OPS
+74,equity,key stats,per share data items,NA,NA,NA,IS_DILUTED_EPS
+75,equity,key stats,per share data items,NA,NA,NA,IS_DIL_EPS_BEF_XO
+76,equity,key stats,per share data items,NA,NA,NA,IS_DIL_EPS_CONT_OPS
+77,equity,key stats,per share data items,NA,NA,NA,EQY_DPS
+78,equity,key stats,per share data items,NA,NA,NA,CASH_FLOW_PER_SH
+79,equity,key stats,per share data items,NA,NA,NA,FREE_CASH_FLOW_PER_SH
+80,equity,key stats,per share data items,NA,NA,NA,CF_FFO_PER_SH
+81,equity,key stats,per share data items,NA,NA,NA,CF_FFO_PER_SH_DILUTED
+82,equity,key stats,per share data items,NA,NA,NA,CASH_ST_INVESTMENTS_PER_SH
+83,equity,key stats,per share data items,NA,NA,NA,BOOK_VAL_PER_SH
+84,equity,key stats,per share data items,NA,NA,NA,TANG_BOOK_VAL_PER_SH
+85,equity,income statement,adjusted,NA,NA,NA,SALES_REV_TURN
+86,equity,income statement,adjusted,NA,NA,NA,IS_COGS_TO_FE_AND_PP_AND_G
+87,equity,income statement,adjusted,NA,NA,NA,GROSS_PROFIT
+88,equity,income statement,adjusted,NA,NA,NA,IS_OTHER_OPER_INC
+89,equity,income statement,adjusted,NA,NA,NA,IS_OPERATING_EXPN
+90,equity,income statement,adjusted,NA,NA,NA,IS_OPER_INC
+91,equity,income statement,adjusted,NA,NA,NA,IS_NONOP_INCOME_LOSS
+92,equity,income statement,adjusted,NA,NA,NA,PRETAX_INC
+93,equity,income statement,adjusted,NA,NA,NA,IS_ABNORMAL_ITEM
+94,equity,income statement,adjusted,NA,NA,NA,PRETAX_INC
+95,equity,income statement,adjusted,NA,NA,NA,IS_INC_TAX_EXP
+96,equity,income statement,adjusted,NA,NA,NA,IS_INC_BEF_XO_ITEM
+97,equity,income statement,adjusted,NA,NA,NA,XO_GL_NET_OF_TAX
+98,equity,income statement,adjusted,NA,NA,NA,NI_INCLUDING_MINORITY_INT_RATIO
+99,equity,income statement,adjusted,NA,NA,NA,MIN_NONCONTROL_INTEREST_CREDITS
+100,equity,income statement,adjusted,NA,NA,NA,NET_INCOME
+101,equity,income statement,adjusted,NA,NA,NA,IS_TOT_CASH_PFD_DVD
+102,equity,income statement,adjusted,NA,NA,NA,OTHER_ADJUSTMENTS
+103,equity,income statement,adjusted,NA,NA,NA,EARN_FOR_COMMON
+104,equity,income statement,adjusted,NA,NA,NA,IS_NET_ABNORMAL_ITEMS
+105,equity,income statement,adjusted,NA,NA,NA,XO_GL_NET_OF_TAX
+106,equity,income statement,adjusted,NA,NA,NA,IS_AVG_NUM_SH_FOR_EPS
+107,equity,income statement,adjusted,NA,NA,NA,IS_EARN_BEF_XO_ITEMS_PER_SH
+108,equity,income statement,adjusted,NA,NA,NA,IS_BASIC_EPS_CONT_OPS
+109,equity,income statement,adjusted,NA,NA,NA,IS_SH_FOR_DILUTED_EPS
+110,equity,income statement,adjusted,NA,NA,NA,IS_DIL_EPS_BEF_XO
+111,equity,income statement,adjusted,NA,NA,NA,IS_DIL_EPS_CONT_OPS
+112,equity,income statement,adjusted,NA,NA,NA,ACCOUNTING_STANDARD
+113,equity,income statement,adjusted,NA,NA,NA,EBITDA
+114,equity,income statement,adjusted,NA,NA,NA,EBITDA_MARGIN
+115,equity,income statement,adjusted,NA,NA,NA,EBITA
+116,equity,income statement,adjusted,NA,NA,NA,EBIT
+117,equity,income statement,adjusted,NA,NA,NA,GROSS_MARGIN
+118,equity,income statement,adjusted,NA,NA,NA,OPER_MARGIN
+119,equity,income statement,adjusted,NA,NA,NA,PROF_MARGIN
+120,equity,income statement,adjusted,NA,NA,NA,ACTUAL_SALES_PER_EMPL
+121,equity,income statement,adjusted,NA,NA,NA,EQY_DPS
+122,equity,income statement,adjusted,NA,NA,NA,IS_TOT_CASH_COM_DVD
+123,equity,income statement,adjusted,NA,NA,NA,IS_PERSONNEL_EXP
+124,equity,income statement,adjusted,NA,NA,NA,IS_DEPR_EXP
+125,equity,income statement,adjusted,NA,NA,NA,BS_CURR_RENTAL_EXPENSE
+126,equity,income statement,as reported,NA,NA,NA,ARD_REVENUES
+127,equity,income statement,as reported,NA,NA,NA,ARD_PRODUCT_REVENUE
+128,equity,income statement,as reported,NA,NA,NA,ARD_SERVICE_REVENUE
+129,equity,income statement,as reported,NA,NA,NA,ARD_FIN_SVCS_MTGE_BANKING_REV
+130,equity,income statement,as reported,NA,NA,NA,ARD_TOTAL_REVENUES
+131,equity,income statement,as reported,NA,NA,NA,ARD_COST_OF_GOODS_SOLD
+132,equity,income statement,as reported,NA,NA,NA,ARD_R&D_EXPENDITURES
+133,equity,income statement,as reported,NA,NA,NA,ARD_DEPRECIATION_EXP
+134,equity,income statement,as reported,NA,NA,NA,ARD_SELLING_GENERAL_ADMIN_EXP
+135,equity,income statement,as reported,NA,NA,NA,ARD_GROSS_PROFITS
+136,equity,income statement,as reported,NA,NA,NA,ARD_OPERATING_INCOME
+137,equity,income statement,as reported,NA,NA,NA,ARD_OTH_OPERATING_INC_EXP_NET
+138,equity,income statement,as reported,NA,NA,NA,ARD_COST_FIN_SVCS_MTG_BANK_REV
+139,equity,income statement,as reported,NA,NA,NA,ARD_SALES_MKT_ADVERTISING_EXP
+140,equity,income statement,as reported,NA,NA,NA,ARD_TOTAL_OPERATING_EXPENSES
+141,equity,income statement,as reported,NA,NA,NA,ARD_OTHER_NON_OPERATING_INC
+142,equity,income statement,as reported,NA,NA,NA,ARD_INT_EXP
+143,equity,income statement,as reported,NA,NA,NA,ARD_EQY_IN_EARN_AFFILIATE_JV
+144,equity,income statement,as reported,NA,NA,NA,ARD_INT_INCOME
+145,equity,income statement,as reported,NA,NA,NA,ARD_INT_EXP_NET
+146,equity,income statement,as reported,NA,NA,NA,ARD_INCOME_TAX_EXP_BENEFIT
+147,equity,income statement,as reported,NA,NA,NA,ARD_INCOME_BEFORE_INCOME_TAXES
+148,equity,income statement,as reported,NA,NA,NA,ARD_GL_ON_SALE_OF_INVESTMENTS
+149,equity,income statement,as reported,NA,NA,NA,ARD_TOTAL_FINANCIAL_LOSSES_GAINS
+150,equity,income statement,as reported,NA,NA,NA,ARD_OTHER_FINANCIAL_LOSSES_GAINS
+151,equity,income statement,as reported,NA,NA,NA,ARD_OTH_NON_OPER_INC_EXP_NET
+152,equity,income statement,as reported,NA,NA,NA,ARD_DVD_PER_SH
+153,equity,income statement,as reported,NA,NA,NA,ARD_MINORITY_NONCONTROL_INTEREST
+154,equity,income statement,as reported,NA,NA,NA,ARD_BASIC_EPS
+155,equity,income statement,as reported,NA,NA,NA,ARD_WEIGHTED_AVG_SHARES_BASIC
+156,equity,income statement,as reported,NA,NA,NA,ARD_DILUTED_EPS
+157,equity,income statement,as reported,NA,NA,NA,ARD_WEIGHTED_AVG_SHARE_DILUTED
+158,equity,income statement,as reported,NA,NA,NA,ARD_PROF_AFTER_TAX_BEF_MINORITY
+159,equity,income statement,as reported,NA,NA,NA,ARD_NET_INC
+160,equity,income statement,as reported,NA,NA,NA,PARTIAL_RECORD_INDICATOR
+161,equity,income statement,as reported,NA,NA,NA,ARD_FOR_CRNCY_TRANSLATION_ADJ
+162,equity,income statement,as reported,NA,NA,NA,ARD_UNREALIZED_GL_ON_SECS
+163,equity,income statement,as reported,NA,NA,NA,ARD_CHG_FAIR_VAL_OF_DERIVATIVES
+164,equity,income statement,as reported,NA,NA,NA,ARD_PENSION_RELATED_ADJUSTMENTS
+165,equity,income statement,as reported,NA,NA,NA,ARD_OTHER_COMPREHENSIVE_INCOME
+166,equity,income statement,as reported,NA,NA,NA,ARD_TOTAL_COMPREHENSIVE_INCOME
+167,equity,income statement,as reported,NA,NA,NA,ARD_MIN_PENSION_LIAB_ADJ_TAX
+168,equity,income statement,as reported,NA,NA,NA,ARD_COMPREHENSIVE_INC_ATTRIB_MI
+169,equity,income statement,as reported,NA,NA,NA,ARD_COMPREHENSIVE_INCOME_NET_INC
+170,equity,income statement,as reported,NA,NA,NA,ARD_TOT_COMP_INC_INCL_MIN_INT
+171,equity,income statement,as reported,NA,NA,NA,ARDR_AMORT_EXP
+172,equity,income statement,as reported,NA,NA,NA,ARDR_R&D_EXPENDITURES
+173,equity,income statement,as reported,NA,NA,NA,ARDR_SALARIES_WAGE_EMPLOYEE_BEN
+174,equity,income statement,as reported,NA,NA,NA,ARDR_DEPRECIATION_EXP
+175,equity,income statement,as reported,NA,NA,NA,ARDR_SELLING_GENERAL_ADMIN_EXP
+176,equity,income statement,as reported,NA,NA,NA,ARDR_DEPRECIATION_AMORTIZATION
+177,equity,income statement,as reported,NA,NA,NA,ARDR_INT_EXP
+178,equity,income statement,as reported,NA,NA,NA,ARDR_GL_ON_SALE_OF_ASSETS
+179,equity,income statement,as reported,NA,NA,NA,ARDR_WRITEDOWN_IMPAIR_OF_ASSETS
+180,equity,income statement,as reported,NA,NA,NA,ARDR_RESTRUCTURING_CHARGES
+181,equity,income statement,as reported,NA,NA,NA,ARDR_OTHER_ONE_TIME_CHARGES
+182,equity,income statement,as reported,NA,NA,NA,ARDR_EQY_IN_EARN_AFFILIATE_JV
+183,equity,income statement,as reported,NA,NA,NA,ARDR_INT_INCOME
+184,equity,income statement,as reported,NA,NA,NA,ARDR_INT_EXP_NET
+185,equity,income statement,as reported,NA,NA,NA,ARDR_INCOME_TAX_EXP_BENEFIT
+186,equity,income statement,as reported,NA,NA,NA,ARDR_FOR_CRNCY_TRANSLATION_ADJ
+187,equity,income statement,as reported,NA,NA,NA,ARDR_UNREALIZED_GL_ON_SECS
+188,equity,income statement,as reported,NA,NA,NA,ARDR_CHG_FAIR_VAL_OF_DERIVATIVES
+189,equity,income statement,as reported,NA,NA,NA,ARDR_INVESTMENT_INCOME
+190,equity,income statement,as reported,NA,NA,NA,ARDR_TOTAL_CASH_COMMON_DVD
+191,equity,income statement,as reported,NA,NA,NA,ARDR_PROJECTED_BENEFIT_OBLIG
+192,equity,income statement,as reported,NA,NA,NA,ARDR_FAIR_VALUE_OF_PLAN_ASSETS
+193,equity,income statement,as reported,NA,NA,NA,ARDR_DVD_PER_SH
+194,equity,income statement,as reported,NA,NA,NA,ARDR_BASIC_EPS
+195,equity,income statement,as reported,NA,NA,NA,ARDR_WEIGHTED_AVG_SHARES_BASIC
+196,equity,income statement,as reported,NA,NA,NA,ARDR_DILUTED_EPS
+197,equity,income statement,as reported,NA,NA,NA,ARDR_WEIGHTED_AVG_SHARE_DILUTED
+198,equity,income statement,as reported,NA,NA,NA,ARDR_PENSION_EXP_INCOME
+199,equity,income statement,as reported,NA,NA,NA,ARDR_SRVC_COST
+200,equity,income statement,as reported,NA,NA,NA,ARDR_OVER_UNDERFUNDED_PENSION
+201,equity,income statement,as reported,NA,NA,NA,ARDR_DISC_RATE_USED_LIAB_PENS
+202,equity,income statement,as reported,NA,NA,NA,ARDR_RATE_OF_COMP_INCR_PENSION
+203,equity,income statement,as reported,NA,NA,NA,ARDR_STK_BASED_COMPENSATION_EXP
+204,equity,income statement,as reported,NA,NA,NA,ARDR_DIVIDEND_INCOME
+205,equity,income statement,as reported,NA,NA,NA,ARDR_IMPAIRMENT_OF_INTANGIBLES
+206,equity,income statement,as reported,NA,NA,NA,ARDR_TOTAL_COMPREHENSIVE_INCOME
+207,equity,income statement,as reported,NA,NA,NA,ARDR_OTH_INCOME_EXPENSE_INT
+208,equity,income statement,as reported,NA,NA,NA,ARDR_AMORT_OF_INTANGIBLE_ASSETS
+209,equity,income statement,as reported,NA,NA,NA,ARDR_PRODUCT_REVENUE
+210,equity,income statement,as reported,NA,NA,NA,ARDR_SERVICE_REVENUE
+211,equity,income statement,as reported,NA,NA,NA,ARDR_GL_ON_SALE_OF_INVESTMENTS
+212,equity,income statement,as reported,NA,NA,NA,ARDR_GL_ON_SALE_OF_BUSINESS
+213,equity,income statement,as reported,NA,NA,NA,ARDR_CUR_INCOME_TAX_EXP_BENEFIT
+214,equity,income statement,as reported,NA,NA,NA,ARDR_DEFERRED_INC_TAX_EXP_BEN
+215,equity,income statement,as reported,NA,NA,NA,ARDR_UNRECOG_PRIOR_SRVC_COST_RBO
+216,equity,income statement,as reported,NA,NA,NA,ARD_ADJ_NET_INCOME_AS_REPORTED
+217,equity,income statement,as reported,NA,NA,NA,ARDR_OCCUPANCY_RENT_EXP
+218,equity,income statement,as reported,NA,NA,NA,ARDR_NET_INC_AVAIL_COM_SHRHLDR
+219,equity,income statement,as reported,NA,NA,NA,ARDR_EFFECTIVE_TAX_RATE_PCT
+220,equity,income statement,as reported,NA,NA,NA,ARDR_NUM_OF_EMPLOYEES_PERIOD_END
+221,equity,income statement,as reported,NA,NA,NA,ARDR_BENEFITS_PAID_PENSION
+222,equity,income statement,as reported,NA,NA,NA,ARDR_INTEREST_COST_PENSION
+223,equity,income statement,as reported,NA,NA,NA,ARDR_EXP_RET_ON_PLAN_ASSET_PENS
+224,equity,income statement,as reported,NA,NA,NA,ARDR_TOT_FEES_PAID_AUDIT_FIRMS
+225,equity,income statement,as reported,NA,NA,NA,ARDR_PROV_GUARANTEES_WARRANTIES
+226,equity,income statement,as reported,NA,NA,NA,ARDR_RENTAL_EXP
+227,equity,income statement,as reported,NA,NA,NA,ARDR_OTHER_FINANCIAL_LOSSES
+228,equity,income statement,as reported,NA,NA,NA,ARDR_UNREAL_GL_FROM_SECS_NON_OP
+229,equity,income statement,as reported,NA,NA,NA,ARDR_AMORT_RESEARCH_DEVELOPMENT
+230,equity,income statement,as reported,NA,NA,NA,ARD_REF_FINANCIAL_SERVICES_REV
+231,equity,income statement,as reported,NA,NA,NA,ARDR_DEPR_IMPAIRMENT_FIXD_ASSETS
+232,equity,income statement,as reported,NA,NA,NA,ARDR_EXPEND_INCURRED_ON_R&D_CAP
+233,equity,income statement,as reported,NA,NA,NA,ARDR_NET_FOR_EXCH_GAIN_PRO_ORD
+234,equity,income statement,as reported,NA,NA,NA,ARDR_FOREIGN_EXCH_LOSSES_NON_OP
+235,equity,income statement,as reported,NA,NA,NA,ARDR_AUDITOR_EXP_AUDIT
+236,equity,income statement,as reported,NA,NA,NA,ARDR_AUDITOR_EXP_NON_AUDIT
+237,equity,income statement,as reported,NA,NA,NA,ARDR_STATUTORY_TAX_RATE_PCT
+238,equity,income statement,as reported,NA,NA,NA,ARDR_AUDIT_FEE_TO_MAIN_AUDITOR
+239,equity,income statement,as reported,NA,NA,NA,ARDR_AUDIT_FEE_TO_OTHER_AUDITORS
+240,equity,income statement,as reported,NA,NA,NA,ARDR_NONAUDIT_FEE_TO_MAIN_AUDIT
+241,equity,income statement,as reported,NA,NA,NA,ARDR_NONAUDIT_TO_OTHER_AUDITORS
+242,equity,income statement,as reported,NA,NA,NA,ARDR_PENSION_PLAN_EQUITIES_AMT
+243,equity,income statement,as reported,NA,NA,NA,ARDR_PENSION_PLAN_DEBT_AMT
+244,equity,income statement,as reported,NA,NA,NA,ARDR_PENSION_PLAN_CASH_AMT
+245,equity,income statement,as reported,NA,NA,NA,ARDR_PENSION_PLAN_OTHER_AMT
+246,equity,income statement,as reported,NA,NA,NA,ARDR_ADJ_EBIT_NON_GAAP_OP_INC
+247,equity,income statement,as reported,NA,NA,NA,ARDR_UNRECOG_TRANS_OBLIG_RBO
+248,equity,income statement,as reported,NA,NA,NA,ARDR_OTHER_EXP_INC_PENSION
+249,equity,income statement,as reported,NA,NA,NA,ARDR_ADVERTISING_EXPENSES
+250,equity,income statement,as reported,NA,NA,NA,ARDR_FIXED_CHARGE_COVERAGE_RATIO
+251,equity,income statement,as reported,NA,NA,NA,ARDR_STOCK_BASED_CMPNSTN_IN_R&D
+252,equity,income statement,as reported,NA,NA,NA,ARDR_STOCK_BASED_CMPNSTN_IN_SG&A
+253,equity,income statement,as reported,NA,NA,NA,ARDR_STOCK_BASED_CMPNSTN_IN_COGS
+254,equity,income statement,as reported,NA,NA,NA,ARDR_ITE_CURRENT_TAX_INTL
+255,equity,income statement,as reported,NA,NA,NA,ARDR_ITE_CURRENT_TAX_NATL
+256,equity,income statement,as reported,NA,NA,NA,ARDR_ITE_CURRENT_TAX_LCL
+257,equity,income statement,as reported,NA,NA,NA,ARDR_INC_DEFERRED_TAX_INTL
+258,equity,income statement,as reported,NA,NA,NA,ARDR_ITE_DEFERRED_TAX_NATL
+259,equity,income statement,as reported,NA,NA,NA,ARDR_ITE_DEFERRED_TAX_LCL
+260,equity,income statement,as reported,NA,NA,NA,ARDR_SBC_NON_GAAP_COGS
+261,equity,income statement,as reported,NA,NA,NA,ARDR_SBC_NON_GAAP_SG&A
+262,equity,income statement,as reported,NA,NA,NA,ARDR_SBC_NON_GAAP_R&D
+263,equity,income statement,as reported,NA,NA,NA,ARDR_EBIT
+264,equity,income statement,as reported,NA,NA,NA,ARDR_GROSS_MARGIN
+265,equity,income statement,as reported,NA,NA,NA,ARDR_REVENUE_GROWTH
+266,equity,income statement,as reported,NA,NA,NA,ARDR_PROPOSED_DIVIDEND_PER_SHARE
+267,equity,income statement,as reported,NA,NA,NA,ARDR_OTHER_FINANCIAL_GAINS
+268,equity,income statement,as reported,NA,NA,NA,ARDR_WEIGHTED_AVG_SHARES_BASIC
+269,equity,income statement,as reported,NA,NA,NA,ARDR_WEIGHTED_AVG_SHARE_DILUTED
+270,equity,income statement,as reported,NA,NA,NA,ARDR_EMPLOYEE_PROFIT_SHARING
+271,equity,income statement,as reported,NA,NA,NA,ARDR_CAPEX_AS_REPORTED
+272,equity,income statement,as reported,NA,NA,NA,ARDR_STK_BASED_COMP_TAX_BFIT
+273,equity,income statement,as reported,NA,NA,NA,ARDR_STK_BSD_CMPNSTN_CF_PRE_TAX
+274,equity,income statement,stock based compensation & amortization,NA,NA,NA,BASIC_EPS_EX_STK_BASED_COMP
+275,equity,income statement,stock based compensation & amortization,NA,NA,NA,DILUTED_EPS_EX_STK_BASED_COMP
+276,equity,income statement,stock based compensation & amortization,NA,NA,NA,ADJ_EPS_EX_AMORT_TOT_INTANG_BAS
+277,equity,income statement,stock based compensation & amortization,NA,NA,NA,ADJ_EPS_EX_AMORT_TOT_INTANG_DIL
+278,equity,income statement,stock based compensation & amortization,NA,NA,NA,ADJ_EPS_EX_SBC_AMORT_TOT_INT_BAS
+279,equity,income statement,stock based compensation & amortization,NA,NA,NA,ADJ_EPS_EX_SBC_AMORT_TOT_INT_DIL
+280,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_EXPENSE_STOCK_BASED_COMP
+281,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_STK_BASED_COMP_AFT_TAX
+282,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_STK_BASED_COMP_PER_BAS_SH
+283,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_STK_BASED_COMP_PER_DIL_SH
+284,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_SBC_ATTRIB_TO_COGS_PRETX
+285,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_SBC_ATTRIB_TO_SG&A_PRETX
+286,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_SBC_ATTRIBUTABLE_TO_R&D_PRETX
+287,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_OF_INTANG_ACQUIS_REL
+288,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_INTANG_ACQ_REL_AT
+289,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_INTANG_ACQ_REL_BASIC_PS
+290,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_INTANG_ACQ_REL_DIL_PS
+291,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_OF_TOT_INTANG_PRETX
+292,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_OF_TOT_INTANG_AFT_TAX
+293,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_OF_TOT_INTANG_P_BAS_SH
+294,equity,income statement,stock based compensation & amortization,NA,NA,NA,IS_AMORT_OF_TOT_INTANG_P_DIL_SH
+295,equity,balance sheet,standardized,NA,assets,current,C&CE_AND_STI_DETAILED
+296,equity,balance sheet,standardized,NA,assets,current,BS_ACCT_NOTE_RCV
+297,equity,balance sheet,standardized,NA,assets,current,BS_INVENTORIES
+298,equity,balance sheet,standardized,NA,assets,current,OTHER_CURRENT_ASSETS_DETAILED
+299,equity,balance sheet,standardized,NA,assets,current,BS_CUR_ASSET_REPORT
+300,equity,balance sheet,standardized,NA,assets,long term,BS_NET_FIX_ASSET
+301,equity,balance sheet,standardized,NA,assets,long term,BS_LT_INVEST
+302,equity,balance sheet,standardized,NA,assets,long term,BS_OTHER_ASSETS_DEF_CHRG_OTHER
+303,equity,balance sheet,standardized,NA,assets,long term,BS_TOT_NON_CUR_ASSET
+304,equity,balance sheet,standardized,NA,assets,total,BS_TOT_ASSET
+305,equity,balance sheet,standardized,NA,liabilities,current,ACCT_PAYABLE_&_ACCRUALS_DETAILED
+306,equity,balance sheet,standardized,NA,liabilities,current,BS_ST_BORROW
+307,equity,balance sheet,standardized,NA,liabilities,current,OTHER_CURRENT_LIABS_SUB_DETAILED
+308,equity,balance sheet,standardized,NA,liabilities,current,BS_CUR_LIAB
+309,equity,balance sheet,standardized,NA,liabilities,long term,BS_LT_BORROW
+310,equity,balance sheet,standardized,NA,liabilities,long term,OTHER_NONCUR_LIABS_SUB_DETAILED
+311,equity,balance sheet,standardized,NA,liabilities,long term,NON_CUR_LIAB
+312,equity,balance sheet,standardized,NA,liabilities,long term,BS_TOT_LIAB2
+313,equity,balance sheet,standardized,NA,equity,NA,BS_PFD_EQTY_&_HYBRID_CPTL
+314,equity,balance sheet,standardized,NA,equity,NA,BS_SH_CAP_AND_APIC
+315,equity,balance sheet,standardized,NA,equity,NA,BS_AMT_OF_TSY_STOCK
+316,equity,balance sheet,standardized,NA,equity,NA,BS_PURE_RETAINED_EARNINGS
+317,equity,balance sheet,standardized,NA,equity,NA,OTHER_INS_RES_TO_SHRHLDR_EQY
+318,equity,balance sheet,standardized,NA,equity,NA,EQTY_BEF_MINORITY_INT_DETAILED
+319,equity,balance sheet,standardized,NA,equity,NA,MINORITY_NONCONTROLLING_INTEREST
+320,equity,balance sheet,standardized,NA,equity,NA,TOTAL_EQUITY
+321,equity,balance sheet,standardized,NA,total,NA,TOT_LIAB_AND_EQY
+322,equity,balance sheet,standardized,NA,NA,NA,ACCOUNTING_STANDARD
+323,equity,balance sheet,standardized,NA,NA,NA,BS_SH_OUT
+324,equity,balance sheet,standardized,NA,NA,NA,BS_NUM_OF_TSY_SH
+325,equity,balance sheet,standardized,NA,NA,NA,BS_PENSION_RSRV
+326,equity,balance sheet,standardized,NA,NA,NA,BS_FUTURE_MIN_OPER_LEASE_OBLIG
+327,equity,balance sheet,standardized,NA,NA,NA,BS_TOTAL_CAPITAL_LEASES
+328,equity,balance sheet,standardized,NA,NA,NA,BS_OPTIONS_GRANTED
+329,equity,balance sheet,standardized,NA,NA,NA,BS_OPTIONS_OUTSTANDING
+330,equity,balance sheet,standardized,NA,NA,NA,NET_DEBT
+331,equity,balance sheet,standardized,NA,NA,NA,NET_DEBT_TO_SHRHLDR_EQTY
+332,equity,balance sheet,standardized,NA,NA,NA,TCE_RATIO
+333,equity,balance sheet,standardized,NA,NA,NA,CUR_RATIO
+334,equity,balance sheet,standardized,NA,NA,NA,CASH_CONVERSION_CYCLE
+335,equity,balance sheet,standardized,NA,NA,NA,BS_CASH_HELD_OVERSEAS
+336,equity,balance sheet,standardized,NA,NA,NA,NUM_OF_EMPLOYEES
+337,equity,balance sheet,as reported,NA,assets,current,ARD_CASH_AND_EQUIVALENTS
+338,equity,balance sheet,as reported,NA,assets,current,ARD_MARKETABLE_SECURITIES
+339,equity,balance sheet,as reported,NA,assets,current,ARD_ACCTS_RECEIVABLE_TRADE
+340,equity,balance sheet,as reported,NA,assets,current,ARD_INVENTORY
+341,equity,balance sheet,as reported,NA,assets,current,ARD_DEFERRED_INC_TAX_ASSET_ST
+342,equity,balance sheet,as reported,NA,assets,current,ARD_OTHER_CURRENT_ASSETS
+343,equity,balance sheet,as reported,NA,assets,current,ARD_ALLOW_FOR_DOUBTFUL_ACCTS
+344,equity,balance sheet,as reported,NA,assets,current,ARD_ACCT_REC_AFF_NONTRADE
+345,equity,balance sheet,as reported,NA,assets,current,ARD_TOTAL_CUR_ASSETS
+346,equity,balance sheet,as reported,NA,assets,long term,ARD_NON_CUR_MKT_SEC
+347,equity,balance sheet,as reported,NA,assets,long term,ARD_PROPERTY_PLANT_EQUIP_NET
+348,equity,balance sheet,as reported,NA,assets,long term,ARD_OTHER_INTANGIBLE_ASSET
+349,equity,balance sheet,as reported,NA,assets,long term,ARD_GOODWLL
+350,equity,balance sheet,as reported,NA,assets,long term,ARD_OTHER_NONCURRENT_ASSET
+351,equity,balance sheet,as reported,NA,assets,total,ARD_TOT_ASSETS
+352,equity,balance sheet,as reported,NA,liabilities,current,ARD_ACCOUNTS_PAYABLE_TRADE
+353,equity,balance sheet,as reported,NA,liabilities,current,ARD_CURRENT_PORTION_OF_LT_DEBT
+354,equity,balance sheet,as reported,NA,liabilities,current,ARD_ST_BORROW
+355,equity,balance sheet,as reported,NA,liabilities,current,ARD_ACCRUED_EXPENSES
+356,equity,balance sheet,as reported,NA,liabilities,current,ARD_DEFERRED_UNEARNED_REV_ST
+357,equity,balance sheet,as reported,NA,liabilities,current,ARD_TOTAL_CURRENT_LIABILITIES
+358,equity,balance sheet,as reported,NA,liabilities,long term,ARD_LT_DEBT
+359,equity,balance sheet,as reported,NA,liabilities,long term,ARD_DEFERRED_UNEARNED_REV_LT
+360,equity,balance sheet,as reported,NA,liabilities,long term,ARD_OTH_NONCURRENT_LIABILITIES
+361,equity,balance sheet,as reported,NA,liabilities,total,ARD_TOT_LIABILITIES
+362,equity,balance sheet,as reported,NA,equity,NA,ARD_COMMON_STOCK
+363,equity,balance sheet,as reported,NA,equity,NA,ARD_ACC_OTH_COMPREHENSIVE_INC
+364,equity,balance sheet,as reported,NA,equity,NA,ARD_RETAINED_EARN_ACC_DEFICIT
+365,equity,balance sheet,as reported,NA,equity,NA,ARD_SHARES_OUTSTANDING
+366,equity,balance sheet,as reported,NA,equity,NA,ARD_PAR_VALUE
+367,equity,balance sheet,as reported,NA,equity,NA,ARD_COMMON_STOCK_AND_APIC
+368,equity,balance sheet,as reported,NA,equity,NA,ARD_TOTAL_SHAREHOLDERS_EQUITY
+369,equity,balance sheet,as reported,NA,equity,NA,ARD_SHARES_AUTHORIZED
+370,equity,balance sheet,as reported,NA,total,NA,ARD_TOT_LIAB_AND_SHAREHOLDER_EQY
+371,equity,balance sheet,as reported,NA,NA,NA,ARDR_INVENTORY
+372,equity,balance sheet,as reported,NA,NA,NA,ARDR_PREPAID_EXPENSES_ST
+373,equity,balance sheet,as reported,NA,NA,NA,ARDR_LAND_AND_BUILDINGS
+374,equity,balance sheet,as reported,NA,NA,NA,ARDR_LEASEHOLD_IMPROVEMENTS
+375,equity,balance sheet,as reported,NA,NA,NA,ARDR_FURNITURE_MACHINERY_EQUIP
+376,equity,balance sheet,as reported,NA,NA,NA,ARDR_PROPERTY_PLANT_EQUIP_GROSS
+377,equity,balance sheet,as reported,NA,NA,NA,ARDR_ACCUMULATED_DEPREC
+378,equity,balance sheet,as reported,NA,NA,NA,ARDR_PROPERTY_PLANT_EQUIP_NET
+379,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_INC_TAX_ASSET_LT
+380,equity,balance sheet,as reported,NA,NA,NA,ARDR_OTHER_INTANGIBLE_ASSET
+381,equity,balance sheet,as reported,NA,NA,NA,ARD_GOODWLL
+382,equity,balance sheet,as reported,NA,NA,NA,ARDR_CURRENT_PORTION_OF_LT_DEBT
+383,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_INCOME_TAXES_LIAB
+384,equity,balance sheet,as reported,NA,NA,NA,ARDR_COMMON_STOCK
+385,equity,balance sheet,as reported,NA,NA,NA,ARDR_ACC_OTH_COMPREHENSIVE_INC
+386,equity,balance sheet,as reported,NA,NA,NA,ARDR_RETAINED_EARN_ACC_DEFICIT
+387,equity,balance sheet,as reported,NA,NA,NA,ARDR_SHARES_OUTSTANDING
+388,equity,balance sheet,as reported,NA,NA,NA,ARDR_PAR_VALUE
+389,equity,balance sheet,as reported,NA,NA,NA,ARDR_RAW_MATERIAL
+390,equity,balance sheet,as reported,NA,NA,NA,ARDR_FINISHED_GOOD
+391,equity,balance sheet,as reported,NA,NA,NA,ARDR_COMMON_STOCK_AND_APIC
+392,equity,balance sheet,as reported,NA,NA,NA,ARDR_VARIABLE_RATE_DEBT
+393,equity,balance sheet,as reported,NA,NA,NA,ARDR_FIXED_RATE_DEBT
+394,equity,balance sheet,as reported,NA,NA,NA,ARDR_FUT_MIN_OPER_LEASE_OBLIG
+395,equity,balance sheet,as reported,NA,NA,NA,ARDR_CURRENT_RENTAL_EXP
+396,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_YR1
+397,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_YR2
+398,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_YR3
+399,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_YR4
+400,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_YR5
+401,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXP_BEYOND_YR5
+402,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_TAX_LIAB_LT
+403,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_TAX_ASSETS_LT
+404,equity,balance sheet,as reported,NA,NA,NA,ARDR_ALLOW_FOR_DOUBTFUL_ACCTS
+405,equity,balance sheet,as reported,NA,NA,NA,ARDR_CAPITALIZED_SOFTWARE_NET
+406,equity,balance sheet,as reported,NA,NA,NA,ARDR_TOTAL_SHAREHOLDERS_EQUITY
+407,equity,balance sheet,as reported,NA,NA,NA,ARDR_DERIVATIVE_ASSET_ST
+408,equity,balance sheet,as reported,NA,NA,NA,ARDR_COMMERCIAL_PAPER
+409,equity,balance sheet,as reported,NA,NA,NA,ARDR_PREPAID_EXPENSES_LT
+410,equity,balance sheet,as reported,NA,NA,NA,ARDR_NUMBER_EMPLOYEES
+411,equity,balance sheet,as reported,NA,NA,NA,ARDR_SHARE_OUT_FROM_FRONT_COVER
+412,equity,balance sheet,as reported,NA,NA,NA,ARDR_ACCCUM_AMORT_INTANG_ASSET
+413,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_GRANTED_DURING_PER
+414,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_OUTSTANDING_END_PER
+415,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_EXERCISED_DUR_PER
+416,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_INC_TAB_LIAB_LT
+417,equity,balance sheet,as reported,NA,NA,NA,ARDR_PURCHASE_OBLIGATIONS
+418,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_NET_ADJ
+419,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_IN_YR1
+420,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_IN_YR2
+421,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_IN_YR3
+422,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_IN_YR4
+423,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_IN_YR5
+424,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_THEREAFTER
+425,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_TOTAL_DEBT
+426,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_TOTAL_LT_DEBT
+427,equity,balance sheet,as reported,NA,NA,NA,ARDR_COMMON_SHARES_REPURCHASED
+428,equity,balance sheet,as reported,NA,NA,NA,ARDR_VAL_COMMON_SHRS_REPURCHASED
+429,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_LEVEL_1
+430,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_LEVEL_2
+431,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_LEVEL_3
+432,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_TOTAL
+433,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIAB_REC_LEVEL_1
+434,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIAB_REC_LEVEL_2
+435,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIAB_REC_LEVEL_3
+436,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIAB_REC_TOTAL
+437,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_CANCELLED_FORFEITED
+438,equity,balance sheet,as reported,NA,NA,NA,ARDR_CONTRACTUAL_OBLIG_YEAR_1
+439,equity,balance sheet,as reported,NA,NA,NA,ARDR_CONTRACTUAL_OBLIG_YEAR_2_3
+440,equity,balance sheet,as reported,NA,NA,NA,ARDR_CONTRACTUAL_OBLIG_YEAR_4_5
+441,equity,balance sheet,as reported,NA,NA,NA,ARDR_CONT_OBLIG_BEYOND_YEAR_5
+442,equity,balance sheet,as reported,NA,NA,NA,ARDR_CONTRACTUAL_OBLIG_TOTAL
+443,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXPENSE_YEARS_2_3
+444,equity,balance sheet,as reported,NA,NA,NA,ARDR_RENTAL_EXPENSE_YEARS_4_5
+445,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_YR_2_3
+446,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_YR_4_5
+447,equity,balance sheet,as reported,NA,NA,NA,ARDR_WEI_AVG_COST_OPTIONS_GRANT
+448,equity,balance sheet,as reported,NA,NA,NA,ARDR_STOCK_OPTION_VAL_RFR
+449,equity,balance sheet,as reported,NA,NA,NA,ARDR_STOCK_OPTION_VAL_EXP_LIFE
+450,equity,balance sheet,as reported,NA,NA,NA,ARDR_STOCK_OPTION_VAL_EXP_VOL
+451,equity,balance sheet,as reported,NA,NA,NA,ARDR_STOCK_OPTION_VAL_DVD_YLD
+452,equity,balance sheet,as reported,NA,NA,NA,ARDR_AVG_EXER_PX_OPT_EXERCISABLE
+453,equity,balance sheet,as reported,NA,NA,NA,ARDR_AVG_EXER_PX_OPT_OUTSTANDING
+454,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_EXERCISABLE
+455,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_NET_UNAMORTIZED_PREM
+456,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEBT_SCHEDULE_OTHER_ADJ
+457,equity,balance sheet,as reported,NA,NA,NA,ARDR_DEFERRED_TAX_ALLOWANCE
+458,equity,balance sheet,as reported,NA,NA,NA,ARDR_SHARES_AUTH_REPURCH_AMOUNT
+459,equity,balance sheet,as reported,NA,NA,NA,ARDR_REMAINING_SH_AUTH_REP_AMT
+460,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_L1_CASH_SECS
+461,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L1_FF_SLD
+462,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_L1_TRAD_TREAS
+463,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L2_CASH_SECS
+464,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L2_FF_SLD
+465,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L2_TRAD_TREAS
+466,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_L2_TRAD_ABS
+467,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_L2_TRAD_OTHER
+468,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L2_DERIVATIVES
+469,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L3_CASH_SECS
+470,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L3_FF_SLD
+471,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_L3_DERIVATIVES
+472,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_TOT_CASH_SECS
+473,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_TOT_FF_SLD
+474,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_TOT_CP
+475,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_TOT_INV_SEC
+476,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASTS_REC_TOT_DERIVATIVES
+477,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_ASSETS_REC_TOT_OTHER
+478,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIABS_REC_L1_DERIVATIVES
+479,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIABS_REC_L2_DERIVATIVES
+480,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIABS_REC_L3_DERIVATIVES
+481,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_LIABS_REC_TOT_DERV
+482,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_TREAS
+483,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_CORP_BONDS
+484,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_ABS
+485,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_OTHER
+486,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDG_DERIV_ASSETS_FX
+487,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_NON_HEDG_DERIV_ASSETS_FX
+488,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDG_DERIV_LIABS_FX
+489,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_N_HEDG_DERIV_AST_IR_CONT
+490,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_NON_HEDG_DERIV_LIABS_IR
+491,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_MUNI
+492,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_MUNI_GAIN_LOSS
+493,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_TREAS_GAIN_LOSS
+494,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_CORP_BONDS_GAIN_LOSS
+495,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_ABS_GAIN_LOSS
+496,equity,balance sheet,as reported,NA,NA,NA,ARDR_AFS_OTHER_GAIN_LOSS
+497,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDG_DERIV_LIABI_FX
+498,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDG_DERIV_ASSETS_IR
+499,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_DERIV_LIABS_IR
+500,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDGING_TOTAL_ASSETS
+501,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_HEDGING_TOTAL_LIABS
+502,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_NON_HEDGING_TOTAL_ASSETS
+503,equity,balance sheet,as reported,NA,NA,NA,ARDR_FV_NON_HEDGING_TOTAL_LIABS
+504,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_BEGINNING_OF_PERIOD
+505,equity,balance sheet,as reported,NA,NA,NA,ARDR_OPTIONS_ADJUSTMENT
+506,equity,balance sheet,as reported,NA,NA,NA,ARDR_AVG_PRICE_PER_SHARE_REPURCH
+507,equity,balance sheet,as reported,NA,NA,NA,ARDR_UTB_BALANCE_BEGIN_PERIOD
+508,equity,balance sheet,as reported,NA,NA,NA,ARDR_UTB_BALANCE_END_PERIOD
+509,equity,balance sheet,as reported,NA,NA,NA,ARDR_ADDITIONS_TAX_POS_CUR_YR
+510,equity,balance sheet,as reported,NA,NA,NA,ARDR_ADDITIONS_TAX_POS_PR_YR
+511,equity,balance sheet,as reported,NA,NA,NA,ARDR_REDUCTIONS_TAX_POS_PR_YR
+512,equity,balance sheet,as reported,NA,NA,NA,ARDR_SETTLEMENTS
+513,equity,balance sheet,as reported,NA,NA,NA,ARDR_STATUTES_LIMITATIONS_UTB
+514,equity,balance sheet,as reported,NA,NA,NA,ARDR_NET_UTB_IMP_ETR_END_PERIOD
+515,equity,balance sheet,as reported,NA,NA,NA,ARDR_UNREMITTED_EARNINGS
+516,equity,balance sheet,as reported,NA,NA,NA,ARDR_RESTRICTED_STOCK_UNITS
+517,equity,balance sheet,as reported,NA,NA,NA,ARDR_RSTR_STK_UNIT_WAVG_FV_PS
+518,equity,balance sheet,as reported,NA,NA,NA,ARDR_PART_TIME_EMPLOYEES
+519,equity,balance sheet,as reported,NA,NA,NA,ARDR_FULL_TIME_EMPLOYEES
+520,equity,balance sheet,as reported,NA,NA,NA,ARDR_CASH_HELD_OVERSEAS
+521,equity,balance sheet,as reported,NA,NA,NA,ARDR_VAL_SHS_REPURCH_FR_REP_PROG
+522,equity,balance sheet,as reported,NA,NA,NA,ARDR_#_SHS_REPURCH_FR_REP_PROG
+523,equity,balance sheet,fair value analysis,NA,NA,NA,ARDR_FV_ASSETS_REC_TOTAL
+524,equity,balance sheet,fair value analysis,NA,NA,NA,ARDR_FV_LIAB_REC_TOTAL
+525,equity,balance sheet,fair value analysis,NA,NA,NA,TOT_FAIR_VAL_ASSETS_TO_TOT_EQTY
+526,equity,balance sheet,fair value analysis,NA,NA,NA,TOT_FAIR_VAL_ASSET_TO_TOT_ASSETS
+527,equity,cash flow statement,standardized,NA,operating,NA,CF_NET_INC
+528,equity,cash flow statement,standardized,NA,operating,NA,CF_DEPR_AMORT
+529,equity,cash flow statement,standardized,NA,operating,NA,NON_CASH_ITEMS_DETAILED
+530,equity,cash flow statement,standardized,NA,operating,NA,CF_CHNG_NON_CASH_WORK_CAP
+531,equity,cash flow statement,standardized,NA,operating,NA,CF_NET_CASH_DISCONT_OPS_OPER
+532,equity,cash flow statement,standardized,NA,operating,NA,CF_CASH_FROM_OPER
+533,equity,cash flow statement,standardized,NA,investing,NA,CHG_IN_FXD_&_INTANG_AST_DETAILED
+534,equity,cash flow statement,standardized,NA,investing,NA,NET_CHG_IN_LT_INVEST_DETAILED
+535,equity,cash flow statement,standardized,NA,investing,NA,CF_NT_CSH_RCVD_PD_FOR_ACQUIS_DIV
+536,equity,cash flow statement,standardized,NA,investing,NA,OTHER_INVESTING_ACT_DETAILED
+537,equity,cash flow statement,standardized,NA,investing,NA,CF_NET_CASH_DISCONTINUED_OPS_INV
+538,equity,cash flow statement,standardized,NA,investing,NA,CF_CASH_FROM_INV_ACT
+539,equity,cash flow statement,standardized,NA,financing,NA,CF_DVD_PAID
+540,equity,cash flow statement,standardized,NA,financing,NA,PROC_FR_REPAYMNTS_BOR_DETAILED
+541,equity,cash flow statement,standardized,NA,financing,NA,PROC_FR_REPURCH_EQTY_DETAILED
+542,equity,cash flow statement,standardized,NA,financing,NA,CF_OTHER_FINANCING_ACT_EXCL_FX
+543,equity,cash flow statement,standardized,NA,financing,NA,CF_NET_CASH_DISCONTINUED_OPS_FIN
+544,equity,cash flow statement,standardized,NA,financing,NA,CFF_ACTIVITIES_DETAILED
+545,equity,cash flow statement,standardized,NA,total,NA,CF_NET_CHNG_CASH
+546,equity,cash flow statement,standardized,NA,total,NA,CF_CASH_PAID_FOR_TAX
+547,equity,cash flow statement,standardized,NA,total,NA,CF_ACT_CASH_PAID_FOR_INT_DEBT
+548,equity,cash flow statement,standardized,NA,NA,NA,EBITDA
+549,equity,cash flow statement,standardized,NA,NA,NA,EBITDA_MARGIN
+550,equity,cash flow statement,standardized,NA,NA,NA,CF_NET_CASH_PAID_FOR_AQUIS
+551,equity,cash flow statement,standardized,NA,NA,NA,CF_TAX_BENEFIT_FRM_STOCK_OPTIONS
+552,equity,cash flow statement,standardized,NA,NA,NA,CF_FREE_CASH_FLOW
+553,equity,cash flow statement,standardized,NA,NA,NA,CF_FREE_CASH_FLOW_FIRM
+554,equity,cash flow statement,standardized,NA,NA,NA,FREE_CASH_FLOW_EQUITY
+555,equity,cash flow statement,standardized,NA,NA,NA,FREE_CASH_FLOW_PER_SH
+556,equity,cash flow statement,standardized,NA,NA,NA,PX_TO_FREE_CASH_FLOW
+557,equity,cash flow statement,standardized,NA,NA,NA,CASH_FLOW_TO_NET_INC
+558,equity,cash flow statement,as reported,NA,operating,NA,ARD_NET_INCOME_CF
+559,equity,cash flow statement,as reported,NA,operating,NA,ARD_DEPRECIATION_AND_AMORT_CF
+560,equity,cash flow statement,as reported,NA,operating,NA,ARD_DEFERRED_INCOME_TAXES_CF
+561,equity,cash flow statement,as reported,NA,operating,NA,ARD_DISPOSAL_SALE_OF_ASSETS
+562,equity,cash flow statement,as reported,NA,operating,NA,ARD_DISPOSAL_SALE_OF_ASSETS
+563,equity,cash flow statement,as reported,NA,operating,NA,ARD_OTHER_NON_CASH_ITEMS
+564,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHANGE_IN_INVENTORIES
+565,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHANGE_IN_ACCOUNTS_PAYABLE
+566,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHG_IN_ACCOUNTS_RECEIVABLE
+567,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHG_IN_DEF_UNEARN_REVENUE_ST
+568,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHANGE_IN_OTHER_CUR_ASSETS
+569,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHANGE_IN_OTHER_ASSETS
+570,equity,cash flow statement,as reported,NA,operating,NA,ARD_CHG_IN_OTHER_LIABILITES
+571,equity,cash flow statement,as reported,NA,operating,NA,ARD_TOT_CASH_FLOWS_FROM_OPS
+572,equity,cash flow statement,as reported,NA,investing,NA,ARD_CAPITAL_EXPENDITURES
+573,equity,cash flow statement,as reported,NA,investing,NA,ARD_PURCHASES_OF_LT_INVEST
+574,equity,cash flow statement,as reported,NA,investing,NA,ARD_PURCHASES_OF_ST_INVEST
+575,equity,cash flow statement,as reported,NA,investing,NA,ARD_PROCEEDS_FROM_INVESTMENTS
+576,equity,cash flow statement,as reported,NA,investing,NA,ARD_PURCHASES_OF_INVESTMENTS
+577,equity,cash flow statement,as reported,NA,investing,NA,ARD_ACQUISITION_OF_BUSINESS
+578,equity,cash flow statement,as reported,NA,investing,NA,ARD_OTHER_INVESTING_ACTIVITIES
+579,equity,cash flow statement,as reported,NA,investing,NA,ARD_PROCEEDS_FROM_ST_MKT_SEC
+580,equity,cash flow statement,as reported,NA,investing,NA,ARD_PURCHASES_OF_ST_MKT_SEC
+581,equity,cash flow statement,as reported,NA,investing,NA,ARD_PURCHASE_OF_INTANGIBLES
+582,equity,cash flow statement,as reported,NA,investing,NA,ARD_TOT_CASHFLOWS_FROM_INVESTING
+583,equity,cash flow statement,as reported,NA,financing,NA,ARD_DIVIDEND_PD
+584,equity,cash flow statement,as reported,NA,financing,NA,ARD_INCR_IN_LT_BORROW
+585,equity,cash flow statement,as reported,NA,financing,NA,ARD_DECR_IN_LT_BORROW
+586,equity,cash flow statement,as reported,NA,financing,NA,ARD_ISSUANCE_OF_COMMON_STOCK
+587,equity,cash flow statement,as reported,NA,financing,NA,ARD_REPURCHASE_OF_COMMON_STOCK
+588,equity,cash flow statement,as reported,NA,financing,NA,ARD_OTHER_FINANCING_ACTIVITIES
+589,equity,cash flow statement,as reported,NA,financing,NA,ARD_CASH_PAID_FOR_TAXES
+590,equity,cash flow statement,as reported,NA,financing,NA,ARD_CASH_PAID_FOR_INTEREST
+591,equity,cash flow statement,as reported,NA,financing,NA,ARD_CHANGE_IN_COMMERCIAL_PAPER
+592,equity,cash flow statement,as reported,NA,financing,NA,ARD_NET_CHANGE_IN_CASH
+593,equity,cash flow statement,as reported,NA,financing,NA,ARD_CASH_CASH_EQUIV_END_OF_PER
+594,equity,cash flow statement,as reported,NA,financing,NA,ARD_CASH_CASH_EQUIV_BEG_OF_PER
+595,equity,cash flow statement,as reported,NA,financing,NA,ARD_TAX_BEN_STOCK_OPTIONS_FIN
+596,equity,cash flow statement,as reported,NA,financing,NA,ARD_TOT_CASHFLOWS_FROM_FINANCING
+597,equity,ratios,profitability,NA,returns,NA,RETURN_COM_EQY
+598,equity,ratios,profitability,NA,returns,NA,RETURN_ON_ASSET
+599,equity,ratios,profitability,NA,returns,NA,RETURN_ON_CAP
+600,equity,ratios,profitability,NA,returns,NA,RETURN_ON_INV_CAPITAL
+601,equity,ratios,profitability,NA,margins,NA,GROSS_MARGIN
+602,equity,ratios,profitability,NA,margins,NA,EBITDA_TO_REVENUE
+603,equity,ratios,profitability,NA,margins,NA,OPER_MARGIN
+604,equity,ratios,profitability,NA,margins,NA,INCREMENTAL_OPERATING_MARGIN
+605,equity,ratios,profitability,NA,margins,NA,PRETAX_INC_TO_NET_SALES
+606,equity,ratios,profitability,NA,margins,NA,INC_BEF_XO_ITEMS_TO_NET_SALES
+607,equity,ratios,profitability,NA,margins,NA,PROF_MARGIN
+608,equity,ratios,profitability,NA,margins,NA,NET_INCOME_TO_COMMON_MARGIN
+609,equity,ratios,profitability,NA,additional,NA,EFF_TAX_RATE
+610,equity,ratios,profitability,NA,additional,NA,DVD_PAYOUT_RATIO
+611,equity,ratios,profitability,NA,additional,NA,SUSTAIN_GROWTH_RT
+612,equity,ratios,growth,NA,1-year growth,NA,SALES_GROWTH
+613,equity,ratios,growth,NA,1-year growth,NA,EBITDA_GROWTH
+614,equity,ratios,growth,NA,1-year growth,NA,OPER_INC_GROWTH
+615,equity,ratios,growth,NA,1-year growth,NA,EARN_FOR_COM_GROWTH
+616,equity,ratios,growth,NA,1-year growth,NA,DILUTED_EPS_AFT_XO_ITEMS_GROWTH
+617,equity,ratios,growth,NA,1-year growth,NA,DILUTED_EPS_BEF_XO_ITEMS_GROWTH
+618,equity,ratios,growth,NA,1-year growth,NA,RR_DIL_EPS_CONT_OPS_GROWTH
+619,equity,ratios,growth,NA,1-year growth,NA,DIVIDEND_PER_SHARE_1_YEAR_GROWTH
+620,equity,ratios,growth,NA,1-year growth,NA,ACCOUNTS_RECEIVABLE_GROWTH
+621,equity,ratios,growth,NA,1-year growth,NA,INVENTORY_GROWTH
+622,equity,ratios,growth,NA,1-year growth,NA,NET_FIXED_ASSETS_1_YEAR_GROWTH
+623,equity,ratios,growth,NA,1-year growth,NA,ASSET_GROWTH
+624,equity,ratios,growth,NA,1-year growth,NA,MODIFIED_WORK_CAP_GROWTH
+625,equity,ratios,growth,NA,1-year growth,NA,WORK_CAP_GROWTH
+626,equity,ratios,growth,NA,1-year growth,NA,EMPL_GROWTH
+627,equity,ratios,growth,NA,1-year growth,NA,ACCOUNTS_PAYABLE_GROWTH_1YR
+628,equity,ratios,growth,NA,1-year growth,NA,SHORT_TERM_DEBT_1_YEAR_GROWTH
+629,equity,ratios,growth,NA,1-year growth,NA,TOTAL_DEBT_1_YEAR_GROWTH
+630,equity,ratios,growth,NA,1-year growth,NA,TOTAL_EQUITY_1_YEAR_GROWTH
+631,equity,ratios,growth,NA,1-year growth,NA,GROWTH_IN_CAP
+632,equity,ratios,growth,NA,1-year growth,NA,BVPS_GROWTH
+633,equity,ratios,growth,NA,1-year growth,NA,CASH_FLOW_GROWTH
+634,equity,ratios,growth,NA,1-year growth,NA,TOT_CAP_EXPEND_GROWTH
+635,equity,ratios,growth,NA,1-year growth,NA,NET_CHANGE_IN_CASH_1_YEAR_GROWTH
+636,equity,ratios,growth,NA,1-year growth,NA,FREE_CASH_FLOW_1_YEAR_GROWTH
+637,equity,ratios,growth,NA,1-year growth,NA,CASH_FLOW_TO_FIRM_1_YEAR_GROWTH
+638,equity,ratios,growth,NA,1-year growth,NA,FCF_TO_FIRM_1_YEAR_GROWTH
+639,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_NET_SALES
+640,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_EBITDA
+641,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_OPER_INC
+642,equity,ratios,growth,NA,5-year growth,NA,NET_INCOME_TO_COMMON_5_YR_GROWTH
+643,equity,ratios,growth,NA,5-year growth,NA,5Y_GEO_GROWTH_DILUTED_EPS
+644,equity,ratios,growth,NA,5-year growth,NA,5Y_GEO_GROWTH_DILUTED_EPS_BEF_XO
+645,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_DILUTED_EPS_CONT_OPS
+646,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_DVD_PER_SH
+647,equity,ratios,growth,NA,5-year growth,NA,ACCOUNTS_RECEIVABLE_5_YR_GROWTH
+648,equity,ratios,growth,NA,5-year growth,NA,INVENTORY_5_YEAR_GROWTH
+649,equity,ratios,growth,NA,5-year growth,NA,NET_FIXED_ASSETS_5_YEAR_GROWTH
+650,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_TOT_ASSET
+651,equity,ratios,growth,NA,5-year growth,NA,WORKING_CAPITAL_5_YEAR_GROWTH
+652,equity,ratios,growth,NA,5-year growth,NA,EMPLOYEES_5_YEAR_GROWTH
+653,equity,ratios,growth,NA,5-year growth,NA,ACCOUNTS_PAYABLE_5_YEAR_GROWTH
+654,equity,ratios,growth,NA,5-year growth,NA,SHORT_TERM_DEBT_5_YEAR_GROWTH
+655,equity,ratios,growth,NA,5-year growth,NA,SHORT_TERM_DEBT_5_YEAR_GROWTH
+656,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_TOT_SHRHLDR_EQY
+657,equity,ratios,growth,NA,5-year growth,NA,TOTAL_CAPITAL_5_YEAR_GROWTH
+658,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_BOOK_VAL
+659,equity,ratios,growth,NA,5-year growth,NA,GEO_GROW_CASH_OPER_ACT
+660,equity,ratios,growth,NA,5-year growth,NA,NET_CHANGE_IN_CASH_5_YEAR_GROWTH
+661,equity,ratios,growth,NA,5-year growth,NA,FREE_CASH_FLOW_5_YEAR_GROWTH
+662,equity,ratios,growth,NA,5-year growth,NA,CASH_FLOW_TO_FIRM_5_YEAR_GROWTH
+663,equity,ratios,growth,NA,5-year growth,NA,FCF_TO_FIRM_5_YEAR_GROWTH
+664,equity,ratios,growth,NA,5-year growth,NA,REVENUE_SEQUENTIAL_GROWTH
+665,equity,ratios,growth,NA,5-year growth,NA,EBITDA_SEQUENTIAL_GROWTH
+666,equity,ratios,growth,NA,5-year growth,NA,OPERATING_INCOME_SEQ_GROWTH
+667,equity,ratios,growth,NA,5-year growth,NA,NET_INCOME_TO_COMMON_SEQ_GROWTH
+668,equity,ratios,growth,NA,5-year growth,NA,EPS_DILUTED_SEQUENTIAL_GROWTH
+669,equity,ratios,growth,NA,5-year growth,NA,EPS_DIL_BEF_EXTRAORD_SEQ_GRWTH
+670,equity,ratios,growth,NA,5-year growth,NA,EPS_DILUTED_BEF_ABNRML_SEQ_GRWTH
+671,equity,ratios,growth,NA,5-year growth,NA,DPS_SEQUENTIAL_GROWTH
+672,equity,ratios,growth,NA,5-year growth,NA,ACCOUNTS_RECEIVABLE_SEQ_GROWTH
+673,equity,ratios,growth,NA,5-year growth,NA,INVENTORY_SEQUENTIAL_GROWTH
+674,equity,ratios,growth,NA,5-year growth,NA,FIXED_ASSETS_SEQUENTIAL_GROWTH
+675,equity,ratios,growth,NA,5-year growth,NA,TOTAL_ASSETS_SEQUENTIAL_GROWTH
+676,equity,ratios,growth,NA,5-year growth,NA,WORKING_CAPITAL_SEQ_GROWTH
+677,equity,ratios,growth,NA,5-year growth,NA,EMPLOYEES_SEQUENTIAL_GROWTH
+678,equity,ratios,growth,NA,5-year growth,NA,ACCOUNTS_PAYABLE_SEQ_GROWTH
+679,equity,ratios,growth,NA,5-year growth,NA,ST_DEBT_SEQUENTIAL_GROWTH
+680,equity,ratios,growth,NA,5-year growth,NA,TOTAL_DEBT_SEQUENTIAL_GROWTH
+681,equity,ratios,growth,NA,5-year growth,NA,TOTAL_EQUITY_SEQUENTIAL_GROWTH
+682,equity,ratios,growth,NA,5-year growth,NA,TOTAL_CAPITAL_SEQUENTIAL_GROWTH
+683,equity,ratios,growth,NA,5-year growth,NA,BPS_SEQUENTIAL_GROWTH
+684,equity,ratios,growth,NA,5-year growth,NA,CFO_SEQUENTIAL_GROWTH
+685,equity,ratios,growth,NA,5-year growth,NA,CAPEX_SEQUENTIAL_GROWTH
+686,equity,ratios,growth,NA,5-year growth,NA,NET_CHANGE_IN_CASH_SEQ_GROWTH
+687,equity,ratios,growth,NA,5-year growth,NA,FREE_CASH_FLOW_SEQUENTIAL_GROWTH
+688,equity,ratios,growth,NA,5-year growth,NA,CF_TO_FIRM_SEQUENTIAL_GROWTH
+689,equity,ratios,growth,NA,5-year growth,NA,FCF_TO_FIRM_SEQUENTIAL_GROWTH
+690,equity,ratios,credit,NA,NA,NA,SHORT_AND_LONG_TERM_DEBT
+691,equity,ratios,credit,NA,NA,NA,TOT_DEBT_TO_EBITDA
+692,equity,ratios,credit,NA,NA,NA,NET_DEBT_TO_EBITDA
+693,equity,ratios,credit,NA,NA,NA,TOTAL_DEBT_TO_EBIT
+694,equity,ratios,credit,NA,NA,NA,NET_DEBT_TO_EBIT
+695,equity,ratios,credit,NA,NA,NA,EBITDA_TO_INTEREST_EXPN
+696,equity,ratios,credit,NA,NA,NA,EBITDA_LES_CAP_EXPEND_TO_INT_EXP
+697,equity,ratios,credit,NA,NA,NA,OPER_INC_TO_INT_EXP
+698,equity,ratios,credit,NA,NA,NA,EBITDA_TO_CASH_INTEREST_PAID
+699,equity,ratios,credit,NA,NA,NA,EBITDA_AFT_CAPEX_TO_CASH_INT_PD
+700,equity,ratios,credit,NA,NA,NA,EBIT_TO_CASH_INTEREST_PAID
+701,equity,ratios,credit,NA,NA,NA,CF_ACT_CASH_PAID_FOR_INT_DEBT
+702,equity,ratios,credit,NA,NA,NA,IS_INT_EXPENSE
+703,equity,ratios,credit,NA,NA,NA,COM_EQY_TO_TOT_ASSET
+704,equity,ratios,credit,NA,NA,NA,LT_DEBT_TO_TOT_EQY
+705,equity,ratios,credit,NA,NA,NA,LT_DEBT_TO_TOT_CAP
+706,equity,ratios,credit,NA,NA,NA,LT_DEBT_TO_TOT_ASSET
+707,equity,ratios,credit,NA,NA,NA,TOT_DEBT_TO_TOT_EQY
+708,equity,ratios,credit,NA,NA,NA,TOT_DEBT_TO_TOT_CAP
+709,equity,ratios,credit,NA,NA,NA,TOT_DEBT_TO_TOT_ASSET
+710,equity,ratios,credit,NA,NA,NA,NET_DEBT_TO_SHRHLDR_EQTY
+711,equity,ratios,credit,NA,NA,NA,NET_DEBT_%_CAPITAL
+712,equity,ratios,credit,NA,NA,NA,EBITDA
+713,equity,ratios,credit,NA,NA,NA,EBITDA_AFTER_CAPEX
+714,equity,ratios,credit,NA,NA,NA,EBIT
+715,equity,ratios,liquidity,NA,NA,NA,CASH_RATIO
+716,equity,ratios,liquidity,NA,NA,NA,CUR_RATIO
+717,equity,ratios,liquidity,NA,NA,NA,QUICK_RATIO
+718,equity,ratios,liquidity,NA,NA,NA,CFO_TO_AVG_CURRENT_LIABILITIES
+719,equity,ratios,liquidity,NA,NA,NA,COM_EQY_TO_TOT_ASSET
+720,equity,ratios,liquidity,NA,NA,NA,LT_DEBT_TO_TOT_EQY
+721,equity,ratios,liquidity,NA,NA,NA,LT_DEBT_TO_TOT_CAP
+722,equity,ratios,liquidity,NA,NA,NA,LT_DEBT_TO_TOT_ASSET
+723,equity,ratios,liquidity,NA,NA,NA,TOT_DEBT_TO_TOT_EQY
+724,equity,ratios,liquidity,NA,NA,NA,TOT_DEBT_TO_TOT_CAP
+725,equity,ratios,liquidity,NA,NA,NA,TOT_DEBT_TO_TOT_ASSET
+726,equity,ratios,liquidity,NA,NA,NA,CASH_FLOW_TO_TOT_LIAB
+727,equity,ratios,liquidity,NA,NA,NA,CAP_EXPEND_RATIO
+728,equity,ratios,liquidity,NA,NA,NA,ALTMAN_Z_SCORE
+729,equity,ratios,liquidity,NA,NA,NA,BS_TOTAL_LINE_OF_CREDIT
+730,equity,ratios,liquidity,NA,NA,NA,BS_TOT_COM_PAPER_ISSUED
+731,equity,ratios,working capital,NA,NA,NA,ACCT_RCV_TURN
+732,equity,ratios,working capital,NA,NA,NA,INVENT_TURN
+733,equity,ratios,working capital,NA,NA,NA,ACCOUNTS_PAYABLE_TURNOVER
+734,equity,ratios,working capital,NA,NA,NA,CASH_CONVERSION_CYCLE
+735,equity,ratios,working capital,NA,NA,NA,INV_TO_CASH_DAYS
+736,equity,ratios,working capital,NA,NA,NA,BS_INVENTORIES
+737,equity,ratios,yield analysis,NA,NA,NA,FREE_CASH_FLOW_YIELD
+738,equity,ratios,yield analysis,NA,NA,NA,SHAREHOLDER_YIELD_CFF
+739,equity,ratios,yield analysis,NA,NA,NA,SHAREHOLDER_YIELD_EX_DEBT
+740,equity,ratios,yield analysis,NA,NA,NA,T12M_FCF_TO_FIRM_YIELD
+741,equity,ratios,yield analysis,NA,NA,NA,CAPITAL_YIELD
+742,equity,ratios,DuPont analysis,NA,NA,NA,TAX_EFFICIENCY
+743,equity,ratios,DuPont analysis,NA,NA,NA,NORM_NET_INC_TO_NET_INC_FO_COM
+744,equity,ratios,DuPont analysis,NA,NA,NA,INT_BURDEN
+745,equity,ratios,DuPont analysis,NA,NA,NA,T12_EBIT_TO_REVENUE
+746,equity,ratios,DuPont analysis,NA,NA,NA,ASSET_TURNOVER
+747,equity,ratios,DuPont analysis,NA,NA,NA,FNCL_LVRG
+748,equity,ratios,DuPont analysis,NA,NA,NA,NORMALIZED_ROE
+749,equity,ratios,DuPont analysis,NA,NA,NA,5_YEAR_AVERAGE_ADJUSTED_ROE
+750,equity,ratios,DuPont analysis,NA,NA,NA,DVD_PAYOUT_RATIO
+751,equity,ratios,DuPont analysis,NA,NA,NA,SUSTAIN_GROWTH_RT
+752,equity,info,NA,NA,NA,NA,LONG_COMP_NAME
+753,equity,info,NA,NA,NA,NA,SECURITY_TYP
+754,equity,info,NA,NA,NA,NA,ID_MIC_PRIM_EXCH
+755,equity,info,NA,NA,NA,NA,CNTRY_OF_INCORPORATION
+756,equity,info,NA,NA,NA,NA,CRNCY
+757,equity,info,NA,NA,NA,NA,ID_BB_GLOBAL
+758,equity,info,NA,NA,NA,NA,GICS_SECTOR
+759,equity,info,NA,NA,NA,NA,GICS_INDUSTRY_GROUP
+760,equity,info,NA,NA,NA,NA,GICS_INDUSTRY
+761,equity,info,NA,NA,NA,NA,GICS_SUB_INDUSTRY
+762,equity,info,NA,NA,NA,NA,CIE_DES
+763,equity,market,NA,NA,NA,NA,PX_OPEN
+764,equity,market,NA,NA,NA,NA,PX_HIGH
+765,equity,market,NA,NA,NA,NA,PX_LOW
+766,equity,market,NA,NA,NA,NA,PX_LAST
+767,equity,market,NA,NA,NA,NA,PX_VOLUME
+768,equity,market,NA,NA,NA,NA,PX_BID
+769,equity,market,NA,NA,NA,NA,PX_ASK
+770,equity,market,NA,NA,NA,NA,PX_MID
+771,equity,market,NA,NA,NA,NA,EQY_SH_OUT
+772,equity,market,NA,NA,NA,NA,CUR_MKT_CAP
+773,futures,market,term structure,NA,NA,NA,PX_OPEN
+774,futures,market,term structure,NA,NA,NA,PX_HIGH
+775,futures,market,term structure,NA,NA,NA,PX_LOW
+776,futures,market,term structure,NA,NA,NA,PX_LAST
+777,futures,market,term structure,NA,NA,NA,PX_BID
+778,futures,market,term structure,NA,NA,NA,PX_ASK
+779,futures,market,term structure,NA,NA,NA,PX_MID
+780,futures,market,term structure,NA,NA,NA,PX_VOLUME
+781,futures,market,term structure,NA,NA,NA,OPEN_INT
+782,futures,market,aggregate,NA,NA,NA,FUT_AGGTE_OPEN_INT
+783,futures,market,aggregate,NA,NA,NA,FUT_AGGTE_VOL
+784,futures,CFTC,NA,NA,NA,NA,PX_LAST
+785,futures,info,NA,NA,NA,NA,SECURITY_NAME
+786,futures,info,NA,NA,NA,NA,FUTURES_CATEGORY
+787,futures,info,NA,NA,NA,NA,CRNCY
+788,futures,info,NA,NA,NA,NA,ID_MIC_PRIM_EXCH
+789,futures,info,NA,NA,NA,NA,FUT_NUM_GEN_AVAIL
+790,futures,info,NA,NA,NA,NA,FUT_CONT_SIZE
+791,futures,info,NA,NA,NA,NA,FUT_TRADING_UNITS
+792,futures,info,NA,NA,NA,NA,FUT_VAL_PT
+793,futures,info,NA,NA,NA,NA,FUT_TICK_SIZE
+794,futures,info,NA,NA,NA,NA,FUT_TICK_VAL
+795,futures,info,NA,NA,NA,NA,ID_BB_GLOBAL
+796,fund,market,NA,NA,NA,NA,FUND_TOTAL_ASSETS
+797,fund,market,NA,NA,NA,NA,FUND_FLOW
+798,fund,market,NA,NA,NA,NA,FUND_NET_ASSET_VAL
+799,fund,market,NA,NA,NA,NA,EQY_SH_OUT
+800,fund,market,NA,NA,NA,NA,CUR_MKT_CAP
+801,fund,market,NA,NA,NA,NA,CEF_PCT_PREM
+802,fund,market,NA,NA,NA,NA,FUND_YIELD
+803,fund,market,NA,NA,NA,NA,PX_OPEN
+804,fund,market,NA,NA,NA,NA,PX_HIGH
+805,fund,market,NA,NA,NA,NA,PX_LOW
+806,fund,market,NA,NA,NA,NA,PX_LAST
+807,fund,market,NA,NA,NA,NA,PX_VOLUME
+808,fund,market,NA,NA,NA,NA,PX_BID
+809,fund,market,NA,NA,NA,NA,PX_ASK
+810,fund,market,NA,NA,NA,NA,PX_MID
+811,fund,info,NA,NA,NA,NA,LONG_COMP_NAME
+812,fund,info,NA,NA,NA,NA,LONG_PARENT_COMP_NAME
+813,fund,info,NA,NA,NA,NA,FUND_MASTER_NAME
+814,fund,info,NA,NA,NA,NA,ID_MIC_PRIM_EXCH
+815,fund,info,NA,NA,NA,NA,CRNCY
+816,fund,info,NA,NA,NA,NA,FD_INITIAL_VAL
+817,fund,info,NA,NA,NA,NA,FUND_INIT_VAL_CRNCY
+818,fund,info,NA,NA,NA,NA,FUND_TYP
+819,fund,info,NA,NA,NA,NA,SECURITY_IS_PRIVATE_EQUITY_FUND
+820,fund,info,NA,NA,NA,NA,FUND_OBJECTIVE_LONG
+821,fund,info,NA,NA,NA,NA,FUND_STRATEGY
+822,fund,info,NA,NA,NA,NA,FUND_SUB_STRATEGIES_BULK
+823,fund,info,NA,NA,NA,NA,GROWTH_FUND_INDICATOR
+824,fund,info,NA,NA,NA,NA,VALUE_FUND_INDICATOR
+825,fund,info,NA,NA,NA,NA,INVERSE_FUND_INDICATOR
+826,fund,info,NA,NA,NA,NA,FUND_ASSET_CLASS_FOCUS
+827,fund,info,NA,NA,NA,NA,FUND_GEO_FOCUS
+828,fund,info,NA,NA,NA,NA,EQY_FUND_IND
+829,fund,info,NA,NA,NA,NA,FUND_INDUSTRY_FOCUS
+830,fund,info,NA,NA,NA,NA,FUND_MKT_CAP_FOCUS
+831,fund,info,NA,NA,NA,NA,FUND_CRNCY_FOCUS
+832,fund,info,NA,NA,NA,NA,FUND_MATURITY_BAND_FOCUS
+833,fund,info,NA,NA,NA,NA,FUND_RTG_CLASS_FOCUS
+834,fund,info,NA,NA,NA,NA,FUND_LEVERAGE_DATE
+835,fund,info,NA,NA,NA,NA,FUND_LEVERAGE_AMOUNT
+836,fund,info,NA,NA,NA,NA,FUND_LEVERAGE_TYPE
+837,fund,info,NA,NA,NA,NA,FUND_LEVERAGE
+838,fund,info,NA,NA,NA,NA,FUND_TOTAL_ASSETS_CRNCY
+839,fund,info,NA,NA,NA,NA,NAV_CRNCY
+840,fund,info,NA,NA,NA,NA,FUND_SIZE
+841,fund,info,NA,NA,NA,NA,FUND_LIFE
+842,fund,info,NA,NA,NA,NA,FUND_STATUS
+843,fund,info,NA,NA,NA,NA,OPEN_ENDED_FUND
+844,fund,info,NA,NA,NA,NA,FUND_LIFE_EXTENSION
+845,fund,info,NA,NA,NA,NA,FUND_TURNOVER
+846,fund,info,NA,NA,NA,NA,FUND_PRICING_FREQ
+847,fund,info,NA,NA,NA,NA,FUND_REDEM_FREQ
+848,fund,info,NA,NA,NA,NA,FUND_SUBSCRIPT_FREQ
+849,fund,info,NA,NA,NA,NA,FUND_CREATION_UNIT_SIZE
+850,fund,info,NA,NA,NA,NA,FUND_MIN_INVEST
+851,fund,info,NA,NA,NA,NA,FUND_MIN_INVEST_CRNCY
+852,fund,info,NA,NA,NA,NA,FUND_IRA_INVEST
+853,fund,info,NA,NA,NA,NA,FUND_MIN_INVEST_PAED
+854,fund,info,NA,NA,NA,NA,FUND_MIN_INVEST_SHARES
+855,fund,info,NA,NA,NA,NA,FUND_MIN_SUBSEQUENT_INVEST_SHARE
+856,fund,info,NA,NA,NA,NA,FUND_MIN_REDEM
+857,fund,info,NA,NA,NA,NA,FUND_MIN_HOLD
+858,fund,info,NA,NA,NA,NA,FUND_LOCK_UP
+859,fund,info,NA,NA,NA,NA,FUND_HIGH_WATER
+860,fund,info,NA,NA,NA,NA,FUND_OPEN_PYMNT_SHR
+861,fund,info,NA,NA,NA,NA,ACTIVELY_MANAGED
+862,fund,info,NA,NA,NA,NA,FUND_MGMT_STYLE
+863,fund,info,NA,NA,NA,NA,FUND_CLOSED_NEW_INV
+864,fund,info,NA,NA,NA,NA,INVESTS_IN_SWAPS
+865,fund,info,NA,NA,NA,NA,FUNDED
+866,fund,info,NA,NA,NA,NA,DERIVATIVES_BASED
+867,fund,info,NA,NA,NA,NA,CURRENCY_HEDGED_INDICATOR
+868,fund,info,NA,NA,NA,NA,INVESTS_IN_PHYSICAL_COMMODITIES
+869,fund,info,NA,NA,NA,NA,SECURITIES_LENDING
+870,fund,info,NA,NA,NA,NA,ETF_UNDL_INDEX_TICKER
+871,fund,info,NA,NA,NA,NA,FUND_BENCHMARK_PRIM
+872,fund,info,NA,NA,NA,NA,FUND_BENCHMARK_SECONDARY
+873,fund,info,NA,NA,NA,NA,FUND_BENCHMARK_THIRD
+874,fund,info,NA,NA,NA,NA,INDEX_WEIGHTING_METHODOLOGY
+875,fund,info,NA,NA,NA,NA,FUND_INCEPT_DT
+876,fund,info,NA,NA,NA,NA,FUND_REDEMP_DT
+877,fund,info,NA,NA,NA,NA,FULL_FUND_AVAIL
+878,fund,info,NA,NA,NA,NA,PRIMARY_PERIODICITY
+879,fund,info,NA,NA,NA,NA,FUND_FISCAL_MONTH
+880,fund,info,NA,NA,NA,NA,REGULATORY_STRUCTURE
+881,fund,info,NA,NA,NA,NA,FUND_TAX_STATUS
+882,fund,info,NA,NA,NA,NA,FUND_TAX_FORM
+883,fund,info,NA,NA,NA,NA,FUND_DOMICILE_TYP
+884,fund,info,NA,NA,NA,NA,FUND_DSK
+885,fund,info,NA,NA,NA,NA,FUND_EURO_DIRECT_UCITS
+886,fund,info,NA,NA,NA,NA,FUND_CPFIS
+887,fund,info,NA,NA,NA,NA,FUND_RSP
+888,fund,info,NA,NA,NA,NA,FUND_VERMOGEN
+889,fund,info,NA,NA,NA,NA,FUND_ARBEIT
+890,fund,info,NA,NA,NA,NA,FUND_EPF_MK
+891,fund,info,NA,NA,NA,NA,FUND_MPF_CON
+892,fund,info,NA,NA,NA,NA,FUND_MPF_APIF
+893,fund,info,NA,NA,NA,NA,CHINA_QDII_FUND
+894,fund,info,NA,NA,NA,NA,FUND_LUX_LAW
+895,fund,info,NA,NA,NA,NA,FUND_FEEDER_BIT
+896,fund,info,NA,NA,NA,NA,FUND_PRIVATE_FUND
+897,fund,info,NA,NA,NA,NA,FUND_PERMISSIONING_STATUS
+898,fund,info,NA,NA,NA,NA,ID_BB_GLOBAL
+899,fund,info,NA,NA,NA,NA,CIE_DES
+900,fund,info,NA,NA,NA,NA,FUND_ASSETS_USD
+901,fund,info,NA,NA,NA,NA,FUND_TOTAL_ASSETS_DT
+902,fund,info,NA,NA,NA,NA,FUND_NAV_DT
+903,fund,info,NA,NA,NA,NA,FUND_RISK_ASOF_DT
+904,fund,info,NA,NA,NA,NA,FUND_PE_RATIO
+905,fund,info,NA,NA,NA,NA,FUND_AVG_MKT_CAP
+906,fund,info,NA,NA,NA,NA,FUND_AVG_DVD_YLD
+907,fund,info,NA,NA,NA,NA,FUND_AVG_PRICE_CASH_FLOW
+908,fund,info,NA,NA,NA,NA,FUND_AVG_PRICE_SALES_RATIO
+909,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_EQUITY
+910,fund,info,NA,NA,NA,NA,CASH_FUND_ASSET_ALLOC
+911,fund,info,NA,NA,NA,NA,OTHER_FUND_ASSET_ALLOC
+912,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_PFD
+913,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_CORP
+914,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_MUNI
+915,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_MTGE
+916,fund,info,NA,NA,NA,NA,FUND_ASSET_ALLOC_GOVT
+917,fund,info,NA,NA,NA,NA,RTG_MOODYS_FUND
+918,fund,info,NA,NA,NA,NA,RTG_MOODYS_FUND_DATE
+919,fund,info,NA,NA,NA,NA,FUND_LAST_RPT_DT
+920,fund,info,NA,NA,NA,NA,FUND_FLOW_DATE
+921,fund,info,NA,NA,NA,NA,FUND_ADMIN_LONG
+922,fund,info,NA,NA,NA,NA,FUND_INVEST_ADVISOR
+923,fund,info,NA,NA,NA,NA,FUND_AUDITOR_LONG
+924,fund,info,NA,NA,NA,NA,FUND_CUSTODIAN_LONG
+925,fund,info,NA,NA,NA,NA,FUND_DISTRIBUTOR_LONG
+926,fund,info,NA,NA,NA,NA,FUND_GUARANTOR
+927,fund,info,NA,NA,NA,NA,FUND_LEAD_MGR_LONG
+928,fund,info,NA,NA,NA,NA,FUND_TRANSFER_AGENT_LONG
+929,fund,info,NA,NA,NA,NA,FUND_TRUSTEE
+930,fund,info,NA,NA,NA,NA,FUND_PRICING_SOURCE
+931,fund,info,NA,NA,NA,NA,FUND_PRIME_BROKER
+932,fund,info,NA,NA,NA,NA,FUND_MANAGEMENT_CO
+933,fund,info,NA,NA,NA,NA,FUND_MGR_LONG
+934,fund,info,NA,NA,NA,NA,CO_FUND_MGR
+935,fund,info,NA,NA,NA,NA,FUND_MGR_START_DT
+936,fund,info,NA,NA,NA,NA,FUND_MGR_STATED_FEE
+937,fund,info,NA,NA,NA,NA,FUND_GUARANTEED_MGMT
+938,fund,info,NA,NA,NA,NA,FUND_MAX_BASE_MGR_FEE
+939,fund,info,NA,NA,NA,NA,FUND_12B_FEE
+940,fund,info,NA,NA,NA,NA,FUND_MGR_STATED_PERFORM_FEE
+941,fund,info,NA,NA,NA,NA,FUND_REDEMPTION_FLAT
+942,fund,info,NA,NA,NA,NA,FUND_EARLY_WITHDRAW_FEE
+943,fund,info,NA,NA,NA,NA,FUND_INCENTIVE_FEE
+944,fund,info,NA,NA,NA,NA,FUND_TRUSTEE_FEE
+945,fund,info,NA,NA,NA,NA,FUND_ACTUAL_TOTAL_FEE
+946,fund,info,NA,NA,NA,NA,FUND_DEFERRED_LOAD
+947,fund,info,NA,NA,NA,NA,FUND_HAS_REDEMPTION_SCHED
+948,fund,info,NA,NA,NA,NA,FUND_HAS_COMPLEX_REDEMP
+949,fund,info,NA,NA,NA,NA,FUND_CURRENT_FRONT_LOAD
+950,fund,info,NA,NA,NA,NA,FUND_HAS_COMPLEX_FRNT_SCHED
+951,fund,info,NA,NA,NA,NA,FUND_EXPENSE_RATIO
+952,fund,info,NA,NA,NA,NA,FUND_ADMIN_EXP
+953,fund,info,NA,NA,NA,NA,FUND_TOTAL_EXP
+954,fund,info,NA,NA,NA,NA,FUND_EXP_ASOF_DT
+955,fund,info,NA,NA,NA,NA,FUND_HURDLE_RATE
+956,index,market,NA,NA,NA,NA,PX_OPEN
+957,index,market,NA,NA,NA,NA,PX_HIGH
+958,index,market,NA,NA,NA,NA,PX_LOW
+959,index,market,NA,NA,NA,NA,PX_LAST
+960,index,info,NA,NA,NA,NA,LONG_COMP_NAME
+961,futures,market,spot,NA,NA,NA,PX_HIGH
+962,futures,market,spot,NA,NA,NA,PX_LAST
+963,futures,market,spot,NA,NA,NA,PX_LOW

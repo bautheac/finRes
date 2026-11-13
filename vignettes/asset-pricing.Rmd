@@ -13,9 +13,7 @@ vignette: >
 
 ```{r, setup, echo = F, message = F, warning = F}
 knitr::opts_chunk$set(collapse = T, eval = T, warning = F, message = F, comment = "#>")
-folder <- "literature_files"; dir.create(folder)
-download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
-path <- here::here("development", "storethat.sqlite")
+path <- system.file("extdata", "storethat.sqlite", package = "finRes")
 ```
 
 At the time of writing, the analytics part of the pipeline in [finRes](https://bautheac.github.io/finRes/) focusses on asset pricing.  

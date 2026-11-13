@@ -13,8 +13,6 @@ vignette: >
 
 ```{r, setup, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
-folder <- "literature_files"; dir.create(folder)
-download.file("https://www.dropbox.com/s/htnd7o9nnkk8ng8/references.bib?dl=1", paste(folder, "references.bib", sep = "/"))
 ```
 
 
