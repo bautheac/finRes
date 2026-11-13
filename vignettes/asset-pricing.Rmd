@@ -14,6 +14,8 @@ vignette: >
 ```{r, setup, echo = F, message = F, warning = F}
 knitr::opts_chunk$set(collapse = T, eval = T, warning = F, message = F, comment = "#>")
 path <- system.file("extdata", "storethat.sqlite", package = "finRes")
+# pkgdown renders articles in a session where finRes is not installed.
+if (! nzchar(path)) path <- here::here("inst", "extdata", "storethat.sqlite")
 ```
 
 At the time of writing, the analytics part of the pipeline in [finRes](https://bautheac.github.io/finRes/) focusses on asset pricing.  
