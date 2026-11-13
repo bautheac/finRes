@@ -47,7 +47,7 @@ RoxygenNote: 7.1.1
 URL: https://bautheac.github.io/finRes/
 BugReports: https://github.com/bautheac/finRes/issues
 Suggests:
-    here,
     knitr,
+    lubridate,
     rmarkdown
 VignetteBuilder: knitr
