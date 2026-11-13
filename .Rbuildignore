@@ -4,8 +4,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
-^\.travis\.yml$
-^appveyor\.yml$
 ^development$
 ^docs$
 ^pkgdown-site$
