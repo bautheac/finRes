@@ -10,11 +10,3 @@ navbar:
       href: index.html
     - text: functions
       href: reference/index.html
-    - text: get started
-      menu:
-      - text: datasets
-        href: articles/datasets.html
-      - text: Bloomberg
-        href: articles/bloomberg.html
-      - text: asset pricing
-        href: articles/asset-pricing.html
