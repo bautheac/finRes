@@ -1,5 +1,5 @@
 ---
-title: finRes
+title: 'finRes <img src="man/figures/logo.png" align="right" height="139" alt="" />'
 output: github_document
 bibliography: literature_files/references.bib
 date: ""
