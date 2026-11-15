@@ -14,7 +14,7 @@ finRes is a set of packages that work in harmony because they share common data
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://bautheac.github.io/finRes/}
+  \item \url{https://dev.bautheac.net/finRes/}
   \item Report bugs at \url{https://github.com/bautheac/finRes/issues}
 }
 
