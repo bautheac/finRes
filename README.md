@@ -1,6 +1,4 @@
-finRes
-<img src="man/figures/logo.png" align="right" height="139" alt="" />
-================
+# finRes <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <style> body {text-align: justify} </style>
 
