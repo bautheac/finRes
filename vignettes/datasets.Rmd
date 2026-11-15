@@ -16,10 +16,10 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 
-[finRes](https://bautheac.github.io/finRes/) is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the [finRes](https://bautheac.github.io/finRes/) suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in [finRes](https://bautheac.github.io/finRes/) includes: [BBGsymbols](https://bautheac.github.io/BBGsymbols/), [fewISOs](https://bautheac.github.io/fewISOs/), [GICS](https://bautheac.github.io/GICS/), [FFresearch](https://bautheac.github.io/FFresearch/) and [factors](https://bautheac.github.io/factors/).
+[finRes](https://dev.bautheac.net/finRes/) is home to a number of packages that, although self-contained with consumption value on their own, host datasets that play important roles in the [finRes](https://dev.bautheac.net/finRes/) suite, mostly in relation to data collection, storage and wrangling but also to analytics and asset pricing in particular. At the time of writing, the set of dataset packages in [finRes](https://dev.bautheac.net/finRes/) includes: [BBGsymbols](https://dev.bautheac.net/BBGsymbols/), [fewISOs](https://dev.bautheac.net/fewISOs/), [GICS](https://dev.bautheac.net/GICS/), [FFresearch](https://dev.bautheac.net/FFresearch/) and [factors](https://dev.bautheac.net/factors/).
 
 ## BBGsymbols
-The [BBGsymbols](https://bautheac.github.io/BBGsymbols/) package plays a critical role in [finRes](https://bautheac.github.io/finRes/) where it provides both the [pullit](https://bautheac.github.io/pullit/) and the [storethat](https://bautheac.github.io/storethat/) packages with support for interacting with Bloomberg through the [Rblpapi](https://github.com/Rblp/Rblpapi) interface [@Armstrong_Rblpapi].
+The [BBGsymbols](https://dev.bautheac.net/BBGsymbols/) package plays a critical role in [finRes](https://dev.bautheac.net/finRes/) where it provides both the [pullit](https://dev.bautheac.net/pullit/) and the [storethat](https://dev.bautheac.net/storethat/) packages with support for interacting with Bloomberg through the [Rblpapi](https://github.com/Rblp/Rblpapi) interface [@Armstrong_Rblpapi].
 
 ```{r `BBGsymbols load`}
 library(BBGsymbols)
@@ -29,7 +29,7 @@ data(list = c("fields", "months", "rolls", "tickers_cftc", "tickers_futures"), p
 
 
 ### fields
-The `fields` dataset is the workhorse in [BBGsymbols](https://bautheac.github.io/BBGsymbols/); it gathers Bloomberg datafields that have been carefully selected over time through experience. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include 'equity', referring to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
+The `fields` dataset is the workhorse in [BBGsymbols](https://dev.bautheac.net/BBGsymbols/); it gathers Bloomberg datafields that have been carefully selected over time through experience. It provides popular historical and contemporaneous data fields that are likely to provide the necessary information and beyond for any rigorous research or more applied work in finance and financial economics. Financial instruments covered at the time of writing include 'equity', referring to any equity like security, 'fund' encompassing any money managing entity and 'futures' covering the futures markets. The author welcomes pull requests that could help expanding the current coverage.  
 ```{r `BBGsymbols fields`, echo = FALSE}
 # data.table::as.data.table(fields)
 tibble::as_tibble(fields)
@@ -51,7 +51,7 @@ rolls
 
 
 ### tickers_CFTC
-The `tickers_cftc` dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via [pullit](https://bautheac.github.io/pullit/) of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the 'legacy', 'disaggregated', 'supplemental' and 'traders in financial futures' (TFF) reports. See `?tickers_CFTC` for details.
+The `tickers_cftc` dataset gathers Bloomberg position data tickers for a number of futures series. These tickers allow direct retrieval from Bloomberg via [pullit](https://dev.bautheac.net/pullit/) of corresponding position data as reported by the US Commodity Futures Trading Commission (CFTC) in a collection of weekly market reports including the 'legacy', 'disaggregated', 'supplemental' and 'traders in financial futures' (TFF) reports. See `?tickers_CFTC` for details.
 ```{r `tickers_CFTC`, echo = FALSE}
 tickers_cftc
 ```
@@ -67,7 +67,7 @@ tibble::as_tibble(tickers_futures)
 
 
 ## fewISOs
-[fewISOs](https://bautheac.github.io/fewISOs/) provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to [finRes](https://bautheac.github.io/finRes/) where they help with data wrangling and exploration. At the time of writing [fewISOs](https://bautheac.github.io/fewISOs/) hosts the `countries`, `currencies` and `exchanges` datasets. 
+[fewISOs](https://dev.bautheac.net/fewISOs/) provides a collection of financial economics related ISO code datasets conveniently packaged for consumption in R. Beyond their self-contained consumption value these datasets belong to [finRes](https://dev.bautheac.net/finRes/) where they help with data wrangling and exploration. At the time of writing [fewISOs](https://dev.bautheac.net/fewISOs/) hosts the `countries`, `currencies` and `exchanges` datasets. 
 ```{r `fewISOs load`}
 library(fewISOs)
 
@@ -102,7 +102,7 @@ exchanges
 
 
 ## GICS
-[GICS](https://bautheac.github.io/GICS/) packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to [finRes](https://bautheac.github.io/finRes/) where, along with [BBGsymbols](https://bautheac.github.io/BBGsymbols/) and [fewISOs](https://bautheac.github.io/fewISOs/), it helps with data wrangling and exploration.
+[GICS](https://dev.bautheac.net/GICS/) packages the Global Industry Classification Standard (GICS) dataset for consumption in R. Beyond its self-contained consumption value GICS belongs to [finRes](https://dev.bautheac.net/finRes/) where, along with [BBGsymbols](https://dev.bautheac.net/BBGsymbols/) and [fewISOs](https://dev.bautheac.net/fewISOs/), it helps with data wrangling and exploration.
 ```{r `GICS load`}
 library(GICS)
 
@@ -117,7 +117,7 @@ standards
 
 
 ## FFresearch
-[FFresearch](https://bautheac.github.io/FFresearch/) conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French's online [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html).  
+[FFresearch](https://dev.bautheac.net/FFresearch/) conveniently packages Fama/French asset pricing research data for consumption in R. The data is pulled directly from Kenneth French's online [data library](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html).  
 ```{r `FFresearch load`}
 library(FFresearch)
 
@@ -171,7 +171,7 @@ breakpoints
 
 
 ## factors  
-The [factors](https://bautheac.github.io/factors/) package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors' website. The current version includes the factor data from Kenneth's French, also available in the [FFresearch](https://bautheac.github.io/FFresearch/) package described above, as well as factor data from Robert F. Stambaugh. 
+The [factors](https://dev.bautheac.net/factors/) package gathers various asset pricing research factor time series for convenient consumption in R with the data directly pulled from the authors' website. The current version includes the factor data from Kenneth's French, also available in the [FFresearch](https://dev.bautheac.net/FFresearch/) package described above, as well as factor data from Robert F. Stambaugh. 
 
 ```{r, `factors load`}
 library(factors)
